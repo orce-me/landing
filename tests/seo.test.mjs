@@ -90,13 +90,14 @@ test('public production pages expose canonical, metadata, schema and valid route
       assert.match(robots, /Allow: \/\n/)
       assert.match(robots, /Sitemap: https:\/\/example.com\/sitemap.xml/)
       const sitemap = await (await fetch(`${base}/sitemap.xml`)).text()
-      assert.equal((sitemap.match(/<loc>/g) || []).length, 7)
+      assert.equal((sitemap.match(/<loc>/g) || []).length, 8)
       assert.ok(!sitemap.includes('localhost'))
       for (const slug of [
         'calculadora-de-desconto',
         'calculadora-de-margem',
         'calculadora-de-custo-hora',
         'calculadora-de-ponto-de-equilibrio',
+        'calculadora-de-preco-com-taxas',
       ]) {
         const page = await (await fetch(`${base}/${slug}`)).text()
         assert.ok(

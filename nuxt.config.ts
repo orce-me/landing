@@ -29,6 +29,7 @@ export default defineNuxtConfig({
             '/calculadora-de-margem',
             '/calculadora-de-custo-hora',
             '/calculadora-de-ponto-de-equilibrio',
+            '/calculadora-de-preco-com-taxas',
 
             '/robots.txt',
             '/sitemap.xml',

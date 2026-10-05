@@ -60,6 +60,15 @@
         </p>
         <span class="resource-action">Usar gratuitamente</span></NuxtLink
       >
+      <NuxtLink class="resource" to="/calculadora-de-preco-com-taxas"
+        ><h3>
+          Calculadora de preço com taxas <span aria-hidden="true">↗</span>
+        </h3>
+        <p>
+          Considere taxas sobre a venda e a margem desejada ao formar seu preço.
+        </p>
+        <span class="resource-action">Usar gratuitamente</span></NuxtLink
+      >
     </div>
   </section>
 </template>

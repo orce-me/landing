@@ -32,6 +32,9 @@ defineProps({
       <NuxtLink to="/calculadora-de-ponto-de-equilibrio"
         >Calculadora de ponto de equilíbrio</NuxtLink
       >
+      <NuxtLink to="/calculadora-de-preco-com-taxas"
+        >Calculadora de preço com taxas</NuxtLink
+      >
     </nav>
   </article>
 </template>
