@@ -2,7 +2,7 @@ export default defineNuxtConfig({
   compatibilityDate: '2026-10-04',
   devtools: { enabled: false },
   devServer: { host: '0.0.0.0', port: 5174 },
-  css: ['~/assets/css/main.css', '~/assets/css/theme.css'],
+  css: ['~/assets/css/main.css'],
   runtimeConfig: { public: { appUrl: 'http://localhost:5173/login' } },
   app: {
     head: {

@@ -40,3 +40,63 @@
     </div>
   </section>
 </template>
+
+<style scoped>
+.faq {
+  border-top: 1px solid var(--line);
+  display: grid;
+  grid-template-columns: 1fr 1.25fr;
+  gap: 70px;
+}
+
+.questions details {
+  border-bottom: 1px solid #dce3d5;
+}
+
+.questions summary {
+  cursor: pointer;
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+  padding: 23px 0;
+  font-size: 13px;
+}
+
+.questions summary::-webkit-details-marker {
+  display: none;
+}
+
+.questions summary span {
+  color: #829568;
+  font-size: 18px;
+}
+
+.questions details[open] summary span {
+  transform: rotate(45deg);
+}
+
+.questions p {
+  font-size: 12px;
+  line-height: 1.9;
+  color: var(--muted);
+  padding-bottom: 22px;
+  max-width: 470px;
+}
+
+@media (max-width: 760px) {
+  .faq {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+}
+
+@media (max-width: 760px) {
+  .faq {
+    gap: 5px;
+  }
+}
+
+[data-theme='dark'] .questions details {
+  border-color: #405438;
+}
+</style>
