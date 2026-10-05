@@ -220,29 +220,25 @@ if (origin) {
 
 <style scoped>
 .guide {
-  max-width: 960px;
+  max-width: var(--spacing-container-content);
   padding-top: 45px;
   padding-bottom: 90px;
 }
-.back-link {
-  font-size: 13px;
-  color: var(--muted);
-}
 h1 {
-  font-size: 48px;
-  letter-spacing: -1.8px;
-  font-weight: 500;
-  line-height: 1.15;
+  font-size: var(--typography-headline-page-font-size);
+  letter-spacing: var(--typography-headline-page-letter-spacing);
+  font-weight: var(--typography-headline-page-font-weight);
+  line-height: var(--typography-headline-page-line-height);
   margin: 32px 0 22px;
 }
 h1 em {
-  font-size: 56px;
+  font-size: var(--typography-headline-page-accent-font-size);
 }
 .intro {
-  font-size: 18px;
-  line-height: 1.8;
-  color: var(--muted);
-  max-width: 720px;
+  font-size: var(--typography-lead-font-size);
+  line-height: var(--typography-lead-line-height);
+  color: var(--color-on-surface-muted);
+  max-width: var(--spacing-measure);
 }
 .guide-index {
   display: flex;
@@ -250,8 +246,8 @@ h1 em {
   gap: 20px;
   margin: 30px 0 45px;
   padding: 20px 0;
-  border-block: 1px solid var(--line);
-  font-size: 13px;
+  border-block: 1px solid var(--color-outline);
+  font-size: var(--typography-body-md-font-size);
 }
 .guide-index a {
   text-decoration: underline;
@@ -259,19 +255,20 @@ h1 em {
 }
 section {
   margin-top: 45px;
+  max-width: var(--spacing-measure);
   scroll-margin-top: 30px;
 }
 h2 {
-  font-size: 27px;
-  font-weight: 500;
-  letter-spacing: -0.5px;
+  font-size: var(--typography-title-xl-font-size);
+  font-weight: var(--typography-title-xl-font-weight);
+  letter-spacing: var(--typography-title-xl-letter-spacing);
   margin-bottom: 20px;
 }
 p,
 li {
-  font-size: 15px;
-  line-height: 1.9;
-  color: var(--muted);
+  font-size: var(--typography-body-lg-font-size);
+  line-height: var(--typography-body-lg-line-height);
+  color: var(--color-on-surface-muted);
 }
 li {
   margin-bottom: 14px;
@@ -293,49 +290,41 @@ ul {
 table {
   width: 100%;
   border-collapse: collapse;
-  font-size: 13px;
+  font-size: var(--typography-body-md-font-size);
   text-align: left;
 }
 caption {
   text-align: left;
-  color: var(--muted);
+  color: var(--color-on-surface-muted);
   padding-bottom: 14px;
 }
 th,
 td {
   padding: 15px 10px;
-  border-bottom: 1px solid var(--line);
+  border-bottom: 1px solid var(--color-outline);
 }
 tbody th {
   font-weight: 500;
 }
 thead,
 tfoot {
-  background: #e9f0df;
+  background: var(--color-surface-tint);
 }
 tfoot {
   font-weight: 600;
 }
 .guide-cta {
-  padding: 28px;
-  border: 1px solid var(--line);
-  border-radius: 9px;
-  background: #eef3e6;
-}
-[data-theme='dark'] thead,
-[data-theme='dark'] tfoot,
-[data-theme='dark'] .guide-cta {
-  background: #263c29;
+  padding: 24px;
+  border: 1px solid var(--color-outline);
+  border-radius: var(--rounded-lg);
+  background: var(--color-surface-tint);
 }
 @media (max-width: 760px) {
   h1 {
-    font-size: 34px;
+    font-size: 32px;
   }
   h1 em {
-    font-size: 40px;
-  }
-  .intro {
-    font-size: 16px;
+    font-size: 38px;
   }
   .guide {
     padding-top: 25px;
@@ -348,11 +337,11 @@ tfoot {
     padding: 22px;
   }
   h2 {
-    font-size: 24px;
+    font-size: 23px;
   }
 }
 section a:not(.button) {
   text-decoration: underline;
-  text-underline-offset: 3px;
+  text-underline-offset: 4px;
 }
 </style>

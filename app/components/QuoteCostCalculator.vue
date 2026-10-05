@@ -121,37 +121,37 @@ const money = (value) =>
 .calculator {
   display: grid;
   grid-template-columns: 1.2fr 1fr;
-  gap: 30px;
+  gap: 32px;
   margin: 35px 0;
 }
 .cost-inputs {
   display: grid;
   gap: 22px;
-  border: 1px solid var(--line);
-  padding: 28px;
-  border-radius: 10px;
+  border: 1px solid var(--color-outline);
+  padding: 24px;
+  border-radius: var(--rounded-lg);
 }
 .input-note {
-  font-size: 12px;
-  line-height: 1.7;
-  color: var(--muted);
+  font-size: var(--typography-body-md-font-size);
+  line-height: var(--typography-body-md-line-height);
+  color: var(--color-on-surface-muted);
   margin: 0;
 }
 label {
   display: flex;
   flex-direction: column;
   gap: 9px;
-  font-size: 13px;
-  font-weight: 500;
+  font-size: var(--typography-label-lg-font-size);
+  font-weight: var(--typography-label-lg-font-weight);
 }
 input {
   width: 100%;
-  border: 1px solid var(--line);
-  border-radius: 6px;
+  border: 1px solid var(--color-on-surface-muted);
+  border-radius: var(--rounded-md);
   padding: 12px;
-  background: #fff;
-  color: #16392d;
-  font-size: 16px;
+  background: var(--color-surface-raised);
+  color: var(--color-on-surface);
+  font-size: var(--typography-lead-font-size);
 }
 .labor-inputs {
   display: grid;
@@ -159,21 +159,21 @@ input {
   gap: 16px;
 }
 small {
-  font-size: 11px;
-  line-height: 1.7;
-  font-weight: 400;
-  color: var(--muted);
+  font-size: var(--typography-body-sm-font-size);
+  line-height: var(--typography-body-sm-line-height);
+  font-weight: var(--typography-body-sm-font-weight);
+  color: var(--color-on-surface-muted);
 }
 .estimate {
-  background: #e8efdd;
-  border: 1px solid var(--line);
-  border-radius: 10px;
-  padding: 28px;
+  background: var(--color-surface-tint);
+  border: 1px solid var(--color-outline);
+  border-radius: var(--rounded-lg);
+  padding: 24px;
   align-self: start;
 }
 .estimate h2 {
-  font-size: 23px;
-  font-weight: 500;
+  font-size: var(--typography-title-lg-font-size);
+  font-weight: var(--typography-title-lg-font-weight);
   margin: 0 0 25px;
 }
 dl {
@@ -184,8 +184,8 @@ dl > div {
   justify-content: space-between;
   gap: 18px;
   margin: 16px 0;
-  font-size: 12px;
-  line-height: 1.6;
+  font-size: var(--typography-body-sm-font-size);
+  line-height: var(--typography-body-sm-line-height);
 }
 dd {
   margin: 0;
@@ -195,40 +195,30 @@ dd {
 .price {
   padding-top: 25px;
   margin: 24px 0 0;
-  border-top: 1px solid var(--line);
+  border-top: 1px solid var(--color-outline);
 }
 .price span {
-  font-size: 12px;
-  color: var(--muted);
+  font-size: var(--typography-body-sm-font-size);
+  color: var(--color-on-surface-muted);
 }
 .price strong {
   display: block;
-  font-size: 38px;
-  font-weight: 500;
-  letter-spacing: -1.2px;
+  font-size: var(--typography-figure-lg-font-size);
+  font-weight: var(--typography-figure-lg-font-weight);
+  letter-spacing: var(--typography-figure-lg-letter-spacing);
   margin-top: 8px;
 }
 .estimate-note {
-  font-size: 11px;
-  line-height: 1.8;
-  color: var(--muted);
+  font-size: var(--typography-body-sm-font-size);
+  line-height: var(--typography-body-sm-line-height);
+  color: var(--color-on-surface-muted);
   margin: 24px 0 0;
 }
 .validation {
-  font-size: 14px;
-  line-height: 1.8;
-  color: #8a342a;
+  font-size: var(--typography-body-md-font-size);
+  line-height: var(--typography-body-md-line-height);
+  color: var(--color-error);
   margin: 0;
-}
-[data-theme='dark'] input {
-  background: #1a2b20;
-  color: #e5ede0;
-}
-[data-theme='dark'] .estimate {
-  background: #263c29;
-}
-[data-theme='dark'] .validation {
-  color: #f3b5a4;
 }
 @media (max-width: 760px) {
   .calculator {

@@ -29,8 +29,8 @@ const { dark, toggle } = useTheme()
   width: 36px;
   height: 36px;
   flex-shrink: 0;
-  border: 1px solid var(--line);
-  border-radius: 50%;
+  border: 1px solid var(--color-outline);
+  border-radius: var(--rounded-full);
   color: inherit;
   background: transparent;
   margin-left: -23px;
@@ -38,7 +38,7 @@ const { dark, toggle } = useTheme()
 }
 
 .theme-toggle:hover {
-  background: #81976c20;
+  background: var(--color-surface-tint);
 }
 
 .theme-toggle svg {

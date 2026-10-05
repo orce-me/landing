@@ -38,14 +38,15 @@ defineExpose({ open })
 <style scoped>
 dialog {
   width: min(740px, 94vw);
-  border: 1px solid #dce4d4;
-  border-radius: 10px;
+  border: 1px solid var(--color-outline);
+  border-radius: var(--rounded-lg);
   padding: 0;
-  color: #203d34;
+  background: var(--color-surface-raised);
+  color: var(--color-on-surface);
 }
 
 dialog::backdrop {
-  background: #132b2399;
+  background: var(--backdrop);
   backdrop-filter: blur(5px);
 }
 
@@ -53,18 +54,18 @@ dialog::backdrop {
   display: flex;
   align-items: center;
   gap: 12px;
-  background: #f1f5eb;
+  background: var(--color-surface-tint);
   padding: 15px;
-  font-size: 10px;
+  font-size: var(--typography-label-sm-font-size);
 }
 
 .dialog-toolbar button {
   border: 0;
-  border-radius: 4px;
+  border-radius: var(--rounded-sm);
   padding: 9px;
-  background: #174c3c;
-  color: white;
-  font-size: 10px;
+  background: var(--color-primary);
+  color: var(--color-on-primary);
+  font-size: var(--typography-label-sm-font-size);
 }
 
 .dialog-toolbar button:first-of-type {
@@ -148,57 +149,6 @@ dialog::backdrop {
 @media print {
   #print-document {
     padding: 0;
-  }
-}
-
-[data-theme='dark'] dialog {
-  background: #1b2b21;
-  color: #e3eddb;
-  border-color: #405536;
-}
-
-[data-theme='dark'] .dialog-toolbar {
-  background: #293b29;
-}
-
-[data-theme='dark'] .dialog-toolbar button {
-  background: #c1dca2;
-  color: #163322;
-}
-
-@media print {
-  [data-theme='dark'] #print-document {
-    background: white;
-    color: #203d34;
-    --muted: #4e6053;
-  }
-}
-
-@media print {
-  [data-theme='dark'] #print-document :deep(.app-inner) {
-    background: white;
-    color: #203d34;
-  }
-}
-
-@media print {
-  [data-theme='dark'] #print-document :deep(.customer b),
-  [data-theme='dark'] #print-document :deep(.total strong) {
-    color: #203d34;
-  }
-}
-
-@media print {
-  [data-theme='dark'] #print-document :deep(.total) {
-    background: #e9f0df;
-  }
-}
-
-@media print {
-  [data-theme='dark'] #print-document :deep(small),
-  [data-theme='dark'] #print-document :deep(.customer > span),
-  [data-theme='dark'] #print-document :deep(.table-head) {
-    color: #596c4d;
   }
 }
 </style>

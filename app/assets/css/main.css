@@ -1,12 +1,41 @@
-/* Base, tokens e utilitários compartilhados. Estilos específicos ficam nos componentes. */
+/* Base and shared styles. Values come from DESIGN.md through tokens.css. Component styles live in the components. */
 :root {
-  font-family: 'DM Sans Variable', Arial, sans-serif;
-  color: #203d34;
-  background: #fafbf6;
+  font-family: var(--typography-body-md-font-family), Arial, sans-serif;
+  color: var(--color-on-surface);
+  background: var(--color-neutral);
+  color-scheme: light;
   font-synthesis: none;
-  --green: #174c3c;
-  --muted: #6c776d;
-  --line: #dde3d9;
+  /* DESIGN.md, Elevation & Depth. The dark values are below. */
+  --shadow-raised: 0 8px 24px #16392d0a;
+  --shadow-floating: 0 24px 64px #16392d17;
+  --glow-page: #e0ebca70;
+  --glow-hero: radial-gradient(
+    ellipse at 60% 48%,
+    #c3dba3 0%,
+    #dfebcb 40%,
+    #edf2df80 58%,
+    transparent 73%
+  );
+  --glow-closing: #356247;
+  --orbit: #b5c99d;
+  --backdrop: #16392d99;
+}
+
+/* Print always uses the light theme. */
+@media screen {
+  :root[data-theme='dark'] {
+    color-scheme: dark;
+    --shadow-raised: 0 18px 48px #00000022;
+    --shadow-floating: 0 18px 48px #00000022;
+    --glow-page: #39512d55;
+    --glow-hero: radial-gradient(
+      ellipse at 60% 48%,
+      #66874360,
+      #384d2a55 40%,
+      transparent 73%
+    );
+    --orbit: #50683a80;
+  }
 }
 
 * {
@@ -15,6 +44,9 @@
 
 body {
   margin: 0;
+  background:
+    radial-gradient(ellipse at 95% 8%, var(--glow-page), transparent 32%),
+    var(--color-neutral);
 }
 
 a {
@@ -42,7 +74,7 @@ a:focus-visible,
 button:focus-visible,
 input:focus-visible,
 summary:focus-visible {
-  outline: 3px solid #81a669;
+  outline: 3px solid var(--color-secondary);
   outline-offset: 5px;
 }
 
@@ -54,11 +86,15 @@ section[id] {
   scroll-margin-top: 35px;
 }
 
+main {
+  overflow-x: clip;
+}
+
 .wrap {
-  max-width: 1240px;
+  max-width: var(--spacing-container);
   margin: auto;
-  padding-left: 40px;
-  padding-right: 40px;
+  padding-left: var(--spacing-gutter);
+  padding-right: var(--spacing-gutter);
 }
 
 h2,
@@ -68,9 +104,9 @@ p {
 }
 
 em {
-  font-family: 'Instrument Serif', Georgia, serif;
-  font-weight: 400;
-  color: #648348;
+  font-family: var(--typography-display-accent-font-family), Georgia, serif;
+  font-weight: var(--typography-display-accent-font-weight);
+  color: var(--color-secondary);
 }
 
 .button {
@@ -78,10 +114,12 @@ em {
   align-items: center;
   justify-content: center;
   gap: 24px;
-  padding: 15px 20px;
-  border-radius: 6px;
-  font-size: 12px;
-  font-weight: 600;
+  min-height: 44px;
+  padding: 12px 20px;
+  border-radius: var(--rounded-md);
+  font-size: var(--typography-label-md-font-size);
+  font-weight: var(--typography-label-md-font-weight);
+  line-height: var(--typography-label-md-line-height);
   transition:
     transform 0.2s,
     background 0.2s;
@@ -92,43 +130,54 @@ em {
 }
 
 .primary {
-  background: var(--green);
-  color: #fff;
+  background: var(--color-primary);
+  color: var(--color-on-primary);
 }
 
 .primary:hover {
-  background: #26634e;
+  background: var(--color-primary-hover);
+}
+
+/* The dark-theme primary button, for dark grounds in both themes. */
+.primary-dark {
+  background: var(--color-primary-dark);
+  color: var(--color-on-primary-dark);
+}
+
+.primary-dark:hover {
+  background: var(--color-primary-hover-dark);
 }
 
 .section {
-  padding-top: 90px;
-  padding-bottom: 90px;
+  padding-top: var(--spacing-section);
+  padding-bottom: var(--spacing-section);
 }
 
 .section h2 {
-  font-size: 36px;
-  font-weight: 500;
-  line-height: 1.23;
-  letter-spacing: -1.4px;
+  font-size: var(--typography-headline-md-font-size);
+  font-weight: var(--typography-headline-md-font-weight);
+  line-height: var(--typography-headline-md-line-height);
+  letter-spacing: var(--typography-headline-md-letter-spacing);
   margin: 17px 0;
 }
 
 .section h2 em {
-  font-size: 43px;
-  letter-spacing: -0.9px;
+  font-size: var(--typography-headline-md-accent-font-size);
+  letter-spacing: var(--typography-headline-md-accent-letter-spacing);
 }
 
 h3 {
-  font-weight: 500;
-  font-size: 18px;
-  letter-spacing: -0.4px;
+  font-size: var(--typography-title-md-font-size);
+  font-weight: var(--typography-title-md-font-weight);
+  line-height: var(--typography-title-md-line-height);
+  letter-spacing: var(--typography-title-md-letter-spacing);
 }
 
 .skip {
   position: fixed;
   top: -80px;
   left: 15px;
-  background: #fff;
+  background: var(--color-surface-raised);
   padding: 12px;
   z-index: 100;
 }
@@ -139,33 +188,24 @@ h3 {
 
 @media (max-width: 1050px) {
   .wrap {
-    padding-left: 28px;
-    padding-right: 28px;
+    padding-left: var(--spacing-gutter-tablet);
+    padding-right: var(--spacing-gutter-tablet);
   }
 }
 
 @media (max-width: 760px) {
   .wrap {
-    padding-left: 22px;
-    padding-right: 22px;
+    padding-left: var(--spacing-gutter-mobile);
+    padding-right: var(--spacing-gutter-mobile);
   }
-}
-
-@media (max-width: 760px) {
   .section {
-    padding-top: 60px;
-    padding-bottom: 60px;
+    padding-top: var(--spacing-section-mobile);
+    padding-bottom: var(--spacing-section-mobile);
   }
-}
-
-@media (max-width: 760px) {
   .section h2 {
     font-size: 29px;
     letter-spacing: -0.8px;
   }
-}
-
-@media (max-width: 760px) {
   .section h2 em {
     font-size: 35px;
   }
@@ -175,9 +215,6 @@ h3 {
   html {
     scroll-behavior: auto;
   }
-}
-
-@media (prefers-reduced-motion: reduce) {
   *,
   *:before,
   *:after {
@@ -189,60 +226,4 @@ h3 {
   body > *:not(dialog) {
     display: none !important;
   }
-}
-
-:root {
-  background: #f7f8f2;
-  color: #16392d;
-  --muted: #4e6053;
-  --line: #cbd5c4;
-}
-
-body {
-  background:
-    radial-gradient(ellipse at 95% 8%, #e0ebca70 0, transparent 32%), #f7f8f2;
-}
-
-em {
-  color: #496c32;
-}
-
-main {
-  overflow-x: clip;
-}
-
-:root {
-  color-scheme: light;
-}
-
-:root[data-theme='dark'] {
-  color-scheme: dark;
-  background: #101c17;
-  color: #e5ede0;
-  --green: #bcd798;
-  --muted: #b3c1ad;
-  --line: #354a39;
-}
-
-[data-theme='dark'] body {
-  background:
-    radial-gradient(ellipse at 95% 8%, #39512d55, transparent 32%), #101c17;
-}
-
-[data-theme='dark'] em {
-  color: #bbd595;
-}
-
-[data-theme='dark'] .primary {
-  background: #c1dca2;
-  color: #163322;
-}
-
-[data-theme='dark'] .primary:hover {
-  background: #d3e8bc;
-}
-
-[data-theme='dark'] .skip {
-  background: #1b2b21;
-  border-color: #405536;
 }

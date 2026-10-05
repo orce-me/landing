@@ -34,50 +34,51 @@ defineProps({
 </template>
 <style scoped>
 .tool-page {
-  max-width: 1040px;
+  max-width: var(--spacing-container-content);
   padding-top: 45px;
   padding-bottom: 80px;
 }
 h1 {
-  font-size: 44px;
-  line-height: 1.2;
-  font-weight: 500;
-  letter-spacing: -1.5px;
+  font-size: var(--typography-headline-page-font-size);
+  line-height: var(--typography-headline-page-line-height);
+  font-weight: var(--typography-headline-page-font-weight);
+  letter-spacing: var(--typography-headline-page-letter-spacing);
   margin: 30px 0 22px;
 }
 .intro {
-  font-size: 16px;
-  line-height: 1.9;
-  color: var(--muted);
-  max-width: 780px;
+  font-size: var(--typography-lead-font-size);
+  line-height: var(--typography-lead-line-height);
+  color: var(--color-on-surface-muted);
+  max-width: var(--spacing-measure);
 }
 .free {
-  font-size: 13px;
-  line-height: 1.7;
+  font-size: var(--typography-body-md-font-size);
+  line-height: var(--typography-body-md-line-height);
   margin-top: 15px;
-  color: var(--muted);
+  color: var(--color-on-surface-muted);
 }
 .explanation :deep(section) {
   margin-top: 42px;
-  max-width: 780px;
+  max-width: var(--spacing-measure);
 }
 .explanation :deep(h2),
 h2 {
-  font-size: 26px;
-  font-weight: 500;
-  line-height: 1.4;
+  font-size: var(--typography-title-xl-font-size);
+  font-weight: var(--typography-title-xl-font-weight);
+  line-height: var(--typography-title-xl-line-height);
   margin-bottom: 18px;
 }
 .explanation :deep(p) {
-  font-size: 14px;
-  line-height: 1.9;
-  color: var(--muted);
+  font-size: var(--typography-body-lg-font-size);
+  line-height: var(--typography-body-lg-line-height);
+  color: var(--color-on-surface-muted);
   margin: 16px 0;
 }
 .explanation :deep(.formula) {
   padding: 20px;
-  border: 1px solid var(--line);
-  border-radius: 6px;
+  font-weight: 500;
+  border: 1px solid var(--color-outline);
+  border-radius: var(--rounded-md);
 }
 .related {
   margin-top: 45px;
@@ -85,7 +86,7 @@ h2 {
   gap: 16px;
 }
 .related a {
-  font-size: 14px;
+  font-size: var(--typography-body-lg-font-size);
   text-decoration: underline;
   text-underline-offset: 4px;
 }
@@ -95,6 +96,10 @@ h2 {
   }
   h1 {
     font-size: 32px;
+  }
+  .explanation :deep(h2),
+  h2 {
+    font-size: 23px;
   }
 }
 </style>

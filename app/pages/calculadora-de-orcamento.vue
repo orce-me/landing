@@ -114,51 +114,51 @@ if (origin) {
 
 <style scoped>
 .calculator-page {
-  max-width: 1040px;
+  max-width: var(--spacing-container-content);
   padding-top: 45px;
   padding-bottom: 80px;
 }
 h1 {
-  font-size: 44px;
-  line-height: 1.2;
-  font-weight: 500;
-  letter-spacing: -1.5px;
+  font-size: var(--typography-headline-page-font-size);
+  line-height: var(--typography-headline-page-line-height);
+  font-weight: var(--typography-headline-page-font-weight);
+  letter-spacing: var(--typography-headline-page-letter-spacing);
   margin: 30px 0 22px;
 }
 h1 em {
-  font-size: 52px;
+  font-size: var(--typography-headline-page-accent-font-size);
 }
 .intro {
-  font-size: 16px;
-  line-height: 1.9;
-  color: var(--muted);
-  max-width: 780px;
+  font-size: var(--typography-lead-font-size);
+  line-height: var(--typography-lead-line-height);
+  color: var(--color-on-surface-muted);
+  max-width: var(--spacing-measure);
 }
 section {
   margin-top: 42px;
-  max-width: 780px;
+  max-width: var(--spacing-measure);
 }
 h2 {
-  font-size: 26px;
-  letter-spacing: -0.5px;
-  font-weight: 500;
+  font-size: var(--typography-title-xl-font-size);
+  letter-spacing: var(--typography-title-xl-letter-spacing);
+  font-weight: var(--typography-title-xl-font-weight);
   margin-bottom: 18px;
 }
 section p {
-  font-size: 14px;
-  line-height: 1.9;
-  color: var(--muted);
+  font-size: var(--typography-body-lg-font-size);
+  line-height: var(--typography-body-lg-line-height);
+  color: var(--color-on-surface-muted);
   margin: 16px 0;
 }
 .formula {
   padding: 20px;
-  border: 1px solid var(--line);
-  border-radius: 6px;
+  border: 1px solid var(--color-outline);
+  border-radius: var(--rounded-md);
   font-weight: 500;
 }
 .next-step a:not(.button) {
   text-decoration: underline;
-  text-underline-offset: 3px;
+  text-underline-offset: 4px;
 }
 .next-step .button {
   margin-top: 10px;
