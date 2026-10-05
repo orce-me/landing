@@ -2,7 +2,12 @@ export default defineNuxtConfig({
   compatibilityDate: '2026-10-04',
   devtools: { enabled: false },
   devServer: { host: '0.0.0.0', port: 5174 },
-  css: ['~/assets/css/main.css'],
+  css: [
+    '@fontsource-variable/dm-sans/wght.css',
+    '@fontsource/instrument-serif/latin-400.css',
+    '@fontsource/instrument-serif/latin-400-italic.css',
+    '~/assets/css/main.css',
+  ],
   runtimeConfig: { public: { appUrl: 'http://localhost:5173/login' } },
   app: {
     head: {
@@ -16,19 +21,7 @@ export default defineNuxtConfig({
             'Transforme seu catálogo em orçamentos profissionais. Produtos, serviços, cálculos e PDF com a identidade da sua empresa, em um só lugar.',
         },
       ],
-      link: [
-        { rel: 'icon', href: '/favicon.svg' },
-        { rel: 'preconnect', href: 'https://fonts.googleapis.com' },
-        {
-          rel: 'preconnect',
-          href: 'https://fonts.gstatic.com',
-          crossorigin: '',
-        },
-        {
-          rel: 'stylesheet',
-          href: 'https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Instrument+Serif:ital@0;1&display=swap',
-        },
-      ],
+      link: [{ rel: 'icon', href: '/favicon.svg' }],
       script: [
         {
           innerHTML:
