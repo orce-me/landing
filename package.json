@@ -10,6 +10,9 @@
     "generate": "nuxt generate",
     "preview": "nuxt preview --port 5174",
     "postinstall": "nuxt prepare",
+    "tokens": "node scripts/build-tokens.mjs",
+    "tokens:check": "node scripts/build-tokens.mjs --check",
+    "design:lint": "designmd lint DESIGN.md",
     "format": "prettier --write .",
     "format:check": "prettier --check .",
     "test:seo": "node --test tests/*.test.mjs"
@@ -22,6 +25,8 @@
     "vue-router": "^4.5.0"
   },
   "devDependencies": {
-    "prettier": "^3.0.0"
+    "@google/design.md": "^0.4.0",
+    "prettier": "^3.0.0",
+    "yaml": "^2.9.1"
   }
 }

@@ -6,9 +6,11 @@ export function useTheme() {
   function applyTheme(theme, persist = false) {
     document.documentElement.dataset.theme = theme
     dark.value = theme === 'dark'
-    document.querySelector('meta[name="theme-color"]').content = dark.value
-      ? '#101c17'
-      : '#174c3c'
+    // DESIGN.md: `primary` in light, `neutral-dark` in dark.
+    document.querySelector('meta[name="theme-color"]').content =
+      getComputedStyle(document.documentElement)
+        .getPropertyValue(dark.value ? '--color-neutral' : '--color-primary')
+        .trim()
     if (persist) {
       try {
         localStorage.setItem('orce-theme', theme)

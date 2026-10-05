@@ -42,7 +42,7 @@ function openPreview() {
 <style scoped>
 .hero-visual {
   position: relative;
-  padding-top: 36px;
+  padding-top: 70px;
   padding-bottom: 40px;
   isolation: isolate;
 }
@@ -52,18 +52,13 @@ function openPreview() {
   position: absolute;
   z-index: -2;
   inset: -90px -100px;
-  background: radial-gradient(
-    ellipse at 65% 50%,
-    #e3ecd0 0%,
-    #eff2df 35%,
-    transparent 68%
-  );
+  background: var(--glow-hero);
   border-radius: 50%;
 }
 
 .orbit {
   position: absolute;
-  border: 1px solid #d9e1cb;
+  border: 1px solid var(--orbit);
   border-radius: 50%;
   z-index: -1;
   pointer-events: none;
@@ -87,26 +82,29 @@ function openPreview() {
   position: absolute;
   right: 15px;
   top: 0;
-  border: 1px solid #e1e8d5;
-  background: #f6f9ed;
-  box-shadow: 0 5px 20px #203d3408;
+  z-index: 2;
+  border: 1px solid var(--color-outline);
+  background: var(--color-surface-tint);
+  color: var(--color-on-surface);
+  box-shadow: var(--shadow-raised);
   padding: 12px 18px;
-  border-radius: 8px;
-  font-size: 10px;
+  border-radius: var(--rounded-lg);
+  font-size: var(--typography-label-sm-font-size);
   transform: rotate(4deg);
 }
 
 .spark {
-  color: #739552;
+  color: var(--color-tertiary);
   font-size: 16px;
   margin-right: 9px;
 }
 
+/* Illustrative mockups use their own reduced type scale. */
 .app-window {
-  background: #fff;
-  border: 1px solid #dfe5da;
-  border-radius: 11px;
-  box-shadow: 0 24px 65px #34472b17;
+  background: var(--color-surface-raised);
+  border: 1px solid var(--color-outline);
+  border-radius: var(--rounded-lg);
+  box-shadow: var(--shadow-floating);
   transform: rotate(-2deg);
   position: relative;
 }
@@ -115,11 +113,11 @@ function openPreview() {
   display: flex;
   align-items: center;
   padding: 13px 16px;
-  background: #f4f6f1;
-  border-radius: 11px 11px 0 0;
-  border-bottom: 1px solid #e7ebe3;
+  background: var(--color-surface-tint);
+  border-radius: var(--rounded-lg) var(--rounded-lg) 0 0;
+  border-bottom: 1px solid var(--color-outline);
   font-size: 9px;
-  color: #8a9285;
+  color: var(--color-on-surface-muted);
   gap: 13px;
 }
 
@@ -131,17 +129,18 @@ function openPreview() {
 .dots i {
   width: 5px;
   height: 5px;
-  border-radius: 50%;
-  background: #c9d1c0;
+  border-radius: var(--rounded-full);
+  background: var(--color-on-surface-muted);
+  opacity: 0.5;
 }
 
 .avatar {
   margin-left: auto;
-  border-radius: 50%;
-  background: #e1e7d8;
+  border-radius: var(--rounded-full);
+  background: var(--color-band);
   padding: 5px;
   font-size: 8px;
-  color: #52614b;
+  color: var(--color-on-surface-muted);
 }
 
 .success-float {
@@ -151,11 +150,11 @@ function openPreview() {
   display: flex;
   align-items: center;
   gap: 12px;
-  background: white;
-  border: 1px solid #dfe7d6;
-  border-radius: 8px;
+  background: var(--color-surface-raised);
+  border: 1px solid var(--color-outline);
+  border-radius: var(--rounded-lg);
   padding: 15px 20px;
-  box-shadow: 0 9px 30px #203d3410;
+  box-shadow: var(--shadow-raised);
   font-size: 11px;
   transform: rotate(2deg);
 }
@@ -163,26 +162,26 @@ function openPreview() {
 .success-float small {
   display: block;
   font-size: 8px;
-  color: #8a9481;
+  color: var(--color-on-surface-muted);
   margin-top: 5px;
 }
 
 .check-icon {
   display: grid;
   place-items: center;
-  border-radius: 50%;
-  background: #e8f0dc;
+  border-radius: var(--rounded-full);
+  background: var(--color-surface-tint);
   width: 27px;
   height: 27px;
-  color: #6f8a4e;
+  color: var(--color-secondary);
 }
 
 .demo-caption {
   position: absolute;
   bottom: -19px;
   left: 30px;
-  font-size: 8px;
-  color: #929a87;
+  font-size: var(--typography-label-sm-font-size);
+  color: var(--color-on-surface-muted);
 }
 
 @media (max-width: 1050px) {
@@ -262,116 +261,5 @@ function openPreview() {
     right: 3px;
     bottom: 12px;
   }
-}
-
-.hero-visual:before {
-  background: radial-gradient(
-    ellipse at 60% 48%,
-    #c3dba3 0%,
-    #dfebcb 40%,
-    #edf2df80 58%,
-    transparent 73%
-  );
-}
-
-.orbit {
-  border-color: #b5c99d;
-}
-
-.float-label {
-  background: #edf4df;
-  border-color: #c4d5b0;
-  color: #37512c;
-}
-
-.demo-caption {
-  color: #536449;
-}
-
-.window-bar {
-  background: #edf2e6;
-  color: #56644d;
-}
-
-.dots i {
-  background: #9ead90;
-}
-
-.success-float {
-  border-color: #c5d6b5;
-}
-
-.success-float small {
-  color: #5d6e50;
-}
-
-@media (max-width: 760px) {
-  .hero-visual:before {
-    inset: -30px -22px;
-  }
-}
-
-.hero-visual {
-  padding-top: 70px;
-}
-
-.float-label {
-  top: 0;
-  z-index: 2;
-}
-
-[data-theme='dark'] .hero-visual:before {
-  background: radial-gradient(
-    ellipse at 60% 48%,
-    #66874360,
-    #384d2a55 40%,
-    transparent 73%
-  );
-}
-
-[data-theme='dark'] .orbit {
-  border-color: #50683a80;
-}
-
-[data-theme='dark'] .float-label {
-  background: #233423;
-  border-color: #49613a;
-  color: #d3e4bf;
-}
-
-[data-theme='dark'] .app-window,
-[data-theme='dark'] .success-float {
-  background: #1b2b21;
-  border-color: #3c5039;
-  color: #e3eddb;
-  box-shadow: 0 18px 48px #0002;
-}
-
-[data-theme='dark'] .window-bar {
-  background: #263628;
-  border-color: #3b4c35;
-  color: #c1cfb6;
-}
-
-[data-theme='dark'] .dots i {
-  background: #7c916b;
-}
-
-[data-theme='dark'] .avatar {
-  background: #3e5134;
-  color: #d7e5c7;
-}
-
-[data-theme='dark'] .success-float small {
-  color: #b0c09f;
-}
-
-[data-theme='dark'] .check-icon {
-  background: #344a2d;
-  color: #c8dfa8;
-}
-
-[data-theme='dark'] .demo-caption {
-  color: #b3c4a6;
 }
 </style>

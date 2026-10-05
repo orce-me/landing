@@ -46,7 +46,9 @@ const percent = (value) =>
       />
     </div>
     <div class="result" aria-live="polite" aria-atomic="true">
-      <p v-if="result.error" role="status">{{ result.error }}</p>
+      <p v-if="result.error" class="validation" role="status">
+        {{ result.error }}
+      </p>
       <template v-else>
         <p>
           {{
@@ -81,8 +83,8 @@ const percent = (value) =>
 .calculator {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  border: 1px solid var(--line);
-  border-radius: 12px;
+  border: 1px solid var(--color-outline);
+  border-radius: var(--rounded-lg);
   overflow: hidden;
   margin-top: 32px;
 }
@@ -95,40 +97,39 @@ const percent = (value) =>
   gap: 12px;
 }
 p {
-  font-size: 14px;
-  line-height: 1.7;
-  color: var(--muted);
+  font-size: var(--typography-body-md-font-size);
+  line-height: var(--typography-body-md-line-height);
+  color: var(--color-on-surface-muted);
+}
+.validation {
+  color: var(--color-error);
 }
 label {
-  font-size: 14px;
+  font-size: var(--typography-label-lg-font-size);
+  font-weight: var(--typography-label-lg-font-weight);
 }
 input {
   width: 100%;
   box-sizing: border-box;
-  padding: 14px;
-  border: 1px solid var(--line);
-  border-radius: 6px;
-  color: #16392d;
-  background: #fff;
-  font: inherit;
-}
-input:focus-visible {
-  outline: 2px solid var(--green);
-  outline-offset: 3px;
+  padding: 12px;
+  border: 1px solid var(--color-on-surface-muted);
+  border-radius: var(--rounded-md);
+  color: var(--color-on-surface);
+  background: var(--color-surface-raised);
+  font-size: var(--typography-lead-font-size);
 }
 .result {
-  border-left: 1px solid var(--line);
-  background: rgba(100, 150, 90, 0.08);
+  border-left: 1px solid var(--color-outline);
+  background: var(--color-surface-tint);
 }
 strong {
   display: block;
-  font-size: 38px;
+  font-size: var(--typography-figure-lg-font-size);
+  font-weight: var(--typography-figure-lg-font-weight);
+  line-height: var(--typography-figure-lg-line-height);
+  letter-spacing: var(--typography-figure-lg-letter-spacing);
   margin: 20px 0;
   overflow-wrap: anywhere;
-}
-[data-theme='dark'] input {
-  background: #1a2b20;
-  color: #e5ede0;
 }
 @media (max-width: 760px) {
   .calculator {
@@ -136,7 +137,7 @@ strong {
   }
   .result {
     border-left: 0;
-    border-top: 1px solid var(--line);
+    border-top: 1px solid var(--color-outline);
   }
 }
 </style>

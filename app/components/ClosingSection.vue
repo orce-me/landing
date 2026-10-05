@@ -8,7 +8,7 @@ const appUrl = useRuntimeConfig().public.appUrl
       <h2>
         Menos tempo orçando.<br /><em>Mais espaço para fazer acontecer.</em>
       </h2>
-      <a class="button light" :href="appUrl"
+      <a class="button primary-dark" :href="appUrl"
         >Criar meu primeiro orçamento <span>↗</span></a
       ><span class="closing-note">Seu próximo negócio começa aqui.</span>
     </div>
@@ -17,9 +17,12 @@ const appUrl = useRuntimeConfig().public.appUrl
 </template>
 
 <style scoped>
+/* A dark island in both themes. It uses the dark-theme accent and button. */
 .closing {
-  background: #183e31;
-  color: #f3f6e8;
+  background:
+    radial-gradient(ellipse at 95% 80%, var(--glow-closing), transparent 62%),
+    var(--color-inverse-surface);
+  color: var(--color-on-inverse-surface);
   position: relative;
   overflow: hidden;
 }
@@ -32,26 +35,22 @@ const appUrl = useRuntimeConfig().public.appUrl
 }
 
 .closing h2 {
-  font-size: 43px;
-  font-weight: 400;
-  line-height: 1.25;
-  letter-spacing: -1.8px;
+  font-size: var(--typography-headline-lg-font-size);
+  font-weight: var(--typography-headline-lg-font-weight);
+  line-height: var(--typography-headline-lg-line-height);
+  letter-spacing: var(--typography-headline-lg-letter-spacing);
   margin: 20px 0 28px;
 }
 
 .closing em {
-  font-size: 51px;
-  color: #c1d2a4;
-}
-
-.light {
-  background: #e8efd6;
-  color: #24422f;
+  font-size: var(--typography-headline-lg-accent-font-size);
+  letter-spacing: var(--typography-headline-lg-accent-letter-spacing);
+  color: var(--color-primary-dark);
 }
 
 .closing-note {
-  font-size: 10px;
-  color: #b0bea2;
+  font-size: var(--typography-label-sm-font-size);
+  color: var(--color-on-inverse-surface);
   margin-left: 20px;
 }
 
@@ -59,7 +58,8 @@ const appUrl = useRuntimeConfig().public.appUrl
   position: absolute;
   font-size: 460px;
   line-height: 1;
-  color: #2b5140;
+  color: var(--color-tertiary);
+  opacity: 0.2;
   right: 30px;
   top: -40px;
   transform: rotate(15deg);
@@ -75,6 +75,7 @@ const appUrl = useRuntimeConfig().public.appUrl
 @media (max-width: 760px) {
   .closing em {
     font-size: 38px;
+    letter-spacing: -1px;
   }
 }
 
@@ -98,29 +99,5 @@ const appUrl = useRuntimeConfig().public.appUrl
     padding-top: 50px;
     padding-bottom: 50px;
   }
-}
-
-.closing {
-  background:
-    radial-gradient(ellipse at 95% 80%, #356247 0, transparent 62%),
-    linear-gradient(110deg, #103c2b, #1d4934);
-}
-
-.closing em {
-  color: #d5e9b6;
-}
-
-.closing-note {
-  color: #cedbc0;
-}
-
-.closing-decoration {
-  color: #60895135;
-}
-
-[data-theme='dark'] .closing {
-  background:
-    radial-gradient(ellipse at 95% 80%, #38563a, transparent 62%),
-    linear-gradient(110deg, #0a281b, #1b3825);
 }
 </style>

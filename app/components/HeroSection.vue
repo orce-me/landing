@@ -39,23 +39,23 @@ h1 {
 }
 
 h1 {
-  font-size: 65px;
-  letter-spacing: -3.3px;
-  line-height: 1.07;
-  font-weight: 500;
+  font-size: var(--typography-display-font-size);
+  letter-spacing: var(--typography-display-letter-spacing);
+  line-height: var(--typography-display-line-height);
+  font-weight: var(--typography-display-font-weight);
   margin: 23px 0;
 }
 
 h1 em {
-  font-size: 76px;
-  letter-spacing: -2.5px;
+  font-size: var(--typography-display-accent-font-size);
+  letter-spacing: var(--typography-display-accent-letter-spacing);
 }
 
 .hero-copy > p {
   max-width: 410px;
-  font-size: 15px;
-  color: var(--muted);
-  line-height: 1.8;
+  font-size: var(--typography-body-lg-font-size);
+  color: var(--color-on-surface-muted);
+  line-height: var(--typography-body-lg-line-height);
 }
 
 .actions {
@@ -66,10 +66,10 @@ h1 em {
 }
 
 .text-link {
-  font-size: 11px;
+  font-size: var(--typography-body-sm-font-size);
   white-space: nowrap;
   display: flex;
-  gap: 10px;
+  gap: 8px;
 }
 
 @media (min-width: 1450px) {

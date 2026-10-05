@@ -56,14 +56,14 @@
 
 <style scoped>
 .faq {
-  border-top: 1px solid var(--line);
+  border-top: 1px solid var(--color-outline);
   display: grid;
   grid-template-columns: 1fr 1.25fr;
   gap: 70px;
 }
 
 .questions details {
-  border-bottom: 1px solid #dce3d5;
+  border-bottom: 1px solid var(--color-outline);
 }
 
 .questions summary {
@@ -72,7 +72,7 @@
   display: flex;
   justify-content: space-between;
   padding: 23px 0;
-  font-size: 13px;
+  font-size: var(--typography-body-md-font-size);
 }
 
 .questions summary::-webkit-details-marker {
@@ -80,7 +80,7 @@
 }
 
 .questions summary span {
-  color: #829568;
+  color: var(--color-secondary);
   font-size: 18px;
 }
 
@@ -89,9 +89,9 @@
 }
 
 .questions p {
-  font-size: 12px;
-  line-height: 1.9;
-  color: var(--muted);
+  font-size: var(--typography-body-sm-font-size);
+  line-height: var(--typography-body-sm-line-height);
+  color: var(--color-on-surface-muted);
   padding-bottom: 22px;
   max-width: 470px;
 }
@@ -109,9 +109,6 @@
   }
 }
 
-[data-theme='dark'] .questions details {
-  border-color: #405438;
-}
 .questions a {
   text-decoration: underline;
   text-underline-offset: 3px;

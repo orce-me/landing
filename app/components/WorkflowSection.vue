@@ -52,9 +52,9 @@
 }
 
 .section-heading > p {
-  font-size: 13px;
-  line-height: 1.8;
-  color: var(--muted);
+  font-size: var(--typography-body-md-font-size);
+  line-height: var(--typography-body-md-line-height);
+  color: var(--color-on-surface-muted);
 }
 
 .steps {
@@ -67,10 +67,10 @@
 .step-number {
   display: flex;
   justify-content: space-between;
-  border-top: 1px solid #cfd9c5;
+  border-top: 1px solid var(--color-outline);
   padding-top: 15px;
-  font-size: 12px;
-  color: #6e8557;
+  font-size: var(--typography-body-sm-font-size);
+  color: var(--color-secondary);
 }
 
 .step-number i {
@@ -83,9 +83,9 @@
 }
 
 .steps p {
-  font-size: 12px;
-  line-height: 1.9;
-  color: var(--muted);
+  font-size: var(--typography-body-sm-font-size);
+  line-height: var(--typography-body-sm-line-height);
+  color: var(--color-on-surface-muted);
   max-width: 305px;
 }
 
@@ -96,17 +96,17 @@
 }
 
 .mini-tags > span {
-  background: #f0f3e9;
-  border: 1px solid #e0e6d7;
-  border-radius: 4px;
+  background: var(--color-surface-tint);
+  border: 1px solid var(--color-outline);
+  border-radius: var(--rounded-sm);
   padding: 6px 9px;
-  font-size: 9px;
-  color: #6d7c5f;
+  font-size: var(--typography-label-sm-font-size);
+  color: var(--color-secondary);
 }
 
 .mini-tags .green-tag {
-  background: #e6eedb;
-  color: #557443;
+  background: var(--color-status-accepted);
+  color: var(--color-on-status-accepted);
 }
 
 .mini-calc {
@@ -114,13 +114,13 @@
   gap: 14px;
   align-items: center;
   margin-top: 24px;
-  font-size: 10px;
-  color: #7c8870;
+  font-size: var(--typography-label-sm-font-size);
+  color: var(--color-on-surface-muted);
 }
 
 .mini-calc b {
   font-weight: 500;
-  color: #486e3c;
+  color: var(--color-secondary);
 }
 
 @media (max-width: 760px) {
@@ -147,40 +147,5 @@
   .steps h3 {
     margin-top: 15px;
   }
-}
-
-.step-number {
-  color: #4b6d35;
-}
-
-.mini-tags > span {
-  background: #e9efdf;
-  border-color: #c7d5b8;
-  color: #466038;
-}
-
-.mini-calc {
-  color: #536746;
-}
-
-.mini-calc b {
-  color: #345629;
-}
-
-[data-theme='dark'] .step-number,
-[data-theme='dark'] .mini-calc,
-[data-theme='dark'] .mini-calc b {
-  color: #c0d79f;
-}
-
-[data-theme='dark'] .step-number {
-  border-color: #405438;
-}
-
-[data-theme='dark'] .mini-tags > span,
-[data-theme='dark'] .mini-tags .green-tag {
-  background: #2b4029;
-  border-color: #4b633b;
-  color: #cce0b5;
 }
 </style>

@@ -83,6 +83,7 @@ function updateQuantity(event) {
 </template>
 
 <style scoped>
+/* Illustrative mockup. It uses its own reduced type scale. */
 .app-inner {
   padding: 25px;
 }
@@ -100,7 +101,7 @@ function updateQuantity(event) {
 }
 
 .mini-logo > span {
-  color: #9aae77;
+  color: var(--color-tertiary);
 }
 
 .mini-logo b {
@@ -112,9 +113,9 @@ function updateQuantity(event) {
 
 .status {
   font-size: 8px;
-  background: #f5f2e7;
-  color: #9b8850;
-  border-radius: 4px;
+  background: var(--color-status-draft);
+  color: var(--color-on-status-draft);
+  border-radius: var(--rounded-sm);
   padding: 5px 7px;
 }
 
@@ -128,11 +129,11 @@ function updateQuantity(event) {
 .quote-title small {
   font-size: 7px;
   letter-spacing: 1px;
-  color: #829077;
+  color: var(--color-on-surface-muted);
 }
 
 .quote-title h2 {
-  font-family: 'Instrument Serif', serif;
+  font-family: var(--typography-display-accent-font-family), Georgia, serif;
   font-size: 26px;
   margin-top: 6px;
   font-weight: 400;
@@ -140,9 +141,9 @@ function updateQuantity(event) {
 
 .document-icon {
   padding: 9px;
-  border: 1px solid #e4e8df;
-  border-radius: 5px;
-  color: #9aa88c;
+  border: 1px solid var(--color-outline);
+  border-radius: var(--rounded-sm);
+  color: var(--color-on-surface-muted);
   font-size: 13px;
 }
 
@@ -150,12 +151,12 @@ function updateQuantity(event) {
   display: flex;
   gap: 45px;
   padding: 22px 0;
-  border-bottom: 1px solid #e8ece5;
+  border-bottom: 1px solid var(--color-outline);
 }
 
 .customer > span {
   font-size: 6px;
-  color: #8a9584;
+  color: var(--color-on-surface-muted);
   letter-spacing: 1px;
 }
 
@@ -164,7 +165,7 @@ function updateQuantity(event) {
   font-size: 9px;
   letter-spacing: 0;
   font-weight: 500;
-  color: #4d5d47;
+  color: var(--color-on-surface);
   margin-top: 7px;
 }
 
@@ -178,12 +179,12 @@ function updateQuantity(event) {
 .table-head {
   font-size: 6px;
   letter-spacing: 1px;
-  color: #87917f;
+  color: var(--color-on-surface-muted);
   margin: 19px 0 5px;
 }
 
 .table-row {
-  border-bottom: 1px solid #edf0e9;
+  border-bottom: 1px solid var(--color-outline);
   padding: 13px 0;
   font-size: 9px;
 }
@@ -195,7 +196,7 @@ function updateQuantity(event) {
 
 .table-row small {
   display: block;
-  color: #909989;
+  color: var(--color-on-surface-muted);
   font-size: 7px;
   margin-top: 4px;
 }
@@ -207,11 +208,12 @@ function updateQuantity(event) {
 
 .table-row input {
   width: 31px;
-  border: 1px solid #e0e6d8;
-  border-radius: 3px;
+  border: 1px solid var(--color-on-surface-muted);
+  border-radius: var(--rounded-sm);
   padding: 3px;
   font-size: 9px;
-  color: #4d5d47;
+  color: var(--color-on-surface);
+  background: var(--color-surface-raised);
 }
 
 .total {
@@ -220,15 +222,15 @@ function updateQuantity(event) {
   align-items: center;
   margin-top: 19px;
   padding: 15px;
-  background: #f3f6ed;
-  border-radius: 5px;
+  background: var(--color-surface-tint);
+  border-radius: var(--rounded-sm);
   font-size: 9px;
 }
 
 .total small {
   display: block;
   font-size: 7px;
-  color: #86917a;
+  color: var(--color-on-surface-muted);
   margin-top: 5px;
 }
 
@@ -236,6 +238,7 @@ function updateQuantity(event) {
   font-size: 23px;
   font-weight: 500;
   letter-spacing: -0.7px;
+  color: var(--color-on-surface);
 }
 
 .app-bottom {
@@ -244,15 +247,15 @@ function updateQuantity(event) {
   justify-content: space-between;
   margin-top: 22px;
   font-size: 6px;
-  color: #8d9882;
+  color: var(--color-on-surface-muted);
 }
 
 .app-bottom button {
   font-size: 8px;
-  background: var(--green);
-  color: white;
+  background: var(--color-primary);
+  color: var(--color-on-primary);
   border: 0;
-  border-radius: 4px;
+  border-radius: var(--rounded-sm);
   padding: 9px 12px;
 }
 
@@ -277,82 +280,5 @@ function updateQuantity(event) {
   .total {
     print-color-adjust: exact;
   }
-}
-
-.quote-title small,
-.customer > span,
-.table-head {
-  color: #596c4d;
-}
-
-.table-row small,
-.total small,
-.app-bottom {
-  color: #596b4e;
-}
-
-.customer b,
-.table-row input {
-  color: #344c2d;
-}
-
-.status {
-  background: #f2e8c9;
-  color: #786017;
-}
-
-.total {
-  background: #e9f0df;
-}
-
-.total strong {
-  color: #17452f;
-}
-
-[data-theme='dark'] .status {
-  background: #473f24;
-  color: #edda93;
-}
-
-[data-theme='dark'] .quote-title small,
-[data-theme='dark'] .customer > span,
-[data-theme='dark'] .table-head,
-[data-theme='dark'] .table-row small,
-[data-theme='dark'] .total small,
-[data-theme='dark'] .app-bottom {
-  color: #b0c09f;
-}
-
-[data-theme='dark'] .customer b,
-[data-theme='dark'] .table-row input {
-  color: #deebd2;
-}
-
-[data-theme='dark'] .table-row input {
-  background: #273827;
-  border-color: #526447;
-}
-
-[data-theme='dark'] .customer,
-[data-theme='dark'] .table-row {
-  border-color: #354734;
-}
-
-[data-theme='dark'] .document-icon {
-  color: #c2d5ad;
-  border-color: #44573b;
-}
-
-[data-theme='dark'] .total {
-  background: #2a3e29;
-}
-
-[data-theme='dark'] .total strong {
-  color: #d4eab9;
-}
-
-[data-theme='dark'] .app-bottom button {
-  background: #c1dca2;
-  color: #173121;
 }
 </style>

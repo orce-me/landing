@@ -57,12 +57,12 @@
 
 <style scoped>
 .resources {
-  border-top: 1px solid var(--line);
+  border-top: 1px solid var(--color-outline);
 }
 .intro {
-  font-size: 13px;
-  color: var(--muted);
-  line-height: 1.9;
+  font-size: var(--typography-body-md-font-size);
+  color: var(--color-on-surface-muted);
+  line-height: var(--typography-body-md-line-height);
   margin-top: 18px;
 }
 .resource-grid {
@@ -73,31 +73,26 @@
 }
 .resource {
   display: block;
-  border: 1px solid var(--line);
-  border-radius: 9px;
-  padding: 28px;
-  background: #f0f4e8;
+  border: 1px solid var(--color-outline);
+  border-radius: var(--rounded-lg);
+  padding: 24px;
+  background: var(--color-surface-tint);
 }
 .resource h3 {
-  font-size: 18px;
-  line-height: 1.5;
   display: flex;
   justify-content: space-between;
   gap: 18px;
 }
 .resource p {
-  font-size: 13px;
-  line-height: 1.9;
-  color: var(--muted);
+  font-size: var(--typography-body-md-font-size);
+  line-height: var(--typography-body-md-line-height);
+  color: var(--color-on-surface-muted);
   margin: 16px 0;
 }
 .resource-action {
-  font-size: 12px;
+  font-size: var(--typography-body-sm-font-size);
   text-decoration: underline;
   text-underline-offset: 4px;
-}
-[data-theme='dark'] .resource {
-  background: #1f3224;
 }
 @media (max-width: 760px) {
   .resource-grid {

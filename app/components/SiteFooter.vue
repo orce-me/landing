@@ -17,13 +17,14 @@ const year = new Date().getFullYear()
 .brand {
   display: flex;
   align-items: center;
-  font-weight: 700;
-  font-size: 29px;
-  letter-spacing: -1.5px;
+  font-size: var(--typography-brand-font-size);
+  font-weight: var(--typography-brand-font-weight);
+  line-height: var(--typography-brand-line-height);
+  letter-spacing: var(--typography-brand-letter-spacing);
 }
 
 .brand-dot {
-  color: #8aa357;
+  color: var(--color-tertiary);
 }
 
 footer {
@@ -38,19 +39,15 @@ footer .brand {
   font-size: 24px;
 }
 
-footer > span {
-  font-size: 10px;
-  color: #8c9780;
+footer > span,
+footer small {
+  font-size: var(--typography-label-sm-font-size);
+  color: var(--color-on-surface-muted);
 }
 
 footer > a:not(.brand) {
   margin-left: auto;
-  font-size: 10px;
-}
-
-footer small {
-  font-size: 9px;
-  color: #8c9780;
+  font-size: var(--typography-label-sm-font-size);
 }
 
 @media (max-width: 760px) {
@@ -70,14 +67,5 @@ footer small {
   footer small {
     margin-left: auto;
   }
-}
-
-footer > span,
-footer small {
-  color: #54664b;
-}
-[data-theme='dark'] footer > span,
-[data-theme='dark'] footer small {
-  color: #b3c4a6;
 }
 </style>

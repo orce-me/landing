@@ -37,24 +37,26 @@ const menuOpen = ref(false)
   display: flex;
   align-items: center;
   gap: 45px;
+  border-bottom: 1px solid var(--color-outline);
 }
 
 .brand {
   display: flex;
   align-items: center;
-  font-weight: 700;
-  font-size: 29px;
-  letter-spacing: -1.5px;
+  font-size: var(--typography-brand-font-size);
+  font-weight: var(--typography-brand-font-weight);
+  line-height: var(--typography-brand-line-height);
+  letter-spacing: var(--typography-brand-letter-spacing);
 }
 
 .brand-dot {
-  color: #8aa357;
+  color: var(--color-tertiary);
 }
 
 .mark {
   position: relative;
-  border: 2.5px solid var(--green);
-  border-radius: 50%;
+  border: 2.5px solid var(--color-primary);
+  border-radius: var(--rounded-full);
   font-size: 0;
   width: 24px;
   height: 24px;
@@ -67,22 +69,22 @@ const menuOpen = ref(false)
   height: 9px;
   right: -6px;
   top: -5px;
-  border-radius: 50%;
-  background: #8ba861;
-  border: 2px solid #fafbf6;
+  border-radius: var(--rounded-full);
+  background: var(--color-tertiary);
+  border: 2px solid var(--color-neutral);
 }
 
 .header nav {
   display: flex;
   gap: 32px;
   margin: auto;
-  font-size: 13px;
-  font-weight: 500;
+  font-size: var(--typography-label-lg-font-size);
+  font-weight: var(--typography-label-lg-font-weight);
 }
 
 .login {
-  font-size: 13px;
-  font-weight: 600;
+  font-size: var(--typography-label-lg-font-size);
+  font-weight: var(--typography-label-lg-font-weight);
   display: flex;
   gap: 22px;
 }
@@ -122,7 +124,7 @@ const menuOpen = ref(false)
     background: none;
     border: 0;
     font-size: 22px;
-    color: #174c3c;
+    color: var(--color-primary);
   }
 }
 
@@ -133,41 +135,14 @@ const menuOpen = ref(false)
     left: 20px;
     right: 20px;
     top: 75px;
-    background: #fafbf6;
-    border: 1px solid #dce4d3;
-    border-radius: 8px;
+    background: var(--color-surface);
+    border: 1px solid var(--color-outline);
+    border-radius: var(--rounded-lg);
     padding: 22px;
     z-index: 10;
     justify-content: space-between;
     gap: 15px;
   }
-}
-
-.header {
-  border-bottom: 1px solid #d8e0ce;
-}
-
-@media (max-width: 760px) {
-  .menu-open nav {
-    background: #f7f8f2;
-  }
-}
-
-[data-theme='dark'] .header {
-  border-color: #2c4132;
-}
-
-[data-theme='dark'] .mark span {
-  border-color: #101c17;
-}
-
-[data-theme='dark'] .menu {
-  color: #c5dcaa;
-}
-
-[data-theme='dark'] .menu-open nav {
-  background: #1b2b21;
-  border-color: #405536;
 }
 
 @media (max-width: 760px) {
