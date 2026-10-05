@@ -29,6 +29,9 @@ defineProps({
       <NuxtLink to="/como-fazer-orcamento-de-servicos"
         >Como fazer um orçamento de serviços</NuxtLink
       >
+      <NuxtLink to="/calculadora-de-ponto-de-equilibrio"
+        >Calculadora de ponto de equilíbrio</NuxtLink
+      >
     </nav>
   </article>
 </template>

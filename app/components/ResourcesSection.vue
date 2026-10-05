@@ -51,6 +51,15 @@
         </p>
         <span class="resource-action">Usar gratuitamente</span></NuxtLink
       >
+      <NuxtLink class="resource" to="/calculadora-de-ponto-de-equilibrio"
+        ><h3>
+          Calculadora de ponto de equilíbrio <span aria-hidden="true">↗</span>
+        </h3>
+        <p>
+          Descubra quantas vendas cobrem os custos fixos e variáveis do período.
+        </p>
+        <span class="resource-action">Usar gratuitamente</span></NuxtLink
+      >
     </div>
   </section>
 </template>
