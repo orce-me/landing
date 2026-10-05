@@ -13,7 +13,7 @@ function openPreview() {
     <div class="float-label">
       <span class="spark">✦</span> Seu catálogo. Sua marca. Seu jeito.
     </div>
-    <div class="app-window">
+    <div class="app-window" data-nosnippet>
       <div class="window-bar">
         <div class="dots"><i></i><i></i><i></i></div>
         <span>Seu espaço de trabalho</span><span class="avatar">AC</span>

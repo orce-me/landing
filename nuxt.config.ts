@@ -8,11 +8,33 @@ export default defineNuxtConfig({
     '@fontsource/instrument-serif/latin-400-italic.css',
     '~/assets/css/main.css',
   ],
-  runtimeConfig: { public: { appUrl: 'http://localhost:5173/login' } },
+  runtimeConfig: {
+    public: {
+      appUrl: 'http://localhost:5173/login',
+      siteUrl: '',
+      indexable: false,
+    },
+  },
+  hooks: {
+    'nitro:config'(config) {
+      if (config.static) {
+        config.prerender = {
+          ...config.prerender,
+          routes: [
+            '/',
+            '/como-fazer-orcamento-de-servicos',
+            '/calculadora-de-orcamento',
+            '/robots.txt',
+            '/sitemap.xml',
+          ],
+        }
+      }
+    },
+  },
   app: {
     head: {
       htmlAttrs: { lang: 'pt-BR' },
-      title: 'orce-me — Seu próximo negócio começa com um bom orçamento.',
+      title: 'Sistema de orçamentos para pequenos negócios | orce-me',
       meta: [
         { name: 'theme-color', content: '#174c3c' },
         {

@@ -23,7 +23,7 @@ const appUrl = useRuntimeConfig().public.appUrl
         >Conhecer o orce-me <span>↗</span></a
       >
     </div>
-    <div class="plan-card module-plans">
+    <div class="plan-card module-plans" data-nosnippet>
       <span class="planning-badge">Modelo em estudo</span>
       <h3>
         Escolha o que faz sentido.<span

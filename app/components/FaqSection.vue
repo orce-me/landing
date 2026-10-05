@@ -1,9 +1,22 @@
 <template>
   <section class="faq wrap section" id="duvidas">
     <div>
-      <h2>Antes do primeiro<br /><em>“pode enviar”.</em></h2>
+      <h2>Dúvidas sobre<br /><em>orçamentos online.</em></h2>
     </div>
     <div class="questions">
+      <details>
+        <summary>
+          Como fazer um orçamento de prestação de serviços?<span>+</span>
+        </summary>
+        <p>
+          Identifique o cliente, descreva o escopo, separe materiais e mão de
+          obra e confira quantidades, valores e condições. Depois, revise o
+          documento antes de enviar.
+          <NuxtLink to="/como-fazer-orcamento-de-servicos"
+            >Veja o guia com exemplo de orçamento de serviços.</NuxtLink
+          >
+        </p>
+      </details>
       <details>
         <summary>Para quem o orce-me foi feito?<span>+</span></summary>
         <p>
@@ -98,5 +111,9 @@
 
 [data-theme='dark'] .questions details {
   border-color: #405438;
+}
+.questions a {
+  text-decoration: underline;
+  text-underline-offset: 3px;
 }
 </style>

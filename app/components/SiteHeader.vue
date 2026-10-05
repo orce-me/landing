@@ -5,7 +5,7 @@ const menuOpen = ref(false)
 
 <template>
   <header class="header wrap" :class="{ 'menu-open': menuOpen }">
-    <a class="brand" href="#" aria-label="orce-me, início"
+    <a class="brand" href="/" aria-label="orce-me, início"
       ><span class="mark">o<span></span></span>orce-me<span class="brand-dot"
         >.</span
       ></a
@@ -15,8 +15,8 @@ const menuOpen = ref(false)
       aria-label="Navegação principal"
       @click="menuOpen = false"
     >
-      <a href="#como-funciona">Como funciona</a><a href="#recursos">Recursos</a
-      ><a href="#planos">Planos</a>
+      <a href="/#como-funciona">Como funciona</a
+      ><a href="/#recursos">Recursos</a><a href="/#planos">Planos</a>
     </nav>
     <a class="login" :href="appUrl">Entrar <span>↗</span></a
     ><ThemeToggle /><button

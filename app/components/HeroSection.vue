@@ -5,10 +5,11 @@ const appUrl = useRuntimeConfig().public.appUrl
 <template>
   <section class="hero wrap">
     <div class="hero-copy">
-      <h1>Um bom orçamento.<br />Um próximo<br /><em>grande negócio.</em></h1>
+      <h1>Orçamentos profissionais.<br /><em>Seu próximo negócio.</em></h1>
       <p>
-        Transforme produtos e serviços em propostas que dão gosto de enviar. Sem
-        refazer planilhas. Sem perder tempo. Com a sua marca.
+        Sistema de orçamentos para pequenos negócios: reúna produtos, serviços e
+        dados do cliente em uma proposta em PDF com a sua marca. Sem refazer
+        planilhas a cada pedido.
       </p>
       <div class="actions">
         <a class="button primary" :href="appUrl"

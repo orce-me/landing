@@ -2,7 +2,7 @@
   <section class="workflow wrap section" id="como-funciona">
     <div class="section-heading">
       <h2>
-        Seu conhecimento vira orçamento.<br /><em
+        Como criar seu orçamento online.<br /><em
           >O trabalho repetitivo fica com a gente.</em
         >
       </h2>
