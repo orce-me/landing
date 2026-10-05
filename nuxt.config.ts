@@ -6,6 +6,7 @@ export default defineNuxtConfig({
     '@fontsource-variable/dm-sans/wght.css',
     '@fontsource/instrument-serif/latin-400.css',
     '@fontsource/instrument-serif/latin-400-italic.css',
+    '~/assets/css/tokens.css',
     '~/assets/css/main.css',
   ],
   runtimeConfig: {
