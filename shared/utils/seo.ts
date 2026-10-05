@@ -2,6 +2,9 @@ export const indexablePaths = [
   '/',
   '/como-fazer-orcamento-de-servicos',
   '/calculadora-de-orcamento',
+  '/calculadora-de-desconto',
+  '/calculadora-de-margem',
+  '/calculadora-de-custo-hora',
 ] as const
 
 // Canonicals and sitemaps must never depend on the incoming Host header.

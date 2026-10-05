@@ -23,6 +23,34 @@
         </p>
         <span class="resource-action">Calcular meu serviço</span></NuxtLink
       >
+      <NuxtLink class="resource" to="/calculadora-de-desconto"
+        ><h3>Calculadora de desconto <span aria-hidden="true">↗</span></h3>
+        <p>
+          Veja o preço final e quanto você concede de desconto em reais antes de
+          enviar uma proposta.
+        </p>
+        <span class="resource-action">Usar gratuitamente</span></NuxtLink
+      >
+      <NuxtLink class="resource" to="/calculadora-de-margem"
+        ><h3>
+          Calculadora de margem e markup <span aria-hidden="true">↗</span>
+        </h3>
+        <p>
+          Compare a margem sobre o preço de venda com o acréscimo sobre o custo.
+          Simule produtos ou serviços com seus próprios valores.
+        </p>
+        <span class="resource-action">Usar gratuitamente</span></NuxtLink
+      >
+      <NuxtLink class="resource" to="/calculadora-de-custo-hora"
+        ><h3>
+          Calculadora de custo por hora <span aria-hidden="true">↗</span>
+        </h3>
+        <p>
+          Estime quanto cada hora faturável precisa recuperar dos seus custos
+          mensais para preparar orçamentos de serviços.
+        </p>
+        <span class="resource-action">Usar gratuitamente</span></NuxtLink
+      >
     </div>
   </section>
 </template>

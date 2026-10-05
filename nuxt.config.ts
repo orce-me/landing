@@ -24,6 +24,10 @@ export default defineNuxtConfig({
             '/',
             '/como-fazer-orcamento-de-servicos',
             '/calculadora-de-orcamento',
+            '/calculadora-de-desconto',
+            '/calculadora-de-margem',
+            '/calculadora-de-custo-hora',
+
             '/robots.txt',
             '/sitemap.xml',
           ],
