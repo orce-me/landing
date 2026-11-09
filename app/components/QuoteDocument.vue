@@ -1,37 +1,14 @@
-<script setup>
-defineProps({
-  quantity: { type: Number, default: 1 },
-  editable: { type: Boolean, default: false },
-})
-const emit = defineEmits(['update:quantity', 'preview'])
-const currency = (value) =>
-  new Intl.NumberFormat('pt-BR', { style: 'currency', currency: 'BRL' }).format(
-    value,
-  )
-function updateQuantity(event) {
-  const value = Math.min(
-    10,
-    Math.max(1, Math.round(Number(event.target.value) || 1)),
-  )
-  emit('update:quantity', value)
-  if (event.type === 'change') event.target.value = String(value)
-}
-</script>
-
 <template>
   <div class="app-inner">
     <div class="app-top">
       <span class="mini-logo">a<span>c</span> <b>almeida & costa</b></span
-      ><span class="status">{{
-        editable ? '● Rascunho' : 'Demonstração'
-      }}</span>
+      ><span class="status">Demonstração</span>
     </div>
     <div class="quote-title">
       <div>
         <small>ORÇAMENTO Nº 0042</small>
         <h2>Um projeto para sair do papel.</h2>
       </div>
-      <span class="document-icon">↗</span>
     </div>
     <div class="customer">
       <span>PREPARADO PARA<b>Marina Oliveira</b></span
@@ -54,30 +31,12 @@ function updateQuantity(event) {
         <span
           ><b>Instalação e configuração</b
           ><small>Mão de obra · serviço</small></span
-        ><span
-          ><input
-            v-if="editable"
-            type="number"
-            min="1"
-            max="10"
-            step="1"
-            :value="quantity"
-            aria-label="Quantidade de serviços de instalação"
-            @input="updateQuantity"
-            @change="updateQuantity"
-          /><template v-else>{{ quantity }}</template></span
-        ><span>{{ currency(quantity * 650) }}</span>
+        ><span>1</span><span>R$ 650,00</span>
       </div>
     </div>
     <div class="total">
       <span>Total do orçamento<small>Produtos e serviços, juntos.</small></span
-      ><strong>{{ currency(3870 + quantity * 650) }}</strong>
-    </div>
-    <div v-if="editable" class="app-bottom">
-      <span>✓ Alterações salvas nesta demonstração</span
-      ><button type="button" @click="$emit('preview')">
-        Visualizar PDF <span>↗</span>
-      </button>
+      ><strong>R$ 4.520,00</strong>
     </div>
   </div>
 </template>
@@ -139,14 +98,6 @@ function updateQuantity(event) {
   font-weight: 400;
 }
 
-.document-icon {
-  padding: 9px;
-  border: 1px solid var(--color-outline);
-  border-radius: var(--rounded-sm);
-  color: var(--color-on-surface-muted);
-  font-size: 13px;
-}
-
 .customer {
   display: flex;
   gap: 45px;
@@ -206,16 +157,6 @@ function updateQuantity(event) {
   text-align: right;
 }
 
-.table-row input {
-  width: 31px;
-  border: 1px solid var(--color-on-surface-muted);
-  border-radius: var(--rounded-sm);
-  padding: 3px;
-  font-size: 9px;
-  color: var(--color-on-surface);
-  background: var(--color-surface-raised);
-}
-
 .total {
   display: flex;
   justify-content: space-between;
@@ -241,28 +182,6 @@ function updateQuantity(event) {
   color: var(--color-on-surface);
 }
 
-.app-bottom {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  margin-top: 22px;
-  font-size: 6px;
-  color: var(--color-on-surface-muted);
-}
-
-.app-bottom button {
-  font-size: 8px;
-  background: var(--color-primary);
-  color: var(--color-on-primary);
-  border: 0;
-  border-radius: var(--rounded-sm);
-  padding: 9px 12px;
-}
-
-.app-bottom button span {
-  margin-left: 7px;
-}
-
 @media (max-width: 760px) {
   .customer {
     gap: 25px;
@@ -273,12 +192,6 @@ function updateQuantity(event) {
   .table-head,
   .table-row {
     grid-template-columns: 1fr 35px 80px;
-  }
-}
-
-@media print {
-  .total {
-    print-color-adjust: exact;
   }
 }
 </style>

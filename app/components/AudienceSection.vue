@@ -1,90 +1,143 @@
+<script setup>
+const audiences = [
+  'Instaladores',
+  'Prestadores de serviço',
+  'Pequenos negócios',
+  'Quem vende e instala',
+]
+</script>
+
 <template>
-  <section class="audience wrap">
-    <span>PARA QUEM FAZ<br />O NEGÓCIO ACONTECER</span>
-    <div>Instaladores</div>
-    <b>✳</b>
-    <div>Prestadores de serviço</div>
-    <b>✳</b>
-    <div>Pequenos negócios</div>
-    <b>✳</b>
-    <div>Quem vende e instala</div>
+  <section class="audience" aria-label="Para quem faz o negócio acontecer">
+    <div class="audience-inner wrap">
+      <span class="audience-label">PARA QUEM FAZ<br />O NEGÓCIO ACONTECER</span>
+      <div
+        class="audience-carousel"
+        tabindex="0"
+        aria-label="Públicos atendidos; passe o mouse ou foque para pausar"
+      >
+        <div class="audience-track">
+          <ul
+            v-for="copy in 2"
+            :key="copy"
+            class="audience-group"
+            :aria-hidden="copy === 2 ? 'true' : undefined"
+          >
+            <li v-for="audience in audiences" :key="audience">
+              {{ audience }}<span aria-hidden="true">✳</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
   </section>
 </template>
 
 <style scoped>
 .audience {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 25px;
   border-top: 1px solid var(--color-outline);
   border-bottom: 1px solid var(--color-outline);
-  padding-top: 28px;
-  padding-bottom: 28px;
 }
-
-.audience > span {
-  font-size: var(--typography-label-sm-font-size);
-  line-height: var(--typography-label-sm-line-height);
-  letter-spacing: 1.2px;
+.audience-inner {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+  padding-top: 21px;
+  padding-bottom: 21px;
+}
+.audience-label {
+  flex-shrink: 0;
+  font-size: 10px;
+  line-height: 1.6;
+  letter-spacing: 1px;
   color: var(--color-on-surface-muted);
 }
-
-.audience > div {
-  font-size: var(--typography-body-lg-font-size);
+.audience-carousel {
+  flex: 1;
+  min-width: 0;
+  overflow: hidden;
+  mask-image: linear-gradient(
+    to right,
+    transparent,
+    #000 2%,
+    #000 98%,
+    transparent
+  );
+}
+.audience-carousel:focus-visible {
+  outline: 3px solid var(--color-secondary);
+  outline-offset: 5px;
+}
+.audience-track {
+  display: flex;
+  width: max-content;
+  animation: audience-scroll 32s linear infinite;
+}
+.audience-group {
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.audience-group li {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  padding-right: 24px;
+  white-space: nowrap;
+  font-size: 13px;
   color: var(--color-on-surface-muted);
 }
-
-.audience > b {
+.audience-group li span {
   color: var(--color-tertiary);
   font-size: 15px;
-  font-weight: 400;
 }
-
-@media (max-width: 1050px) {
-  .audience {
-    gap: 15px;
+.audience-carousel:hover .audience-track,
+.audience-carousel:focus-within .audience-track {
+  animation-play-state: paused;
+}
+@keyframes audience-scroll {
+  to {
+    transform: translateX(-50%);
   }
 }
-
-@media (max-width: 1050px) {
-  .audience > div {
-    font-size: 12px;
-  }
-}
-
 @media (max-width: 760px) {
-  .audience {
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 20px;
-    padding-top: 25px;
-    padding-bottom: 25px;
+  .audience-inner {
+    flex-direction: column;
+    gap: 14px;
   }
-}
-
-@media (max-width: 760px) {
-  .audience > span {
-    width: 100%;
+  .audience-label {
     text-align: center;
   }
-}
-
-@media (max-width: 760px) {
-  .audience > span br {
-    display: none;
+  .audience-carousel {
+    flex: auto;
+    width: 100%;
   }
 }
-
-@media (max-width: 760px) {
-  .audience > b {
+@media (prefers-reduced-motion: reduce) {
+  .audience-track {
+    animation: none;
+    width: 100%;
+  }
+  .audience-group {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 12px;
+  }
+  .audience-group[aria-hidden='true'] {
     display: none;
   }
-}
-
-@media (max-width: 760px) {
-  .audience > div {
-    font-size: 12px;
+  .audience-group li {
+    padding: 0;
+    white-space: normal;
+  }
+  .audience-group li span {
+    display: none;
+  }
+  .audience-carousel {
+    mask-image: none;
   }
 }
 </style>

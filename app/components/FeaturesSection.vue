@@ -40,7 +40,6 @@
           </div>
         </article>
         <article>
-          <span class="feature-icon">↗</span>
           <h3>Uma proposta com a sua cara.</h3>
           <p>
             Sua marca, seus dados e uma apresentação profissional. Um documento

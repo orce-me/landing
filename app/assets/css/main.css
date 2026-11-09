@@ -21,7 +21,7 @@
   --backdrop: #16392d99;
 }
 
-/* Print always uses the light theme. */
+/* Theme-specific surface and glow values. */
 @media screen {
   :root[data-theme='dark'] {
     color-scheme: dark;
@@ -219,11 +219,5 @@ h3 {
   *:before,
   *:after {
     transition: none !important;
-  }
-}
-
-@media print {
-  body > *:not(dialog) {
-    display: none !important;
   }
 }

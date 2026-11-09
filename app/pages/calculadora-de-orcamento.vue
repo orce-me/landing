@@ -106,7 +106,7 @@ if (origin) {
         catálogo e os dados do cliente em uma proposta em PDF.
       </p>
       <a class="button primary" :href="appUrl"
-        >Conhecer o sistema de orçamentos <span>↗</span></a
+        >Conhecer o sistema de orçamentos</a
       >
     </section>
   </article>

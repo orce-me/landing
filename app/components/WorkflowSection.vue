@@ -10,7 +10,7 @@
     </div>
     <div class="steps">
       <article>
-        <span class="step-number">01 <i>↗</i></span>
+        <span class="step-number">01</span>
         <h3>Monte seu catálogo.</h3>
         <p>
           Cadastre produtos e serviços ou importe uma planilha. Descrições e
@@ -21,7 +21,7 @@
         </div>
       </article>
       <article>
-        <span class="step-number">02 <i>↗</i></span>
+        <span class="step-number">02</span>
         <h3>Dê forma à proposta.</h3>
         <p>
           Escolha o cliente, adicione os itens e ajuste quantidades e descontos.
@@ -32,14 +32,14 @@
         </div>
       </article>
       <article>
-        <span class="step-number">03 <i>↗</i></span>
+        <span class="step-number">03</span>
         <h3>Envie com confiança.</h3>
         <p>
           Exporte um PDF profissional com a sua marca e acompanhe o status da
           proposta em um só lugar.
         </p>
         <div class="mini-tags">
-          <span class="green-tag">✓ PDF pronto</span><span>↗ Enviado</span>
+          <span class="green-tag">✓ PDF pronto</span><span>Enviado</span>
         </div>
       </article>
     </div>

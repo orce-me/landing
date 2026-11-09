@@ -211,9 +211,7 @@ if (origin) {
         No orce-me, você seleciona produtos e serviços, ajusta quantidades,
         confere a proposta e exporta um PDF com a identidade da empresa.
       </p>
-      <a class="button primary" :href="appUrl"
-        >Criar meu orçamento <span>↗</span></a
-      >
+      <a class="button primary" :href="appUrl">Criar meu orçamento</a>
     </section>
   </article>
 </template>
