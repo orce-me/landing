@@ -1,49 +1,25 @@
-<script setup>
-const quantity = ref(1)
-const preview = useTemplateRef('preview')
-function openPreview() {
-  preview.value?.open()
-}
-</script>
-
 <template>
   <div class="hero-visual" id="demonstracao">
     <div class="orbit orbit-one"></div>
     <div class="orbit orbit-two"></div>
     <div class="float-label">
-      <span class="spark">✦</span> Seu catálogo. Sua marca. Seu jeito.
+      <span class="spark">✦</span> Um PDF com a identidade da sua empresa
     </div>
     <div class="app-window" data-nosnippet>
       <div class="window-bar">
         <div class="dots"><i></i><i></i><i></i></div>
         <span>Seu espaço de trabalho</span><span class="avatar">AC</span>
       </div>
-      <QuoteDocument
-        v-model:quantity="quantity"
-        editable
-        @preview="openPreview"
-      />
+      <QuoteDocument />
     </div>
-    <div class="success-float">
-      <span class="check-icon">✓</span>
-      <div>
-        Pronto para impressionar.<small
-          >Um PDF com a identidade da sua empresa.</small
-        >
-      </div>
-    </div>
-    <p class="demo-caption">
-      Prévia ilustrativa · experimente alterar a quantidade
-    </p>
   </div>
-  <QuotePreview ref="preview" :quantity="quantity" />
 </template>
 
 <style scoped>
 .hero-visual {
   position: relative;
-  padding-top: 70px;
-  padding-bottom: 40px;
+  padding-top: 58px;
+  padding-bottom: 16px;
   isolation: isolate;
 }
 
@@ -83,18 +59,20 @@ function openPreview() {
   right: 15px;
   top: 0;
   z-index: 2;
-  border: 1px solid var(--color-outline);
-  background: var(--color-surface-tint);
-  color: var(--color-on-surface);
+  border: 1px solid var(--color-tertiary);
+  background: var(--color-primary-dark);
+  color: var(--color-on-primary-dark);
   box-shadow: var(--shadow-raised);
   padding: 12px 18px;
   border-radius: var(--rounded-lg);
-  font-size: var(--typography-label-sm-font-size);
-  transform: rotate(4deg);
+  font-size: 12px;
+  font-weight: 600;
+  max-width: calc(100% - 28px);
+  transform: rotate(2deg);
 }
 
 .spark {
-  color: var(--color-tertiary);
+  color: inherit;
   font-size: 16px;
   margin-right: 9px;
 }
@@ -143,56 +121,9 @@ function openPreview() {
   color: var(--color-on-surface-muted);
 }
 
-.success-float {
-  position: absolute;
-  right: -15px;
-  bottom: 10px;
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  background: var(--color-surface-raised);
-  border: 1px solid var(--color-outline);
-  border-radius: var(--rounded-lg);
-  padding: 15px 20px;
-  box-shadow: var(--shadow-raised);
-  font-size: 11px;
-  transform: rotate(2deg);
-}
-
-.success-float small {
-  display: block;
-  font-size: 8px;
-  color: var(--color-on-surface-muted);
-  margin-top: 5px;
-}
-
-.check-icon {
-  display: grid;
-  place-items: center;
-  border-radius: var(--rounded-full);
-  background: var(--color-surface-tint);
-  width: 27px;
-  height: 27px;
-  color: var(--color-secondary);
-}
-
-.demo-caption {
-  position: absolute;
-  bottom: -19px;
-  left: 30px;
-  font-size: var(--typography-label-sm-font-size);
-  color: var(--color-on-surface-muted);
-}
-
 @media (max-width: 1050px) {
   .hero-visual :deep(.app-inner) {
     padding: 20px;
-  }
-}
-
-@media (max-width: 1050px) {
-  .success-float {
-    right: 0;
   }
 }
 
@@ -253,13 +184,6 @@ function openPreview() {
 @media (max-width: 760px) {
   .float-label {
     right: 20px;
-  }
-}
-
-@media (max-width: 760px) {
-  .success-float {
-    right: 3px;
-    bottom: 12px;
   }
 }
 </style>

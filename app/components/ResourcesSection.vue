@@ -6,9 +6,7 @@
     </p>
     <div class="resource-grid">
       <NuxtLink class="resource" to="/como-fazer-orcamento-de-servicos"
-        ><h3>
-          Como fazer um orçamento de serviços <span aria-hidden="true">↗</span>
-        </h3>
+        ><h3>Como fazer um orçamento de serviços</h3>
         <p>
           Veja os campos da proposta, um exemplo com materiais e mão de obra e
           um checklist antes de enviar.
@@ -16,7 +14,7 @@
         <span class="resource-action">Ler o guia</span></NuxtLink
       >
       <NuxtLink class="resource" to="/calculadora-de-orcamento"
-        ><h3>Calculadora de orçamento <span aria-hidden="true">↗</span></h3>
+        ><h3>Calculadora de orçamento</h3>
         <p>
           Simule custos de materiais, horas de trabalho e margem. Entenda a
           diferença entre margem e acréscimo.
@@ -24,7 +22,7 @@
         <span class="resource-action">Calcular meu serviço</span></NuxtLink
       >
       <NuxtLink class="resource" to="/calculadora-de-desconto"
-        ><h3>Calculadora de desconto <span aria-hidden="true">↗</span></h3>
+        ><h3>Calculadora de desconto</h3>
         <p>
           Veja o preço final e quanto você concede de desconto em reais antes de
           enviar uma proposta.
@@ -32,9 +30,7 @@
         <span class="resource-action">Usar gratuitamente</span></NuxtLink
       >
       <NuxtLink class="resource" to="/calculadora-de-margem"
-        ><h3>
-          Calculadora de margem e markup <span aria-hidden="true">↗</span>
-        </h3>
+        ><h3>Calculadora de margem e markup</h3>
         <p>
           Compare a margem sobre o preço de venda com o acréscimo sobre o custo.
           Simule produtos ou serviços com seus próprios valores.
@@ -42,9 +38,7 @@
         <span class="resource-action">Usar gratuitamente</span></NuxtLink
       >
       <NuxtLink class="resource" to="/calculadora-de-custo-hora"
-        ><h3>
-          Calculadora de custo por hora <span aria-hidden="true">↗</span>
-        </h3>
+        ><h3>Calculadora de custo por hora</h3>
         <p>
           Estime quanto cada hora faturável precisa recuperar dos seus custos
           mensais para preparar orçamentos de serviços.
@@ -52,18 +46,14 @@
         <span class="resource-action">Usar gratuitamente</span></NuxtLink
       >
       <NuxtLink class="resource" to="/calculadora-de-ponto-de-equilibrio"
-        ><h3>
-          Calculadora de ponto de equilíbrio <span aria-hidden="true">↗</span>
-        </h3>
+        ><h3>Calculadora de ponto de equilíbrio</h3>
         <p>
           Descubra quantas vendas cobrem os custos fixos e variáveis do período.
         </p>
         <span class="resource-action">Usar gratuitamente</span></NuxtLink
       >
       <NuxtLink class="resource" to="/calculadora-de-preco-com-taxas"
-        ><h3>
-          Calculadora de preço com taxas <span aria-hidden="true">↗</span>
-        </h3>
+        ><h3>Calculadora de preço com taxas</h3>
         <p>
           Considere taxas sobre a venda e a margem desejada ao formar seu preço.
         </p>

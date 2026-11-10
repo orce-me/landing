@@ -18,8 +18,7 @@ const menuOpen = ref(false)
       <a href="/#como-funciona">Como funciona</a
       ><a href="/#recursos">Recursos</a><a href="/#planos">Planos</a>
     </nav>
-    <a class="login" :href="appUrl">Entrar <span>↗</span></a
-    ><ThemeToggle /><button
+    <a class="login" :href="appUrl">Entrar</a><ThemeToggle /><button
       class="menu"
       :aria-label="menuOpen ? 'Fechar menu' : 'Abrir menu'"
       :aria-expanded="menuOpen"

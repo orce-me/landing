@@ -9,7 +9,7 @@ const appUrl = useRuntimeConfig().public.appUrl
         Menos tempo orçando.<br /><em>Mais espaço para fazer acontecer.</em>
       </h2>
       <a class="button primary-dark" :href="appUrl"
-        >Criar meu primeiro orçamento <span>↗</span></a
+        >Criar meu primeiro orçamento</a
       ><span class="closing-note">Seu próximo negócio começa aqui.</span>
     </div>
     <span class="closing-decoration" aria-hidden="true">✳</span>

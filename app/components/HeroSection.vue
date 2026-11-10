@@ -7,13 +7,11 @@ const appUrl = useRuntimeConfig().public.appUrl
     <div class="hero-copy">
       <h1>Orçamentos profissionais.<br /><em>Seu próximo negócio.</em></h1>
       <p>
-        Sistema de orçamentos para pequenos negócios: reúna produtos, serviços e
-        dados do cliente em uma proposta em PDF com a sua marca. Sem refazer
-        planilhas a cada pedido.
+        Conte o que precisa. Organize produtos, serviços e valores sem
+        complicação e tenha seu orçamento pronto com um clique.
       </p>
       <div class="actions">
-        <a class="button primary" :href="appUrl"
-          >Criar meu primeiro orçamento <span>↗</span></a
+        <a class="button primary" :href="appUrl">Criar meu primeiro orçamento</a
         ><a class="text-link" href="#demonstracao"
           >Conhecer por dentro <span>↓</span></a
         >
@@ -29,8 +27,8 @@ const appUrl = useRuntimeConfig().public.appUrl
   grid-template-columns: 1fr 1.08fr;
   align-items: center;
   gap: 44px;
-  padding-top: 57px;
-  padding-bottom: 90px;
+  padding-top: 36px;
+  padding-bottom: 42px;
   position: relative;
 }
 
@@ -74,8 +72,8 @@ h1 em {
 
 @media (min-width: 1450px) {
   .hero {
-    padding-top: 80px;
-    padding-bottom: 120px;
+    padding-top: 48px;
+    padding-bottom: 48px;
   }
 }
 
