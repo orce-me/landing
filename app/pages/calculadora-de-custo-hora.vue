@@ -1,6 +1,6 @@
 <script setup>
 const { origin, canonical } = usePageSeo({
-  title: 'Calculadora de custo por hora grátis | orce-me',
+  title: 'Calculadora de custo por hora grátis | orce.me',
   description:
     'Estime quanto cada hora faturável precisa recuperar dos seus custos mensais para preparar orçamentos de serviços.',
   path: '/calculadora-de-custo-hora',
@@ -28,7 +28,7 @@ if (origin)
                 {
                   '@type': 'ListItem',
                   position: 1,
-                  name: 'orce-me',
+                  name: 'orce.me',
                   item: `${origin}/`,
                 },
                 {

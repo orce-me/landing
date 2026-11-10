@@ -5,7 +5,7 @@ defineProps({ current: { type: String, required: true } })
 <template>
   <nav class="breadcrumbs" aria-label="Caminho da página">
     <ol>
-      <li><NuxtLink to="/">orce-me</NuxtLink></li>
+      <li><NuxtLink to="/">orce.me</NuxtLink></li>
       <li aria-hidden="true">/</li>
       <li aria-current="page">{{ current }}</li>
     </ol>

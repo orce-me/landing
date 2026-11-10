@@ -18,7 +18,7 @@
         </p>
       </details>
       <details>
-        <summary>Para quem o orce-me foi feito?<span>+</span></summary>
+        <summary>Para quem o orce.me foi feito?<span>+</span></summary>
         <p>
           Para pequenos negócios que vendem produtos e serviços e precisam
           preparar orçamentos com frequência, como instaladores, empresas de

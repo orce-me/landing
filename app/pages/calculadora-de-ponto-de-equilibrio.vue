@@ -1,7 +1,7 @@
 <script setup>
 import { breakEven } from '#shared/utils/breakEven'
 const { origin, canonical } = usePageSeo({
-  title: 'Calculadora de ponto de equilíbrio grátis | orce-me',
+  title: 'Calculadora de ponto de equilíbrio grátis | orce.me',
   description:
     'Calcule quantas vendas são necessárias para cobrir custos fixos e variáveis no mesmo período.',
   path: '/calculadora-de-ponto-de-equilibrio',
@@ -29,7 +29,7 @@ if (origin)
                 {
                   '@type': 'ListItem',
                   position: 1,
-                  name: 'orce-me',
+                  name: 'orce.me',
                   item: `${origin}/`,
                 },
                 {

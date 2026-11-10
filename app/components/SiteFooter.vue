@@ -4,11 +4,11 @@ const year = new Date().getFullYear()
 
 <template>
   <footer class="wrap">
-    <a class="brand" href="/">orce-me<span class="brand-dot">.</span></a
+    <a class="brand" href="/">orce<span class="brand-dot">.</span>me</a
     ><span>Feito para quem faz.</span><a href="/#duvidas">Dúvidas frequentes</a
     ><NuxtLink to="/como-fazer-orcamento-de-servicos"
       >Guia de orçamentos</NuxtLink
-    ><small>© {{ year }} orce-me</small>
+    ><small>© {{ year }} orce.me</small>
   </footer>
 </template>
 

@@ -1,6 +1,6 @@
 <script setup>
 const { origin, canonical } = usePageSeo({
-  title: 'Calculadora de margem e markup grátis | orce-me',
+  title: 'Calculadora de margem e markup grátis | orce.me',
   description:
     'Compare a margem sobre o preço de venda com o acréscimo sobre o custo. Simule produtos ou serviços com seus próprios valores.',
   path: '/calculadora-de-margem',
@@ -28,7 +28,7 @@ if (origin)
                 {
                   '@type': 'ListItem',
                   position: 1,
-                  name: 'orce-me',
+                  name: 'orce.me',
                   item: `${origin}/`,
                 },
                 {

@@ -5,10 +5,10 @@ const menuOpen = ref(false)
 
 <template>
   <header class="header wrap" :class="{ 'menu-open': menuOpen }">
-    <a class="brand" href="/" aria-label="orce-me, início"
-      ><span class="mark">o<span></span></span>orce-me<span class="brand-dot"
+    <a class="brand" href="/" aria-label="orce.me, início"
+      ><span class="mark">o<span></span></span>orce<span class="brand-dot"
         >.</span
-      ></a
+      >me</a
     >
     <nav
       id="site-navigation"

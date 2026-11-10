@@ -6,7 +6,7 @@
           >O trabalho repetitivo fica com a gente.</em
         >
       </h2>
-      <p>Você conhece o serviço. O orce-me organiza o resto.</p>
+      <p>Você conhece o serviço. O orce.me organiza o resto.</p>
     </div>
     <div class="steps">
       <article>

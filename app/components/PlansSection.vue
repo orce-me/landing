@@ -19,7 +19,7 @@ const appUrl = useRuntimeConfig().public.appUrl
         Estamos estudando um modelo de assinatura por módulo. Você começa com o
         que precisa e adiciona outros serviços conforme o negócio cresce.
       </p>
-      <a class="button primary" :href="appUrl">Conhecer o orce-me</a>
+      <a class="button primary" :href="appUrl">Conhecer o orce.me</a>
     </div>
     <div class="plan-card" data-nosnippet>
       <span class="planning-badge">Modelo em estudo</span>

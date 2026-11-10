@@ -1,6 +1,6 @@
 ---
 name: design-md
-description: Use when changing anything visual in the orce-me landing page, such as CSS, colors, fonts, spacing, radii, shadows, dark mode, or a new section or component, or when editing DESIGN.md itself.
+description: Use when changing anything visual in the orce.me landing page, such as CSS, colors, fonts, spacing, radii, shadows, dark mode, or a new section or component, or when editing DESIGN.md itself.
 ---
 
 # DESIGN.md

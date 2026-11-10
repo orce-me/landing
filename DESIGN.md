@@ -1,6 +1,6 @@
 ---
 version: alpha
-name: orce-me
+name: orce.me
 description: Visual identity of the orce.me landing page. Calm forest greens on warm linen, a sans-serif voice with serif italic accents, and illustrative product mockups.
 colors:
   # Light theme
@@ -332,7 +332,7 @@ components:
     typography: '{typography.headline-lg-accent}'
 ---
 
-# orce-me
+# orce.me
 
 This file is the source of truth for the visual design of the orce.me landing page. The YAML tokens above are the normative values. The prose below tells you why the values exist and how to apply them.
 
@@ -340,14 +340,14 @@ The spec has no theme modes. Tokens with the `-dark` suffix are the dark theme v
 
 ## Overview
 
-orce-me helps small Brazilian businesses (installers, service providers, shops that sell and install) turn a catalog into professional quotes. The site has three kinds of page: the landing page, free calculators, and a guide. Every page must feel calm, competent, and crafted. It must not feel like a loud SaaS template.
+orce.me helps small Brazilian businesses (installers, service providers, shops that sell and install) turn a catalog into professional quotes. The site has three kinds of page: the landing page, free calculators, and a guide. Every page must feel calm, competent, and crafted. It must not feel like a loud SaaS template.
 
 - **Mood:** Quiet confidence. Deep forest greens on a warm linen ground. Generous white space, thin hairlines, and soft green glows.
 - **Voice:** Each headline has two parts. A plain statement in DM Sans comes first. A second clause in Instrument Serif italic follows on a new line, for example "Um bom orçamento. Um próximo _grande negócio._"
 - **Product proof:** Illustrative mockups of the app (a quote window, a catalog, a printed proposal) show the product instead of describing it. They tilt slightly and float above the page.
 - **Language:** All copy is Brazilian Portuguese (`lang="pt-BR"`). Currency uses `Intl.NumberFormat('pt-BR', { style: 'currency', currency: 'BRL' })`.
 - **Content pages:** The calculators and the guide put reading and input first. They use a narrower column, larger body text, underlined links, and no mockups.
-- **Brand:** The wordmark is lowercase `orce-me` with a lime period. The mark is a forest ring with a small lime dot at the top right.
+- **Brand:** The wordmark is lowercase `orce.me` with a lime period. The mark is a forest ring with a small lime dot at the top right.
 
 ## Colors
 
