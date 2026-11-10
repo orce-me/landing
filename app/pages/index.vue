@@ -1,8 +1,8 @@
 <script setup>
 const { origin, canonical } = usePageSeo({
-  title: 'Sistema de orçamentos para pequenos negócios | orce-me',
+  title: 'Sistema de orçamentos para pequenos negócios | orce.me',
   description:
-    'Crie orçamentos de produtos e serviços com seu catálogo, dados do cliente e PDF com sua marca. Conheça o orce-me para pequenos negócios.',
+    'Crie orçamentos de produtos e serviços com seu catálogo, dados do cliente e PDF com sua marca. Conheça o orce.me para pequenos negócios.',
   path: '/',
 })
 if (origin) {
@@ -12,14 +12,14 @@ if (origin) {
       {
         '@type': 'Organization',
         '@id': `${origin}/#organization`,
-        name: 'orce-me',
+        name: 'orce.me',
         url: origin,
         logo: `${origin}/favicon.svg`,
       },
       {
         '@type': 'WebSite',
         '@id': `${origin}/#website`,
-        name: 'orce-me',
+        name: 'orce.me',
         url: origin,
         inLanguage: 'pt-BR',
         publisher: { '@id': `${origin}/#organization` },
@@ -36,7 +36,7 @@ if (origin) {
       {
         '@type': 'SoftwareApplication',
         '@id': `${origin}/#software`,
-        name: 'orce-me',
+        name: 'orce.me',
         url: origin,
         applicationCategory: 'BusinessApplication',
         operatingSystem: 'Web',

@@ -1,7 +1,7 @@
 <script setup>
 const appUrl = useRuntimeConfig().public.appUrl
 const { origin, canonical } = usePageSeo({
-  title: 'Calculadora de orçamento de serviços: custos e margem | orce-me',
+  title: 'Calculadora de orçamento de serviços: custos e margem | orce.me',
   description:
     'Calcule um orçamento de serviços a partir de materiais, horas de trabalho, outros custos e margem sobre o preço final. Veja a fórmula e simule seus valores.',
   path: '/calculadora-de-orcamento',
@@ -29,7 +29,7 @@ if (origin) {
                 {
                   '@type': 'ListItem',
                   position: 1,
-                  name: 'orce-me',
+                  name: 'orce.me',
                   item: `${origin}/`,
                 },
                 {
@@ -102,7 +102,7 @@ if (origin) {
         <NuxtLink to="/como-fazer-orcamento-de-servicos"
           >Veja o guia de orçamento de prestação de serviços</NuxtLink
         >
-        para definir escopo, itens e condições. No orce-me, você reúne seu
+        para definir escopo, itens e condições. No orce.me, você reúne seu
         catálogo e os dados do cliente em uma proposta em PDF.
       </p>
       <a class="button primary" :href="appUrl"

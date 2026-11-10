@@ -25,18 +25,18 @@ export function usePageSeo(options: {
     ogDescription: options.description,
     ogType: options.type || 'website',
     ogLocale: 'pt_BR',
-    ogSiteName: 'orce-me',
+    ogSiteName: 'orce.me',
     ogUrl: canonical,
     ogImage: origin ? `${origin}/social-card.png` : undefined,
     ogImageWidth: 1200,
     ogImageHeight: 630,
     ogImageType: 'image/png',
-    ogImageAlt: 'orce-me — Orçamentos de produtos e serviços em PDF',
+    ogImageAlt: 'orce.me — Orçamentos de produtos e serviços em PDF',
     twitterCard: 'summary_large_image',
     twitterTitle: options.title,
     twitterDescription: options.description,
     twitterImage: origin ? `${origin}/social-card.png` : undefined,
-    twitterImageAlt: 'orce-me — Orçamentos de produtos e serviços em PDF',
+    twitterImageAlt: 'orce.me — Orçamentos de produtos e serviços em PDF',
   })
 
   useHead({

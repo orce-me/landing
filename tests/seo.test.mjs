@@ -52,7 +52,7 @@ test('public production pages expose canonical, metadata, schema and valid route
       const home = await (await fetch(base)).text()
       assert.match(
         home,
-        /<title>Sistema de orçamentos para pequenos negócios \| orce-me<\/title>/,
+        /<title>Sistema de orçamentos para pequenos negócios \| orce\.me<\/title>/,
       )
       assert.equal(
         meta(home, 'robots'),

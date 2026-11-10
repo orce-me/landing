@@ -41,7 +41,7 @@ export default defineNuxtConfig({
   app: {
     head: {
       htmlAttrs: { lang: 'pt-BR' },
-      title: 'Sistema de orçamentos para pequenos negócios | orce-me',
+      title: 'Sistema de orçamentos para pequenos negócios | orce.me',
       meta: [
         { name: 'theme-color', content: '#174c3c' },
         {

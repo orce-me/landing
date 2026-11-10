@@ -1,7 +1,7 @@
 <script setup>
 import { priceWithFees } from '#shared/utils/priceWithFees'
 const { origin, canonical } = usePageSeo({
-  title: 'Calculadora de preço com taxas grátis | orce-me',
+  title: 'Calculadora de preço com taxas grátis | orce.me',
   description:
     'Estime o preço de venda considerando custos, taxas percentuais e margem sobre o valor final.',
   path: '/calculadora-de-preco-com-taxas',
@@ -29,7 +29,7 @@ if (origin)
                 {
                   '@type': 'ListItem',
                   position: 1,
-                  name: 'orce-me',
+                  name: 'orce.me',
                   item: `${origin}/`,
                 },
                 {

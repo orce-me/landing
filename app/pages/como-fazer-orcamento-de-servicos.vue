@@ -1,7 +1,7 @@
 <script setup>
 const appUrl = useRuntimeConfig().public.appUrl
 const { origin, canonical } = usePageSeo({
-  title: 'Como fazer um orçamento de serviços: guia e exemplo | orce-me',
+  title: 'Como fazer um orçamento de serviços: guia e exemplo | orce.me',
   description:
     'Veja o que incluir em um orçamento de prestação de serviços: escopo, materiais, mão de obra, quantidades e condições, com um exemplo de cálculo.',
   path: '/como-fazer-orcamento-de-servicos',
@@ -17,7 +17,7 @@ if (origin) {
           {
             '@type': 'ListItem',
             position: 1,
-            name: 'orce-me',
+            name: 'orce.me',
             item: `${origin}/`,
           },
           {
@@ -36,8 +36,8 @@ if (origin) {
         inLanguage: 'pt-BR',
         mainEntityOfPage: canonical,
         image: `${origin}/social-card.png`,
-        author: { '@type': 'Organization', name: 'orce-me', url: origin },
-        publisher: { '@type': 'Organization', name: 'orce-me', url: origin },
+        author: { '@type': 'Organization', name: 'orce.me', url: origin },
+        publisher: { '@type': 'Organization', name: 'orce.me', url: origin },
       },
     ],
   }
@@ -102,7 +102,7 @@ if (origin) {
       <h2>Exemplo de orçamento de instalação</h2>
       <p>
         Este exemplo é ilustrativo e usa os mesmos itens da demonstração do
-        orce-me. Os valores não representam preços de mercado nem uma
+        orce.me. Os valores não representam preços de mercado nem uma
         recomendação de cobrança.
       </p>
       <div class="table-scroll">
@@ -208,7 +208,7 @@ if (origin) {
     <section class="guide-cta">
       <h2>Reutilize seu catálogo no próximo orçamento.</h2>
       <p>
-        No orce-me, você seleciona produtos e serviços, ajusta quantidades,
+        No orce.me, você seleciona produtos e serviços, ajusta quantidades,
         confere a proposta e exporta um PDF com a identidade da empresa.
       </p>
       <a class="button primary" :href="appUrl">Criar meu orçamento</a>

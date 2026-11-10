@@ -1,6 +1,6 @@
 <script setup>
 const { origin, canonical } = usePageSeo({
-  title: 'Calculadora de desconto grátis | orce-me',
+  title: 'Calculadora de desconto grátis | orce.me',
   description:
     'Veja o preço final e quanto você concede de desconto em reais antes de enviar uma proposta.',
   path: '/calculadora-de-desconto',
@@ -28,7 +28,7 @@ if (origin)
                 {
                   '@type': 'ListItem',
                   position: 1,
-                  name: 'orce-me',
+                  name: 'orce.me',
                   item: `${origin}/`,
                 },
                 {
