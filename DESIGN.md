@@ -456,7 +456,7 @@ Shapes are soft but restrained. Corners are small, lines are thin, and circles m
 - **Pricing detail:** Uses the existing card and tint-panel tokens. Never invent prices or sell unshipped modules. Link to current options in the application.
 - **Closing band:** A full-width dark island in `inverse-surface` with a soft glow, a `headline-lg` statement, a Sprout serif clause, and `button-primary-dark` in both themes. A large rotated `✳` decoration sits at the right edge at low opacity. The CTA sits to the right of the headline near the asterisk on desktop, and stacks on mobile. There is no adjacent slogan.
 - **Dialog:** The native `<dialog>` for the PDF preview. `surface-raised`, `rounded.lg`, hairline border, and a `surface-tint` toolbar. Print always renders it in the light theme.
-- **Mockups:** The app window, catalog, and paper are illustrations of the product. They use the reduced mockup scale and the floating or raised shadow. The examples are not editable. The hero has a real pause/resume control for its document animation.
+- **Mockups:** The app window, catalog, and paper are illustrations of the product. They use the reduced mockup scale and the floating or raised shadow. The examples are not editable. The hero uses a brief entrance animation with no visible playback controls or development-status captions.
 - **Input:** `surface-raised` (or `surface-raised-dark`), `on-surface` text at 16px, `rounded.md`, 12px padding. The border is `on-surface-muted`, so the field edge has 3:1 contrast. The label sits above the field in `label-lg`. Help text sits below in `body-sm`, `on-surface-muted`.
 - **Calculator:** A bordered box (`rounded.lg`) with inputs on one side and a `tint-panel` result on the other. The result value uses `figure-lg`. Results update live in an `aria-live="polite"` region.
 - **Tint panel:** `surface-tint` with a hairline border, `rounded.lg`, 24px padding. Use it for calculator results, the guide call to action, and table headers and footers.
@@ -471,7 +471,7 @@ Shapes are soft but restrained. Corners are small, lines are thin, and circles m
 ## Motion
 
 - Transitions are 0.2s and change only `transform` and `background`.
-- The quotation gallery uses a slow 18s transform cycle with 620px of horizontal travel, enough to bring the final layout fully into the desktop and standard mobile preview. Its visible pause/resume button persists the paused state, hovering the preview stage also pauses it, and reduced motion renders all examples statically. Layout variants are explicitly labeled as previews in preparation, never advertised as shipped.
+- The quotation gallery moves 620px once over four seconds, then rests on the final document. It has no visible playback controls, layout-name strips, or development-status captions. Reduced motion renders all examples statically. The gallery illustrates quotation output without making template-availability claims.
 - The theme toggle reveals the new theme with a circular clip from the pointer, 520ms, `cubic-bezier(.2,.7,.2,1)`, through the View Transitions API. Without that API, the theme changes at once.
 - `prefers-reduced-motion: reduce` turns off all transitions, smooth scroll, and the theme reveal.
 

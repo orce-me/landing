@@ -44,8 +44,11 @@ with sync_playwright() as playwright:
             page.goto(args.base_url)
             page.evaluate('document.fonts.ready')
             if width in [1240, 390]:
-                page.locator('.motion-control').click()
-                page.locator('.motion-control').blur()
+                page.locator('.gallery-rail').evaluate('''(element) => {
+                    const animation = element.getAnimations()[0];
+                    animation.pause();
+                    animation.currentTime = 0;
+                }''')
                 page.evaluate("window.scrollTo({top: 0, behavior: 'instant'})")
                 stage = page.locator('.gallery-stage').bounding_box()
                 total = page.locator('.document-essential .total').bounding_box()
@@ -70,25 +73,19 @@ with sync_playwright() as playwright:
     context = browser.new_context(viewport={'width': 1240, 'height': 900})
     page = context.new_page()
     page.goto(args.base_url)
-    control = page.locator('.motion-control')
     rail = page.locator('.gallery-rail')
-    page.mouse.move(0, 0)
-    expect(rail).to_have_css('animation-play-state', 'running')
-    control.click()
-    expect(control).to_have_attribute('aria-pressed', 'true')
-    expect(rail).to_have_css('animation-play-state', 'paused')
-    page.mouse.move(0, 0)
-    expect(rail).to_have_css('animation-play-state', 'paused')
+    expect(page.locator('.quote-gallery button')).to_have_count(0)
+    expect(page.locator('.quote-gallery figcaption')).to_have_count(0)
+    expect(page.locator('.layout-name')).to_have_count(0)
+    expect(page.get_by_text('Layouts em preparação')).to_have_count(0)
+    timing = rail.evaluate('(element) => element.getAnimations()[0].effect.getTiming()')
+    assert timing['iterations'] == 1 and timing['duration'] <= 5000, timing
+    rail.evaluate('(element) => element.getAnimations()[0].finish()')
+    assert rail.evaluate('(element) => element.getAnimations()[0].playState') == 'finished'
     before = rail.evaluate('(element) => getComputedStyle(element).transform')
     page.wait_for_timeout(200)
     assert before == rail.evaluate('(element) => getComputedStyle(element).transform')
-    page.get_by_role('button', name='Retomar animação').click()
-    expect(control).to_have_attribute('aria-pressed', 'false')
-    expect(rail).to_have_css('animation-play-state', 'running')
-    before = rail.evaluate('(element) => getComputedStyle(element).transform')
-    page.wait_for_timeout(200)
-    assert before != rail.evaluate('(element) => getComputedStyle(element).transform')
-    checks.append('animation pauses persistently and resumes while control retains focus')
+    checks.append('brief entrance finishes and rests without playback controls or development captions')
     for width in [1240, 390]:
         page.set_viewport_size({'width': width, 'height': 900})
         page.goto(args.base_url)
@@ -141,7 +138,7 @@ with sync_playwright() as playwright:
     page = context.new_page()
     page.goto(args.base_url)
     expect(page.locator('.gallery-rail')).to_have_css('animation-name', 'none')
-    expect(page.locator('.motion-control')).not_to_be_visible()
+    expect(page.locator('.quote-gallery button')).to_have_count(0)
     for document in page.locator('.layout-example').all():
         expect(document).to_be_visible()
     assert page.evaluate('document.documentElement.scrollWidth <= innerWidth')

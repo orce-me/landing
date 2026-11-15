@@ -15,13 +15,10 @@ test('homepage keeps quotations central and delegates pricing and help to real p
   }
 })
 
-test('quotation layout previews disclose preparation and have persistent motion controls', () => {
+test('quotation showcase settles after a brief entrance and respects reduced motion', () => {
   const demo = component('QuoteDemo')
-  assert.match(demo, /Layouts em preparação/)
-  assert.match(demo, /Pausar animação/)
-  assert.match(demo, /Retomar animação/)
-  assert.match(demo, /:aria-pressed="paused"/)
-  assert.match(demo, /animation-play-state: paused/)
+  assert.match(demo, /animation: quotation-layouts 4s ease-in-out forwards/)
+  assert.doesNotMatch(demo, /infinite|<button|<figcaption/)
   assert.match(demo, /prefers-reduced-motion: reduce/)
   assert.match(demo, /animation: none/)
 })

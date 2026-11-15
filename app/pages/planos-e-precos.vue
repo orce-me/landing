@@ -40,11 +40,6 @@ usePageSeo({
         <NuxtLink to="/ajuda">Tirar dúvidas sobre o produto</NuxtLink>
       </div>
     </article>
-    <p class="preview-note">
-      Os layouts alternativos mostrados na página inicial são prévias em
-      preparação. Eles não representam uma funcionalidade já disponível ou
-      incluída em um plano.
-    </p>
   </section>
 </template>
 
@@ -89,8 +84,7 @@ h1 {
   font-size: var(--typography-label-md-font-size);
   letter-spacing: 1px;
 }
-.conditions p,
-.preview-note {
+.conditions p {
   font-size: var(--typography-body-md-font-size);
   color: var(--color-on-surface-muted);
   line-height: var(--typography-body-md-line-height);
