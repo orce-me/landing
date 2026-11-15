@@ -44,9 +44,7 @@
 
 body {
   margin: 0;
-  background:
-    radial-gradient(ellipse at 95% 8%, var(--glow-page), transparent 32%),
-    var(--color-neutral);
+  background: var(--color-neutral);
 }
 
 a {
@@ -106,7 +104,7 @@ p {
 em {
   font-family: var(--typography-display-accent-font-family), Georgia, serif;
   font-weight: var(--typography-display-accent-font-weight);
-  color: var(--color-secondary);
+  color: var(--color-primary);
 }
 
 .button {

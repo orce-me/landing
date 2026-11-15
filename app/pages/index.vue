@@ -68,12 +68,45 @@ if (origin) {
 <template>
   <div>
     <HeroSection />
-    <AudienceSection />
     <WorkflowSection />
     <FeaturesSection />
-    <PlansSection />
+    <div class="plan-link wrap">
+      <p>Quer saber as condições para usar o orce.me?</p>
+      <NuxtLink to="/planos-e-precos"
+        >Consultar planos e preços <span aria-hidden="true">→</span></NuxtLink
+      >
+    </div>
     <ResourcesSection />
-    <FaqSection />
     <ClosingSection />
   </div>
 </template>
+
+<style scoped>
+.plan-link {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: var(--spacing-2xl);
+  padding-top: var(--spacing-3xl);
+  padding-bottom: var(--spacing-3xl);
+  border-bottom: 1px solid var(--color-outline);
+  font-size: var(--typography-body-lg-font-size);
+}
+.plan-link p {
+  color: var(--color-on-surface-muted);
+}
+.plan-link a {
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+.plan-link a span {
+  margin-left: var(--spacing-sm);
+}
+@media (max-width: 760px) {
+  .plan-link {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: var(--spacing-md);
+  }
+}
+</style>

@@ -23,6 +23,8 @@ export default defineNuxtConfig({
           ...config.prerender,
           routes: [
             '/',
+            '/planos-e-precos',
+            '/ajuda',
             '/como-fazer-orcamento-de-servicos',
             '/calculadora-de-orcamento',
             '/calculadora-de-desconto',

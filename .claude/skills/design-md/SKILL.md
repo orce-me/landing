@@ -44,6 +44,18 @@ A visual change is complete only when all of these are true:
 6. You checked each page you changed in light and dark at 1240px, 1050px, and 760px (`pnpm dev`, port 5174). The pages are the landing page, the four calculators, and the guide. If you cannot render the page, say so in your report.
 7. Your report lists any drift you found in CSS rules you did not change. Do not fix that drift without a request.
 
+## Accent restraint
+
+Keep purple to small accents such as labels, thin rules, and focus rings. Use neutral large surfaces and green headlines; do not replace an all-green page with an all-purple page. Keep the hero CTA free of supporting feature chips or checklists underneath.
+
+## Product examples
+
+Use broadly relatable examples such as birthday parties, photography, and room painting instead of niche equipment such as gas heaters. Keep quotation previews, catalog illustrations, accessible descriptions, guide examples, and totals consistent when changing example data. Prices are illustrative, not market-price recommendations.
+
+## Browser regression checks
+
+Run `scripts/test-landing-browser.py` against a real production build with Python Playwright (see README). Keep host-specific Chromium/font/library paths in the invoking environment. When reusing dependencies from another checkout, keep a real task-local `node_modules` directory with linked dependency entries and a local `.cache`; a symlink for the entire directory lets Nuxt write generated files into the shared checkout and can break prerender package-import resolution. Keep the quotation showcase free of development-status captions, layout-name strips, and visible playback controls. Use a short, non-looping entrance that settles within five seconds and disable it for reduced motion. Test the finished state as well as the static reduced-motion layout. Before full-page screenshots, scroll instantly to the top so offscreen fixed skip links are not captured in the middle of the page. For element screenshots that scroll automatically, hide only unfocused offscreen skip links with the screenshot API’s temporary style override, not an application accessibility change. Assert that the illustrative quotation total is inside its clipped preview stage on desktop and mobile.
+
 ## Linter traps
 
 - Quote every hex value in the YAML. An unquoted `#174c3c` is a YAML comment.

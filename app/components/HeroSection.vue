@@ -3,19 +3,15 @@ const appUrl = useRuntimeConfig().public.appUrl
 </script>
 
 <template>
-  <section class="hero wrap">
+  <section class="hero wrap" aria-labelledby="hero-title">
     <div class="hero-copy">
-      <h1>Orçamentos profissionais.<br /><em>Seu próximo negócio.</em></h1>
+      <span class="eyebrow">ORÇAMENTOS PARA PEQUENOS NEGÓCIOS</span>
+      <h1 id="hero-title">Crie orçamentos.<br /><em>Envie em PDF.</em></h1>
       <p>
-        Conte o que precisa. Organize produtos, serviços e valores sem
-        complicação e tenha seu orçamento pronto com um clique.
+        Reúna produtos e serviços do seu catálogo, ajuste os valores e gere uma
+        proposta com os dados da sua empresa. Tudo no mesmo lugar.
       </p>
-      <div class="actions">
-        <a class="button primary" :href="appUrl">Criar meu primeiro orçamento</a
-        ><a class="text-link" href="#demonstracao"
-          >Conhecer por dentro <span>↓</span></a
-        >
-      </div>
+      <a class="button primary" :href="appUrl">Criar meu primeiro orçamento</a>
     </div>
     <QuoteDemo />
   </section>
@@ -26,113 +22,74 @@ const appUrl = useRuntimeConfig().public.appUrl
   display: grid;
   grid-template-columns: 1fr 1.08fr;
   align-items: center;
-  gap: 44px;
-  padding-top: 36px;
-  padding-bottom: 42px;
+  gap: var(--spacing-4xl);
+  padding-top: var(--spacing-5xl);
+  padding-bottom: var(--spacing-5xl);
+}
+.hero-copy {
   position: relative;
+  z-index: 1;
 }
-
-h1 {
-  margin: 0;
+.eyebrow {
+  font-size: var(--typography-label-sm-font-size);
+  font-weight: var(--typography-label-md-font-weight);
+  color: var(--color-secondary);
+  letter-spacing: 1.2px;
 }
-
 h1 {
   font-size: var(--typography-display-font-size);
+  font-weight: var(--typography-display-font-weight);
   letter-spacing: var(--typography-display-letter-spacing);
   line-height: var(--typography-display-line-height);
-  font-weight: var(--typography-display-font-weight);
-  margin: 23px 0;
+  margin: var(--spacing-2xl) 0;
 }
-
 h1 em {
   font-size: var(--typography-display-accent-font-size);
   letter-spacing: var(--typography-display-accent-letter-spacing);
 }
-
 .hero-copy > p {
   max-width: 410px;
-  font-size: var(--typography-body-lg-font-size);
+  font-size: var(--typography-lead-font-size);
+  line-height: var(--typography-lead-line-height);
   color: var(--color-on-surface-muted);
-  line-height: var(--typography-body-lg-line-height);
 }
-
-.actions {
-  display: flex;
-  align-items: center;
-  gap: 20px;
-  margin-top: 31px;
+.hero-copy > .button {
+  margin-top: var(--spacing-3xl);
 }
-
-.text-link {
-  font-size: var(--typography-body-sm-font-size);
-  white-space: nowrap;
-  display: flex;
-  gap: 8px;
-}
-
-@media (min-width: 1450px) {
-  .hero {
-    padding-top: 48px;
-    padding-bottom: 48px;
-  }
-}
-
 @media (max-width: 1050px) {
   .hero {
-    gap: 25px;
+    gap: var(--spacing-2xl);
   }
-}
-
-@media (max-width: 1050px) {
   h1 {
     font-size: 52px;
   }
-}
-
-@media (max-width: 1050px) {
   h1 em {
     font-size: 62px;
   }
 }
-
-@media (max-width: 1050px) {
-  .actions {
-    flex-wrap: wrap;
-    gap: 17px;
-  }
-}
-
 @media (max-width: 760px) {
   .hero {
     grid-template-columns: 1fr;
-    padding-top: 34px;
-    padding-bottom: 55px;
-    gap: 55px;
+    padding-top: var(--spacing-4xl);
+    gap: var(--spacing-4xl);
   }
-}
-
-@media (max-width: 760px) {
-  .hero-copy {
-    max-width: 540px;
-  }
-}
-
-@media (max-width: 760px) {
   h1 {
     font-size: 57px;
     letter-spacing: -2.8px;
   }
-}
-
-@media (max-width: 760px) {
   h1 em {
     font-size: 66px;
   }
-}
-
-@media (max-width: 760px) {
   .hero-copy > p {
-    font-size: 14px;
+    font-size: var(--typography-body-lg-font-size);
+  }
+}
+@media (max-width: 380px) {
+  h1 {
+    font-size: 49px;
+  }
+  h1 em {
+    font-size: 58px;
   }
 }
 </style>

@@ -1,10 +1,26 @@
 <script setup>
 const appUrl = useRuntimeConfig().public.appUrl
 const menuOpen = ref(false)
+const menuButton = ref(null)
+const route = useRoute()
+watch(
+  () => route.fullPath,
+  () => {
+    menuOpen.value = false
+  },
+)
+function closeMenu() {
+  menuOpen.value = false
+  menuButton.value?.focus()
+}
 </script>
 
 <template>
-  <header class="header wrap" :class="{ 'menu-open': menuOpen }">
+  <header
+    class="header wrap"
+    :class="{ 'menu-open': menuOpen }"
+    @keydown.esc="closeMenu"
+  >
     <a class="brand" href="/" aria-label="orce.me, início"
       ><span class="mark">o<span></span></span>orce<span class="brand-dot"
         >.</span
@@ -15,17 +31,21 @@ const menuOpen = ref(false)
       aria-label="Navegação principal"
       @click="menuOpen = false"
     >
-      <a href="/#como-funciona">Como funciona</a
-      ><a href="/#recursos">Recursos</a><a href="/#planos">Planos</a>
+      <a href="/#como-funciona">Como funciona</a>
+      <a href="/#recursos">Funcionalidades</a>
+      <a href="/#materiais">Ferramentas</a>
+      <NuxtLink to="/planos-e-precos">Planos e preços</NuxtLink>
+      <NuxtLink to="/ajuda">Ajuda</NuxtLink>
     </nav>
     <a class="login" :href="appUrl">Entrar</a><ThemeToggle /><button
+      ref="menuButton"
       class="menu"
       :aria-label="menuOpen ? 'Fechar menu' : 'Abrir menu'"
       :aria-expanded="menuOpen"
       aria-controls="site-navigation"
       @click="menuOpen = !menuOpen"
     >
-      ☰
+      <span class="menu-icon" aria-hidden="true"><i></i><i></i><i></i></span>
     </button>
   </header>
 </template>
@@ -35,7 +55,7 @@ const menuOpen = ref(false)
   height: 108px;
   display: flex;
   align-items: center;
-  gap: 45px;
+  gap: 24px;
   border-bottom: 1px solid var(--color-outline);
 }
 
@@ -75,7 +95,7 @@ const menuOpen = ref(false)
 
 .header nav {
   display: flex;
-  gap: 32px;
+  gap: 24px;
   margin: auto;
   font-size: var(--typography-label-lg-font-size);
   font-weight: var(--typography-label-lg-font-weight);
@@ -90,6 +110,18 @@ const menuOpen = ref(false)
 
 .menu {
   display: none;
+}
+.menu-icon {
+  display: inline-grid;
+  gap: 4px;
+  width: 18px;
+  vertical-align: middle;
+}
+.menu-icon i {
+  display: block;
+  height: 2px;
+  background: currentColor;
+  border-radius: var(--rounded-full);
 }
 
 @media (max-width: 760px) {
@@ -139,7 +171,8 @@ const menuOpen = ref(false)
     border-radius: var(--rounded-lg);
     padding: 22px;
     z-index: 10;
-    justify-content: space-between;
+    flex-direction: column;
+    align-items: flex-start;
     gap: 15px;
   }
 }
@@ -147,6 +180,26 @@ const menuOpen = ref(false)
 @media (max-width: 760px) {
   .header {
     gap: 16px;
+  }
+}
+
+@media (min-width: 761px) and (max-width: 1050px) {
+  .header {
+    gap: var(--spacing-lg);
+  }
+  .header nav {
+    gap: var(--spacing-md);
+    font-size: var(--typography-body-sm-font-size);
+  }
+}
+@media (max-width: 760px) {
+  .header nav a {
+    padding: var(--spacing-sm) 0;
+    width: 100%;
+  }
+  .menu {
+    min-width: 36px;
+    min-height: 44px;
   }
 }
 </style>

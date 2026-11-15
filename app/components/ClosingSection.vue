@@ -10,7 +10,7 @@ const appUrl = useRuntimeConfig().public.appUrl
       </h2>
       <a class="button primary-dark" :href="appUrl"
         >Criar meu primeiro orçamento</a
-      ><span class="closing-note">Seu próximo negócio começa aqui.</span>
+      >
     </div>
     <span class="closing-decoration" aria-hidden="true">✳</span>
   </section>
@@ -32,6 +32,10 @@ const appUrl = useRuntimeConfig().public.appUrl
   padding-bottom: 68px;
   position: relative;
   z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--spacing-4xl);
 }
 
 .closing h2 {
@@ -46,12 +50,6 @@ const appUrl = useRuntimeConfig().public.appUrl
   font-size: var(--typography-headline-lg-accent-font-size);
   letter-spacing: var(--typography-headline-lg-accent-letter-spacing);
   color: var(--color-primary-dark);
-}
-
-.closing-note {
-  font-size: var(--typography-label-sm-font-size);
-  color: var(--color-on-inverse-surface);
-  margin-left: 20px;
 }
 
 .closing-decoration {
@@ -88,14 +86,10 @@ const appUrl = useRuntimeConfig().public.appUrl
 }
 
 @media (max-width: 760px) {
-  .closing-note {
-    display: block;
-    margin: 17px 0 0;
-  }
-}
-
-@media (max-width: 760px) {
   .closing > .wrap {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--spacing-lg);
     padding-top: 50px;
     padding-bottom: 50px;
   }
