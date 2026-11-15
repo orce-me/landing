@@ -11,40 +11,37 @@ defineProps({ layout: { type: String, default: 'essential' } })
     <div class="quote-title">
       <div>
         <small>ORÇAMENTO Nº 0042</small>
-        <h3>Aquecimento residencial.</h3>
+        <h3>Festa de aniversário.</h3>
       </div>
     </div>
     <div class="customer">
       <span>PREPARADO PARA<b>Marina Oliveira</b></span
-      ><span>PROJETO<b>Aquecimento residencial</b></span>
+      ><span>PROJETO<b>Festa de aniversário</b></span>
     </div>
     <div class="table">
       <div class="table-head">
         <span>PRODUTO / SERVIÇO</span><span>QTD.</span><span>VALOR</span>
       </div>
       <div class="table-row">
-        <span
-          ><b>Aquecedor a gás 26L</b><small>Equipamento · unidade</small></span
-        ><span>1</span><span>R$ 3.490,00</span>
+        <span><b>Bolo de aniversário</b><small>Produto · unidade</small></span
+        ><span>1</span><span>R$ 350,00</span>
       </div>
       <div class="table-row">
-        <span><b>Kit de instalação</b><small>Material · conjunto</small></span
-        ><span>1</span><span>R$ 380,00</span>
+        <span><b>Caixa de docinhos</b><small>Produto · caixa</small></span
+        ><span>1</span><span>R$ 180,00</span>
       </div>
       <div class="table-row">
-        <span
-          ><b>Instalação e configuração</b
-          ><small>Mão de obra · serviço</small></span
-        ><span>1</span><span>R$ 650,00</span>
+        <span><b>Decoração da mesa</b><small>Mão de obra · serviço</small></span
+        ><span>1</span><span>R$ 120,00</span>
       </div>
     </div>
     <div class="total">
       <span>Total do orçamento<small>Produtos e serviços, juntos.</small></span
-      ><strong>R$ 4.520,00</strong>
+      ><strong>R$ 650,00</strong>
     </div>
     <div class="document-terms">
       <b>Condições da proposta</b>
-      <p>Validade: 15 dias · Prazo de instalação: a combinar.</p>
+      <p>Validade: 15 dias · Entrega e montagem: a combinar.</p>
       <p>Pagamento: 50% na aprovação e 50% na entrega.</p>
     </div>
   </div>

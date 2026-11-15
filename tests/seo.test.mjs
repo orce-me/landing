@@ -84,7 +84,7 @@ test('public production pages expose canonical, metadata, schema and valid route
         guide,
         /rel="canonical" href="https:\/\/example.com\/como-fazer-orcamento-de-servicos"/,
       )
-      assert.match(guide, /R\$ 5.170,00/)
+      assert.match(guide, /R\$ 770,00/)
       assert.notEqual(meta(guide, 'description'), meta(home, 'description'))
       const robots = await (await fetch(`${base}/robots.txt`)).text()
       assert.match(robots, /Allow: \/\n/)

@@ -12,11 +12,6 @@ const appUrl = useRuntimeConfig().public.appUrl
         proposta com os dados da sua empresa. Tudo no mesmo lugar.
       </p>
       <a class="button primary" :href="appUrl">Criar meu primeiro orçamento</a>
-      <ul class="hero-details" aria-label="Recursos de orçamento">
-        <li>Catálogo reutilizável</li>
-        <li>Clientes organizados</li>
-        <li>PDF com sua marca</li>
-      </ul>
     </div>
     <QuoteDemo />
   </section>
@@ -60,21 +55,6 @@ h1 em {
 }
 .hero-copy > .button {
   margin-top: var(--spacing-3xl);
-}
-.hero-details {
-  display: flex;
-  flex-wrap: wrap;
-  gap: var(--spacing-sm) var(--spacing-lg);
-  list-style: none;
-  padding: 0;
-  margin: var(--spacing-2xl) 0 0;
-  font-size: var(--typography-label-sm-font-size);
-  color: var(--color-on-surface-muted);
-}
-.hero-details li::before {
-  content: '✓';
-  margin-right: var(--spacing-xs);
-  color: var(--color-secondary);
 }
 @media (max-width: 1050px) {
   .hero {

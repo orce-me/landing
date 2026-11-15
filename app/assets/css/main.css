@@ -104,7 +104,7 @@ p {
 em {
   font-family: var(--typography-display-accent-font-family), Georgia, serif;
   font-weight: var(--typography-display-accent-font-weight);
-  color: var(--color-secondary);
+  color: var(--color-primary);
 }
 
 .button {

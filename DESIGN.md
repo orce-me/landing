@@ -1,7 +1,7 @@
 ---
 version: alpha
 name: orce.me
-description: Visual identity of the orce.me landing page. Forest actions, muted plum and lilac product surfaces on warm linen, with concrete quotation UI and accessible layout previews.
+description: Visual identity of the orce.me landing page. Forest actions and neutral product surfaces on warm linen with restrained plum accents, with concrete quotation UI and accessible layout previews.
 colors:
   # Light theme
   primary: '#174c3c'
@@ -12,8 +12,8 @@ colors:
   neutral: '#f7f4ef'
   surface: '#fcfaf7'
   surface-raised: '#ffffff'
-  surface-tint: '#eee5ef'
-  band: '#e8dcec'
+  surface-tint: '#f0ece6'
+  band: '#e9e5df'
   on-surface: '#16392d'
   on-surface-muted: '#4e6053'
   outline: '#d8d3ce'
@@ -34,8 +34,8 @@ colors:
   neutral-dark: '#101c17'
   surface-dark: '#1b2b21'
   surface-raised-dark: '{colors.surface-dark}'
-  surface-tint-dark: '#302b34'
-  band-dark: '#342938'
+  surface-tint-dark: '#252b27'
+  band-dark: '#202622'
   on-surface-dark: '#e5ede0'
   on-surface-muted-dark: '#b3c1ad'
   outline-dark: '#354a39'
@@ -207,11 +207,11 @@ components:
     textColor: '{colors.on-surface-muted-dark}'
   headline-accent:
     backgroundColor: '{colors.neutral}'
-    textColor: '{colors.secondary}'
+    textColor: '{colors.primary}'
     typography: '{typography.headline-md-accent}'
   headline-accent-dark:
     backgroundColor: '{colors.neutral-dark}'
-    textColor: '{colors.secondary-dark}'
+    textColor: '{colors.primary-dark}'
   brand-mark:
     textColor: '{colors.primary}'
     size: 24px
@@ -349,7 +349,7 @@ The spec has no theme modes. Tokens with the `-dark` suffix are the dark theme v
 
 orce.me helps small Brazilian businesses (installers, service providers, shops that sell and install) turn a catalog into professional quotes. The site has a quotation-focused landing page, separate pricing and help pages, free calculators, and a guide. Every page must feel calm, competent, and crafted. It must not feel like a loud SaaS template.
 
-- **Mood:** Quiet confidence. Forest green actions on warm linen, contrasted with muted plum text and lilac product surfaces. Generous white space and thin hairlines.
+- **Mood:** Quiet confidence. Forest green actions on warm linen, neutral product surfaces, and small muted plum accents. Generous white space and thin hairlines.
 - **Voice:** Lead with concrete functionality in DM Sans. Instrument Serif italic can emphasize a second clause, but is not required on every heading. Use at most one catch phrase, in the closing block.
 - **Product proof:** Illustrative mockups of the app (a quote window, a catalog, a printed proposal) show the product instead of describing it. They tilt slightly and float above the page.
 - **Language:** All copy is Brazilian Portuguese (`lang="pt-BR"`). Currency uses `Intl.NumberFormat('pt-BR', { style: 'currency', currency: 'BRL' })`.
@@ -358,15 +358,15 @@ orce.me helps small Brazilian businesses (installers, service providers, shops t
 
 ## Colors
 
-Forest carries actions; muted Plum carries emphasis; Lilac distinguishes product demonstration surfaces from the warm Linen page. Lime remains a small decorative brand signal. Never tint the whole page green.
+Forest carries actions and large headlines; warm neutral surfaces distinguish product demonstrations from the Linen page. Reserve muted Plum for small labels, thin rules, and focus rings, never large backgrounds or entire headlines. Lime remains a small decorative brand signal. Never tint the whole page green.
 
 **Light theme**
 
 - `primary` Forest (#174c3c), white `on-primary`, and hover #26634e remain the action colors.
-- `secondary` Plum (#73536e) is used for serif accents, section labels and focus rings.
+- `secondary` Plum (#73536e) is used only for small section labels, thin rules and focus rings, not large serif headlines.
 - `tertiary` Lime (#8aa357) is decorative only, not a text color.
 - `neutral` Linen (#f7f4ef) is the warm page ground. `surface` (#fcfaf7) and `surface-raised` (#ffffff) separate cards and documents.
-- `surface-tint` (#eee5ef) and `band` (#e8dcec) create the contrasting lilac product gallery and functionality section.
+- `surface-tint` (#f0ece6) and `band` (#e9e5df) create neutral stone product-gallery and functionality surfaces.
 - `on-surface` (#16392d) and `on-surface-muted` (#4e6053) carry headings and supporting text. `outline` (#d8d3ce) is the neutral hairline.
 - `inverse-surface` (#103c2b) and `on-inverse-surface` (#f3f6e8) form the closing island.
 - Error and quote-status pairs retain their semantic amber, blue, green and red hues.
@@ -376,14 +376,14 @@ Forest carries actions; muted Plum carries emphasis; Lilac distinguishes product
 - `primary-dark` (#c1dca2), hover (#d3e8bc), and `on-primary-dark` (#163322) retain the forest brand's action contrast.
 - `secondary-dark` (#d7bce0) is a pale lilac accent, distinct from primary actions.
 - `neutral-dark` (#101c17), `surface-dark` (#1b2b21), and `surface-raised-dark` provide dark page and paper surfaces.
-- `surface-tint-dark` (#302b34) and `band-dark` (#342938) retain the plum/lilac contrast without bright white papers.
+- `surface-tint-dark` (#252b27) and `band-dark` (#202622) provide neutral charcoal product surfaces without purple washes or bright white papers.
 - Text (#e5ede0), supporting text (#b3c1ad), and hairlines (#354a39) retain their established dark pairs.
 
 **Shared rules**
 
 - The closing band is a dark island in both themes. Use the dark-theme accent and button there.
-- Status chips use only their semantic pairs. Plum/lilac are brand surfaces, not status colors.
-- Product surfaces use solid tokens, with borders and subtle raised shadows instead of green glows. The hero previews have a lilac stage and varied document composition, not unrelated logos.
+- Status chips use only their semantic pairs. Plum is a restrained accent, not a surface or status color.
+- Product surfaces use solid tokens, with borders and subtle raised shadows instead of green glows. The hero previews have a neutral stone stage and varied document composition, not unrelated logos.
 - The `theme-color` is `primary` in light and `neutral-dark` in dark. Keep the initial meta tag in `nuxt.config.ts` in sync.
 
 ## Typography
@@ -428,7 +428,7 @@ Depth comes from tonal layers first. The layers, from back to front: `neutral` p
 - **Floating:** `0 24px 64px #16392d17`. Use it only for the hero app window.
 - **Dark theme:** `0 18px 48px #00000022` for every raised element.
 - **Tilt:** Illustrative floating elements rotate 2 to 4 degrees. Alternate the direction: app window -2deg, float label 4deg, success chip 2deg, paper mockup -4deg.
-- **Legacy decorative properties:** Existing glow/orbit custom properties remain available for other pages, but the homepage does not render green hero glows or orbit rings. The quote gallery uses a solid lilac stage.
+- **Legacy decorative properties:** Existing glow/orbit custom properties remain available for other pages, but the homepage does not render green hero glows or orbit rings. The quote gallery uses a solid neutral stone stage.
 - **Dialog backdrop:** Ink at 60% (`#16392d99`) with a 5px backdrop blur.
 
 ## Shapes

@@ -24,7 +24,7 @@
           <div
             class="workspace"
             role="img"
-            aria-label="Exemplo ilustrativo de catálogo: aquecedor por R$ 3.490, kit por R$ 380 e instalação por R$ 650."
+            aria-label="Exemplo ilustrativo de catálogo: bolo por R$ 350, docinhos por R$ 180 e decoração da mesa por R$ 120."
           >
             <div class="workspace-bar">
               <b>orce.me</b><span>Catálogo</span
@@ -40,20 +40,19 @@
               </div>
               <div class="catalog-row">
                 <span
-                  ><b>Aquecedor a gás 26L</b
-                  ><small>Produto · AQ-026</small></span
-                ><strong>R$ 3.490,00</strong>
+                  ><b>Bolo de aniversário</b
+                  ><small>Produto · BL-001</small></span
+                ><strong>R$ 350,00</strong>
               </div>
               <div class="catalog-row">
                 <span
-                  ><b>Kit de instalação</b><small>Produto · KT-001</small></span
-                ><strong>R$ 380,00</strong>
+                  ><b>Caixa de docinhos</b><small>Produto · DC-001</small></span
+                ><strong>R$ 180,00</strong>
               </div>
               <div class="catalog-row">
                 <span
-                  ><b>Instalação e configuração</b
-                  ><small>Serviço · SV-001</small></span
-                ><strong>R$ 650,00</strong>
+                  ><b>Decoração da mesa</b><small>Serviço · SV-001</small></span
+                ><strong>R$ 120,00</strong>
               </div>
               <div class="workspace-note">
                 3 itens prontos para o próximo orçamento
@@ -73,7 +72,7 @@
           <div
             class="workspace"
             role="img"
-            aria-label="Exemplo ilustrativo de orçamento número 0042 para Marina Oliveira: três itens, sem desconto, total de R$ 4.520."
+            aria-label="Exemplo ilustrativo de orçamento número 0042 para Marina Oliveira: três itens, sem desconto, total de R$ 650."
           >
             <div class="workspace-bar">
               <b>orce.me</b><span>Orçamento #0042</span
@@ -82,19 +81,19 @@
             <div class="workspace-body">
               <div class="client-field">
                 <small>CLIENTE</small><b>Marina Oliveira</b
-                ><span>Aquecimento residencial</span>
+                ><span>Festa de aniversário</span>
               </div>
               <div class="proposal-line">
                 <span>Produtos e serviços</span><b>3 itens</b>
               </div>
               <div class="proposal-line">
-                <span>Subtotal</span><b>R$ 4.520,00</b>
+                <span>Subtotal</span><b>R$ 650,00</b>
               </div>
               <div class="proposal-line">
                 <span>Desconto</span><b>R$ 0,00</b>
               </div>
               <div class="proposal-total">
-                <span>Total do orçamento</span><strong>R$ 4.520,00</strong>
+                <span>Total do orçamento</span><strong>R$ 650,00</strong>
               </div>
               <div class="export-note">
                 <span aria-hidden="true">✓</span> PDF com os dados da sua
@@ -117,15 +116,15 @@
             aria-label="Exemplo ilustrativo de histórico: orçamento 0042 enviado, 0041 aceito e 0040 em rascunho."
           >
             <div>
-              <span><b>#0042</b> Aquecimento residencial</span
+              <span><b>#0042</b> Festa de aniversário</span
               ><span class="status sent">Enviado</span>
             </div>
             <div>
-              <span><b>#0041</b> Instalação comercial</span
+              <span><b>#0041</b> Ensaio fotográfico</span
               ><span class="status accepted">Aceito</span>
             </div>
             <div>
-              <span><b>#0040</b> Manutenção preventiva</span
+              <span><b>#0040</b> Pintura de quarto</span
               ><span class="status draft">Rascunho</span>
             </div>
           </div>
