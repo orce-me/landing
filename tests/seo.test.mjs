@@ -60,7 +60,7 @@ test('public production pages expose canonical, metadata, schema and valid route
       )
       assert.match(home, /rel="canonical" href="https:\/\/example.com\/"/)
       assert.equal((home.match(/<h1\b/g) || []).length, 1)
-      assert.match(home, /Orçamentos profissionais/)
+      assert.match(home, /Crie orçamentos/)
       assert.match(home, /property="og:url" content="https:\/\/example.com\/"/)
       const schema = JSON.parse(
         home.match(
@@ -90,8 +90,29 @@ test('public production pages expose canonical, metadata, schema and valid route
       assert.match(robots, /Allow: \/\n/)
       assert.match(robots, /Sitemap: https:\/\/example.com\/sitemap.xml/)
       const sitemap = await (await fetch(`${base}/sitemap.xml`)).text()
-      assert.equal((sitemap.match(/<loc>/g) || []).length, 8)
+      assert.equal((sitemap.match(/<loc>/g) || []).length, 10)
       assert.ok(!sitemap.includes('localhost'))
+      for (const slug of ['planos-e-precos', 'ajuda']) {
+        const response = await fetch(`${base}/${slug}`)
+        assert.equal(response.status, 200)
+        const page = await response.text()
+        assert.ok(
+          page.includes(`rel="canonical" href="https://example.com/${slug}"`),
+        )
+        assert.equal((page.match(/<h1\b/g) || []).length, 1)
+        assert.ok(sitemap.includes(`https://example.com/${slug}`))
+        assert.notEqual(meta(page, 'description'), meta(home, 'description'))
+        for (const anchor of ['como-funciona', 'recursos', 'materiais']) {
+          assert.ok(page.includes(`href="/#${anchor}"`))
+          assert.ok(home.includes(`id="${anchor}"`))
+        }
+      }
+      assert.doesNotMatch(
+        home,
+        /<details|Sincronizar produtos|pacote inteiro|R\$ 20–30/,
+      )
+      assert.match(home, /Layouts em preparação/)
+      assert.equal((home.match(/Menos tempo orçando/g) || []).length, 1)
       for (const slug of [
         'calculadora-de-desconto',
         'calculadora-de-margem',

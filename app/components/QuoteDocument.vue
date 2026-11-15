@@ -1,13 +1,17 @@
+<script setup>
+defineProps({ layout: { type: String, default: 'essential' } })
+</script>
+
 <template>
-  <div class="app-inner">
+  <div class="app-inner" :class="`document-${layout}`">
     <div class="app-top">
-      <span class="mini-logo">a<span>c</span> <b>almeida & costa</b></span
-      ><span class="status">Demonstração</span>
+      <span class="mini-logo">se <b>sua empresa</b></span>
+      <span class="status">Orçamento</span>
     </div>
     <div class="quote-title">
       <div>
         <small>ORÇAMENTO Nº 0042</small>
-        <h2>Um projeto para sair do papel.</h2>
+        <h3>Aquecimento residencial.</h3>
       </div>
     </div>
     <div class="customer">
@@ -38,13 +42,20 @@
       <span>Total do orçamento<small>Produtos e serviços, juntos.</small></span
       ><strong>R$ 4.520,00</strong>
     </div>
+    <div class="document-terms">
+      <b>Condições da proposta</b>
+      <p>Validade: 15 dias · Prazo de instalação: a combinar.</p>
+      <p>Pagamento: 50% na aprovação e 50% na entrega.</p>
+    </div>
   </div>
 </template>
 
 <style scoped>
 /* Illustrative mockup. It uses its own reduced type scale. */
 .app-inner {
-  padding: 25px;
+  padding: 20px;
+  font-size: 9px;
+  line-height: 1.5;
 }
 
 .app-top {
@@ -82,7 +93,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin-top: 31px;
+  margin-top: 20px;
 }
 
 .quote-title small {
@@ -91,17 +102,17 @@
   color: var(--color-on-surface-muted);
 }
 
-.quote-title h2 {
+.quote-title h3 {
   font-family: var(--typography-display-accent-font-family), Georgia, serif;
-  font-size: 26px;
+  font-size: 23px;
   margin-top: 6px;
   font-weight: 400;
 }
 
 .customer {
   display: flex;
-  gap: 45px;
-  padding: 22px 0;
+  gap: 20px;
+  padding: 15px 0;
   border-bottom: 1px solid var(--color-outline);
 }
 
@@ -123,7 +134,7 @@
 .table-head,
 .table-row {
   display: grid;
-  grid-template-columns: 1fr 45px 85px;
+  grid-template-columns: 1fr 25px 75px;
   align-items: center;
 }
 
@@ -131,12 +142,12 @@
   font-size: 6px;
   letter-spacing: 1px;
   color: var(--color-on-surface-muted);
-  margin: 19px 0 5px;
+  margin: 14px 0 5px;
 }
 
 .table-row {
   border-bottom: 1px solid var(--color-outline);
-  padding: 13px 0;
+  padding: 10px 0;
   font-size: 9px;
 }
 
@@ -161,8 +172,8 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-top: 19px;
-  padding: 15px;
+  margin-top: 14px;
+  padding: 12px;
   background: var(--color-surface-tint);
   border-radius: var(--rounded-sm);
   font-size: 9px;
@@ -176,7 +187,7 @@
 }
 
 .total strong {
-  font-size: 23px;
+  font-size: 20px;
   font-weight: 500;
   letter-spacing: -0.7px;
   color: var(--color-on-surface);
@@ -191,7 +202,60 @@
 @media (max-width: 760px) {
   .table-head,
   .table-row {
-    grid-template-columns: 1fr 35px 80px;
+    grid-template-columns: 1fr 20px 70px;
   }
+}
+
+.document-terms {
+  border-top: 1px solid var(--color-outline);
+  padding-top: 14px;
+  margin-top: 18px;
+  font-size: 7px;
+  line-height: 1.8;
+  color: var(--color-on-surface-muted);
+}
+.document-terms b {
+  color: var(--color-on-surface);
+}
+.document-editorial {
+  border-top: 6px solid var(--color-secondary);
+}
+.document-editorial .quote-title {
+  margin-top: 24px;
+  border-bottom: 1px solid var(--color-secondary);
+  padding-bottom: 14px;
+}
+.document-editorial .quote-title h3 {
+  font-family: var(--typography-body-md-font-family), sans-serif;
+  font-size: 24px;
+  font-weight: 500;
+}
+.document-editorial .customer {
+  flex-direction: column;
+  gap: 12px;
+}
+.document-editorial .total {
+  background: var(--color-band);
+}
+.document-compact .app-top {
+  flex-direction: row-reverse;
+}
+.document-compact .quote-title {
+  margin-top: 20px;
+}
+.document-compact .quote-title h3 {
+  font-size: 22px;
+}
+.document-compact .customer {
+  padding: 15px 0;
+}
+.document-compact .total {
+  border-top: 2px solid var(--color-primary);
+  border-radius: 0;
+  background: none;
+  padding-inline: 0;
+}
+.document-compact .table-row {
+  padding: 9px 0;
 }
 </style>

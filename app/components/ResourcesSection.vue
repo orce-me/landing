@@ -1,6 +1,6 @@
 <template>
   <section class="resources wrap section" id="materiais">
-    <h2>Um orçamento melhor começa<br /><em>com informação clara.</em></h2>
+    <h2>Guias e calculadoras gratuitas.</h2>
     <p class="intro">
       Ferramentas gratuitas e exemplos para tirar a proposta do papel.
     </p>
@@ -84,7 +84,7 @@
   border: 1px solid var(--color-outline);
   border-radius: var(--rounded-lg);
   padding: 24px;
-  background: var(--color-surface-tint);
+  background: var(--color-surface);
 }
 .resource h3 {
   display: flex;

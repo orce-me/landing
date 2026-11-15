@@ -5,7 +5,8 @@ const year = new Date().getFullYear()
 <template>
   <footer class="wrap">
     <a class="brand" href="/">orce<span class="brand-dot">.</span>me</a
-    ><span>Feito para quem faz.</span><a href="/#duvidas">Dúvidas frequentes</a
+    ><NuxtLink to="/planos-e-precos">Planos e preços</NuxtLink>
+    <NuxtLink to="/ajuda">Ajuda</NuxtLink
     ><NuxtLink to="/como-fazer-orcamento-de-servicos"
       >Guia de orçamentos</NuxtLink
     ><small>© {{ year }} orce.me</small>

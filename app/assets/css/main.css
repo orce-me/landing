@@ -44,9 +44,7 @@
 
 body {
   margin: 0;
-  background:
-    radial-gradient(ellipse at 95% 8%, var(--glow-page), transparent 32%),
-    var(--color-neutral);
+  background: var(--color-neutral);
 }
 
 a {

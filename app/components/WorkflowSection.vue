@@ -1,12 +1,11 @@
 <template>
   <section class="workflow wrap section" id="como-funciona">
     <div class="section-heading">
-      <h2>
-        Como criar seu orçamento online.<br /><em
-          >O trabalho repetitivo fica com a gente.</em
-        >
-      </h2>
-      <p>Você conhece o serviço. O orce.me organiza o resto.</p>
+      <h2>Do catálogo ao PDF, em três etapas.</h2>
+      <p>
+        Organize os itens, confira os valores e prepare o documento para seu
+        cliente.
+      </p>
     </div>
     <div class="steps">
       <article>
