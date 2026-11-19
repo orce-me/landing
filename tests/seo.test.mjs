@@ -60,7 +60,7 @@ test('public production pages expose canonical, metadata, schema and valid route
       )
       assert.match(home, /rel="canonical" href="https:\/\/example.com\/"/)
       assert.equal((home.match(/<h1\b/g) || []).length, 1)
-      assert.match(home, /Orçamentos profissionais/)
+      assert.match(home, /Crie orçamentos/)
       assert.match(home, /property="og:url" content="https:\/\/example.com\/"/)
       const schema = JSON.parse(
         home.match(
@@ -84,14 +84,40 @@ test('public production pages expose canonical, metadata, schema and valid route
         guide,
         /rel="canonical" href="https:\/\/example.com\/como-fazer-orcamento-de-servicos"/,
       )
-      assert.match(guide, /R\$ 5.170,00/)
+      assert.match(guide, /R\$ 770,00/)
       assert.notEqual(meta(guide, 'description'), meta(home, 'description'))
       const robots = await (await fetch(`${base}/robots.txt`)).text()
       assert.match(robots, /Allow: \/\n/)
       assert.match(robots, /Sitemap: https:\/\/example.com\/sitemap.xml/)
       const sitemap = await (await fetch(`${base}/sitemap.xml`)).text()
-      assert.equal((sitemap.match(/<loc>/g) || []).length, 8)
+      assert.equal((sitemap.match(/<loc>/g) || []).length, 10)
       assert.ok(!sitemap.includes('localhost'))
+      for (const slug of ['planos-e-precos', 'ajuda']) {
+        const response = await fetch(`${base}/${slug}`)
+        assert.equal(response.status, 200)
+        const page = await response.text()
+        assert.ok(
+          page.includes(`rel="canonical" href="https://example.com/${slug}"`),
+        )
+        assert.equal((page.match(/<h1\b/g) || []).length, 1)
+        assert.ok(sitemap.includes(`https://example.com/${slug}`))
+        assert.notEqual(meta(page, 'description'), meta(home, 'description'))
+        for (const anchor of ['como-funciona', 'recursos']) {
+          assert.ok(page.includes(`href="/#${anchor}"`))
+          assert.ok(home.includes(`id="${anchor}"`))
+        }
+      }
+      assert.doesNotMatch(
+        home,
+        /<details|Sincronizar produtos|pacote inteiro|R\$ 20–30/,
+      )
+      assert.match(home, /Tela de orçamentos do orce\.me/)
+      assert.equal((home.match(/Menos tempo orçando/g) || []).length, 1)
+      // The home links the quote calculator, which links every other tool.
+      assert.match(home, /href="\/calculadora-de-orcamento"/)
+      const quoteCalculator = await (
+        await fetch(`${base}/calculadora-de-orcamento`)
+      ).text()
       for (const slug of [
         'calculadora-de-desconto',
         'calculadora-de-margem',
@@ -105,7 +131,10 @@ test('public production pages expose canonical, metadata, schema and valid route
         )
         assert.equal((page.match(/<h1\b/g) || []).length, 1)
         assert.ok(page.includes('application/ld+json'))
-        assert.ok(home.includes(`href="/${slug}"`))
+        assert.ok(
+          quoteCalculator.includes(`href="/${slug}"`) ||
+            slug === 'calculadora-de-orcamento',
+        )
         assert.ok(sitemap.includes(`https://example.com/${slug}`))
       }
 

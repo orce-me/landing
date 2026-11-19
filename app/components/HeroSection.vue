@@ -3,136 +3,135 @@ const appUrl = useRuntimeConfig().public.appUrl
 </script>
 
 <template>
-  <section class="hero wrap">
-    <div class="hero-copy">
-      <h1>Orçamentos profissionais.<br /><em>Seu próximo negócio.</em></h1>
+  <section class="hero" aria-labelledby="hero-title">
+    <div class="hero-copy wrap">
+      <h1 id="hero-title">
+        Crie orçamentos e envie <br class="desktop-break" />
+        <em>em PDF com a sua marca.</em>
+      </h1>
       <p>
-        Conte o que precisa. Organize produtos, serviços e valores sem
-        complicação e tenha seu orçamento pronto com um clique.
+        Reúna produtos e serviços do seu catálogo, ajuste os valores e gere uma
+        proposta com os dados da sua empresa.
       </p>
-      <div class="actions">
-        <a class="button primary" :href="appUrl">Criar meu primeiro orçamento</a
-        ><a class="text-link" href="#demonstracao"
-          >Conhecer por dentro <span>↓</span></a
+      <div class="hero-actions">
+        <a class="button primary" :href="appUrl"
+          >Criar meu primeiro orçamento
+          <span class="arrow-dot" aria-hidden="true">→</span></a
+        >
+        <a class="arrow-link see-how" href="#como-funciona"
+          >Ver como funciona <span aria-hidden="true">↓</span></a
         >
       </div>
     </div>
-    <QuoteDemo />
+    <div class="hero-product wrap">
+      <QuoteDemo />
+    </div>
   </section>
 </template>
 
 <style scoped>
 .hero {
-  display: grid;
-  grid-template-columns: 1fr 1.08fr;
-  align-items: center;
-  gap: 44px;
-  padding-top: 36px;
-  padding-bottom: 42px;
   position: relative;
+  isolation: isolate;
+  padding-top: var(--spacing-5xl);
+  padding-bottom: var(--spacing-section);
 }
-
+/* DESIGN.md, Elevation & Depth: the hero wash. */
+.hero::before {
+  content: '';
+  position: absolute;
+  inset: 34% 0 0;
+  z-index: -1;
+  background:
+    radial-gradient(
+      60% 70% at 25% 60%,
+      var(--color-primary-soft),
+      transparent 70%
+    ),
+    radial-gradient(
+      50% 60% at 80% 45%,
+      var(--color-tertiary-soft),
+      transparent 70%
+    );
+}
+.hero-copy {
+  max-width: 860px;
+  text-align: center;
+  animation: fade-up 0.8s var(--ease-soft) both;
+}
 h1 {
   margin: 0;
-}
-
-h1 {
   font-size: var(--typography-display-font-size);
+  font-weight: var(--typography-display-font-weight);
   letter-spacing: var(--typography-display-letter-spacing);
   line-height: var(--typography-display-line-height);
-  font-weight: var(--typography-display-font-weight);
-  margin: 23px 0;
 }
-
-h1 em {
-  font-size: var(--typography-display-accent-font-size);
-  letter-spacing: var(--typography-display-accent-letter-spacing);
-}
-
 .hero-copy > p {
-  max-width: 410px;
-  font-size: var(--typography-body-lg-font-size);
+  max-width: 580px;
+  margin: var(--spacing-2xl) auto 0;
+  font-size: var(--typography-lead-font-size);
+  line-height: var(--typography-lead-line-height);
   color: var(--color-on-surface-muted);
-  line-height: var(--typography-body-lg-line-height);
 }
-
-.actions {
+.hero-actions {
   display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
   align-items: center;
-  gap: 20px;
-  margin-top: 31px;
+  gap: var(--spacing-lg) var(--spacing-2xl);
+  margin-top: var(--spacing-3xl);
 }
-
-.text-link {
-  font-size: var(--typography-body-sm-font-size);
-  white-space: nowrap;
-  display: flex;
-  gap: 8px;
+.see-how {
+  font-size: var(--typography-label-lg-font-size);
+  font-weight: var(--typography-label-lg-font-weight);
 }
-
-@media (min-width: 1450px) {
-  .hero {
-    padding-top: 48px;
-    padding-bottom: 48px;
+.see-how:hover span {
+  transform: translateY(3px);
+}
+.hero-product {
+  margin-top: var(--spacing-5xl);
+}
+@keyframes fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
   }
 }
-
-@media (max-width: 1050px) {
-  .hero {
-    gap: 25px;
-  }
-}
-
 @media (max-width: 1050px) {
   h1 {
     font-size: 52px;
+    letter-spacing: -1.6px;
   }
 }
-
-@media (max-width: 1050px) {
-  h1 em {
-    font-size: 62px;
-  }
-}
-
-@media (max-width: 1050px) {
-  .actions {
-    flex-wrap: wrap;
-    gap: 17px;
-  }
-}
-
 @media (max-width: 760px) {
+  .desktop-break {
+    display: none;
+  }
   .hero {
-    grid-template-columns: 1fr;
-    padding-top: 34px;
-    padding-bottom: 55px;
-    gap: 55px;
+    padding-top: var(--spacing-3xl);
+    padding-bottom: var(--spacing-section-mobile);
   }
-}
-
-@media (max-width: 760px) {
   .hero-copy {
-    max-width: 540px;
+    text-align: left;
   }
-}
-
-@media (max-width: 760px) {
   h1 {
-    font-size: 57px;
-    letter-spacing: -2.8px;
+    font-size: 40px;
+    letter-spacing: -1.2px;
   }
-}
-
-@media (max-width: 760px) {
-  h1 em {
-    font-size: 66px;
-  }
-}
-
-@media (max-width: 760px) {
   .hero-copy > p {
-    font-size: 14px;
+    margin-left: 0;
+    font-size: var(--typography-body-lg-font-size);
+  }
+  .hero-actions {
+    justify-content: flex-start;
+  }
+  .hero-product {
+    margin-top: var(--spacing-4xl);
+  }
+}
+@media (max-width: 380px) {
+  h1 {
+    font-size: 34px;
   }
 }
 </style>

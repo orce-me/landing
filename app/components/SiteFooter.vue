@@ -4,67 +4,70 @@ const year = new Date().getFullYear()
 
 <template>
   <footer class="wrap">
-    <a class="brand" href="/">orce<span class="brand-dot">.</span>me</a
-    ><span>Feito para quem faz.</span><a href="/#duvidas">Dúvidas frequentes</a
+    <a class="brand" href="/"
+      ><BrandMark class="mark" />orce<span class="brand-dot">.</span>me</a
+    ><NuxtLink to="/planos-e-precos">Planos e preços</NuxtLink>
+    <NuxtLink to="/ajuda">Ajuda</NuxtLink
     ><NuxtLink to="/como-fazer-orcamento-de-servicos"
       >Guia de orçamentos</NuxtLink
+    ><NuxtLink to="/calculadora-de-orcamento">Calculadora de orçamento</NuxtLink
     ><small>© {{ year }} orce.me</small>
   </footer>
 </template>
 
 <style scoped>
+footer {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-3xl);
+  padding-top: var(--spacing-3xl);
+  padding-bottom: var(--spacing-3xl);
+  border-top: 1px solid var(--color-outline);
+}
+
 .brand {
   display: flex;
   align-items: center;
-  font-size: var(--typography-brand-font-size);
+  font-size: 22px;
   font-weight: var(--typography-brand-font-weight);
   line-height: var(--typography-brand-line-height);
   letter-spacing: var(--typography-brand-letter-spacing);
+}
+
+.mark {
+  width: 22px;
+  height: 22px;
+  margin-right: 8px;
 }
 
 .brand-dot {
   color: var(--color-tertiary);
 }
 
-footer {
-  display: flex;
-  align-items: center;
-  gap: 35px;
-  padding-top: 32px;
-  padding-bottom: 32px;
+footer > a:not(.brand) {
+  font-size: var(--typography-label-lg-font-size);
+  color: var(--color-on-surface-muted);
 }
 
-footer .brand {
-  font-size: 24px;
+footer > a:nth-child(2) {
+  margin-left: auto;
 }
 
-footer > span,
 footer small {
   font-size: var(--typography-label-sm-font-size);
   color: var(--color-on-surface-muted);
 }
 
-footer > a:not(.brand) {
-  margin-left: auto;
-  font-size: var(--typography-label-sm-font-size);
-}
-
 @media (max-width: 760px) {
   footer {
     flex-wrap: wrap;
-    gap: 18px;
+    gap: var(--spacing-lg);
   }
-}
-
-@media (max-width: 760px) {
-  footer > a:not(.brand) {
+  footer > a:nth-child(2) {
     margin-left: 0;
   }
-}
-
-@media (max-width: 760px) {
   footer small {
-    margin-left: auto;
+    width: 100%;
   }
 }
 </style>

@@ -68,12 +68,46 @@ if (origin) {
 <template>
   <div>
     <HeroSection />
-    <AudienceSection />
     <WorkflowSection />
     <FeaturesSection />
-    <PlansSection />
-    <ResourcesSection />
-    <FaqSection />
+    <div class="wrap">
+      <div class="plan-banner" v-reveal>
+        <p>Planos e preços.</p>
+        <NuxtLink class="arrow-link" to="/planos-e-precos"
+          >Ver as condições <span aria-hidden="true">→</span></NuxtLink
+        >
+      </div>
+    </div>
     <ClosingSection />
   </div>
 </template>
+
+<style scoped>
+.plan-banner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: var(--spacing-2xl);
+  padding: var(--spacing-2xl) var(--spacing-3xl);
+  background: var(--color-surface);
+  border-radius: var(--rounded-xl);
+}
+.plan-banner p {
+  font-size: var(--typography-title-md-font-size);
+  font-weight: var(--typography-title-md-font-weight);
+}
+.plan-banner a {
+  flex-shrink: 0;
+  color: var(--color-primary);
+  font-size: var(--typography-label-md-font-size);
+  font-weight: var(--typography-label-md-font-weight);
+}
+@media (max-width: 760px) {
+  .plan-banner {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--spacing-sm);
+    padding: var(--spacing-xl);
+  }
+}
+</style>

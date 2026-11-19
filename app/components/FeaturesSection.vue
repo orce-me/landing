@@ -1,357 +1,168 @@
 <template>
-  <section class="features" id="recursos">
+  <section class="features" id="recursos" aria-labelledby="features-title">
     <div class="wrap section">
-      <div class="feature-heading">
-        <div>
-          <h2>
-            O cuidado está nos detalhes.<br /><em
-              >E no que você não precisa refazer.</em
-            >
-          </h2>
-        </div>
-        <p>Menos copiar e colar.<br />Mais clareza em cada proposta.</p>
+      <div class="feature-heading" v-reveal>
+        <h2 id="features-title">
+          Do item cadastrado<br /><em>ao documento final.</em>
+        </h2>
       </div>
       <div class="feature-grid">
-        <article class="feature-main">
-          <span class="feature-icon">▦</span>
-          <h3>Seu catálogo trabalha com você.</h3>
-          <p>
-            Produtos, serviços e preços em um lugar só. Atualize uma vez e use
-            nos próximos orçamentos.
-          </p>
-          <div class="catalog">
-            <div>
-              <span class="product-icon">▣</span
-              ><span
-                ><b>Aquecedor a gás 26L</b
-                ><small>Equipamentos · AQ-026</small></span
-              ><strong>R$ 3.490,00</strong>
-            </div>
-            <div>
-              <span class="product-icon">⌁</span
-              ><span
-                ><b>Instalação e configuração</b
-                ><small>Serviços · SV-001</small></span
-              ><strong>R$ 650,00</strong>
-            </div>
-            <div class="catalog-search">
-              ⌕ <span>Encontre o próximo item do seu orçamento...</span>
-            </div>
+        <article class="feature-card" v-reveal="0">
+          <div class="feature-copy">
+            <h3>Reutilize itens do catálogo.</h3>
+            <p>
+              Guarde descrições e preços de produtos e serviços. Importe uma
+              planilha CSV ou adicione cada item.
+            </p>
+          </div>
+          <div class="shot" data-nosnippet>
+            <img
+              src="/screens/catalog.webp"
+              width="2020"
+              height="880"
+              loading="lazy"
+              decoding="async"
+              alt="Tela de produtos do orce.me: aquecedores, materiais e serviços de instalação com tipo, variações e preço."
+            />
           </div>
         </article>
-        <article>
-          <h3>Uma proposta com a sua cara.</h3>
-          <p>
-            Sua marca, seus dados e uma apresentação profissional. Um documento
-            à altura do seu trabalho.
-          </p>
-          <div class="paper-mini">
-            <span class="mini-logo">ac <b>almeida & costa</b></span
-            ><strong>Orçamento</strong><i></i><i></i><i></i>
-            <div>TOTAL <b>R$ 4.520,00</b></div>
+        <article class="feature-card" v-reveal="1">
+          <div class="feature-copy">
+            <h3>Cliente, itens e total juntos.</h3>
+            <p>
+              Ajuste quantidades e descontos, confira o total e exporte um PDF
+              com os dados da sua empresa.
+            </p>
+          </div>
+          <div class="shot" data-nosnippet>
+            <img
+              src="/screens/proposal.webp"
+              width="1932"
+              height="942"
+              loading="lazy"
+              decoding="async"
+              alt="Itens de um orçamento no orce.me: aquecedor, tubo e instalação com quantidade, unidade, preço e total de R$ 3.529,00."
+            />
           </div>
         </article>
-        <article>
-          <span class="feature-icon">◷</span>
-          <h3>Nenhum orçamento esquecido.</h3>
-          <p>
-            Consulte o histórico e registre o que foi enviado, aceito ou
-            recusado. Retome a conversa com contexto.
-          </p>
-          <div class="status-list">
-            <span>Reforma residencial <b>Enviado</b></span
-            ><span>Instalação comercial <b> Aceito ✓</b></span
-            ><span>Manutenção preventiva <b>Rascunho</b></span>
+        <article class="feature-card feature-wide" v-reveal>
+          <div class="feature-copy">
+            <h3>Acompanhe cada proposta.</h3>
+            <p>
+              Veja quanto está aguardando resposta, quais propostas vencem nos
+              próximos dias e quantas foram aceitas.
+            </p>
+          </div>
+          <div class="shot" data-nosnippet>
+            <img
+              src="/screens/home.webp"
+              width="2020"
+              height="1360"
+              loading="lazy"
+              decoding="async"
+              alt="Início do orce.me: valor aguardando resposta, orçamentos por status, taxa de aceite, valor enviado por semana e propostas que precisam de retorno."
+            />
           </div>
         </article>
       </div>
+      <p class="illustration-note">Telas do orce.me com dados de exemplo.</p>
     </div>
   </section>
 </template>
 
 <style scoped>
-.mini-logo {
-  font-size: 21px;
-  font-weight: 700;
-  letter-spacing: -2px;
+.feature-heading h2 {
+  margin-bottom: 0;
+  text-align: center;
 }
-
-.mini-logo b {
-  font-size: 9px;
-  letter-spacing: 0;
-  font-weight: 500;
-  margin-left: 8px;
-}
-
-.feature-grid p {
-  font-size: var(--typography-body-sm-font-size);
-  line-height: var(--typography-body-sm-line-height);
-  color: var(--color-on-surface-muted);
-  max-width: 305px;
-}
-
-.features {
-  background: linear-gradient(
-    125deg,
-    var(--color-band),
-    var(--color-surface-tint) 55%,
-    var(--color-band)
-  );
-  border-top: 1px solid var(--color-outline);
-  border-bottom: 1px solid var(--color-outline);
-}
-
-.feature-heading {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-end;
-}
-
-.feature-heading > p {
-  font-size: var(--typography-body-sm-font-size);
-  line-height: var(--typography-body-sm-line-height);
-  color: var(--color-on-surface-muted);
-  margin-bottom: 20px;
-}
-
 .feature-grid {
   display: grid;
-  grid-template-columns: 1.3fr 1fr 1fr;
-  gap: 20px;
-  margin-top: 35px;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--spacing-2xl);
+  margin-top: var(--spacing-4xl);
 }
-
-.feature-grid article {
-  padding: 24px;
-  background: var(--color-surface);
-  border: 1px solid var(--color-outline);
-  border-radius: var(--rounded-lg);
-  box-shadow: var(--shadow-raised);
-  overflow: hidden;
-}
-
-.feature-icon {
-  font-size: 22px;
-  color: var(--color-secondary);
-}
-
-.feature-grid h3 {
-  margin: 21px 0 12px;
-}
-
-.catalog {
-  background: var(--color-surface-raised);
-  border: 1px solid var(--color-outline);
-  border-radius: var(--rounded-md);
-  margin-top: 26px;
-  overflow: hidden;
-}
-
-.catalog > div {
+.feature-card {
   display: flex;
-  gap: 9px;
-  align-items: center;
-  padding: 13px 10px;
-  border-bottom: 1px solid var(--color-outline);
+  flex-direction: column;
+  min-width: 0;
+  overflow: hidden;
+  border-radius: var(--rounded-xl);
+  background: var(--color-surface);
 }
-
-.product-icon {
-  display: grid;
-  place-items: center;
-  background: var(--color-surface-tint);
-  width: 29px;
-  height: 29px;
-  color: var(--color-secondary);
-  border-radius: var(--rounded-sm);
+.feature-copy {
+  padding: var(--spacing-3xl);
 }
-
-.catalog b {
-  display: block;
-  font-size: 8px;
-  font-weight: 500;
+.feature-copy h3 {
+  margin: 0 0 var(--spacing-md);
+  max-width: 350px;
+  font-size: var(--typography-title-lg-font-size);
+  letter-spacing: var(--typography-title-lg-letter-spacing);
+  line-height: var(--typography-title-lg-line-height);
 }
-
-.catalog small {
-  font-size: 7px;
+.feature-copy p {
+  max-width: 390px;
+  font-size: var(--typography-body-md-font-size);
+  line-height: var(--typography-body-md-line-height);
   color: var(--color-on-surface-muted);
 }
-
-.catalog strong {
-  font-size: 8px;
-  white-space: nowrap;
-  font-weight: 500;
-  margin-left: auto;
-}
-
-.catalog .catalog-search {
-  border: 0;
-  color: var(--color-on-surface-muted);
-  font-size: 14px;
-  padding: 12px;
-}
-
-.catalog-search > span {
-  font-size: 7px;
-}
-
-.paper-mini {
+/* A real screen that enters from the right and is cut by the card edges. */
+.shot {
+  margin: auto 0 0 var(--spacing-3xl);
+  overflow: hidden;
+  border: 1px solid var(--color-outline);
+  border-right: 0;
+  border-bottom: 0;
+  border-top-left-radius: var(--rounded-lg);
   background: var(--color-surface-raised);
   box-shadow: var(--shadow-raised);
-  border: 1px solid var(--color-outline);
-  padding: 19px;
-  margin: 27px 12px -50px;
-  transform: rotate(-4deg);
+  transition: transform 0.4s var(--ease-soft);
 }
-
-.paper-mini .mini-logo {
-  font-size: 17px;
+.shot img {
   display: block;
+  width: 150%;
+  max-width: none;
+  height: auto;
 }
-
-.paper-mini .mini-logo b {
-  font-size: 7px;
+.feature-card:hover .shot {
+  transform: translateY(-6px);
 }
-
-.paper-mini > strong {
-  display: block;
-  font-family: var(--typography-display-accent-font-family), Georgia, serif;
-  font-size: 25px;
-  font-weight: 400;
-  margin-top: 20px;
+.feature-wide {
+  grid-column: 1 / -1;
+  display: grid;
+  grid-template-columns: 0.8fr 1.2fr;
+  align-items: start;
 }
-
-.paper-mini > i {
-  height: 4px;
-  background: var(--color-surface-tint);
-  display: block;
-  margin-top: 12px;
+.feature-wide .shot {
+  margin: var(--spacing-3xl) 0 0;
+  max-height: 420px;
+}
+.feature-wide .shot img {
   width: 100%;
 }
-
-.paper-mini > i:nth-of-type(2) {
-  width: 70%;
+.illustration-note {
+  text-align: right;
+  margin-top: var(--spacing-lg);
+  font-size: var(--typography-label-sm-font-size);
+  color: var(--color-on-surface-muted);
 }
-
-.paper-mini > div {
-  background: var(--color-surface-tint);
-  margin-top: 22px;
-  padding: 12px;
-  font-size: 7px;
-  display: flex;
-  justify-content: space-between;
-}
-
-.status-list {
-  margin-top: 33px;
-  display: grid;
-  gap: 16px;
-}
-
-.status-list > span {
-  display: flex;
-  justify-content: space-between;
-  gap: 6px;
-  font-size: 8px;
-  align-items: center;
-}
-
-.status-list b {
-  font-size: 7px;
-  font-weight: 500;
-  background: var(--color-status-sent);
-  color: var(--color-on-status-sent);
-  padding: 5px 7px;
-  border-radius: var(--rounded-sm);
-}
-
-.status-list > span:nth-child(2) b {
-  background: var(--color-status-accepted);
-  color: var(--color-on-status-accepted);
-}
-
-.status-list > span:nth-child(3) b {
-  background: var(--color-status-draft);
-  color: var(--color-on-status-draft);
-}
-
-@media (max-width: 1050px) {
-  .feature-grid {
-    grid-template-columns: 1fr 1fr;
-  }
-}
-
-@media (max-width: 1050px) {
-  .feature-main {
-    grid-column: span 2;
-  }
-}
-
-@media (max-width: 1050px) {
-  .catalog {
-    max-width: 450px;
-  }
-}
-
 @media (max-width: 760px) {
-  .feature-heading {
-    display: block;
-  }
-}
-
-@media (max-width: 760px) {
-  .feature-heading > p {
-    margin-top: 20px;
-  }
-}
-
-@media (max-width: 760px) {
-  .feature-grid {
+  .feature-grid,
+  .feature-wide {
     grid-template-columns: 1fr;
-    margin-top: 25px;
   }
-}
-
-@media (max-width: 760px) {
-  .feature-main {
-    grid-column: auto;
+  .feature-copy {
+    padding: var(--spacing-2xl);
   }
-}
-
-@media (max-width: 760px) {
-  .feature-grid article {
-    min-height: 280px;
+  .shot {
+    margin-left: var(--spacing-2xl);
   }
-}
-
-@media (max-width: 760px) {
-  .feature-grid p {
-    max-width: 100%;
+  .feature-wide .shot {
+    margin: 0 0 0 var(--spacing-2xl);
+    max-height: 300px;
   }
-}
-
-@media (max-width: 760px) {
-  .paper-mini {
-    max-width: 240px;
-    margin-left: auto;
-    margin-right: auto;
-  }
-}
-
-@media (max-width: 760px) {
-  .status-list {
-    gap: 23px;
-  }
-}
-
-@media (max-width: 760px) {
-  .status-list > span {
-    font-size: 11px;
-  }
-}
-
-@media (max-width: 760px) {
-  .status-list b {
-    font-size: 9px;
+  .shot img,
+  .feature-wide .shot img {
+    width: 180%;
   }
 }
 </style>

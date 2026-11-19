@@ -78,8 +78,8 @@ if (origin) {
         </li>
         <li>
           <strong>Descrição do escopo.</strong> Explique o serviço, os materiais
-          incluídos e o que ficará fora da proposta. “Instalação de aquecedor”
-          fica mais claro quando acompanhado dos detalhes da instalação.
+          incluídos e o que ficará fora da proposta. “Decoração da mesa” fica
+          mais claro quando acompanhado dos itens e da montagem incluídos.
         </li>
         <li>
           <strong>Produtos, serviços e quantidades.</strong> Separe
@@ -99,7 +99,7 @@ if (origin) {
       </ol>
     </section>
     <section id="exemplo">
-      <h2>Exemplo de orçamento de instalação</h2>
+      <h2>Exemplo de orçamento para uma festa</h2>
       <p>
         Este exemplo é ilustrativo e usa os mesmos itens da demonstração do
         orce.me. Os valores não representam preços de mercado nem uma
@@ -108,7 +108,7 @@ if (origin) {
       <div class="table-scroll">
         <table>
           <caption>
-            Produtos e serviços para uma instalação residencial
+            Produtos e serviços para uma festa de aniversário
           </caption>
           <thead>
             <tr>
@@ -120,37 +120,37 @@ if (origin) {
           </thead>
           <tbody>
             <tr>
-              <th scope="row">Aquecedor a gás 26L</th>
+              <th scope="row">Bolo de aniversário</th>
               <td>1 unidade</td>
-              <td>R$ 3.490,00</td>
-              <td>R$ 3.490,00</td>
+              <td>R$ 350,00</td>
+              <td>R$ 350,00</td>
             </tr>
             <tr>
-              <th scope="row">Kit de instalação</th>
-              <td>1 conjunto</td>
-              <td>R$ 380,00</td>
-              <td>R$ 380,00</td>
+              <th scope="row">Caixa de docinhos</th>
+              <td>1 caixa</td>
+              <td>R$ 180,00</td>
+              <td>R$ 180,00</td>
             </tr>
             <tr>
-              <th scope="row">Instalação e configuração</th>
+              <th scope="row">Decoração da mesa</th>
               <td>1 serviço</td>
-              <td>R$ 650,00</td>
-              <td>R$ 650,00</td>
+              <td>R$ 120,00</td>
+              <td>R$ 120,00</td>
             </tr>
           </tbody>
           <tfoot>
             <tr>
               <th scope="row" colspan="3">Total sem desconto</th>
-              <td>R$ 4.520,00</td>
+              <td>R$ 650,00</td>
             </tr>
           </tfoot>
         </table>
       </div>
       <p>
         O cálculo é: quantidade × preço unitário para cada linha; depois, some
-        os subtotais. Se a quantidade de serviços passar de um para dois, a mão
-        de obra soma R$ 1.300,00 e o total passa a R$ 5.170,00. Uma revisão
-        evita enviar o total antigo depois de alterar os itens.
+        os subtotais. Se a decoração passar de uma mesa para duas, esse serviço
+        soma R$ 240,00 e o total passa a R$ 770,00. Uma revisão evita enviar o
+        total antigo depois de alterar os itens.
       </p>
     </section>
     <section id="revisao">

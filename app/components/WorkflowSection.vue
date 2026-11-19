@@ -1,151 +1,163 @@
 <template>
   <section class="workflow wrap section" id="como-funciona">
-    <div class="section-heading">
-      <h2>
-        Como criar seu orçamento online.<br /><em
-          >O trabalho repetitivo fica com a gente.</em
-        >
-      </h2>
-      <p>Você conhece o serviço. O orce.me organiza o resto.</p>
-    </div>
-    <div class="steps">
-      <article>
-        <span class="step-number">01</span>
+    <h2 v-reveal>Do catálogo ao PDF, <em>em três etapas.</em></h2>
+    <ol class="steps">
+      <li class="step" v-reveal="0">
+        <span class="step-number" aria-hidden="true">1</span>
         <h3>Monte seu catálogo.</h3>
         <p>
           Cadastre produtos e serviços ou importe uma planilha. Descrições e
           preços prontos para usar de novo.
         </p>
-        <div class="mini-tags">
-          <span>▧ Produtos</span><span>⌁ Serviços</span><span>↥ CSV</span>
+        <div class="snippet" aria-hidden="true">
+          <div><span>Aquecedor a gás 20 L/min</span><b>R$ 2.890,00</b></div>
+          <div><span>Tubo PPR 25 mm</span><b>R$ 18,90</b></div>
+          <div><span>Instalação de aquecedor</span><b>R$ 450,00</b></div>
         </div>
-      </article>
-      <article>
-        <span class="step-number">02</span>
-        <h3>Dê forma à proposta.</h3>
+      </li>
+      <li class="step" v-reveal="1">
+        <span class="step-number" aria-hidden="true">2</span>
+        <h3>Prepare a proposta.</h3>
         <p>
           Escolha o cliente, adicione os itens e ajuste quantidades e descontos.
           Confira cada detalhe antes de enviar.
         </p>
-        <div class="mini-calc">
-          <span>Produtos + serviços</span><b>= Seu orçamento</b>
+        <div class="snippet" aria-hidden="true">
+          <div><span>Rafael Souza</span><small>3 itens</small></div>
+          <div class="snippet-total"><span>Total</span><b>R$ 3.529,00</b></div>
         </div>
-      </article>
-      <article>
-        <span class="step-number">03</span>
-        <h3>Envie com confiança.</h3>
+      </li>
+      <li class="step" v-reveal="2">
+        <span class="step-number" aria-hidden="true">3</span>
+        <h3>Envie o PDF.</h3>
         <p>
-          Exporte um PDF profissional com a sua marca e acompanhe o status da
-          proposta em um só lugar.
+          Exporte o PDF com a sua marca e acompanhe o status de cada proposta.
         </p>
-        <div class="mini-tags">
-          <span class="green-tag">✓ PDF pronto</span><span>Enviado</span>
+        <div class="snippet" aria-hidden="true">
+          <div>
+            <span class="file"><i></i>orcamento-0015.pdf</span
+            ><span class="chip">Enviado</span>
+          </div>
         </div>
-      </article>
-    </div>
+      </li>
+    </ol>
   </section>
 </template>
 
 <style scoped>
-.section-heading {
+.workflow h2 {
   text-align: center;
 }
-
-.section-heading > p {
+.steps {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--spacing-xl);
+  margin: var(--spacing-4xl) 0 0;
+  padding: 0;
+  list-style: none;
+}
+.step {
+  display: flex;
+  flex-direction: column;
+  padding: var(--spacing-3xl);
+  border-radius: var(--rounded-xl);
+}
+.step {
+  background: var(--color-surface);
+}
+.step-number {
+  display: grid;
+  place-items: center;
+  width: 36px;
+  height: 36px;
+  border-radius: var(--rounded-full);
+  background: var(--color-primary);
+  color: var(--color-on-primary);
+  font-size: var(--typography-label-md-font-size);
+  font-weight: var(--typography-label-md-font-weight);
+}
+.step h3 {
+  font-size: var(--typography-title-lg-font-size);
+  font-weight: var(--typography-title-lg-font-weight);
+  letter-spacing: var(--typography-title-lg-letter-spacing);
+  line-height: var(--typography-title-lg-line-height);
+  margin: var(--spacing-2xl) 0 var(--spacing-sm);
+}
+.step p {
   font-size: var(--typography-body-md-font-size);
   line-height: var(--typography-body-md-line-height);
   color: var(--color-on-surface-muted);
 }
-
-.steps {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 40px;
-  margin-top: 57px;
+.snippet {
+  margin-top: auto;
+  padding: var(--spacing-md) var(--spacing-lg);
+  background: var(--color-surface-raised);
+  border-radius: var(--rounded-md);
+  box-shadow: var(--shadow-raised);
+  color: var(--color-on-surface);
+  font-size: var(--typography-body-sm-font-size);
+  font-variant-numeric: tabular-nums;
 }
-
-.step-number {
+.step p {
+  margin-bottom: var(--spacing-2xl);
+}
+.snippet > div {
   display: flex;
   justify-content: space-between;
-  border-top: 1px solid var(--color-outline);
-  padding-top: 15px;
-  font-size: var(--typography-body-sm-font-size);
-  color: var(--color-secondary);
-}
-
-.step-number i {
-  font-size: 18px;
-  font-style: normal;
-}
-
-.steps h3 {
-  margin: 22px 0 12px;
-}
-
-.steps p {
-  font-size: var(--typography-body-sm-font-size);
-  line-height: var(--typography-body-sm-line-height);
-  color: var(--color-on-surface-muted);
-  max-width: 305px;
-}
-
-.mini-tags {
-  display: flex;
-  gap: 7px;
-  margin-top: 20px;
-}
-
-.mini-tags > span {
-  background: var(--color-surface-tint);
-  border: 1px solid var(--color-outline);
-  border-radius: var(--rounded-sm);
-  padding: 6px 9px;
-  font-size: var(--typography-label-sm-font-size);
-  color: var(--color-secondary);
-}
-
-.mini-tags .green-tag {
-  background: var(--color-status-accepted);
-  color: var(--color-on-status-accepted);
-}
-
-.mini-calc {
-  display: flex;
-  gap: 14px;
   align-items: center;
-  margin-top: 24px;
+  gap: var(--spacing-md);
+  padding: 6px 0;
+}
+.snippet > div + div {
+  border-top: 1px solid var(--color-outline);
+}
+.snippet b {
+  font-weight: 600;
+  white-space: nowrap;
+}
+.snippet small {
   font-size: var(--typography-label-sm-font-size);
   color: var(--color-on-surface-muted);
 }
-
-.mini-calc b {
-  font-weight: 500;
-  color: var(--color-secondary);
+.snippet-total b {
+  font-size: var(--typography-figure-font-size);
+  font-weight: var(--typography-figure-font-weight);
+  letter-spacing: var(--typography-figure-letter-spacing);
 }
-
-@media (max-width: 760px) {
+.file {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+  font-weight: 500;
+}
+.file i {
+  width: 18px;
+  height: 22px;
+  border-radius: 3px;
+  background: var(--color-primary);
+}
+.chip {
+  padding: 2px var(--spacing-md);
+  border-radius: var(--rounded-full);
+  background: var(--color-status-sent);
+  color: var(--color-on-status-sent);
+  font-size: var(--typography-label-sm-font-size);
+  font-weight: 600;
+}
+@media (max-width: 1050px) {
   .steps {
     grid-template-columns: 1fr;
-    gap: 35px;
-    margin-top: 37px;
+  }
+  .step p {
+    max-width: 520px;
   }
 }
-
 @media (max-width: 760px) {
-  .steps article {
-    max-width: 100%;
+  .workflow h2 {
+    text-align: left;
   }
-}
-
-@media (max-width: 760px) {
-  .steps p {
-    max-width: 100%;
-  }
-}
-
-@media (max-width: 760px) {
-  .steps h3 {
-    margin-top: 15px;
+  .step {
+    padding: var(--spacing-2xl);
   }
 }
 </style>

@@ -109,6 +109,7 @@ if (origin) {
         >Conhecer o sistema de orçamentos</a
       >
     </section>
+    <RelatedTools current="/calculadora-de-orcamento" />
   </article>
 </template>
 

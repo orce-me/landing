@@ -1,5 +1,7 @@
 export const indexablePaths = [
   '/',
+  '/planos-e-precos',
+  '/ajuda',
   '/como-fazer-orcamento-de-servicos',
   '/calculadora-de-orcamento',
   '/calculadora-de-desconto',

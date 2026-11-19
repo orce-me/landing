@@ -14,28 +14,7 @@ defineProps({
     </p>
     <slot />
     <div class="explanation"><slot name="explanation" /></div>
-    <nav class="related" aria-label="Outras ferramentas gratuitas">
-      <h2>Continue preparando seu orçamento</h2>
-      <NuxtLink to="/calculadora-de-orcamento"
-        >Calculadora de orçamento de serviços</NuxtLink
-      >
-      <NuxtLink to="/calculadora-de-desconto">Calculadora de desconto</NuxtLink>
-      <NuxtLink to="/calculadora-de-margem"
-        >Calculadora de margem e markup</NuxtLink
-      >
-      <NuxtLink to="/calculadora-de-custo-hora"
-        >Calculadora de custo por hora</NuxtLink
-      >
-      <NuxtLink to="/como-fazer-orcamento-de-servicos"
-        >Como fazer um orçamento de serviços</NuxtLink
-      >
-      <NuxtLink to="/calculadora-de-ponto-de-equilibrio"
-        >Calculadora de ponto de equilíbrio</NuxtLink
-      >
-      <NuxtLink to="/calculadora-de-preco-com-taxas"
-        >Calculadora de preço com taxas</NuxtLink
-      >
-    </nav>
+    <RelatedTools :current="$route.path" />
   </article>
 </template>
 <style scoped>
@@ -85,16 +64,6 @@ h2 {
   font-weight: 500;
   border: 1px solid var(--color-outline);
   border-radius: var(--rounded-md);
-}
-.related {
-  margin-top: 45px;
-  display: grid;
-  gap: 16px;
-}
-.related a {
-  font-size: var(--typography-body-lg-font-size);
-  text-decoration: underline;
-  text-underline-offset: 4px;
 }
 @media (max-width: 760px) {
   .tool-page {

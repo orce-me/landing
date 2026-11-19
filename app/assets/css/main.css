@@ -5,36 +5,21 @@
   background: var(--color-neutral);
   color-scheme: light;
   font-synthesis: none;
+  -webkit-font-smoothing: antialiased;
   /* DESIGN.md, Elevation & Depth. The dark values are below. */
-  --shadow-raised: 0 8px 24px #16392d0a;
-  --shadow-floating: 0 24px 64px #16392d17;
-  --glow-page: #e0ebca70;
-  --glow-hero: radial-gradient(
-    ellipse at 60% 48%,
-    #c3dba3 0%,
-    #dfebcb 40%,
-    #edf2df80 58%,
-    transparent 73%
-  );
-  --glow-closing: #356247;
-  --orbit: #b5c99d;
-  --backdrop: #16392d99;
+  --shadow-raised: 0 1px 2px #16171c0a, 0 8px 24px -10px #16171c1f;
+  --shadow-floating: 0 30px 80px -30px #16171c40, 0 2px 8px #16171c0d;
+  --backdrop: #16171c99;
+  /* DESIGN.md, Motion. */
+  --ease-soft: cubic-bezier(0.2, 0.7, 0.2, 1);
 }
 
-/* Theme-specific surface and glow values. */
+/* Theme-specific shadow values. */
 @media screen {
   :root[data-theme='dark'] {
     color-scheme: dark;
-    --shadow-raised: 0 18px 48px #00000022;
-    --shadow-floating: 0 18px 48px #00000022;
-    --glow-page: #39512d55;
-    --glow-hero: radial-gradient(
-      ellipse at 60% 48%,
-      #66874360,
-      #384d2a55 40%,
-      transparent 73%
-    );
-    --orbit: #50683a80;
+    --shadow-raised: 0 1px 2px #00000066, 0 10px 30px -12px #000000aa;
+    --shadow-floating: 0 30px 80px -24px #000000cc;
   }
 }
 
@@ -44,9 +29,7 @@
 
 body {
   margin: 0;
-  background:
-    radial-gradient(ellipse at 95% 8%, var(--glow-page), transparent 32%),
-    var(--color-neutral);
+  background: var(--color-neutral);
 }
 
 a {
@@ -83,7 +66,7 @@ html {
 }
 
 section[id] {
-  scroll-margin-top: 35px;
+  scroll-margin-top: 100px;
 }
 
 main {
@@ -103,19 +86,23 @@ p {
   margin: 0;
 }
 
+/* DESIGN.md, Typography: the accent words. */
 em {
-  font-family: var(--typography-display-accent-font-family), Georgia, serif;
-  font-weight: var(--typography-display-accent-font-weight);
-  color: var(--color-secondary);
+  font-style: normal;
+  color: var(--color-primary);
+}
+
+.figure {
+  font-variant-numeric: tabular-nums;
 }
 
 .button {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  gap: 24px;
-  min-height: 44px;
-  padding: 12px 20px;
+  gap: var(--spacing-sm);
+  min-height: 48px;
+  padding: 12px 22px;
   border-radius: var(--rounded-md);
   font-size: var(--typography-label-md-font-size);
   font-weight: var(--typography-label-md-font-weight);
@@ -123,10 +110,6 @@ em {
   transition:
     transform 0.2s,
     background 0.2s;
-}
-
-.button:hover {
-  transform: translateY(-2px);
 }
 
 .primary {
@@ -138,14 +121,30 @@ em {
   background: var(--color-primary-hover);
 }
 
-/* The dark-theme primary button, for dark grounds in both themes. */
-.primary-dark {
-  background: var(--color-primary-dark);
-  color: var(--color-on-primary-dark);
+/* The arrow circle inside primary buttons. */
+.button .arrow-dot {
+  display: inline-grid;
+  place-items: center;
+  width: 22px;
+  height: 22px;
+  border-radius: var(--rounded-full);
+  background: color-mix(in srgb, currentColor 22%, transparent);
+  font-size: 13px;
+  transition: transform 0.4s var(--ease-soft);
 }
 
-.primary-dark:hover {
-  background: var(--color-primary-hover-dark);
+.button:hover .arrow-dot {
+  transform: translateX(3px);
+}
+
+/* The quiet button, used for the header login. */
+.quiet {
+  background: var(--color-surface);
+  color: var(--color-on-surface);
+}
+
+.quiet:hover {
+  background: var(--color-surface-tint);
 }
 
 .section {
@@ -158,7 +157,7 @@ em {
   font-weight: var(--typography-headline-md-font-weight);
   line-height: var(--typography-headline-md-line-height);
   letter-spacing: var(--typography-headline-md-letter-spacing);
-  margin: 17px 0;
+  margin: 0 0 var(--spacing-lg);
 }
 
 .section h2 em {
@@ -186,6 +185,36 @@ h3 {
   top: 10px;
 }
 
+/* v-reveal (app/plugins/reveal.js). Hidden only once the client opts in. */
+.reveal-ready [data-reveal] {
+  opacity: 0;
+  transform: translateY(24px);
+  transition:
+    opacity 0.8s var(--ease-soft),
+    transform 0.8s var(--ease-soft);
+  transition-delay: calc(var(--reveal-delay, 0) * 90ms);
+}
+
+.reveal-ready [data-reveal].is-revealed {
+  opacity: 1;
+  transform: none;
+}
+
+.arrow-link {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+}
+
+.arrow-link span {
+  display: inline-block;
+  transition: transform 0.4s var(--ease-soft);
+}
+
+.arrow-link:hover span {
+  transform: translateX(5px);
+}
+
 @media (max-width: 1050px) {
   .wrap {
     padding-left: var(--spacing-gutter-tablet);
@@ -202,12 +231,10 @@ h3 {
     padding-top: var(--spacing-section-mobile);
     padding-bottom: var(--spacing-section-mobile);
   }
-  .section h2 {
-    font-size: 29px;
-    letter-spacing: -0.8px;
-  }
+  .section h2,
   .section h2 em {
-    font-size: 35px;
+    font-size: 32px;
+    letter-spacing: -0.8px;
   }
 }
 
@@ -219,5 +246,6 @@ h3 {
   *:before,
   *:after {
     transition: none !important;
+    animation: none !important;
   }
 }

@@ -3,9 +3,7 @@ export default defineNuxtConfig({
   devtools: { enabled: false },
   devServer: { host: '0.0.0.0', port: 5174 },
   css: [
-    '@fontsource-variable/dm-sans/wght.css',
-    '@fontsource/instrument-serif/latin-400.css',
-    '@fontsource/instrument-serif/latin-400-italic.css',
+    '@fontsource-variable/figtree/wght.css',
     '~/assets/css/tokens.css',
     '~/assets/css/main.css',
   ],
@@ -23,6 +21,8 @@ export default defineNuxtConfig({
           ...config.prerender,
           routes: [
             '/',
+            '/planos-e-precos',
+            '/ajuda',
             '/como-fazer-orcamento-de-servicos',
             '/calculadora-de-orcamento',
             '/calculadora-de-desconto',
@@ -43,7 +43,7 @@ export default defineNuxtConfig({
       htmlAttrs: { lang: 'pt-BR' },
       title: 'Sistema de orçamentos para pequenos negócios | orce.me',
       meta: [
-        { name: 'theme-color', content: '#174c3c' },
+        { name: 'theme-color', content: '#12805c' },
         {
           name: 'description',
           content:
@@ -54,7 +54,7 @@ export default defineNuxtConfig({
       script: [
         {
           innerHTML:
-            'try{const t=localStorage.getItem("orce-theme");document.documentElement.dataset.theme=t==="dark"||t==="light"?t:matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light"}catch{document.documentElement.dataset.theme="light"}',
+            'try{const t=localStorage.getItem("orce-theme");document.documentElement.dataset.theme=t==="dark"?"dark":"light"}catch{document.documentElement.dataset.theme="light"}',
           tagPosition: 'head',
         },
       ],
