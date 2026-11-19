@@ -54,7 +54,7 @@ export default defineNuxtConfig({
       script: [
         {
           innerHTML:
-            'try{const t=localStorage.getItem("orce-theme");document.documentElement.dataset.theme=t==="dark"||t==="light"?t:matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light"}catch{document.documentElement.dataset.theme="light"}',
+            'try{const t=localStorage.getItem("orce-theme");document.documentElement.dataset.theme=t==="dark"?"dark":"light"}catch{document.documentElement.dataset.theme="light"}',
           tagPosition: 'head',
         },
       ],

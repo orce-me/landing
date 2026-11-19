@@ -1,7 +1,6 @@
 export function useTheme() {
   const dark = ref(false)
   let running = false
-  let systemTheme
 
   function applyTheme(theme, persist = false) {
     document.documentElement.dataset.theme = theme
@@ -18,21 +17,8 @@ export function useTheme() {
     }
   }
 
-  function onSystemChange(event) {
-    try {
-      if (localStorage.getItem('orce-theme')) return
-    } catch {}
-    applyTheme(event.matches ? 'dark' : 'light')
-  }
-
-  onMounted(() => {
-    applyTheme(document.documentElement.dataset.theme || 'light')
-    systemTheme = matchMedia('(prefers-color-scheme: dark)')
-    systemTheme.addEventListener('change', onSystemChange)
-  })
-  onBeforeUnmount(() =>
-    systemTheme?.removeEventListener('change', onSystemChange),
-  )
+  // Light is the default; dark only when the visitor picked it.
+  onMounted(() => applyTheme(document.documentElement.dataset.theme || 'light'))
 
   async function toggle(event) {
     if (running) return

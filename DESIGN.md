@@ -413,6 +413,7 @@ White carries the page; light greys group content; emerald is the single brand c
 
 **Dark theme**
 
+- Light is the default for every visitor, whatever the system setting. Dark applies only after the visitor picks it with the theme toggle, and the choice is saved.
 - The page is near-black (#0f1112) with surfaces #17191b and #1d2023, text #eef0f2 and muted #a3a8ae. Hairlines are #2b2f33.
 - Emerald brightens to #3ccf91 with dark `on-primary-dark` text. The soft wash becomes a deep green (#122a20).
 
@@ -493,7 +494,7 @@ Depth is light and clean. Grey cards sit flat on white; app windows and document
 - **Footer:** Brand, links and copyright in one row, with a top hairline.
 - **Focus ring:** A 3px `secondary` outline with a 5px offset on every interactive element.
 - **Soft pill:** `primary-soft` with `on-primary-soft` text, `label-sm`, pill. Mockup states such as the active sidebar item.
-- **Theme toggle:** A 36px circle with a hairline border and a 17px stroke icon. Moon in light, sun in dark.
+- **Theme toggle:** A 36px circle with a hairline border and a 17px stroke icon. Moon in light, sun in dark. The page starts light; the toggle is the only way into dark.
 - **Card:** `surface`, `rounded.xl`, 28px padding, flat.
 - **Pricing panel:** A card on the separate pricing route explains quotation capabilities and links to current app conditions. No speculative module cards or invented prices appear on any public page.
 - **Tag:** `surface-tint` with deep emerald (`on-primary-soft`) text, `label-sm`, pill, hairline border.
