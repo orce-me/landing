@@ -119,9 +119,9 @@ function reset() {
 .approval {
   position: absolute;
   z-index: 2;
-  top: 300px;
+  top: 462px;
   left: 50%;
-  margin-left: 40px;
+  margin-left: -30px;
   padding: var(--spacing-xs) var(--spacing-md);
   border: 3px solid var(--color-primary);
   border-radius: var(--rounded-md);

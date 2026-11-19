@@ -33,7 +33,7 @@ const appUrl = useRuntimeConfig().public.appUrl
 <style scoped>
 .hero {
   padding-top: var(--spacing-5xl);
-  padding-bottom: var(--spacing-section);
+  padding-bottom: var(--spacing-3xl);
 }
 h1 {
   margin: 0 0 var(--spacing-5xl);
