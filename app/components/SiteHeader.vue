@@ -77,7 +77,7 @@ function closeMenu() {
 }
 .header {
   position: relative;
-  height: 84px;
+  height: 76px;
   display: flex;
   align-items: center;
   gap: 24px;
@@ -114,17 +114,17 @@ function closeMenu() {
 }
 
 .brand-dot {
-  color: var(--color-tertiary);
+  color: var(--color-primary);
 }
 
 .mark {
   position: relative;
-  border: 2.5px solid var(--color-primary);
+  border: 3px solid var(--color-on-surface);
   border-radius: var(--rounded-full);
   font-size: 0;
-  width: 24px;
-  height: 24px;
-  margin-right: 11px;
+  width: 26px;
+  height: 26px;
+  margin-right: 10px;
 }
 
 .mark span {
@@ -134,7 +134,7 @@ function closeMenu() {
   right: -6px;
   top: -5px;
   border-radius: var(--rounded-full);
-  background: var(--color-tertiary);
+  background: var(--color-primary);
   border: 2px solid var(--color-neutral);
 }
 
@@ -147,10 +147,19 @@ function closeMenu() {
 }
 
 .login {
+  display: inline-flex;
+  align-items: center;
+  min-height: 36px;
+  padding: 0 var(--spacing-lg);
+  border: 1px solid var(--color-on-surface);
+  border-radius: var(--rounded-full);
   font-size: var(--typography-label-lg-font-size);
   font-weight: var(--typography-label-lg-font-weight);
-  display: flex;
-  gap: 22px;
+  transition: background 0.2s;
+}
+.login:hover {
+  background: var(--color-inverse-surface);
+  color: var(--color-on-inverse-surface);
 }
 
 .menu {
@@ -171,7 +180,7 @@ function closeMenu() {
 
 @media (max-width: 760px) {
   .header {
-    height: 72px;
+    height: 64px;
     gap: 20px;
   }
 }
@@ -200,7 +209,7 @@ function closeMenu() {
     background: none;
     border: 0;
     font-size: 22px;
-    color: var(--color-primary);
+    color: var(--color-on-surface);
   }
 }
 
@@ -210,7 +219,7 @@ function closeMenu() {
     position: absolute;
     left: 20px;
     right: 20px;
-    top: 68px;
+    top: 60px;
     background: var(--color-surface);
     border: 1px solid var(--color-outline);
     border-radius: var(--rounded-lg);
@@ -248,6 +257,22 @@ function closeMenu() {
   .menu {
     min-width: 36px;
     min-height: 44px;
+  }
+}
+@media (max-width: 380px) {
+  .header {
+    gap: var(--spacing-sm);
+  }
+  .header .brand {
+    font-size: 22px;
+  }
+  .mark {
+    width: 22px;
+    height: 22px;
+    margin-right: var(--spacing-sm);
+  }
+  .login {
+    padding: 0 var(--spacing-md);
   }
 }
 </style>

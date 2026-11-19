@@ -16,7 +16,7 @@ const trades = [
     <div class="track">
       <ul v-for="copy in 2" :key="copy" :aria-hidden="copy === 2 || undefined">
         <li v-for="trade in trades" :key="trade">
-          <em>{{ trade }}</em
+          <span class="trade">{{ trade }}</span
           ><span class="sep" aria-hidden="true">✳</span>
         </li>
       </ul>
@@ -26,16 +26,15 @@ const trades = [
 
 <style scoped>
 .marquee {
+  position: relative;
+  z-index: 1;
+  width: 110%;
+  margin-left: -5%;
   overflow: hidden;
-  border-block: 1px solid var(--color-outline);
-  padding: var(--spacing-2xl) 0;
-  mask-image: linear-gradient(
-    to right,
-    transparent,
-    var(--color-neutral) 8%,
-    var(--color-neutral) 92%,
-    transparent
-  );
+  padding: var(--spacing-xl) 0;
+  background: var(--color-primary);
+  color: var(--color-on-primary);
+  transform: rotate(-2deg);
 }
 .track {
   display: flex;
@@ -56,16 +55,17 @@ li {
   align-items: center;
   white-space: nowrap;
 }
-em {
+.trade {
+  font-family: var(--typography-marquee-font-family), Arial, sans-serif;
   font-size: var(--typography-marquee-font-size);
+  font-weight: var(--typography-marquee-font-weight);
   line-height: var(--typography-marquee-line-height);
   letter-spacing: var(--typography-marquee-letter-spacing);
-  color: var(--color-on-surface);
 }
 .sep {
   margin: 0 var(--spacing-3xl);
-  font-size: var(--typography-title-lg-font-size);
-  color: var(--color-tertiary);
+  font-size: var(--typography-headline-md-font-size);
+  line-height: 1;
 }
 @keyframes marquee {
   to {
@@ -76,11 +76,13 @@ em {
   .marquee {
     padding: var(--spacing-lg) 0;
   }
-  em {
+  .trade {
     font-size: 40px;
+    letter-spacing: -1.4px;
   }
   .sep {
     margin: 0 var(--spacing-xl);
+    font-size: 28px;
   }
 }
 @media (prefers-reduced-motion: reduce) {

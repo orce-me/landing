@@ -68,7 +68,7 @@ defineProps({ layout: { type: String, default: 'essential' } })
 }
 
 .mini-logo > span {
-  color: var(--color-tertiary);
+  color: var(--color-primary);
 }
 
 .mini-logo b {
@@ -100,7 +100,7 @@ defineProps({ layout: { type: String, default: 'essential' } })
 }
 
 .quote-title h3 {
-  font-family: var(--typography-display-accent-font-family), Georgia, serif;
+  font-family: var(--typography-display-accent-font-family), Arial, sans-serif;
   font-size: 23px;
   margin-top: 6px;
   font-weight: 400;
@@ -184,6 +184,7 @@ defineProps({ layout: { type: String, default: 'essential' } })
 }
 
 .total strong {
+  font-family: var(--typography-figure-font-family), monospace;
   font-size: 20px;
   font-weight: 500;
   letter-spacing: -0.7px;

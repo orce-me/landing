@@ -29,16 +29,17 @@ const year = new Date().getFullYear()
 }
 
 .brand-dot {
-  color: var(--color-tertiary);
+  color: var(--color-primary);
 }
 
 .footer-wordmark {
   padding-top: var(--spacing-4xl);
-  font-size: clamp(88px, 21vw, 290px);
+  font-size: clamp(88px, 22vw, 300px);
   font-weight: var(--typography-brand-font-weight);
   line-height: 0.8;
-  letter-spacing: -0.06em;
-  color: var(--color-primary);
+  letter-spacing: -0.035em;
+  font-family: var(--typography-brand-font-family), Arial, sans-serif;
+  color: var(--color-on-surface);
   white-space: nowrap;
   overflow: hidden;
   user-select: none;
@@ -55,6 +56,7 @@ const year = new Date().getFullYear()
 }
 
 .footer-links small {
+  font-family: var(--typography-label-sm-font-family), monospace;
   font-size: var(--typography-label-sm-font-size);
   color: var(--color-on-surface-muted);
 }

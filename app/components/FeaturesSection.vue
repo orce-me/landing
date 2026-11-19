@@ -124,8 +124,8 @@
 
 <style scoped>
 .features {
-  background: var(--color-band);
-  border-block: 1px solid var(--color-outline);
+  background: var(--color-inverse-surface);
+  color: var(--color-on-inverse-surface);
 }
 .feature-heading h2 {
   margin-bottom: 0;
@@ -140,7 +140,7 @@
 .history-card {
   min-width: 0;
   background: var(--color-surface);
-  border: 1px solid var(--color-outline);
+  color: var(--color-on-surface);
   border-radius: var(--rounded-lg);
   overflow: hidden;
 }
@@ -167,7 +167,7 @@
   padding: var(--spacing-3xl);
 }
 .feature-copy h3 {
-  margin: var(--spacing-md) 0;
+  margin: 0 0 var(--spacing-md);
   max-width: 350px;
 }
 .feature-copy p {
@@ -357,11 +357,26 @@
   background: var(--color-status-draft);
   color: var(--color-on-status-draft);
 }
+.history-card {
+  background: var(--color-primary);
+  color: var(--color-on-primary);
+}
+.history-card .feature-copy p {
+  color: var(--color-on-primary);
+}
+.history-preview {
+  color: var(--color-on-surface);
+}
+.proposal-total strong,
+.catalog-row strong {
+  font-family: var(--typography-figure-font-family), monospace;
+}
 .illustration-note {
   text-align: right;
   margin-top: var(--spacing-lg);
+  font-family: var(--typography-label-sm-font-family), monospace;
   font-size: var(--typography-label-sm-font-size);
-  color: var(--color-on-surface-muted);
+  color: color-mix(in srgb, var(--color-on-inverse-surface) 72%, transparent);
 }
 @media (max-width: 760px) {
   .feature-grid,

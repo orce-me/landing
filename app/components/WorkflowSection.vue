@@ -2,7 +2,7 @@
   <section class="workflow wrap section" id="como-funciona">
     <div class="section-heading">
       <div class="sticky" v-reveal>
-        <h2>Do catálogo ao PDF, <em>em três etapas.</em></h2>
+        <h2>Do catálogo ao PDF em <em>três etapas.</em></h2>
       </div>
     </div>
     <ol class="steps">
@@ -72,18 +72,21 @@
   right: 0;
   top: 0;
   height: 1px;
-  background: var(--color-outline);
+  background: var(--color-on-surface);
   transform-origin: left;
   transition: transform 1.2s var(--ease-editorial) 0.2s;
 }
 .step-number {
-  font-family: var(--typography-numeral-font-family), Georgia, serif;
-  font-style: italic;
+  font-family: var(--typography-numeral-font-family), monospace;
   font-size: var(--typography-numeral-font-size);
   font-weight: var(--typography-numeral-font-weight);
   line-height: var(--typography-numeral-line-height);
   letter-spacing: var(--typography-numeral-letter-spacing);
   color: var(--color-secondary);
+  transition: transform 0.5s var(--ease-editorial);
+}
+.steps li:hover .step-number {
+  transform: translateX(8px);
 }
 .steps h3 {
   font-size: var(--typography-title-lg-font-size);
@@ -117,7 +120,8 @@
     padding: var(--spacing-3xl) 0;
   }
   .step-number {
-    font-size: 64px;
+    font-size: 44px;
+    letter-spacing: -2.4px;
   }
 }
 </style>

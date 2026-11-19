@@ -47,6 +47,7 @@ function reset() {
           <div v-for="layout in layouts" :key="layout" class="layout-example">
             <QuoteDocument :layout="layout" />
           </div>
+          <span class="approval">Aceito</span>
         </div>
       </div>
     </div>
@@ -66,18 +67,13 @@ function reset() {
   overflow: hidden;
   border-radius: var(--rounded-lg);
   background:
-    repeating-linear-gradient(
-      to right,
-      transparent 0 39px,
-      color-mix(in srgb, var(--color-outline) 55%, transparent) 39px 40px
-    ),
-    repeating-linear-gradient(
-      to bottom,
-      transparent 0 39px,
-      color-mix(in srgb, var(--color-outline) 55%, transparent) 39px 40px
-    ),
-    var(--color-band);
-  border: 1px solid var(--color-outline);
+    radial-gradient(
+        circle at 1px 1px,
+        color-mix(in srgb, var(--color-on-secondary) 22%, transparent) 1px,
+        transparent 1.5px
+      )
+      0 0 / 24px 24px,
+    var(--color-stage);
   perspective: 1400px;
 }
 .gallery-rail {
@@ -91,6 +87,7 @@ function reset() {
   animation: quotation-layouts 4s ease-in-out forwards;
 }
 .deck {
+  position: relative;
   display: grid;
   place-items: center;
   transform-style: preserve-3d;
@@ -118,6 +115,34 @@ function reset() {
 .layout-example:nth-child(3) {
   transform: translateY(-14px) translateZ(40px);
   animation-name: fan-center;
+}
+.approval {
+  position: absolute;
+  z-index: 2;
+  top: 300px;
+  left: 50%;
+  margin-left: 40px;
+  padding: var(--spacing-xs) var(--spacing-md);
+  border: 3px solid var(--color-primary);
+  border-radius: var(--rounded-md);
+  color: var(--color-primary);
+  font-family: var(--typography-display-font-family), Arial, sans-serif;
+  font-size: var(--typography-title-lg-font-size);
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  transform: translateZ(60px) rotate(-14deg);
+  mix-blend-mode: multiply;
+  animation: approval 0.45s var(--ease-editorial) 2.6s both;
+}
+:root[data-theme='dark'] .approval {
+  mix-blend-mode: normal;
+}
+@keyframes approval {
+  from {
+    opacity: 0;
+    transform: translateZ(60px) rotate(-14deg) scale(2.2);
+  }
 }
 @keyframes quotation-layouts {
   from {
@@ -169,7 +194,8 @@ function reset() {
     transform: none;
     transition: none;
   }
-  .layout-example {
+  .layout-example,
+  .approval {
     animation: none;
   }
 }

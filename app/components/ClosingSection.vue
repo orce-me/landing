@@ -9,9 +9,7 @@ const appUrl = useRuntimeConfig().public.appUrl
         Menos tempo orçando.<br /><em>Mais espaço para fazer acontecer.</em>
       </h2>
       <div class="closing-action" v-reveal="1">
-        <a class="button primary-dark" :href="appUrl"
-          >Criar meu primeiro orçamento</a
-        >
+        <a class="button ink" :href="appUrl">Criar meu primeiro orçamento</a>
       </div>
     </div>
     <span class="closing-decoration" aria-hidden="true">✳</span>
@@ -19,12 +17,10 @@ const appUrl = useRuntimeConfig().public.appUrl
 </template>
 
 <style scoped>
-/* A dark island in both themes. It uses the dark-theme accent and button. */
+/* A vermilion slab in both themes, with ink text and the ink button. */
 .closing {
-  background:
-    radial-gradient(ellipse at 95% 80%, var(--glow-closing), transparent 62%),
-    var(--color-inverse-surface);
-  color: var(--color-on-inverse-surface);
+  background: var(--color-primary);
+  color: var(--color-on-primary);
   position: relative;
   overflow: hidden;
 }
@@ -41,7 +37,7 @@ const appUrl = useRuntimeConfig().public.appUrl
 }
 
 .closing h2 {
-  max-width: 820px;
+  max-width: 980px;
   font-size: var(--typography-headline-lg-font-size);
   font-weight: var(--typography-headline-lg-font-weight);
   line-height: var(--typography-headline-lg-line-height);
@@ -51,15 +47,17 @@ const appUrl = useRuntimeConfig().public.appUrl
 .closing em {
   font-size: var(--typography-headline-lg-accent-font-size);
   letter-spacing: var(--typography-headline-lg-accent-letter-spacing);
-  color: var(--color-primary-dark);
+  background: var(--color-on-primary);
+  color: var(--color-primary);
+  border-radius: var(--rounded-md);
 }
 
 .closing-decoration {
   position: absolute;
   font-size: 520px;
   line-height: 1;
-  color: var(--color-tertiary);
-  opacity: 0.2;
+  color: var(--color-on-primary);
+  opacity: 0.12;
   right: -40px;
   top: -80px;
   animation: spin 30s linear infinite;
@@ -72,12 +70,10 @@ const appUrl = useRuntimeConfig().public.appUrl
 }
 
 @media (max-width: 1050px) {
-  .closing h2 {
-    font-size: 56px;
-    letter-spacing: -2.4px;
-  }
+  .closing h2,
   .closing em {
     font-size: 64px;
+    letter-spacing: -2.6px;
   }
 }
 
@@ -88,13 +84,10 @@ const appUrl = useRuntimeConfig().public.appUrl
     padding-top: 72px;
     padding-bottom: 72px;
   }
-  .closing h2 {
-    font-size: 36px;
-    letter-spacing: -1.4px;
-  }
+  .closing h2,
   .closing em {
-    font-size: 42px;
-    letter-spacing: -1px;
+    font-size: 44px;
+    letter-spacing: -1.8px;
   }
   .closing-decoration {
     right: -160px;

@@ -1,6 +1,6 @@
 <script setup>
-import sansFont from '@fontsource-variable/dm-sans/files/dm-sans-latin-wght-normal.woff2?url'
-import serifFont from '@fontsource/instrument-serif/files/instrument-serif-latin-400-italic.woff2?url'
+import sansFont from '@fontsource-variable/geist/files/geist-latin-wght-normal.woff2?url'
+import displayFont from '@fontsource-variable/bricolage-grotesque/files/bricolage-grotesque-latin-opsz-normal.woff2?url'
 
 useHead({
   link: [
@@ -13,7 +13,7 @@ useHead({
     },
     {
       rel: 'preload',
-      href: serifFont,
+      href: displayFont,
       as: 'font',
       type: 'font/woff2',
       crossorigin: '',
