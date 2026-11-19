@@ -465,13 +465,13 @@ Each page is a single column. Content sits in a centered container, `.wrap`, wit
 - **Sections:** 90px block padding on desktop, 60px on mobile. Anchored sections have a 100px `scroll-margin-top` so the sticky header never covers their headings.
 - **Header:** 84px tall on desktop, 72px on mobile. It sticks to the top with a translucent `neutral` ground (92% mix) and a 14px backdrop blur, and has a bottom hairline.
 - **Grids:**
-  - Hero: the headline spans the full container. Below it, supporting copy and CTA sit in a `0.8fr 1.2fr` grid beside the quotation stage.
+  - Hero: the headline spans the full container, with no eyebrow or status line above it. Below it, supporting copy and CTA sit in a `0.8fr 1.2fr` grid beside the quotation stage.
   - Trade marquee: a full-bleed strip between two hairlines.
   - Workflow: a `0.9fr 2fr` split, with a sticky heading on the left and three stacked step rows on the right.
   - Features: a two-column product workspace grid with a full-width history strip. It becomes one column at 760px. Each card pairs one function with an illustrative UI.
   - Pricing: a separate page with a two-column quotation capability and current-options panel. The homepage has only a contextual pricing link.
   - FAQ: a `1fr 1.25fr` grid.
-  - Resources: an editorial index of full-width rows (number, title, description, arrow) separated by hairlines.
+  - Resources: an editorial index of full-width rows (title, description, arrow) separated by hairlines.
   - Calculators: inputs and result side by side. The quote calculator uses `1.2fr 1fr` with a 32px gap. The small calculators use two equal columns in one bordered box.
 - **Breakpoints:** 1050px (tablet) and 760px (mobile). A 1450px query only adds hero padding. All content grids collapse to one column at 760px. The preview gallery keeps a compact layered composition, and the closing CTA stacks below the heading.
 - **Spacing scale:** Component spacing uses the 4px scale (`xs` to `5xl`). The layout tokens (`container`, `gutter*`, `section*`) are exact values. Do not round them.
@@ -505,7 +505,7 @@ Shapes are soft but restrained. Corners are small, lines are thin, and circles m
 - **Header:** Sticky and translucent (see Layout). Brand left, navigation centered (`label-lg`, 24px gap) with an underline that grows from the left on hover, then login and the theme toggle. At 760px and below the navigation moves into a menu panel (`surface` or `surface-dark`, `rounded.lg`, hairline border).
 - **Trade marquee:** Examples of small businesses in `marquee` serif italic, separated by `✳` in `tertiary`, scrolling slowly left. The list is decorative and duplicated for a seamless loop; the second copy is `aria-hidden`.
 - **Step numeral:** A serif italic `numeral` in `secondary` beside each workflow step. A hairline above the step draws from left to right when the row enters the viewport.
-- **Index row:** A resource link row with a `label-sm` number, a `title-lg` title, a `body-md` description and a `→` glyph. On hover a `primary` fill rises from the bottom, the text turns `on-primary`, and the arrow slides 8px right. In dark the fill is `primary-dark` with `on-primary-dark` text.
+- **Index row:** A resource link row with a `title-lg` title, a `body-md` description and a `→` glyph. No decorative numbering or repeated action labels. On hover a `primary` fill rises from the bottom, the text turns `on-primary`, and the arrow slides 8px right. In dark the fill is `primary-dark` with `on-primary-dark` text.
 - **Footer wordmark:** A giant lowercase `orce.me` in `primary` (`primary-dark` in dark) with the lime period, set at the foot of every page above the footer links.
 - **Theme toggle:** A 36px circle with a hairline border and a 17px stroke icon (1.6 stroke, round caps). Show the moon in light and the sun in dark.
 - **Card:** `surface`, hairline border, `rounded.lg`, 24px padding, raised shadow. Feature cards use 32px copy insets and 24px mockup insets, with equal-width catalog and proposal columns.
@@ -513,12 +513,11 @@ Shapes are soft but restrained. Corners are small, lines are thin, and circles m
 - **Tag:** `surface-tint` with Fern text, `label-sm`, `rounded.sm`, a hairline border. A leading glyph names the item type.
 - **Status chip:** Draft, sent, and accepted pairs only, `rounded.sm`, small text.
 - **FAQ:** Native `<details>` and `<summary>` with a hairline under each item. A `+` glyph in Fern rotates 45 degrees when open.
-- **Quotation gallery:** A neutral stone stage with a faint hairline grid. Three quotation documents with the same sample company, line items, totals and conditions fan out from a stack (-7deg, 0deg, 6deg) in a perspective scene. On hover-capable pointers the deck tilts up to 6 degrees toward the pointer. Two floating chips (total and PDF ready) sit on top. Document composition changes across examples. No playback controls or captions.
+- **Quotation gallery:** A neutral stone stage with a faint hairline grid. Three quotation documents with the same sample company, line items, totals and conditions fan out from a stack (-7deg, 0deg, 6deg) in a perspective scene. On hover-capable pointers the deck tilts up to 6 degrees toward the pointer. No chips or badges sit on top: the documents already show the total. Document composition changes across examples. No playback controls or captions.
 - **Pricing detail:** Uses the existing card and tint-panel tokens. Never invent prices or sell unshipped modules. Link to current options in the application.
 - **Closing band:** A full-width dark island in `inverse-surface` with a soft glow, 120px block padding (72px on mobile), a `headline-lg` statement, a Sprout serif clause, and `button-primary-dark` in both themes. A large `✳` decoration sits at the right edge at low opacity and rotates slowly. The CTA aligns to the baseline at the right of the headline on desktop, and stacks on mobile. There is no adjacent slogan.
 - **Dialog:** The native `<dialog>` for the PDF preview. `surface-raised`, `rounded.lg`, hairline border, and a `surface-tint` toolbar. Print always renders it in the light theme.
-- **Pricing link:** A homepage row with muted `body-lg` context on the left and a `title-xl` underlined link with a sliding `→` on the right.
-- **Hero facts:** A three-row hairline list under the hero CTA (`body-sm`, `secondary` term, `on-surface` value).
+- **Pricing link:** A homepage row with a single `title-xl` underlined link and a sliding `→`. No lead-in question.
 - **Mockups:** The app window, catalog, and paper are illustrations of the product. They use the reduced mockup scale and the floating or raised shadow. The examples are not editable. The hero uses a brief entrance animation with no visible playback controls or development-status captions.
 - **Input:** `surface-raised` (or `surface-raised-dark`), `on-surface` text at 16px, `rounded.md`, 12px padding. The border is `on-surface-muted`, so the field edge has 3:1 contrast. The label sits above the field in `label-lg`. Help text sits below in `body-sm`, `on-surface-muted`.
 - **Calculator:** A bordered box (`rounded.lg`) with inputs on one side and a `tint-panel` result on the other. The result value uses `figure-lg`. Results update live in an `aria-live="polite"` region.
@@ -567,4 +566,5 @@ The page uses Unicode glyphs instead of an icon library. The glyph set is part o
 - Do set input text to 16px or larger, so mobile browsers do not zoom on focus.
 - Do underline links inside prose on content pages. Don't underline navigation or buttons.
 - Do write all copy in Brazilian Portuguese.
+- Don't put eyebrow labels above landing headings, decorative `01 / 02` numbering (workflow steps are a real order and keep theirs), or badges and chips that do not reflect real state. Don't add a subtitle that repeats its heading.
 - Do respect `prefers-reduced-motion` for every new animation.

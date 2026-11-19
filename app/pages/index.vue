@@ -72,7 +72,6 @@ if (origin) {
     <WorkflowSection />
     <FeaturesSection />
     <div class="plan-link wrap" v-reveal>
-      <p>Quer saber as condições para usar o orce.me?</p>
       <NuxtLink class="arrow-link" to="/planos-e-precos"
         >Consultar planos e preços <span aria-hidden="true">→</span></NuxtLink
       >
@@ -84,16 +83,8 @@ if (origin) {
 
 <style scoped>
 .plan-link {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: var(--spacing-2xl);
   padding-top: var(--spacing-5xl);
   padding-bottom: var(--spacing-5xl);
-  font-size: var(--typography-body-lg-font-size);
-}
-.plan-link p {
-  color: var(--color-on-surface-muted);
 }
 .plan-link a {
   font-size: var(--typography-title-xl-font-size);
@@ -103,11 +94,6 @@ if (origin) {
   padding-bottom: var(--spacing-xs);
 }
 @media (max-width: 760px) {
-  .plan-link {
-    align-items: flex-start;
-    flex-direction: column;
-    gap: var(--spacing-md);
-  }
   .plan-link a {
     font-size: var(--typography-title-md-font-size);
   }

@@ -206,16 +206,6 @@ h3 {
   transform: scaleX(0);
 }
 
-.eyebrow {
-  display: inline-flex;
-  align-items: center;
-  gap: var(--spacing-sm);
-  font-size: var(--typography-label-sm-font-size);
-  font-weight: var(--typography-label-md-font-weight);
-  letter-spacing: 1.2px;
-  color: var(--color-secondary);
-}
-
 .arrow-link {
   display: inline-flex;
   align-items: center;

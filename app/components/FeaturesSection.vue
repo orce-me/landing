@@ -2,20 +2,14 @@
   <section class="features" id="recursos" aria-labelledby="features-title">
     <div class="wrap section">
       <div class="feature-heading" v-reveal>
-        <span class="eyebrow">POR DENTRO DO ORCE.ME</span>
         <h2 id="features-title">
-          Um orçamento melhor começa<br /><em>com informação clara.</em>
+          Do item cadastrado<br /><em>ao documento final.</em>
         </h2>
-        <p class="feature-lead">
-          Do item cadastrado ao documento final: veja o que você organiza em
-          cada etapa.
-        </p>
       </div>
       <div class="feature-grid">
         <article class="feature-card" v-reveal="0">
           <div class="feature-copy">
-            <span class="feature-number">01 / CATÁLOGO</span>
-            <h3>Cadastre uma vez. Reutilize nos orçamentos.</h3>
+            <h3>Reutilize itens do catálogo.</h3>
             <p>
               Guarde descrições e preços de produtos e serviços. Importe uma
               planilha CSV ou adicione cada item.
@@ -54,16 +48,12 @@
                   ><b>Decoração da mesa</b><small>Serviço · SV-001</small></span
                 ><strong>R$ 120,00</strong>
               </div>
-              <div class="workspace-note">
-                3 itens prontos para o próximo orçamento
-              </div>
             </div>
           </div>
         </article>
         <article class="feature-card" v-reveal="1">
           <div class="feature-copy">
-            <span class="feature-number">02 / PROPOSTA</span>
-            <h3>Cliente, itens e valores. Sem informação solta.</h3>
+            <h3>Cliente, itens e total juntos.</h3>
             <p>
               Ajuste quantidades e descontos, confira o total e exporte um PDF
               com os dados da sua empresa.
@@ -95,17 +85,12 @@
               <div class="proposal-total">
                 <span>Total do orçamento</span><strong>R$ 650,00</strong>
               </div>
-              <div class="export-note">
-                <span aria-hidden="true">✓</span> PDF com os dados da sua
-                empresa
-              </div>
             </div>
           </div>
         </article>
         <article class="history-card" v-reveal>
           <div class="feature-copy">
-            <span class="feature-number">03 / HISTÓRICO</span>
-            <h3>Retome cada proposta com contexto.</h3>
+            <h3>Histórico de cada proposta.</h3>
             <p>
               Consulte seus orçamentos e registre o andamento de cada conversa.
             </p>
@@ -142,30 +127,8 @@
   background: var(--color-band);
   border-block: 1px solid var(--color-outline);
 }
-.feature-heading {
-  display: grid;
-  grid-template-columns: 1.4fr 1fr;
-  align-items: end;
-  column-gap: var(--spacing-5xl);
-}
-.feature-heading .eyebrow {
-  grid-column: 1 / -1;
-}
 .feature-heading h2 {
   margin-bottom: 0;
-}
-.feature-number {
-  font-size: var(--typography-label-sm-font-size);
-  font-weight: var(--typography-label-md-font-weight);
-  letter-spacing: 1px;
-  color: var(--color-secondary);
-}
-.feature-lead {
-  max-width: 400px;
-  padding-bottom: var(--spacing-sm);
-  font-size: var(--typography-body-lg-font-size);
-  color: var(--color-on-surface-muted);
-  line-height: var(--typography-body-lg-line-height);
 }
 .feature-grid {
   display: grid;
@@ -305,11 +268,6 @@
   font-weight: 500;
   white-space: nowrap;
 }
-.workspace-note {
-  margin-top: var(--spacing-md);
-  color: var(--color-on-surface-muted);
-  font-size: 9px;
-}
 .client-field {
   display: grid;
   gap: var(--spacing-xs);
@@ -351,14 +309,6 @@
   font-weight: 500;
   letter-spacing: -0.7px;
   white-space: nowrap;
-}
-.export-note {
-  margin-top: var(--spacing-md);
-  font-size: 10px;
-  color: var(--color-secondary);
-}
-.export-note span {
-  margin-right: var(--spacing-xs);
 }
 .history-card {
   grid-column: 1 / -1;
@@ -412,14 +362,6 @@
   margin-top: var(--spacing-lg);
   font-size: var(--typography-label-sm-font-size);
   color: var(--color-on-surface-muted);
-}
-@media (max-width: 1050px) {
-  .feature-heading {
-    grid-template-columns: 1fr;
-  }
-  .feature-lead {
-    margin-top: var(--spacing-lg);
-  }
 }
 @media (max-width: 760px) {
   .feature-grid,

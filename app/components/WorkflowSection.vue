@@ -2,12 +2,7 @@
   <section class="workflow wrap section" id="como-funciona">
     <div class="section-heading">
       <div class="sticky" v-reveal>
-        <span class="eyebrow">COMO FUNCIONA</span>
         <h2>Do catálogo ao PDF, <em>em três etapas.</em></h2>
-        <p>
-          Organize os itens, confira os valores e prepare o documento para seu
-          cliente.
-        </p>
       </div>
     </div>
     <ol class="steps">
@@ -19,35 +14,25 @@
             Cadastre produtos e serviços ou importe uma planilha. Descrições e
             preços prontos para usar de novo.
           </p>
-          <div class="mini-tags">
-            <span>▧ Produtos</span><span>⌁ Serviços</span><span>↥ CSV</span>
-          </div>
         </div>
       </li>
       <li class="draw-line" v-reveal>
         <span class="step-number" aria-hidden="true">02</span>
         <div>
-          <h3>Dê forma à proposta.</h3>
+          <h3>Prepare a proposta.</h3>
           <p>
             Escolha o cliente, adicione os itens e ajuste quantidades e
             descontos. Confira cada detalhe antes de enviar.
           </p>
-          <div class="mini-calc">
-            <span>Produtos + serviços</span><b>= Seu orçamento</b>
-          </div>
         </div>
       </li>
       <li class="draw-line" v-reveal>
         <span class="step-number" aria-hidden="true">03</span>
         <div>
-          <h3>Envie com confiança.</h3>
+          <h3>Envie o PDF.</h3>
           <p>
-            Exporte um PDF profissional com a sua marca e acompanhe o status da
-            proposta em um só lugar.
+            Exporte o PDF com a sua marca e acompanhe o status de cada proposta.
           </p>
-          <div class="mini-tags">
-            <span class="green-tag">✓ PDF pronto</span><span>Enviado</span>
-          </div>
         </div>
       </li>
     </ol>
@@ -67,12 +52,6 @@
 }
 .section-heading {
   align-self: stretch;
-}
-.section-heading > div > p {
-  max-width: 320px;
-  font-size: var(--typography-body-lg-font-size);
-  line-height: var(--typography-body-lg-line-height);
-  color: var(--color-on-surface-muted);
 }
 .steps {
   margin: 0;
@@ -118,36 +97,6 @@
   line-height: var(--typography-body-lg-line-height);
   color: var(--color-on-surface-muted);
   max-width: 440px;
-}
-.mini-tags {
-  display: flex;
-  flex-wrap: wrap;
-  gap: var(--spacing-sm);
-  margin-top: var(--spacing-xl);
-}
-.mini-tags > span {
-  background: var(--color-surface-tint);
-  border: 1px solid var(--color-outline);
-  border-radius: var(--rounded-sm);
-  padding: 6px 9px;
-  font-size: var(--typography-label-sm-font-size);
-  color: var(--color-secondary);
-}
-.mini-tags .green-tag {
-  background: var(--color-status-accepted);
-  color: var(--color-on-status-accepted);
-}
-.mini-calc {
-  display: flex;
-  gap: var(--spacing-md);
-  align-items: center;
-  margin-top: var(--spacing-xl);
-  font-size: var(--typography-label-sm-font-size);
-  color: var(--color-on-surface-muted);
-}
-.mini-calc b {
-  font-weight: 500;
-  color: var(--color-secondary);
 }
 @media (max-width: 1050px) {
   .workflow {

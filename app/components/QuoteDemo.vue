@@ -49,12 +49,6 @@ function reset() {
           </div>
         </div>
       </div>
-      <div class="chip chip-total" aria-hidden="true">
-        <small>Total do orçamento</small><b>R$ 650,00</b>
-      </div>
-      <div class="chip chip-pdf" aria-hidden="true">
-        <span class="check">✓</span>PDF pronto para enviar
-      </div>
     </div>
   </figure>
 </template>
@@ -125,53 +119,6 @@ function reset() {
   transform: translateY(-14px) translateZ(40px);
   animation-name: fan-center;
 }
-.chip {
-  position: absolute;
-  z-index: 2;
-  display: flex;
-  align-items: center;
-  gap: var(--spacing-sm);
-  padding: var(--spacing-md) var(--spacing-lg);
-  background: var(--color-surface-raised);
-  border: 1px solid var(--color-outline);
-  border-radius: var(--rounded-lg);
-  box-shadow: var(--shadow-raised);
-  font-size: var(--typography-label-sm-font-size);
-  animation: chip-in 0.9s var(--ease-editorial) both;
-}
-.chip-total {
-  top: var(--spacing-5xl);
-  left: var(--spacing-2xl);
-  flex-direction: column;
-  align-items: flex-start;
-  gap: 2px;
-  transform: rotate(-3deg);
-  animation-delay: 1.8s;
-}
-.chip-total small {
-  color: var(--color-on-surface-muted);
-}
-.chip-total b {
-  font-size: var(--typography-figure-font-size);
-  font-weight: var(--typography-figure-font-weight);
-  letter-spacing: var(--typography-figure-letter-spacing);
-  white-space: nowrap;
-}
-.chip-pdf {
-  right: var(--spacing-3xl);
-  bottom: var(--spacing-3xl);
-  transform: rotate(2deg);
-  animation-delay: 2.2s;
-}
-.check {
-  display: grid;
-  place-items: center;
-  width: 18px;
-  height: 18px;
-  border-radius: var(--rounded-full);
-  background: var(--color-status-accepted);
-  color: var(--color-on-status-accepted);
-}
 @keyframes quotation-layouts {
   from {
     opacity: 0;
@@ -196,12 +143,6 @@ function reset() {
     transform: translateY(0) translateZ(40px);
   }
 }
-@keyframes chip-in {
-  from {
-    opacity: 0;
-    translate: 0 16px;
-  }
-}
 @media (max-width: 760px) {
   .gallery-stage {
     height: 470px;
@@ -219,14 +160,6 @@ function reset() {
   .layout-example:nth-child(2) {
     transform: translate(100px, 16px) rotate(6deg);
   }
-  .chip-total {
-    top: var(--spacing-3xl);
-    left: var(--spacing-lg);
-  }
-  .chip-pdf {
-    right: var(--spacing-lg);
-    bottom: var(--spacing-lg);
-  }
 }
 @media (prefers-reduced-motion: reduce) {
   .gallery-rail {
@@ -236,8 +169,7 @@ function reset() {
     transform: none;
     transition: none;
   }
-  .layout-example,
-  .chip {
+  .layout-example {
     animation: none;
   }
 }
