@@ -43,7 +43,7 @@ test('product screens are real images with a description and a reserved size', (
 
 test('navigation reaches every homepage section from secondary pages', () => {
   const header = component('SiteHeader')
-  for (const id of ['como-funciona', 'recursos', 'materiais']) {
+  for (const id of ['como-funciona', 'recursos']) {
     assert.ok(header.includes(`href="/#${id}"`))
   }
   for (const route of ['planos-e-precos', 'ajuda']) {
@@ -58,7 +58,6 @@ test('the public quotation story does not promote speculative services or repeat
     'HeroSection',
     'WorkflowSection',
     'FeaturesSection',
-    'ResourcesSection',
     'ClosingSection',
     'SiteFooter',
   ]

@@ -448,8 +448,7 @@ Each page is a single column. Content sits in a centered container, `.wrap`, wit
   - Hero: centered copy (max 760px) over the product frame, which spans the container. A soft emerald and sun wash sits behind the lower half of the hero.
   - Workflow: a centered heading over three grey step cards with a 20px gap. One column at 1050px.
   - Features: a centered heading over two grey feature cards and a full-width history card.
-  - Pricing banner: one full-width grey card between features and resources.
-  - Resources: a three-column card grid with a 20px gap; the guide card spans the full row. Two columns at 1050px, one at 760px.
+  - Pricing banner: one full-width grey card between the features and the closing band.
   - Closing: a soft emerald card inside the container.
   - Pricing: a separate page with a two-column quotation capability and current-options panel.
   - FAQ: a `1fr 1.25fr` grid.
@@ -462,7 +461,7 @@ Each page is a single column. Content sits in a centered container, `.wrap`, wit
 
 Depth is light and clean. Grey cards sit flat on white; app windows and documents float with a soft neutral shadow.
 
-- **Raised:** `0 1px 2px #16171c0a, 0 8px 24px -10px #16171c1f`. App windows inside cards, resource cards on hover.
+- **Raised:** `0 1px 2px #16171c0a, 0 8px 24px -10px #16171c1f`. App windows inside cards.
 - **Floating:** `0 30px 80px -30px #16171c40, 0 2px 8px #16171c0d`. The hero product frame.
 - **Dark theme:** raised `0 1px 2px #00000066, 0 10px 30px -12px #000000aa`; floating `0 30px 80px -24px #000000cc`.
 - **Washes:** The hero and the closing card use soft radial washes of `primary-soft` and `tertiary-soft` only. No other gradients.
@@ -473,7 +472,7 @@ Depth is light and clean. Grey cards sit flat on white; app windows and document
 
 - `rounded.sm` (6px): chips and small buttons inside workflow snippets.
 - `rounded.md` (10px): page buttons, inputs, workflow snippets.
-- `rounded.lg` (16px): app windows, panels, the dialog, resource cards.
+- `rounded.lg` (16px): app windows, panels, the dialog.
 - `rounded.xl` (24px): grey section cards, the product frame and the closing card.
 - `rounded.full`: pills, status chips, step badges, the arrow circle in buttons and the theme toggle.
 - Borders are 1px hairlines in `outline`.
@@ -488,10 +487,10 @@ Depth is light and clean. Grey cards sit flat on white; app windows and document
 - **Product frame:** A translucent white `rounded.xl` frame (8px padding, hairline, floating shadow) holding a real capture of the quote inbox in a `rounded.lg` hairline window. It rises in once.
 - **Step card:** A grey `rounded.xl` card per workflow step with an emerald numbered badge, a `title-lg` title, a `body-md` text and a small white UI snippet from the same sample quote.
 - **Feature card:** Grey `rounded.xl` cards with copy on top and a real screen that enters from the right and is cut by the card edges (top-left radius, hairline on the top and left, raised shadow); the screen lifts 6px on hover. The follow-up card spans the row with the home dashboard beside its copy.
-- **Resource card:** A grey `rounded.lg` link with a `title-md` title, a `body-sm` description and an emerald `→`; it turns white with the raised shadow on hover. The guide card spans the row.
 - **Pricing banner:** A full-width grey card with a short title and an emerald text link.
 - **Closing card:** A `primary-soft` `rounded.xl` card with a sun wash, a centered `headline-lg` with emerald accent words, and the primary button.
-- **Footer:** Brand, links and copyright in one row, with a top hairline.
+- **Footer:** Brand, links (plans, help, the guide and the quote calculator) and copyright in one row, with a top hairline.
+- **Related tools:** Every calculator ends with the same list of underlined links to the other free tools (`RelatedTools.vue`). The home page does not list the tools; it reaches them through the footer link to the quote calculator.
 - **Focus ring:** A 3px `secondary` outline with a 5px offset on every interactive element.
 - **Soft pill:** `primary-soft` with `on-primary-soft` text, `label-sm`, pill. Mockup states such as the active sidebar item.
 - **Theme toggle:** A 36px circle with a hairline border and a 17px stroke icon. Moon in light, sun in dark. The page starts light; the toggle is the only way into dark.

@@ -78,7 +78,6 @@ if (origin) {
         >
       </div>
     </div>
-    <ResourcesSection />
     <ClosingSection />
   </div>
 </template>

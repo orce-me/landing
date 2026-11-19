@@ -17,7 +17,9 @@ usePageSeo({
         <NuxtLink to="/como-fazer-orcamento-de-servicos"
           >Ler o guia de orçamentos</NuxtLink
         >
-        <NuxtLink to="/#materiais">Acessar ferramentas gratuitas</NuxtLink>
+        <NuxtLink to="/calculadora-de-orcamento"
+          >Usar a calculadora de orçamento</NuxtLink
+        >
         <NuxtLink to="/planos-e-precos">Consultar planos e preços</NuxtLink>
       </div>
     </div>

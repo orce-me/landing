@@ -102,7 +102,7 @@ test('public production pages expose canonical, metadata, schema and valid route
         assert.equal((page.match(/<h1\b/g) || []).length, 1)
         assert.ok(sitemap.includes(`https://example.com/${slug}`))
         assert.notEqual(meta(page, 'description'), meta(home, 'description'))
-        for (const anchor of ['como-funciona', 'recursos', 'materiais']) {
+        for (const anchor of ['como-funciona', 'recursos']) {
           assert.ok(page.includes(`href="/#${anchor}"`))
           assert.ok(home.includes(`id="${anchor}"`))
         }
@@ -113,6 +113,11 @@ test('public production pages expose canonical, metadata, schema and valid route
       )
       assert.match(home, /Tela de orçamentos do orce\.me/)
       assert.equal((home.match(/Menos tempo orçando/g) || []).length, 1)
+      // The home links the quote calculator, which links every other tool.
+      assert.match(home, /href="\/calculadora-de-orcamento"/)
+      const quoteCalculator = await (
+        await fetch(`${base}/calculadora-de-orcamento`)
+      ).text()
       for (const slug of [
         'calculadora-de-desconto',
         'calculadora-de-margem',
@@ -126,7 +131,10 @@ test('public production pages expose canonical, metadata, schema and valid route
         )
         assert.equal((page.match(/<h1\b/g) || []).length, 1)
         assert.ok(page.includes('application/ld+json'))
-        assert.ok(home.includes(`href="/${slug}"`))
+        assert.ok(
+          quoteCalculator.includes(`href="/${slug}"`) ||
+            slug === 'calculadora-de-orcamento',
+        )
         assert.ok(sitemap.includes(`https://example.com/${slug}`))
       }
 

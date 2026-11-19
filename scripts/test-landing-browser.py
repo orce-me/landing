@@ -103,7 +103,7 @@ with sync_playwright() as playwright:
 
     for width in [1240, 390]:
         page.set_viewport_size({'width': width, 'height': 900})
-        for destination in ['como-funciona', 'recursos', 'materiais']:
+        for destination in ['como-funciona', 'recursos']:
             page.goto(args.base_url + '/ajuda')
             if width == 390:
                 page.get_by_role('button', name='Abrir menu').click()

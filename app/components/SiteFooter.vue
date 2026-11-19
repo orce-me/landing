@@ -10,6 +10,7 @@ const year = new Date().getFullYear()
     <NuxtLink to="/ajuda">Ajuda</NuxtLink
     ><NuxtLink to="/como-fazer-orcamento-de-servicos"
       >Guia de orçamentos</NuxtLink
+    ><NuxtLink to="/calculadora-de-orcamento">Calculadora de orçamento</NuxtLink
     ><small>© {{ year }} orce.me</small>
   </footer>
 </template>

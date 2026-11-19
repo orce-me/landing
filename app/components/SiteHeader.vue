@@ -41,7 +41,6 @@ function closeMenu() {
       >
         <a href="/#como-funciona">Como funciona</a>
         <a href="/#recursos">Funcionalidades</a>
-        <a href="/#materiais">Ferramentas</a>
         <NuxtLink to="/planos-e-precos">Planos e preços</NuxtLink>
         <NuxtLink to="/ajuda">Ajuda</NuxtLink>
       </nav>
