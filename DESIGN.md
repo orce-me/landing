@@ -1,27 +1,33 @@
 ---
 version: alpha
 name: orce.me
-description: Visual identity of orce.me. Warm and friendly. Cream paper, warm brown text, terracotta actions and soft pastel cards, with a soft serif for headlines and a friendly sans for the product and copy. The product is shown at real, readable size.
+description: Visual identity of orce.me. Warm and human. Raw-cotton paper, warm brown text, jabuticaba actions and the colors of a Brazilian street market (maracujá, urucum, anil, mata), with a soft serif for headlines and a friendly sans for the product and copy. The product is shown at real, readable size.
 colors:
   # Light theme
-  primary: '#c2461f'
-  primary-hover: '#a83b18'
-  on-primary: '#ffffff'
-  secondary: '#6a4fb3'
-  tertiary: '#f2a65a'
-  neutral: '#fbf6ee'
-  surface: '#fffdf9'
-  surface-raised: '#ffffff'
-  surface-tint: '#f5ede1'
-  band: '#efe5d6'
-  on-surface: '#2b2118'
-  on-surface-muted: '#6b5d50'
-  outline: '#e8dccb'
-  peach: '#ffe3d1'
-  butter: '#fdefc3'
-  mint: '#d8efdf'
-  lavender: '#e7e1fa'
-  sky: '#d9ebfa'
+  primary: '#5a1f45'
+  primary-hover: '#74295a'
+  on-primary: '#fbf3e6'
+  accent: '#b9411c'
+  secondary: '#2b4c9b'
+  tertiary: '#f2b33d'
+  neutral: '#f6efe2'
+  surface: '#fbf6ec'
+  surface-raised: '#fffdf8'
+  surface-tint: '#efe5d3'
+  band: '#e8dcc6'
+  on-surface: '#2a1e17'
+  on-surface-muted: '#6a5848'
+  outline: '#e2d4bd'
+  maracuja: '#f2b33d'
+  on-maracuja: '#2a1e17'
+  jabuticaba: '#5a1f45'
+  on-jabuticaba: '#fbf3e6'
+  urucum: '#e26a3b'
+  on-urucum: '#2a1e17'
+  anil: '#2b4c9b'
+  on-anil: '#f6efe2'
+  mata: '#23503d'
+  on-mata: '#f6efe2'
   status-draft: '#fbeec4'
   on-status-draft: '#6b5300'
   status-sent: '#dceafb'
@@ -30,23 +36,19 @@ colors:
   on-status-accepted: '#2c5e33'
   error: '#b3261e'
   # Dark theme
-  primary-dark: '#ff8a63'
-  primary-hover-dark: '#ffa182'
-  on-primary-dark: '#2b1408'
-  secondary-dark: '#b9a8ff'
-  neutral-dark: '#1b1611'
-  surface-dark: '#241e18'
-  surface-raised-dark: '#2b241d'
-  surface-tint-dark: '#2e261f'
-  band-dark: '#2a221b'
-  on-surface-dark: '#f6eee3'
-  on-surface-muted-dark: '#bfb1a1'
-  outline-dark: '#3d3329'
-  peach-dark: '#3d2a20'
-  butter-dark: '#3a3220'
-  mint-dark: '#213328'
-  lavender-dark: '#2c2740'
-  sky-dark: '#1f2e3d'
+  primary-dark: '#f2b33d'
+  primary-hover-dark: '#f6c461'
+  on-primary-dark: '#2a1e17'
+  accent-dark: '#ff9a6b'
+  secondary-dark: '#9fb5ff'
+  neutral-dark: '#1c1418'
+  surface-dark: '#261c21'
+  surface-raised-dark: '#2e2328'
+  surface-tint-dark: '#33272c'
+  band-dark: '#2c2126'
+  on-surface-dark: '#f6efe2'
+  on-surface-muted-dark: '#c4b2a6'
+  outline-dark: '#43343a'
   status-draft-dark: '#463e27'
   on-status-draft-dark: '#eedc9f'
   status-sent-dark: '#233a55'
@@ -215,11 +217,11 @@ components:
     textColor: '{colors.on-surface-muted-dark}'
   headline-accent:
     backgroundColor: '{colors.neutral}'
-    textColor: '{colors.primary}'
+    textColor: '{colors.accent}'
     typography: '{typography.headline-md-accent}'
   headline-accent-dark:
     backgroundColor: '{colors.neutral-dark}'
-    textColor: '{colors.primary-dark}'
+    textColor: '{colors.accent-dark}'
   brand-mark:
     backgroundColor: '{colors.primary}'
     textColor: '{colors.on-primary}'
@@ -243,8 +245,8 @@ components:
   button-primary-dark-hover:
     backgroundColor: '{colors.primary-hover-dark}'
   button-light:
-    backgroundColor: '{colors.surface-raised}'
-    textColor: '{colors.primary}'
+    backgroundColor: '{colors.maracuja}'
+    textColor: '{colors.on-maracuja}'
     typography: '{typography.label-md}'
     rounded: '{rounded.full}'
     height: 52px
@@ -257,41 +259,22 @@ components:
   card-dark:
     backgroundColor: '{colors.surface-dark}'
     textColor: '{colors.on-surface-dark}'
-  card-peach:
-    backgroundColor: '{colors.peach}'
-    textColor: '{colors.on-surface}'
+  card-maracuja:
+    backgroundColor: '{colors.maracuja}'
+    textColor: '{colors.on-maracuja}'
     rounded: '{rounded.xl}'
-  card-peach-dark:
-    backgroundColor: '{colors.peach-dark}'
-    textColor: '{colors.on-surface-dark}'
-  card-butter:
-    backgroundColor: '{colors.butter}'
-    textColor: '{colors.on-surface}'
+  card-urucum:
+    backgroundColor: '{colors.urucum}'
+    textColor: '{colors.on-urucum}'
     rounded: '{rounded.xl}'
-  card-butter-dark:
-    backgroundColor: '{colors.butter-dark}'
-    textColor: '{colors.on-surface-dark}'
-  card-mint:
-    backgroundColor: '{colors.mint}'
-    textColor: '{colors.on-surface}'
+  card-anil:
+    backgroundColor: '{colors.anil}'
+    textColor: '{colors.on-anil}'
     rounded: '{rounded.xl}'
-  card-mint-dark:
-    backgroundColor: '{colors.mint-dark}'
-    textColor: '{colors.on-surface-dark}'
-  card-lavender:
-    backgroundColor: '{colors.lavender}'
-    textColor: '{colors.on-surface}'
+  card-mata:
+    backgroundColor: '{colors.mata}'
+    textColor: '{colors.on-mata}'
     rounded: '{rounded.xl}'
-  card-lavender-dark:
-    backgroundColor: '{colors.lavender-dark}'
-    textColor: '{colors.on-surface-dark}'
-  card-sky:
-    backgroundColor: '{colors.sky}'
-    textColor: '{colors.on-surface}'
-    rounded: '{rounded.xl}'
-  card-sky-dark:
-    backgroundColor: '{colors.sky-dark}'
-    textColor: '{colors.on-surface-dark}'
   app-window:
     backgroundColor: '{colors.surface-raised}'
     textColor: '{colors.on-surface}'
@@ -355,13 +338,14 @@ components:
     backgroundColor: '{colors.status-accepted-dark}'
     textColor: '{colors.on-status-accepted-dark}'
   closing-card:
-    backgroundColor: '{colors.primary}'
-    textColor: '{colors.on-primary}'
+    backgroundColor: '{colors.jabuticaba}'
+    textColor: '{colors.on-jabuticaba}'
     typography: '{typography.headline-lg}'
     rounded: '{rounded.xl}'
-  closing-card-dark:
-    backgroundColor: '{colors.primary-dark}'
-    textColor: '{colors.on-primary-dark}'
+  closing-accent:
+    backgroundColor: '{colors.jabuticaba}'
+    textColor: '{colors.maracuja}'
+    typography: '{typography.headline-lg-accent}'
   input:
     backgroundColor: '{colors.surface-raised}'
     textColor: '{colors.on-surface}'
@@ -406,38 +390,40 @@ The spec has no theme modes. Tokens with the `-dark` suffix are the dark theme v
 
 orce.me helps small Brazilian businesses (bakeries, installers, photographers, painters, service providers) turn a catalog into professional quotes. The site has a quotation-focused landing page, separate pricing and help pages, free calculators, and a guide.
 
-The identity is **warm and friendly**: the tone of a neighborhood business, not a corporate SaaS. It must feel welcoming and easy, and it must show the real product instead of decorating around it.
+The identity is **warm and human**: the tone and colors of a neighborhood business in Brazil, not a corporate SaaS. It must feel welcoming and easy, and it must show the real product instead of decorating around it.
 
-- **Mood:** Cream paper, warm brown text, terracotta actions and soft pastel cards. Generous rounding and white space.
+- **Mood:** Raw-cotton paper, warm brown text, jabuticaba actions and solid market-color cards (maracujá, urucum, anil, mata). Generous rounding and white space.
 - **Product first:** The hero and the feature cards show the quotation editor and the generated PDF at a readable size, with the same sample quote everywhere (orçamento nº 0042 for Marina Oliveira, R$ 650,00).
 - **Voice:** Plain, concrete and kind. Headlines say what the product does. Use at most one catch phrase, in the closing card.
 - **Language:** All copy is Brazilian Portuguese (`lang="pt-BR"`). Currency uses `Intl.NumberFormat('pt-BR', { style: 'currency', currency: 'BRL' })`.
 - **Content pages:** The calculators and the guide put reading and input first. They use a narrower column, larger body text, underlined links, and no mockups.
-- **Brand:** The wordmark is lowercase `orce.me` in Figtree 700 with an apricot period. The mark is a terracotta circle with a white `o`.
+- **Brand:** The wordmark is lowercase `orce.me` in Figtree 700 with a maracujá period. The mark is a jabuticaba circle with a cotton `o`, and the wordmark period is maracujá.
 
 ## Colors
 
-Cream carries the page. Terracotta is the only action color. Pastels group content into friendly cards; each pastel is a background only, always with the regular brown text. Violet appears only in small labels and the focus ring.
+The palette comes from everyday Brazil: the fruit stand, the dye pot and the woods. Raw cotton carries the page. Jabuticaba is the only action color. Four market colors (maracujá, urucum, anil and mata) give each block a voice; they are solid and earthy, never pastel and never neon. Each pairs with a fixed text color and stays the same in both themes.
 
 **Light theme**
 
-- `primary` Terracotta (#c2461f) with white `on-primary` (5:1) and hover #a83b18. Buttons, links that act, the brand mark, the closing card and headline accents.
-- `secondary` Violet (#6a4fb3). Small labels, tags and the focus ring.
-- `tertiary` Apricot (#f2a65a). Decorative only: the wordmark period and small dots. Never text.
-- `neutral` Cream (#fbf6ee) is the page. `surface` (#fffdf9) and `surface-raised` (#ffffff) are cards and app windows. `surface-tint` (#f5ede1) and `band` (#efe5d6) are panels and mockup fills.
-- `on-surface` (#2b2118) and `on-surface-muted` (#6b5d50) carry text. `outline` (#e8dccb) is the hairline.
-- Pastels: `peach` (#ffe3d1), `butter` (#fdefc3), `mint` (#d8efdf), `lavender` (#e7e1fa), `sky` (#d9ebfa).
+- `primary` Jabuticaba (#5a1f45) with raw-cotton `on-primary` (#fbf3e6) and hover #74295a. Buttons, the brand mark and the closing card.
+- `accent` Urucum ink (#b9411c). The italic accent clause in headlines and small arrows. 5:1 on the page.
+- `secondary` Anil (#2b4c9b). Small labels, tags and the focus ring.
+- `tertiary` Maracujá (#f2b33d). Decorative only outside cards: the wordmark period. Never text on the page.
+- `neutral` Raw cotton (#f6efe2) is the page. `surface` (#fbf6ec) and `surface-raised` (#fffdf8) are cards and app windows. `surface-tint` (#efe5d3) and `band` (#e8dcc6) are panels and mockup fills.
+- `on-surface` (#2a1e17) and `on-surface-muted` (#6a5848) carry text. `outline` (#e2d4bd) is the hairline.
+- Market colors, each with its text pair: `jabuticaba` (#5a1f45) with cotton, `maracuja` (#f2b33d) with brown, `urucum` (#e26a3b) with brown, `anil` (#2b4c9b) with cotton, `mata` (#23503d) with cotton.
 - Quote-status pairs keep semantic amber, blue and green. `error` is #b3261e.
 
 **Dark theme**
 
-- The page is warm cocoa (#1b1611) with surfaces #241e18 and #2b241d, cream text (#f6eee3) and muted #bfb1a1. Hairlines are #3d3329.
-- Terracotta brightens to #ff8a63 with dark `on-primary-dark` text. Violet becomes #b9a8ff.
-- Each pastel has a deep, low-saturation partner (`peach-dark` #3d2a20 and so on) that keeps the card grouping without glowing.
+- The page is a deep jabuticaba-brown (#1c1418) with surfaces #261c21 and #2e2328, cotton text (#f6efe2) and muted #c4b2a6. Hairlines are #43343a.
+- The action color becomes maracujá (#f2b33d) with brown text, so buttons stay bright on the dark page. The accent clause becomes #ff9a6b. Anil labels become #9fb5ff.
+- Market-color cards keep their light-theme colors.
 
 **Shared rules**
 
-- Never put two pastels side by side without a gap. Never use a pastel as text.
+- One market color per block. Never place the same color in two adjacent blocks.
+- Text inside a market-color card uses its `on-` pair; supporting text there is the same pair at 82% opacity.
 - Status chips use only their semantic pairs.
 - The `theme-color` is `primary` in light and `neutral-dark` in dark. Keep the initial meta tag in `nuxt.config.ts` in sync.
 
@@ -450,7 +436,7 @@ Two families, self-hosted through Fontsource; `app.vue` preloads the two files t
 
 - **Display:** The hero `h1` is 76px, weight 500, line height 1.04, tracking -2px.
 - **Headlines:** Section `h2` titles use `headline-md` (44px). The closing card uses `headline-lg` (56px). Content pages use `headline-page` (48px).
-- **Accent:** `<em>` sets the second clause of a headline in Fraunces italic, weight 400, in `primary`. Use it once per headline at most.
+- **Accent:** `<em>` sets the second clause of a headline in Fraunces italic, weight 400, in `accent` (urucum). Use it once per headline at most.
 - **Titles:** `title-md` (18px) for card and step titles, `title-lg` (21px) for feature cards and resource cards, `title-xl` (24px) for content sections.
 - **Figures:** Prices and totals use `figure` (22px, 700) and `figure-lg` (40px). Use tabular numbers and keep currency on one line.
 - **Body:** `lead` (19px) for the hero paragraph and content intros, `body-lg` (17px) for supporting text, `body-md` (15px) for descriptions, `body-sm` (14px) for help text and the app window.
@@ -467,11 +453,11 @@ Each page is a single column. Content sits in a centered container, `.wrap`, wit
 - **Header:** 76px tall on desktop, 64px on mobile. It sticks to the top with a translucent `neutral` ground (92% mix) and a 14px backdrop blur, and shows a bottom hairline once the page scrolls. Below 380px the brand shrinks and the gaps tighten.
 - **Grids:**
   - Hero: copy and showcase in a `0.85fr 1.15fr` grid, vertically centered. One column at 1050px.
-  - Workflow: a centered heading over three equal pastel step cards with a 24px gap. One column at 1050px.
-  - Features: a centered heading over two pastel feature cards and a full-width history card.
+  - Workflow: a centered heading over three equal market-color step cards with a 24px gap. One column at 1050px.
+  - Features: a centered heading over two market-color feature cards and a full-width history card.
   - Pricing banner: one full-width tint card between features and resources.
   - Resources: a three-column card grid with a 20px gap; the guide card spans the full row. Two columns at 1050px, one at 760px.
-  - Closing: a terracotta card inside the container.
+  - Closing: a jabuticaba card inside the container.
   - Pricing: a separate page with a two-column quotation capability and current-options panel.
   - FAQ: a `1fr 1.25fr` grid.
   - Calculators: inputs and result side by side. The quote calculator uses `1.2fr 1fr` with a 32px gap. The small calculators use two equal columns in one bordered box.
@@ -496,29 +482,29 @@ Round and soft.
 - `rounded.sm` (8px): chips inside mockups, small buttons in mockups.
 - `rounded.md` (14px): inputs, mockup rows and inner panels.
 - `rounded.lg` (24px): cards, app windows, panels, the dialog.
-- `rounded.xl` (36px): pastel section cards and the closing card.
+- `rounded.xl` (36px): market-color section cards and the closing card.
 - `rounded.full`: every button, tags, status chips, step badges, the brand mark and the theme toggle.
 - Borders are 1px hairlines in `outline`.
 
 ## Components
 
-- **Primary button:** Terracotta pill, white `label-md` text, 52px tall, 26px inline padding. On hover it lifts 2px and goes to `primary-hover`.
-- **Light button:** White pill with terracotta text, used on the terracotta closing card.
+- **Primary button:** Jabuticaba pill, cotton `label-md` text (maracujá with brown text in dark), 52px tall, 26px inline padding. On hover it lifts 2px and goes to `primary-hover`.
+- **Light button:** Maracujá pill with brown text, used on the jabuticaba closing card.
 - **Text link:** `label-lg` text with a trailing glyph (`↓` in-page, `→` next page) that slides on hover. No underline.
 - **Header:** Sticky and translucent (see Layout). Brand left, navigation centered (`label-lg`), then the login link as an outlined pill and the theme toggle. At 760px and below the navigation moves into a menu panel (`surface`, `rounded.lg`, hairline border).
-- **Hero showcase:** A peach `rounded.xl` panel holding the quotation editor (`app-window`) at real size: quote number and draft chip, client and validity fields, three item rows with quantity and price, subtotal, discount and total, and an export action rendered as a non-interactive pill. The generated PDF paper (`QuoteDocument`) overlaps the lower right, tilted 3deg. Item rows appear one by one, then the paper slides in, once.
-- **Step card:** One pastel card per workflow step (peach, butter, mint), `rounded.xl`, with a numbered `rounded.full` badge, a `title-lg` title, a `body-md` text and a small real UI snippet from the same sample quote.
-- **Feature card:** Lavender and sky `rounded.xl` cards, each with copy on top and an `app-window` mockup below. The history strip is a full-width butter card.
+- **Hero showcase:** A maracujá `rounded.xl` panel holding the quotation editor (`app-window`) at real size: quote number and draft chip, client and validity fields, three item rows with quantity and price, subtotal, discount and total, and an export action rendered as a non-interactive pill. The generated PDF paper (`QuoteDocument`) overlaps the lower right, tilted 3deg. Item rows appear one by one, then the paper slides in, once.
+- **Step card:** One market-color card per workflow step (urucum, anil, mata), `rounded.xl`, with a numbered `rounded.full` badge, a `title-lg` title, a `body-md` text and a small real UI snippet from the same sample quote.
+- **Feature card:** Anil and urucum `rounded.xl` cards, each with copy on top and an `app-window` mockup below. The history strip is a full-width maracujá card.
 - **Resource card:** A `card` link with a `title-md` title, a `body-sm` description and a `→` that slides on hover; the card lifts 4px on hover.
 - **Pricing banner:** A full-width `surface-tint` card with a short sentence and a primary text link.
-- **Closing card:** A terracotta `rounded.xl` card inside the container, white `headline-lg` text with an italic clause, and the light button.
+- **Closing card:** A jabuticaba `rounded.xl` card (the fixed `jabuticaba` token, so it stays purple in dark) inside the container, cotton `headline-lg` text with a maracujá italic clause, and the maracujá button.
 - **Footer:** Brand, links and copyright in one row, with a top hairline.
 - **Theme toggle:** A 36px circle with a hairline border and a 17px stroke icon. Moon in light, sun in dark.
 - **Card:** `surface`, `rounded.lg`, 28px padding, raised shadow.
 - **Pricing panel:** A card on the separate pricing route explains quotation capabilities and links to current app conditions. No speculative module cards or invented prices appear on any public page.
 - **Tag:** `surface-tint` with violet text, `label-sm`, pill, hairline border.
 - **Status chip:** Draft, sent, and accepted pairs only, pill, small text.
-- **FAQ:** Native `<details>` and `<summary>` with a hairline under each item. A `+` glyph in terracotta rotates 45 degrees when open.
+- **FAQ:** Native `<details>` and `<summary>` with a hairline under each item. A `+` glyph in urucum rotates 45 degrees when open.
 - **Dialog:** The native `<dialog>` for the PDF preview. `surface-raised`, `rounded.lg`, hairline border, and a `surface-tint` toolbar. Print always renders it in the light theme.
 - **Input:** `surface-raised`, `on-surface` text at 19px (`lead`), `rounded.md`, 12px padding. The border is `on-surface-muted` for 3:1 contrast. The label sits above in `label-lg`. Help text sits below in `body-sm`.
 - **Calculator:** A bordered box (`rounded.lg`) with inputs on one side and a `tint-panel` result on the other. The result uses `figure-lg`. Results update live in an `aria-live="polite"` region.
@@ -550,7 +536,7 @@ The page uses Unicode glyphs instead of an icon library.
 - Do treat the shadow and backdrop values in this file as the only colors outside the tokens.
 - Do give every new surface and text pair a `-dark` value. Check contrast in both themes.
 - Do use the focus ring as a 3px solid outline with a 5px offset, in `secondary`.
-- Don't use `tertiary` (apricot) or a pastel as text, or `outline` for control borders. Form control borders use `on-surface-muted` for 3:1 contrast.
+- Don't use `tertiary` or a market color as text on the page, or `outline` for control borders. Form control borders use `on-surface-muted` for 3:1 contrast.
 - Do keep real page text at 12px or larger. Only the reduced mockups go smaller.
 - Do keep one primary button per section. Pair it with a text link, not a second filled button.
 - Do show the product at a readable size where it explains a feature. Don't shrink the app window below 12px text.

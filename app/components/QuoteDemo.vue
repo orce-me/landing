@@ -83,7 +83,7 @@ const items = [
   position: relative;
   height: 600px;
   border-radius: var(--rounded-xl);
-  background: var(--color-peach);
+  background: var(--color-maracuja);
   overflow: hidden;
 }
 .gallery-rail {

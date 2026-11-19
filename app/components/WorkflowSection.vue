@@ -2,7 +2,7 @@
   <section class="workflow wrap section" id="como-funciona">
     <h2 v-reveal>Do catálogo ao PDF, <em>em três etapas.</em></h2>
     <ol class="steps">
-      <li class="step step-peach" v-reveal="0">
+      <li class="step step-urucum" v-reveal="0">
         <span class="step-number" aria-hidden="true">1</span>
         <h3>Monte seu catálogo.</h3>
         <p>
@@ -15,7 +15,7 @@
           <div><span>Decoração da mesa</span><b>R$ 120,00</b></div>
         </div>
       </li>
-      <li class="step step-butter" v-reveal="1">
+      <li class="step step-anil" v-reveal="1">
         <span class="step-number" aria-hidden="true">2</span>
         <h3>Prepare a proposta.</h3>
         <p>
@@ -27,7 +27,7 @@
           <div class="snippet-total"><span>Total</span><b>R$ 650,00</b></div>
         </div>
       </li>
-      <li class="step step-mint" v-reveal="2">
+      <li class="step step-mata" v-reveal="2">
         <span class="step-number" aria-hidden="true">3</span>
         <h3>Envie o PDF.</h3>
         <p>
@@ -62,14 +62,17 @@
   padding: var(--spacing-3xl);
   border-radius: var(--rounded-xl);
 }
-.step-peach {
-  background: var(--color-peach);
+.step-urucum {
+  background: var(--color-urucum);
+  color: var(--color-on-urucum);
 }
-.step-butter {
-  background: var(--color-butter);
+.step-anil {
+  background: var(--color-anil);
+  color: var(--color-on-anil);
 }
-.step-mint {
-  background: var(--color-mint);
+.step-mata {
+  background: var(--color-mata);
+  color: var(--color-on-mata);
 }
 .step-number {
   display: grid;
@@ -78,6 +81,7 @@
   height: 40px;
   border-radius: var(--rounded-full);
   background: var(--color-surface-raised);
+  color: var(--color-on-surface);
   font-size: var(--typography-title-md-font-size);
   font-weight: var(--typography-title-md-font-weight);
 }
@@ -91,7 +95,7 @@
 .step p {
   font-size: var(--typography-body-md-font-size);
   line-height: var(--typography-body-md-line-height);
-  color: var(--color-on-surface-muted);
+  opacity: 0.82;
 }
 .snippet {
   margin-top: auto;
@@ -99,6 +103,7 @@
   background: var(--color-surface-raised);
   border-radius: var(--rounded-md);
   box-shadow: var(--shadow-raised);
+  color: var(--color-on-surface);
   font-size: var(--typography-body-sm-font-size);
   font-variant-numeric: tabular-nums;
 }

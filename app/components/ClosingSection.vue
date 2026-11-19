@@ -26,8 +26,8 @@ const appUrl = useRuntimeConfig().public.appUrl
   gap: var(--spacing-3xl);
   padding: 88px var(--spacing-4xl);
   text-align: center;
-  background: var(--color-primary);
-  color: var(--color-on-primary);
+  background: var(--color-jabuticaba);
+  color: var(--color-on-jabuticaba);
   border-radius: var(--rounded-xl);
 }
 .closing h2 {
@@ -40,7 +40,7 @@ const appUrl = useRuntimeConfig().public.appUrl
 .closing em {
   font-size: var(--typography-headline-lg-accent-font-size);
   letter-spacing: var(--typography-headline-lg-accent-letter-spacing);
-  color: inherit;
+  color: var(--color-maracuja);
 }
 @media (max-width: 1050px) {
   .closing h2,
