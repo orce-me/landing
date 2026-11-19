@@ -19,6 +19,8 @@
   --glow-closing: #356247;
   --orbit: #b5c99d;
   --backdrop: #16392d99;
+  /* DESIGN.md, Motion. */
+  --ease-editorial: cubic-bezier(0.2, 0.7, 0.2, 1);
 }
 
 /* Theme-specific surface and glow values. */
@@ -81,7 +83,7 @@ html {
 }
 
 section[id] {
-  scroll-margin-top: 35px;
+  scroll-margin-top: 100px;
 }
 
 main {
@@ -184,6 +186,51 @@ h3 {
   top: 10px;
 }
 
+/* v-reveal (app/plugins/reveal.js). Hidden only once the client opts in. */
+.reveal-ready [data-reveal] {
+  opacity: 0;
+  transform: translateY(28px);
+  transition:
+    opacity 0.9s var(--ease-editorial),
+    transform 0.9s var(--ease-editorial);
+  transition-delay: calc(var(--reveal-delay, 0) * 90ms);
+}
+
+.reveal-ready [data-reveal].is-revealed {
+  opacity: 1;
+  transform: none;
+}
+
+/* A hairline (drawn by the component's ::before) that grows once revealed. */
+.reveal-ready .draw-line:not(.is-revealed)::before {
+  transform: scaleX(0);
+}
+
+.eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+  font-size: var(--typography-label-sm-font-size);
+  font-weight: var(--typography-label-md-font-weight);
+  letter-spacing: 1.2px;
+  color: var(--color-secondary);
+}
+
+.arrow-link {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+}
+
+.arrow-link span {
+  display: inline-block;
+  transition: transform 0.5s var(--ease-editorial);
+}
+
+.arrow-link:hover span {
+  transform: translateX(6px);
+}
+
 @media (max-width: 1050px) {
   .wrap {
     padding-left: var(--spacing-gutter-tablet);
@@ -217,5 +264,6 @@ h3 {
   *:before,
   *:after {
     transition: none !important;
+    animation: none !important;
   }
 }

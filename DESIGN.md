@@ -50,28 +50,40 @@ colors:
 typography:
   display:
     fontFamily: DM Sans Variable
-    fontSize: 65px
+    fontSize: 116px
     fontWeight: 500
-    lineHeight: 1.07
-    letterSpacing: -3.3px
+    lineHeight: 0.94
+    letterSpacing: -6px
   display-accent:
     fontFamily: Instrument Serif
-    fontSize: 76px
+    fontSize: 132px
     fontWeight: 400
-    lineHeight: 1.07
-    letterSpacing: -2.5px
+    lineHeight: 0.94
+    letterSpacing: -4px
+  numeral:
+    fontFamily: Instrument Serif
+    fontSize: 88px
+    fontWeight: 400
+    lineHeight: 1
+    letterSpacing: -2px
+  marquee:
+    fontFamily: Instrument Serif
+    fontSize: 60px
+    fontWeight: 400
+    lineHeight: 1.1
+    letterSpacing: -1.5px
   headline-lg:
     fontFamily: DM Sans Variable
-    fontSize: 43px
+    fontSize: 72px
     fontWeight: 400
-    lineHeight: 1.25
-    letterSpacing: -1.8px
+    lineHeight: 1.02
+    letterSpacing: -3.4px
   headline-lg-accent:
     fontFamily: Instrument Serif
-    fontSize: 51px
+    fontSize: 84px
     fontWeight: 400
-    lineHeight: 1.25
-    letterSpacing: -1.8px
+    lineHeight: 1.02
+    letterSpacing: -2.4px
   headline-md:
     fontFamily: DM Sans Variable
     fontSize: 36px
@@ -337,6 +349,49 @@ components:
     backgroundColor: '{colors.inverse-surface}'
     textColor: '{colors.primary-dark}'
     typography: '{typography.headline-lg-accent}'
+  site-header:
+    backgroundColor: '{colors.neutral}'
+    textColor: '{colors.on-surface}'
+    typography: '{typography.label-lg}'
+    height: 84px
+  site-header-dark:
+    backgroundColor: '{colors.neutral-dark}'
+    textColor: '{colors.on-surface-dark}'
+  trade-marquee:
+    backgroundColor: '{colors.neutral}'
+    textColor: '{colors.on-surface}'
+    typography: '{typography.marquee}'
+  trade-marquee-dark:
+    backgroundColor: '{colors.neutral-dark}'
+    textColor: '{colors.on-surface-dark}'
+  step-numeral:
+    backgroundColor: '{colors.neutral}'
+    textColor: '{colors.secondary}'
+    typography: '{typography.numeral}'
+  step-numeral-dark:
+    backgroundColor: '{colors.neutral-dark}'
+    textColor: '{colors.secondary-dark}'
+  index-row:
+    backgroundColor: '{colors.neutral}'
+    textColor: '{colors.on-surface}'
+    typography: '{typography.title-lg}'
+    padding: 28px
+  index-row-dark:
+    backgroundColor: '{colors.neutral-dark}'
+    textColor: '{colors.on-surface-dark}'
+  index-row-hover:
+    backgroundColor: '{colors.primary}'
+    textColor: '{colors.on-primary}'
+  index-row-hover-dark:
+    backgroundColor: '{colors.primary-dark}'
+    textColor: '{colors.on-primary-dark}'
+  footer-wordmark:
+    backgroundColor: '{colors.neutral}'
+    textColor: '{colors.primary}'
+    typography: '{typography.brand}'
+  footer-wordmark-dark:
+    backgroundColor: '{colors.neutral-dark}'
+    textColor: '{colors.primary-dark}'
 ---
 
 # orce.me
@@ -390,14 +445,15 @@ Forest carries actions and large headlines; warm neutral surfaces distinguish pr
 
 Two families carry the identity. **DM Sans** (the variable font, weights 400 to 700) does all the work. **Instrument Serif** italic is the accent voice. Both are self-hosted through Fontsource, and `app.vue` preloads the two files that render first.
 
-- **Display:** The hero `h1`, DM Sans Medium at 65px with tight tracking (-3.3px). Its serif clause (`display-accent`) is larger, at 76px, so the two parts look the same optical size.
-- **Headlines:** Section `h2` titles use `headline-md` (36px) with a `headline-md-accent` clause (43px). The closing band uses the lighter, larger `headline-lg` (43px, weight 400) with a 51px accent.
+- **Display:** The hero `h1` is an editorial poster line: DM Sans Medium at 116px with very tight tracking (-6px) and a 0.94 line height. Its serif clause (`display-accent`) is larger, at 132px, so the two parts look the same optical size. The second line is indented on desktop to create an asymmetric, typeset composition.
+- **Numerals and marquee:** Workflow step numbers use `numeral` (Instrument Serif italic, 88px). The trade marquee under the hero uses `marquee` (Instrument Serif italic, 60px).
+- **Headlines:** Section `h2` titles use `headline-md` (36px) with a `headline-md-accent` clause (43px). The closing band uses the lighter, poster-sized `headline-lg` (72px, weight 400, -3.4px) with an 84px accent.
 - **Titles:** `title-md` (18px) for card and step titles. `title-lg` (25px) for the plan card title.
 - **Figures:** Prices and totals use `figure` (22px, weight 500, -0.7px). Keep currency on one line (`white-space: nowrap`).
 - **Body:** `lead` (16px) for the hero paragraph; `body-lg` (15px) for supporting introductions. `body-md` (13px) for section intros and FAQ questions. `body-sm` (12px) for card and step text. Keep paragraph width between 305px and 470px.
 - **Labels:** `label-lg` (13px, 500) for navigation. `label-md` (12px, 600) for buttons. `label-sm` (10px) for notes, footer text, badges, and disclaimers. Uppercase lead-ins use `label-sm` with 1.2px tracking.
 - **Serif accents:** Set the accent with the `<em>` element. It is italic by default. Use it for the second clause of a headline and for document titles inside the mockups. Use it nowhere else.
-- **Responsive sizes:** At 1050px and below, `display` is 52px and `display-accent` is 62px. At 760px and below, the hero is one column, so `display` returns to 57px (-2.8px) with a 66px accent, and the hero paragraph is 15px. Below 380px, the hero display and accent are 49px and 58px to keep long Portuguese words inside the gutter. Section headlines drop to 29px and 35px. Closing headlines drop to 32px and 38px.
+- **Responsive sizes:** At 1050px and below, `display` is 84px (-4px) and `display-accent` is 96px. At 760px and below, `display` is 60px (-3px) with a 70px accent (-2px), the hero paragraph is 15px, the numerals are 64px and the marquee is 40px. Below 380px, the hero display and accent are 50px and 58px to keep long Portuguese words inside the gutter. The footer wordmark scales with the viewport (`clamp(88px, 21vw, 290px)`). Section headlines drop to 29px and 35px. Closing headlines drop to 56px and 64px at 1050px, and to 36px and 42px at 760px.
 - **Content pages:** Page titles use `headline-page` (44px) with a `headline-page-accent` clause (52px). Section titles use `title-xl` (26px). Intros use `lead` (16px). Paragraphs, list items, and related links use `body-lg` (15px). Labels, tables, and secondary notes use `body-md` or `label-lg` (13px). Help text and breadcrumbs use `body-sm` (12px). Calculator results use `figure-lg` (38px). At 760px and below, page titles drop to 32px and 38px, and section titles drop to 23px.
 - **Mockup text:** The illustrative mockups use their own reduced scale (6px to 9px). That scale imitates a screenshot. Do not reuse it for real page text.
 
@@ -406,15 +462,16 @@ Two families carry the identity. **DM Sans** (the variable font, weights 400 to 
 Each page is a single column. Content sits in a centered container, `.wrap`, with a 1240px maximum width. The landing page stacks full-width sections. Content pages narrow the container to `container-content` (1040px) and keep prose at the `measure` (780px).
 
 - **Gutters:** 40px on desktop, 28px at 1050px and below, 22px at 760px and below.
-- **Sections:** 90px block padding on desktop, 60px on mobile. Anchored sections have a 35px `scroll-margin-top`.
-- **Header:** 108px tall on desktop, 82px on mobile. It has a bottom hairline.
+- **Sections:** 90px block padding on desktop, 60px on mobile. Anchored sections have a 100px `scroll-margin-top` so the sticky header never covers their headings.
+- **Header:** 84px tall on desktop, 72px on mobile. It sticks to the top with a translucent `neutral` ground (92% mix) and a 14px backdrop blur, and has a bottom hairline.
 - **Grids:**
-  - Hero: copy and visual in a `1fr 1.08fr` grid.
-  - Workflow: three equal steps with a 40px gap.
+  - Hero: the headline spans the full container. Below it, supporting copy and CTA sit in a `0.8fr 1.2fr` grid beside the quotation stage.
+  - Trade marquee: a full-bleed strip between two hairlines.
+  - Workflow: a `0.9fr 2fr` split, with a sticky heading on the left and three stacked step rows on the right.
   - Features: a two-column product workspace grid with a full-width history strip. It becomes one column at 760px. Each card pairs one function with an illustrative UI.
   - Pricing: a separate page with a two-column quotation capability and current-options panel. The homepage has only a contextual pricing link.
   - FAQ: a `1fr 1.25fr` grid.
-  - Resources: two equal columns with a 24px gap.
+  - Resources: an editorial index of full-width rows (number, title, description, arrow) separated by hairlines.
   - Calculators: inputs and result side by side. The quote calculator uses `1.2fr 1fr` with a 32px gap. The small calculators use two equal columns in one bordered box.
 - **Breakpoints:** 1050px (tablet) and 760px (mobile). A 1450px query only adds hero padding. All content grids collapse to one column at 760px. The preview gallery keeps a compact layered composition, and the closing CTA stacks below the heading.
 - **Spacing scale:** Component spacing uses the 4px scale (`xs` to `5xl`). The layout tokens (`container`, `gutter*`, `section*`) are exact values. Do not round them.
@@ -445,17 +502,23 @@ Shapes are soft but restrained. Corners are small, lines are thin, and circles m
 
 - **Primary button:** Forest background, white `label-md` text, 44px tall, 20px inline padding, `rounded.md`. On hover it lifts 2px (`translateY(-2px)`) and goes to `primary-hover`. In dark it is Sprout with `on-primary-dark` text. A trailing `↗` glyph sits 24px from the label.
 - **Text link:** `label-sm` or `body-sm` text with a trailing glyph (`↓` for in-page, `↗` for outbound) and an 8px gap. It has no underline.
-- **Header:** Brand left, navigation centered (`label-lg`, 24px gap), then login and the theme toggle. At 760px and below the navigation moves into a menu panel (`surface` or `surface-dark`, `rounded.lg`, hairline border).
+- **Header:** Sticky and translucent (see Layout). Brand left, navigation centered (`label-lg`, 24px gap) with an underline that grows from the left on hover, then login and the theme toggle. At 760px and below the navigation moves into a menu panel (`surface` or `surface-dark`, `rounded.lg`, hairline border).
+- **Trade marquee:** Examples of small businesses in `marquee` serif italic, separated by `✳` in `tertiary`, scrolling slowly left. The list is decorative and duplicated for a seamless loop; the second copy is `aria-hidden`.
+- **Step numeral:** A serif italic `numeral` in `secondary` beside each workflow step. A hairline above the step draws from left to right when the row enters the viewport.
+- **Index row:** A resource link row with a `label-sm` number, a `title-lg` title, a `body-md` description and a `→` glyph. On hover a `primary` fill rises from the bottom, the text turns `on-primary`, and the arrow slides 8px right. In dark the fill is `primary-dark` with `on-primary-dark` text.
+- **Footer wordmark:** A giant lowercase `orce.me` in `primary` (`primary-dark` in dark) with the lime period, set at the foot of every page above the footer links.
 - **Theme toggle:** A 36px circle with a hairline border and a 17px stroke icon (1.6 stroke, round caps). Show the moon in light and the sun in dark.
 - **Card:** `surface`, hairline border, `rounded.lg`, 24px padding, raised shadow. Feature cards use 32px copy insets and 24px mockup insets, with equal-width catalog and proposal columns.
 - **Pricing panel:** A card on the separate pricing route explains quotation capabilities and links to current app conditions. No speculative module cards or invented prices appear on any public page.
 - **Tag:** `surface-tint` with Fern text, `label-sm`, `rounded.sm`, a hairline border. A leading glyph names the item type.
 - **Status chip:** Draft, sent, and accepted pairs only, `rounded.sm`, small text.
 - **FAQ:** Native `<details>` and `<summary>` with a hairline under each item. A `+` glyph in Fern rotates 45 degrees when open.
-- **Quotation gallery:** A lilac stage of three gently angled quotation documents with the same sample company, line items, totals and conditions. Document composition changes across examples. A persistent motion button and preparation disclosure sit outside the decorative papers.
+- **Quotation gallery:** A neutral stone stage with a faint hairline grid. Three quotation documents with the same sample company, line items, totals and conditions fan out from a stack (-7deg, 0deg, 6deg) in a perspective scene. On hover-capable pointers the deck tilts up to 6 degrees toward the pointer. Two floating chips (total and PDF ready) sit on top. Document composition changes across examples. No playback controls or captions.
 - **Pricing detail:** Uses the existing card and tint-panel tokens. Never invent prices or sell unshipped modules. Link to current options in the application.
-- **Closing band:** A full-width dark island in `inverse-surface` with a soft glow, a `headline-lg` statement, a Sprout serif clause, and `button-primary-dark` in both themes. A large rotated `✳` decoration sits at the right edge at low opacity. The CTA sits to the right of the headline near the asterisk on desktop, and stacks on mobile. There is no adjacent slogan.
+- **Closing band:** A full-width dark island in `inverse-surface` with a soft glow, 120px block padding (72px on mobile), a `headline-lg` statement, a Sprout serif clause, and `button-primary-dark` in both themes. A large `✳` decoration sits at the right edge at low opacity and rotates slowly. The CTA aligns to the baseline at the right of the headline on desktop, and stacks on mobile. There is no adjacent slogan.
 - **Dialog:** The native `<dialog>` for the PDF preview. `surface-raised`, `rounded.lg`, hairline border, and a `surface-tint` toolbar. Print always renders it in the light theme.
+- **Pricing link:** A homepage row with muted `body-lg` context on the left and a `title-xl` underlined link with a sliding `→` on the right.
+- **Hero facts:** A three-row hairline list under the hero CTA (`body-sm`, `secondary` term, `on-surface` value).
 - **Mockups:** The app window, catalog, and paper are illustrations of the product. They use the reduced mockup scale and the floating or raised shadow. The examples are not editable. The hero uses a brief entrance animation with no visible playback controls or development-status captions.
 - **Input:** `surface-raised` (or `surface-raised-dark`), `on-surface` text at 16px, `rounded.md`, 12px padding. The border is `on-surface-muted`, so the field edge has 3:1 contrast. The label sits above the field in `label-lg`. Help text sits below in `body-sm`, `on-surface-muted`.
 - **Calculator:** A bordered box (`rounded.lg`) with inputs on one side and a `tint-panel` result on the other. The result value uses `figure-lg`. Results update live in an `aria-live="polite"` region.
@@ -470,16 +533,18 @@ Shapes are soft but restrained. Corners are small, lines are thin, and circles m
 
 ## Motion
 
-- Transitions are 0.2s and change only `transform` and `background`.
-- The quotation gallery moves 620px once over four seconds, then rests on the final document. It has no visible playback controls, layout-name strips, or development-status captions. Reduced motion renders all examples statically. The gallery illustrates quotation output without making template-availability claims.
+- Transitions are 0.2s and change only `transform` and `background`. Editorial hovers (index rows, nav underline, plan link) use 0.5s `cubic-bezier(.2,.7,.2,1)`.
+- **Entrance:** Hero headline lines rise out of a clipped mask (0.9s, staggered 120ms). Below-the-fold blocks use the `v-reveal` directive: they fade in and lift 28px over 0.9s with the same curve, staggered 90ms by the directive value, once per page view.
+- The trade marquee loops every 40 seconds, and the closing `✳` rotates once every 30 seconds. Both stop under reduced motion.
+- The quotation gallery deck rises and fans out once over four seconds, then rests. It has no visible playback controls, layout-name strips, or development-status captions. Reduced motion renders all examples statically. The gallery illustrates quotation output without making template-availability claims.
 - The theme toggle reveals the new theme with a circular clip from the pointer, 520ms, `cubic-bezier(.2,.7,.2,1)`, through the View Transitions API. Without that API, the theme changes at once.
-- `prefers-reduced-motion: reduce` turns off all transitions, smooth scroll, and the theme reveal.
+- `prefers-reduced-motion: reduce` turns off all transitions, smooth scroll, the theme reveal, the reveal directive, the marquee loop, the rotating asterisk and the pointer tilt. Everything renders in its final position.
 
 ## Iconography
 
 The page uses Unicode glyphs instead of an icon library. The glyph set is part of the identity.
 
-- `↗` outbound actions and calls to action. `↓` in-page links.
+- `↗` outbound actions and calls to action. `↓` in-page links. `→` index rows and the pricing link.
 - `✳` separators and the closing decoration. `✦` the spark in the float label.
 - `✓` success and plan features. `+` FAQ expand. `☰` the mobile menu.
 - The theme toggle is the only SVG icon. Illustrative search icons use a CSS ring and stem. The mobile menu uses three CSS lines to avoid missing-glyph boxes on systems without the hamburger character. Mark decorative glyphs with `aria-hidden="true"`.
@@ -495,7 +560,7 @@ The page uses Unicode glyphs instead of an icon library. The glyph set is part o
 - Do keep one primary button per section. Pair it with a text link, not a second filled button.
 - Do set the serif only for the second clause of a headline and for mockup document titles. Don't use it for body text, labels, or buttons.
 - Do end headlines and step titles with a period, for example "Monte seu catálogo."
-- Do tilt only illustrative floating elements, and only 2 to 4 degrees.
+- Do tilt only illustrative floating elements, 2 to 4 degrees at rest; the hero deck fans up to 7 degrees.
 - Don't add shadows outside the raised and floating levels. Don't use black shadows in the light theme.
 - Don't add an icon library or emoji. Use the glyph set.
 - Do use `error` only for validation messages.

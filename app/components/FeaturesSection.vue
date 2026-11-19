@@ -1,18 +1,18 @@
 <template>
   <section class="features" id="recursos" aria-labelledby="features-title">
     <div class="wrap section">
-      <div class="feature-heading">
+      <div class="feature-heading" v-reveal>
         <span class="eyebrow">POR DENTRO DO ORCE.ME</span>
         <h2 id="features-title">
           Um orçamento melhor começa<br /><em>com informação clara.</em>
         </h2>
-        <p>
+        <p class="feature-lead">
           Do item cadastrado ao documento final: veja o que você organiza em
           cada etapa.
         </p>
       </div>
       <div class="feature-grid">
-        <article class="feature-card">
+        <article class="feature-card" v-reveal="0">
           <div class="feature-copy">
             <span class="feature-number">01 / CATÁLOGO</span>
             <h3>Cadastre uma vez. Reutilize nos orçamentos.</h3>
@@ -60,7 +60,7 @@
             </div>
           </div>
         </article>
-        <article class="feature-card">
+        <article class="feature-card" v-reveal="1">
           <div class="feature-copy">
             <span class="feature-number">02 / PROPOSTA</span>
             <h3>Cliente, itens e valores. Sem informação solta.</h3>
@@ -102,7 +102,7 @@
             </div>
           </div>
         </article>
-        <article class="history-card">
+        <article class="history-card" v-reveal>
           <div class="feature-copy">
             <span class="feature-number">03 / HISTÓRICO</span>
             <h3>Retome cada proposta com contexto.</h3>
@@ -143,17 +143,26 @@
   border-block: 1px solid var(--color-outline);
 }
 .feature-heading {
-  max-width: var(--spacing-measure);
+  display: grid;
+  grid-template-columns: 1.4fr 1fr;
+  align-items: end;
+  column-gap: var(--spacing-5xl);
 }
-.eyebrow,
+.feature-heading .eyebrow {
+  grid-column: 1 / -1;
+}
+.feature-heading h2 {
+  margin-bottom: 0;
+}
 .feature-number {
   font-size: var(--typography-label-sm-font-size);
   font-weight: var(--typography-label-md-font-weight);
   letter-spacing: 1px;
   color: var(--color-secondary);
 }
-.feature-heading > p {
-  max-width: 470px;
+.feature-lead {
+  max-width: 400px;
+  padding-bottom: var(--spacing-sm);
   font-size: var(--typography-body-lg-font-size);
   color: var(--color-on-surface-muted);
   line-height: var(--typography-body-lg-line-height);
@@ -171,6 +180,21 @@
   border: 1px solid var(--color-outline);
   border-radius: var(--rounded-lg);
   overflow: hidden;
+}
+.feature-copy h3 {
+  font-size: var(--typography-title-lg-font-size);
+  letter-spacing: var(--typography-title-lg-letter-spacing);
+  line-height: var(--typography-title-lg-line-height);
+}
+.workspace,
+.history-preview {
+  transition: transform 0.5s var(--ease-editorial);
+}
+.feature-card:hover .workspace {
+  transform: translateY(-6px) rotate(-1deg);
+}
+.history-card:hover .history-preview {
+  transform: translateY(-4px) rotate(1deg);
 }
 .feature-card {
   display: flex;
@@ -388,6 +412,14 @@
   margin-top: var(--spacing-lg);
   font-size: var(--typography-label-sm-font-size);
   color: var(--color-on-surface-muted);
+}
+@media (max-width: 1050px) {
+  .feature-heading {
+    grid-template-columns: 1fr;
+  }
+  .feature-lead {
+    margin-top: var(--spacing-lg);
+  }
 }
 @media (max-width: 760px) {
   .feature-grid,

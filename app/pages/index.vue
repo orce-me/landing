@@ -68,11 +68,12 @@ if (origin) {
 <template>
   <div>
     <HeroSection />
+    <TradeMarquee />
     <WorkflowSection />
     <FeaturesSection />
-    <div class="plan-link wrap">
+    <div class="plan-link wrap" v-reveal>
       <p>Quer saber as condições para usar o orce.me?</p>
-      <NuxtLink to="/planos-e-precos"
+      <NuxtLink class="arrow-link" to="/planos-e-precos"
         >Consultar planos e preços <span aria-hidden="true">→</span></NuxtLink
       >
     </div>
@@ -87,26 +88,28 @@ if (origin) {
   justify-content: space-between;
   align-items: center;
   gap: var(--spacing-2xl);
-  padding-top: var(--spacing-3xl);
-  padding-bottom: var(--spacing-3xl);
-  border-bottom: 1px solid var(--color-outline);
+  padding-top: var(--spacing-5xl);
+  padding-bottom: var(--spacing-5xl);
   font-size: var(--typography-body-lg-font-size);
 }
 .plan-link p {
   color: var(--color-on-surface-muted);
 }
 .plan-link a {
-  text-decoration: underline;
-  text-underline-offset: 4px;
-}
-.plan-link a span {
-  margin-left: var(--spacing-sm);
+  font-size: var(--typography-title-xl-font-size);
+  font-weight: var(--typography-title-xl-font-weight);
+  letter-spacing: var(--typography-title-xl-letter-spacing);
+  border-bottom: 1px solid currentColor;
+  padding-bottom: var(--spacing-xs);
 }
 @media (max-width: 760px) {
   .plan-link {
     align-items: flex-start;
     flex-direction: column;
     gap: var(--spacing-md);
+  }
+  .plan-link a {
+    font-size: var(--typography-title-md-font-size);
   }
 }
 </style>

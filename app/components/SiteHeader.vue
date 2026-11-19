@@ -9,6 +9,15 @@ watch(
     menuOpen.value = false
   },
 )
+const scrolled = ref(false)
+function onScroll() {
+  scrolled.value = window.scrollY > 8
+}
+onMounted(() => {
+  onScroll()
+  window.addEventListener('scroll', onScroll, { passive: true })
+})
+onBeforeUnmount(() => window.removeEventListener('scroll', onScroll))
 function closeMenu() {
   menuOpen.value = false
   menuButton.value?.focus()
@@ -17,46 +26,82 @@ function closeMenu() {
 
 <template>
   <header
-    class="header wrap"
-    :class="{ 'menu-open': menuOpen }"
+    class="site-header"
+    :class="{ 'menu-open': menuOpen, scrolled }"
     @keydown.esc="closeMenu"
   >
-    <a class="brand" href="/" aria-label="orce.me, início"
-      ><span class="mark">o<span></span></span>orce<span class="brand-dot"
-        >.</span
-      >me</a
-    >
-    <nav
-      id="site-navigation"
-      aria-label="Navegação principal"
-      @click="menuOpen = false"
-    >
-      <a href="/#como-funciona">Como funciona</a>
-      <a href="/#recursos">Funcionalidades</a>
-      <a href="/#materiais">Ferramentas</a>
-      <NuxtLink to="/planos-e-precos">Planos e preços</NuxtLink>
-      <NuxtLink to="/ajuda">Ajuda</NuxtLink>
-    </nav>
-    <a class="login" :href="appUrl">Entrar</a><ThemeToggle /><button
-      ref="menuButton"
-      class="menu"
-      :aria-label="menuOpen ? 'Fechar menu' : 'Abrir menu'"
-      :aria-expanded="menuOpen"
-      aria-controls="site-navigation"
-      @click="menuOpen = !menuOpen"
-    >
-      <span class="menu-icon" aria-hidden="true"><i></i><i></i><i></i></span>
-    </button>
+    <div class="header wrap">
+      <a class="brand" href="/" aria-label="orce.me, início"
+        ><span class="mark">o<span></span></span>orce<span class="brand-dot"
+          >.</span
+        >me</a
+      >
+      <nav
+        id="site-navigation"
+        aria-label="Navegação principal"
+        @click="menuOpen = false"
+      >
+        <a href="/#como-funciona">Como funciona</a>
+        <a href="/#recursos">Funcionalidades</a>
+        <a href="/#materiais">Ferramentas</a>
+        <NuxtLink to="/planos-e-precos">Planos e preços</NuxtLink>
+        <NuxtLink to="/ajuda">Ajuda</NuxtLink>
+      </nav>
+      <a class="login" :href="appUrl">Entrar</a><ThemeToggle /><button
+        ref="menuButton"
+        class="menu"
+        :aria-label="menuOpen ? 'Fechar menu' : 'Abrir menu'"
+        :aria-expanded="menuOpen"
+        aria-controls="site-navigation"
+        @click="menuOpen = !menuOpen"
+      >
+        <span class="menu-icon" aria-hidden="true"><i></i><i></i><i></i></span>
+      </button>
+    </div>
   </header>
 </template>
 
 <style scoped>
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  background: color-mix(in srgb, var(--color-neutral) 92%, transparent);
+  backdrop-filter: blur(14px) saturate(1.2);
+  -webkit-backdrop-filter: blur(14px) saturate(1.2);
+  border-bottom: 1px solid transparent;
+  transition: background 0.2s;
+}
+.site-header.scrolled {
+  border-bottom-color: var(--color-outline);
+}
 .header {
-  height: 108px;
+  position: relative;
+  height: 84px;
   display: flex;
   align-items: center;
   gap: 24px;
-  border-bottom: 1px solid var(--color-outline);
+}
+.header nav a {
+  position: relative;
+  padding: var(--spacing-xs) 0;
+}
+.header nav a::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 1px;
+  background: currentColor;
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform 0.5s var(--ease-editorial);
+}
+.header nav a:hover::after,
+.header nav a.router-link-exact-active::after {
+  transform: scaleX(1);
+  transform-origin: left;
 }
 
 .brand {
@@ -126,7 +171,7 @@ function closeMenu() {
 
 @media (max-width: 760px) {
   .header {
-    height: 82px;
+    height: 72px;
     gap: 20px;
   }
 }
@@ -165,7 +210,7 @@ function closeMenu() {
     position: absolute;
     left: 20px;
     right: 20px;
-    top: 75px;
+    top: 68px;
     background: var(--color-surface);
     border: 1px solid var(--color-outline);
     border-radius: var(--rounded-lg);
@@ -196,6 +241,9 @@ function closeMenu() {
   .header nav a {
     padding: var(--spacing-sm) 0;
     width: 100%;
+  }
+  .header nav a::after {
+    display: none;
   }
   .menu {
     min-width: 36px;
