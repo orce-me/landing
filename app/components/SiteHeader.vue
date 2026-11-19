@@ -32,9 +32,7 @@ function closeMenu() {
   >
     <div class="header wrap">
       <a class="brand" href="/" aria-label="orce.me, início"
-        ><span class="mark">o<span></span></span>orce<span class="brand-dot"
-          >.</span
-        >me</a
+        ><BrandMark class="mark" />orce<span class="brand-dot">.</span>me</a
       >
       <nav
         id="site-navigation"
@@ -124,22 +122,9 @@ function closeMenu() {
 }
 
 .mark {
-  position: relative;
-  display: grid;
-  place-items: center;
-  background: var(--color-primary);
-  border-radius: var(--rounded-md);
-  font-size: 0;
   width: 28px;
   height: 28px;
   margin-right: 10px;
-}
-
-.mark span {
-  width: 12px;
-  height: 12px;
-  border-radius: var(--rounded-full);
-  border: 3px solid var(--color-on-primary);
 }
 
 .header nav {

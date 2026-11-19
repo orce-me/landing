@@ -395,7 +395,7 @@ The identity is **bright and friendly**: an airy white page, light type, one viv
 - **Voice:** Plain, concrete and kind. Headlines say what the product does. Use at most one catch phrase, in the closing card.
 - **Language:** All copy is Brazilian Portuguese (`lang="pt-BR"`). Currency uses `Intl.NumberFormat('pt-BR', { style: 'currency', currency: 'BRL' })`.
 - **Content pages:** The calculators and the guide put reading and input first. They use a narrower column, larger body text, underlined links, and no mockups.
-- **Brand:** The wordmark is lowercase `orce.me` in Figtree 700 with a sun-yellow period. The mark is an emerald rounded square with a white `o`.
+- **Brand:** The wordmark is lowercase `orce.me` in Figtree 700 with a sun-yellow period. The mark is the same drawing as in the web app (`BrandMark.vue`, `public/favicon.svg`): an emerald rounded square lit from the top, holding the white ring of the `o` with a sun-yellow dot above its shoulder, the dot that also ends the wordmark. The header and the footer show it beside the wordmark.
 
 ## Colors
 
@@ -522,7 +522,7 @@ Depth is light and clean. Grey cards sit flat on white; app windows and document
 The page uses Unicode glyphs instead of an icon library.
 
 - `↓` in-page links. `→` buttons, next page and card links. `✓` success. `+` FAQ expand.
-- The theme toggle is the only SVG icon. Illustrative search icons use a CSS ring and stem. The mobile menu uses three CSS lines. Mark decorative glyphs with `aria-hidden="true"`.
+- The theme toggle and the brand mark (`BrandMark.vue`) are the only SVGs. Illustrative search icons use a CSS ring and stem. The mobile menu uses three CSS lines. Mark decorative glyphs with `aria-hidden="true"`.
 
 ## Do's and Don'ts
 

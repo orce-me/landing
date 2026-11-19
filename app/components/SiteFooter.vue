@@ -4,7 +4,8 @@ const year = new Date().getFullYear()
 
 <template>
   <footer class="wrap">
-    <a class="brand" href="/">orce<span class="brand-dot">.</span>me</a
+    <a class="brand" href="/"
+      ><BrandMark class="mark" />orce<span class="brand-dot">.</span>me</a
     ><NuxtLink to="/planos-e-precos">Planos e preços</NuxtLink>
     <NuxtLink to="/ajuda">Ajuda</NuxtLink
     ><NuxtLink to="/como-fazer-orcamento-de-servicos"
@@ -24,10 +25,18 @@ footer {
 }
 
 .brand {
+  display: flex;
+  align-items: center;
   font-size: 22px;
   font-weight: var(--typography-brand-font-weight);
   line-height: var(--typography-brand-line-height);
   letter-spacing: var(--typography-brand-letter-spacing);
+}
+
+.mark {
+  width: 22px;
+  height: 22px;
+  margin-right: 8px;
 }
 
 .brand-dot {
