@@ -123,12 +123,9 @@
 </template>
 
 <style scoped>
-.features {
-  background: var(--color-inverse-surface);
-  color: var(--color-on-inverse-surface);
-}
 .feature-heading h2 {
   margin-bottom: 0;
+  text-align: center;
 }
 .feature-grid {
   display: grid;
@@ -139,10 +136,14 @@
 .feature-card,
 .history-card {
   min-width: 0;
-  background: var(--color-surface);
-  color: var(--color-on-surface);
-  border-radius: var(--rounded-lg);
+  border-radius: var(--rounded-xl);
   overflow: hidden;
+}
+.feature-card:first-child {
+  background: var(--color-lavender);
+}
+.feature-card:nth-child(2) {
+  background: var(--color-sky);
 }
 .feature-copy h3 {
   font-size: var(--typography-title-lg-font-size);
@@ -151,13 +152,11 @@
 }
 .workspace,
 .history-preview {
-  transition: transform 0.5s var(--ease-editorial);
+  transition: transform 0.4s var(--ease-soft);
 }
-.feature-card:hover .workspace {
-  transform: translateY(-6px) rotate(-1deg);
-}
+.feature-card:hover .workspace,
 .history-card:hover .history-preview {
-  transform: translateY(-4px) rotate(1deg);
+  transform: translateY(-6px);
 }
 .feature-card {
   display: flex;
@@ -177,13 +176,12 @@
   max-width: 390px;
 }
 .workspace {
-  margin: auto var(--spacing-2xl) var(--spacing-2xl);
-  border: 1px solid var(--color-outline);
-  border-radius: var(--rounded-md);
+  margin: auto var(--spacing-3xl) var(--spacing-3xl);
+  border-radius: var(--rounded-lg);
   background: var(--color-surface-raised);
   box-shadow: var(--shadow-raised);
   overflow: hidden;
-  font-size: 11px;
+  font-size: 13px;
 }
 .workspace-bar {
   display: flex;
@@ -204,7 +202,7 @@
   color: var(--color-secondary);
   padding: var(--spacing-xs) var(--spacing-sm);
   border-radius: var(--rounded-sm);
-  font-size: 10px;
+  font-size: 12px;
 }
 .workspace-body {
   padding: var(--spacing-xl);
@@ -240,7 +238,7 @@
   justify-content: space-between;
   margin-top: var(--spacing-xl);
   padding-bottom: var(--spacing-sm);
-  font-size: 8px;
+  font-size: 11px;
   letter-spacing: 1px;
   color: var(--color-on-surface-muted);
 }
@@ -259,12 +257,12 @@
 }
 .catalog-row small {
   display: block;
-  font-size: 9px;
+  font-size: 12px;
   color: var(--color-on-surface-muted);
   margin-top: var(--spacing-xs);
 }
 .catalog-row strong {
-  font-size: 11px;
+  font-size: 13px;
   font-weight: 500;
   white-space: nowrap;
 }
@@ -274,7 +272,7 @@
   padding-bottom: var(--spacing-lg);
 }
 .client-field small {
-  font-size: 8px;
+  font-size: 11px;
   letter-spacing: 1px;
   color: var(--color-on-surface-muted);
 }
@@ -282,7 +280,7 @@
   font-size: 13px;
 }
 .client-field > span {
-  font-size: 10px;
+  font-size: 12px;
   color: var(--color-on-surface-muted);
 }
 .proposal-line {
@@ -317,18 +315,18 @@
   align-items: center;
 }
 .history-preview {
-  margin: var(--spacing-2xl);
+  margin: var(--spacing-3xl);
   background: var(--color-surface-raised);
+  box-shadow: var(--shadow-raised);
   padding: var(--spacing-lg) var(--spacing-xl);
-  border: 1px solid var(--color-outline);
-  border-radius: var(--rounded-md);
+  border-radius: var(--rounded-lg);
 }
 .history-preview > div {
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: var(--spacing-md);
-  font-size: 11px;
+  font-size: 13px;
   padding: var(--spacing-md) 0;
 }
 .history-preview > div + div {
@@ -341,7 +339,7 @@
 }
 .status,
 .draft {
-  font-size: 10px;
+  font-size: 12px;
   padding: var(--spacing-xs) var(--spacing-sm);
   border-radius: var(--rounded-sm);
 }
@@ -358,25 +356,17 @@
   color: var(--color-on-status-draft);
 }
 .history-card {
-  background: var(--color-primary);
-  color: var(--color-on-primary);
-}
-.history-card .feature-copy p {
-  color: var(--color-on-primary);
-}
-.history-preview {
-  color: var(--color-on-surface);
+  background: var(--color-butter);
 }
 .proposal-total strong,
 .catalog-row strong {
-  font-family: var(--typography-figure-font-family), monospace;
+  font-variant-numeric: tabular-nums;
 }
 .illustration-note {
   text-align: right;
   margin-top: var(--spacing-lg);
-  font-family: var(--typography-label-sm-font-family), monospace;
   font-size: var(--typography-label-sm-font-size);
-  color: color-mix(in srgb, var(--color-on-inverse-surface) 72%, transparent);
+  color: var(--color-on-surface-muted);
 }
 @media (max-width: 760px) {
   .feature-grid,
@@ -393,7 +383,7 @@
   .workspace-bar {
     gap: var(--spacing-sm);
     padding: var(--spacing-md);
-    font-size: 10px;
+    font-size: 12px;
   }
   .workspace-body {
     padding: var(--spacing-lg);
@@ -403,7 +393,7 @@
     padding: var(--spacing-md);
   }
   .history-preview > div {
-    font-size: 10px;
+    font-size: 12px;
   }
 }
 </style>

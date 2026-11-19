@@ -92,11 +92,12 @@ function closeMenu() {
   left: 0;
   right: 0;
   bottom: 0;
-  height: 1px;
-  background: currentColor;
+  height: 2px;
+  border-radius: var(--rounded-full);
+  background: var(--color-primary);
   transform: scaleX(0);
   transform-origin: right;
-  transition: transform 0.5s var(--ease-editorial);
+  transition: transform 0.4s var(--ease-soft);
 }
 .header nav a:hover::after,
 .header nav a.router-link-exact-active::after {
@@ -114,28 +115,26 @@ function closeMenu() {
 }
 
 .brand-dot {
-  color: var(--color-primary);
+  color: var(--color-tertiary);
 }
 
 .mark {
   position: relative;
-  border: 3px solid var(--color-on-surface);
+  display: grid;
+  place-items: center;
+  background: var(--color-primary);
   border-radius: var(--rounded-full);
   font-size: 0;
-  width: 26px;
-  height: 26px;
+  width: 30px;
+  height: 30px;
   margin-right: 10px;
 }
 
 .mark span {
-  position: absolute;
-  width: 9px;
-  height: 9px;
-  right: -6px;
-  top: -5px;
+  width: 12px;
+  height: 12px;
   border-radius: var(--rounded-full);
-  background: var(--color-primary);
-  border: 2px solid var(--color-neutral);
+  border: 3px solid var(--color-on-primary);
 }
 
 .header nav {
@@ -151,15 +150,15 @@ function closeMenu() {
   align-items: center;
   min-height: 36px;
   padding: 0 var(--spacing-lg);
-  border: 1px solid var(--color-on-surface);
+  border: 1px solid var(--color-outline);
   border-radius: var(--rounded-full);
+  background: var(--color-surface-raised);
   font-size: var(--typography-label-lg-font-size);
   font-weight: var(--typography-label-lg-font-weight);
   transition: background 0.2s;
 }
 .login:hover {
-  background: var(--color-inverse-surface);
-  color: var(--color-on-inverse-surface);
+  background: var(--color-surface-tint);
 }
 
 .menu {

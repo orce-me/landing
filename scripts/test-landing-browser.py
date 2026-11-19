@@ -59,7 +59,7 @@ with sync_playwright() as playwright:
             if width == 1240:
                 heading = page.locator('.closing h2').bounding_box()
                 cta = page.locator('.closing .button').bounding_box()
-                assert cta['x'] > heading['x'] + heading['width'], 'desktop closing CTA is not right of heading'
+                assert cta['y'] >= heading['y'] + heading['height'], 'desktop closing CTA is not below heading'
             if width == 390:
                 heading = page.locator('.closing h2').bounding_box()
                 cta = page.locator('.closing .button').bounding_box()
@@ -95,9 +95,10 @@ with sync_playwright() as playwright:
             animation.currentTime = animation.effect.getTiming().duration;
         }''')
         stage = page.locator('.gallery-stage').bounding_box()
-        compact = page.locator('.document-compact').bounding_box()
-        assert compact['x'] >= stage['x'] and compact['x'] + compact['width'] <= stage['x'] + stage['width'], (width, 'last layout never fits inside preview', stage, compact)
-    checks.append('animation reaches the last layout fully on desktop and mobile')
+        page.wait_for_timeout(3000)
+        paper = page.locator('.paper').bounding_box()
+        assert paper['x'] >= stage['x'] and paper['x'] + paper['width'] <= stage['x'] + stage['width'] + 8, (width, 'generated PDF does not fit inside the showcase', stage, paper)
+    checks.append('showcase entrance ends with the editor and the generated PDF inside the stage')
 
     for width in [1240, 390]:
         page.set_viewport_size({'width': width, 'height': 900})

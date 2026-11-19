@@ -1,53 +1,73 @@
 <script setup>
-const layouts = ['essential', 'editorial', 'compact']
-const stage = ref(null)
-let frame = 0
-
-function canTilt() {
-  return (
-    window.matchMedia('(hover: hover) and (pointer: fine)').matches &&
-    !window.matchMedia('(prefers-reduced-motion: reduce)').matches
-  )
-}
-
-function tilt(event) {
-  if (!stage.value || !canTilt()) return
-  const rect = stage.value.getBoundingClientRect()
-  const x = (event.clientX - rect.left) / rect.width - 0.5
-  const y = (event.clientY - rect.top) / rect.height - 0.5
-  cancelAnimationFrame(frame)
-  frame = requestAnimationFrame(() => {
-    stage.value?.style.setProperty('--tilt-x', `${(-y * 6).toFixed(2)}deg`)
-    stage.value?.style.setProperty('--tilt-y', `${(x * 6).toFixed(2)}deg`)
-  })
-}
-
-function reset() {
-  cancelAnimationFrame(frame)
-  stage.value?.style.setProperty('--tilt-x', '0deg')
-  stage.value?.style.setProperty('--tilt-y', '0deg')
-}
+const items = [
+  {
+    name: 'Bolo de aniversário',
+    kind: 'Produto · unidade',
+    qty: 1,
+    price: 'R$ 350,00',
+  },
+  {
+    name: 'Caixa de docinhos',
+    kind: 'Produto · caixa',
+    qty: 1,
+    price: 'R$ 180,00',
+  },
+  { name: 'Decoração da mesa', kind: 'Serviço', qty: 1, price: 'R$ 120,00' },
+]
 </script>
 
 <template>
   <figure
     class="quote-gallery"
     role="img"
-    aria-label="Exemplos ilustrativos de orçamentos"
+    aria-label="Exemplo ilustrativo: orçamento nº 0042 para Marina Oliveira com bolo, docinhos e decoração da mesa, total de R$ 650,00, e o PDF gerado."
   >
-    <div
-      ref="stage"
-      class="gallery-stage"
-      data-nosnippet
-      @pointermove="tilt"
-      @pointerleave="reset"
-    >
+    <div class="gallery-stage" data-nosnippet>
       <div class="gallery-rail" aria-hidden="true">
-        <div class="deck">
-          <div v-for="layout in layouts" :key="layout" class="layout-example">
-            <QuoteDocument :layout="layout" />
+        <div class="app">
+          <div class="app-head">
+            <div>
+              <small>Orçamento nº 0042</small>
+              <b>Festa de aniversário</b>
+            </div>
+            <span class="chip">Rascunho</span>
           </div>
-          <span class="approval">Aceito</span>
+          <div class="fields">
+            <div class="field">
+              <small>Cliente</small><span>Marina Oliveira</span>
+            </div>
+            <div class="field"><small>Validade</small><span>15 dias</span></div>
+          </div>
+          <div class="items">
+            <div class="item-head">
+              <span>Item</span><span>Qtd.</span><span>Valor</span>
+            </div>
+            <div
+              v-for="(item, index) in items"
+              :key="item.name"
+              class="item"
+              :style="{ '--row': index }"
+            >
+              <span class="name"
+                ><b>{{ item.name }}</b
+                ><small>{{ item.kind }}</small></span
+              ><span class="qty">{{ item.qty }}</span
+              ><span class="price">{{ item.price }}</span>
+            </div>
+          </div>
+          <div class="sums">
+            <div><span>Subtotal</span><span>R$ 650,00</span></div>
+            <div><span>Desconto</span><span>R$ 0,00</span></div>
+            <div class="total">
+              <span>Total</span><strong>R$ 650,00</strong>
+            </div>
+          </div>
+          <div class="app-actions">
+            <span class="fake-button">Gerar PDF</span>
+          </div>
+        </div>
+        <div class="layout-example paper">
+          <QuoteDocument layout="essential" />
         </div>
       </div>
     </div>
@@ -60,142 +80,235 @@ function reset() {
   min-width: 0;
 }
 .gallery-stage {
-  --tilt-x: 0deg;
-  --tilt-y: 0deg;
   position: relative;
-  height: 580px;
+  height: 600px;
+  border-radius: var(--rounded-xl);
+  background: var(--color-peach);
   overflow: hidden;
-  border-radius: var(--rounded-lg);
-  background:
-    radial-gradient(
-        circle at 1px 1px,
-        color-mix(in srgb, var(--color-on-secondary) 22%, transparent) 1px,
-        transparent 1.5px
-      )
-      0 0 / 24px 24px,
-    var(--color-stage);
-  perspective: 1400px;
 }
 .gallery-rail {
   position: absolute;
   inset: 0;
-  display: grid;
-  justify-items: center;
-  align-items: start;
-  padding-top: var(--spacing-3xl);
-  transform-style: preserve-3d;
   animation: quotation-layouts 4s ease-in-out forwards;
 }
-.deck {
-  position: relative;
-  display: grid;
-  place-items: center;
-  transform-style: preserve-3d;
-  transform: rotateX(var(--tilt-x)) rotateY(var(--tilt-y));
-  transition: transform 0.5s var(--ease-editorial);
-}
-.layout-example {
-  grid-area: 1 / 1;
-  width: 300px;
+
+/* The quotation editor, at real UI size. */
+.app {
+  position: absolute;
+  top: var(--spacing-3xl);
+  left: var(--spacing-3xl);
+  width: 410px;
+  padding: var(--spacing-2xl);
   background: var(--color-surface-raised);
+  border-radius: var(--rounded-lg);
+  box-shadow: var(--shadow-floating);
+  font-size: var(--typography-body-sm-font-size);
+  font-variant-numeric: tabular-nums;
+}
+.app small {
+  display: block;
+  font-size: var(--typography-label-sm-font-size);
+  color: var(--color-on-surface-muted);
+}
+.app-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: var(--spacing-md);
+}
+.app-head b {
+  display: block;
+  margin-top: 2px;
+  font-size: var(--typography-title-md-font-size);
+  font-weight: var(--typography-title-md-font-weight);
+  letter-spacing: var(--typography-title-md-letter-spacing);
+}
+.chip {
+  padding: var(--spacing-xs) var(--spacing-md);
+  border-radius: var(--rounded-full);
+  background: var(--color-status-draft);
+  color: var(--color-on-status-draft);
+  font-size: var(--typography-label-sm-font-size);
+  font-weight: 600;
+}
+.fields {
+  display: grid;
+  grid-template-columns: 1.4fr 1fr;
+  gap: var(--spacing-sm);
+  margin-top: var(--spacing-xl);
+}
+.field {
+  padding: var(--spacing-sm) var(--spacing-md);
   border: 1px solid var(--color-outline);
+  border-radius: var(--rounded-md);
+}
+.field span {
+  font-weight: 500;
+}
+.items {
+  margin-top: var(--spacing-xl);
+}
+.item-head,
+.item {
+  display: grid;
+  grid-template-columns: 1fr 40px 92px;
+  align-items: center;
+}
+.item-head {
+  padding: 0 var(--spacing-md) var(--spacing-sm);
+  font-size: var(--typography-label-sm-font-size);
+  color: var(--color-on-surface-muted);
+}
+.item {
+  padding: var(--spacing-sm) var(--spacing-md);
+  border-radius: var(--rounded-md);
+  background: var(--color-surface-tint);
+  animation: row-in 0.5s var(--ease-soft) both;
+  animation-delay: calc(0.6s + var(--row) * 0.3s);
+}
+.item + .item {
+  margin-top: var(--spacing-xs);
+}
+.item b {
+  display: block;
+  font-weight: 600;
+}
+.item-head > span:nth-child(2),
+.qty {
+  text-align: center;
+}
+.item-head > span:last-child,
+.price {
+  text-align: right;
+  white-space: nowrap;
+}
+.sums {
+  margin-top: var(--spacing-lg);
+  padding: 0 var(--spacing-md);
+}
+.sums > div {
+  display: flex;
+  justify-content: space-between;
+  padding: 2px 0;
+  color: var(--color-on-surface-muted);
+}
+.sums .total {
+  margin-top: var(--spacing-sm);
+  padding-top: var(--spacing-sm);
+  border-top: 1px solid var(--color-outline);
+  color: var(--color-on-surface);
+  align-items: baseline;
+}
+.total span {
+  font-weight: 600;
+}
+.total strong {
+  font-size: var(--typography-figure-font-size);
+  font-weight: var(--typography-figure-font-weight);
+  letter-spacing: var(--typography-figure-letter-spacing);
+  white-space: nowrap;
+}
+.app-actions {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: var(--spacing-lg);
+}
+.fake-button {
+  padding: var(--spacing-sm) var(--spacing-xl);
+  border-radius: var(--rounded-full);
+  background: var(--color-primary);
+  color: var(--color-on-primary);
+  font-weight: 600;
+}
+
+/* The generated PDF. */
+.paper {
+  position: absolute;
+  right: var(--spacing-2xl);
+  bottom: var(--spacing-2xl);
+  width: 260px;
+  background: var(--color-surface-raised);
   border-radius: var(--rounded-md);
   box-shadow: var(--shadow-floating);
   overflow: hidden;
-  animation: 1.6s var(--ease-editorial) 0.5s both;
+  transform: rotate(3deg) scale(0.72);
+  transform-origin: bottom right;
+  animation: paper-in 0.8s var(--ease-soft) 1.9s both;
 }
-.layout-example:nth-child(1) {
-  transform: translate(-150px, 26px) rotate(-7deg);
-  animation-name: fan-left;
-}
-.layout-example:nth-child(2) {
-  transform: translate(150px, 18px) rotate(6deg);
-  animation-name: fan-right;
-}
-.layout-example:nth-child(3) {
-  transform: translateY(-14px) translateZ(40px);
-  animation-name: fan-center;
-}
-.approval {
-  position: absolute;
-  z-index: 2;
-  top: 462px;
-  left: 50%;
-  margin-left: -30px;
-  padding: var(--spacing-xs) var(--spacing-md);
-  border: 3px solid var(--color-primary);
-  border-radius: var(--rounded-md);
-  color: var(--color-primary);
-  font-family: var(--typography-display-font-family), Arial, sans-serif;
-  font-size: var(--typography-title-lg-font-size);
-  font-weight: 700;
-  letter-spacing: 1px;
-  text-transform: uppercase;
-  transform: translateZ(60px) rotate(-14deg);
-  mix-blend-mode: multiply;
-  animation: approval 0.45s var(--ease-editorial) 2.6s both;
-}
-:root[data-theme='dark'] .approval {
-  mix-blend-mode: normal;
-}
-@keyframes approval {
-  from {
-    opacity: 0;
-    transform: translateZ(60px) rotate(-14deg) scale(2.2);
-  }
-}
+
 @keyframes quotation-layouts {
   from {
     opacity: 0;
-    transform: translateY(36px) rotateX(14deg);
+    transform: translateY(16px);
   }
-  30% {
+  15% {
     opacity: 1;
+    transform: none;
+  }
+  to {
+    opacity: 1;
+    transform: none;
   }
 }
-@keyframes fan-left {
+@keyframes row-in {
   from {
-    transform: translateY(0) rotate(0);
+    opacity: 0;
+    transform: translateY(8px);
   }
 }
-@keyframes fan-right {
+@keyframes paper-in {
   from {
-    transform: translateY(0) rotate(0);
+    opacity: 0;
+    transform: translate(40px, 40px) rotate(9deg) scale(0.72);
   }
 }
-@keyframes fan-center {
-  from {
-    transform: translateY(0) translateZ(40px);
+@media (max-width: 1050px) {
+  .gallery-stage {
+    height: 580px;
   }
 }
 @media (max-width: 760px) {
   .gallery-stage {
-    height: 470px;
+    height: auto;
+    padding: var(--spacing-lg) var(--spacing-lg) var(--spacing-2xl);
   }
   .gallery-rail {
-    padding-top: var(--spacing-xl);
+    position: relative;
+    inset: auto;
   }
-  .deck {
-    scale: 0.78;
-    transform-origin: top center;
+  .app {
+    position: relative;
+    top: auto;
+    left: auto;
+    width: auto;
+    padding: var(--spacing-lg);
   }
-  .layout-example:nth-child(1) {
-    transform: translate(-100px, 24px) rotate(-7deg);
+  .item-head,
+  .item {
+    grid-template-columns: 1fr 32px 84px;
   }
-  .layout-example:nth-child(2) {
-    transform: translate(100px, 16px) rotate(6deg);
+  .paper {
+    position: relative;
+    right: auto;
+    bottom: auto;
+    width: 220px;
+    margin: calc(-1 * var(--spacing-sm)) var(--spacing-sm) 0 auto;
+    transform: rotate(3deg);
+    transform-origin: center;
+  }
+  @keyframes paper-in {
+    from {
+      opacity: 0;
+      transform: translateY(30px) rotate(8deg);
+    }
   }
 }
 @media (prefers-reduced-motion: reduce) {
   .gallery-rail {
     animation: none;
   }
-  .deck {
-    transform: none;
-    transition: none;
-  }
-  .layout-example,
-  .approval {
+  .item,
+  .paper {
     animation: none;
   }
 }

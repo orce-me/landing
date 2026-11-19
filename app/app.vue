@@ -1,6 +1,6 @@
 <script setup>
-import sansFont from '@fontsource-variable/geist/files/geist-latin-wght-normal.woff2?url'
-import displayFont from '@fontsource-variable/bricolage-grotesque/files/bricolage-grotesque-latin-opsz-normal.woff2?url'
+import sansFont from '@fontsource-variable/figtree/files/figtree-latin-wght-normal.woff2?url'
+import displayFont from '@fontsource-variable/fraunces/files/fraunces-latin-full-normal.woff2?url'
 
 useHead({
   link: [

@@ -70,69 +70,45 @@ if (origin) {
     <HeroSection />
     <WorkflowSection />
     <FeaturesSection />
-    <NuxtLink class="plan-link" to="/planos-e-precos">
-      <span class="wrap plan-inner"
-        ><span>Consultar planos e preços</span
-        ><span class="plan-arrow" aria-hidden="true">→</span></span
-      >
-    </NuxtLink>
+    <div class="wrap">
+      <div class="plan-banner" v-reveal>
+        <p>Planos e preços.</p>
+        <NuxtLink class="arrow-link" to="/planos-e-precos"
+          >Ver as condições <span aria-hidden="true">→</span></NuxtLink
+        >
+      </div>
+    </div>
     <ResourcesSection />
     <ClosingSection />
   </div>
 </template>
 
 <style scoped>
-.plan-link {
-  position: relative;
-  display: block;
-  overflow: hidden;
-  isolation: isolate;
-  border-bottom: 1px solid var(--color-outline);
-  transition: color 0.5s var(--ease-editorial);
-}
-.plan-link::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  z-index: -1;
-  background: var(--color-primary);
-  transform: scaleY(0);
-  transform-origin: bottom;
-  transition: transform 0.5s var(--ease-editorial);
-}
-.plan-link:hover,
-.plan-link:focus-visible {
-  color: var(--color-on-primary);
-}
-.plan-link:hover::before,
-.plan-link:focus-visible::before {
-  transform: scaleY(1);
-}
-.plan-inner {
+.plan-banner {
   display: flex;
   justify-content: space-between;
   align-items: center;
   gap: var(--spacing-2xl);
-  padding-top: var(--spacing-4xl);
-  padding-bottom: var(--spacing-4xl);
-  font-family: var(--typography-headline-md-font-family), Arial, sans-serif;
-  font-size: var(--typography-headline-md-font-size);
-  font-weight: var(--typography-headline-md-font-weight);
-  line-height: var(--typography-headline-md-line-height);
-  letter-spacing: var(--typography-headline-md-letter-spacing);
+  padding: var(--spacing-2xl) var(--spacing-3xl);
+  background: var(--color-surface-tint);
+  border-radius: var(--rounded-lg);
 }
-.plan-arrow {
-  transition: transform 0.5s var(--ease-editorial);
+.plan-banner p {
+  font-size: var(--typography-title-md-font-size);
+  font-weight: var(--typography-title-md-font-weight);
 }
-.plan-link:hover .plan-arrow {
-  transform: translateX(12px);
+.plan-banner a {
+  flex-shrink: 0;
+  color: var(--color-primary);
+  font-size: var(--typography-label-md-font-size);
+  font-weight: var(--typography-label-md-font-weight);
 }
 @media (max-width: 760px) {
-  .plan-inner {
-    font-size: 28px;
-    letter-spacing: -0.8px;
-    padding-top: var(--spacing-3xl);
-    padding-bottom: var(--spacing-3xl);
+  .plan-banner {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--spacing-sm);
+    padding: var(--spacing-xl);
   }
 }
 </style>

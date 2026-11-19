@@ -1,187 +1,184 @@
 ---
 version: alpha
 name: orce.me
-description: Visual identity of orce.me. Paper, ink and stamp. Ink type on warm paper, a vermilion stamp color for actions, cobalt for the product stage, and a highlighter accent, with a characterful grotesque for display and a mono for figures.
+description: Visual identity of orce.me. Warm and friendly. Cream paper, warm brown text, terracotta actions and soft pastel cards, with a soft serif for headlines and a friendly sans for the product and copy. The product is shown at real, readable size.
 colors:
   # Light theme
-  primary: '#ff5a36'
-  primary-hover: '#ff7652'
-  on-primary: '#141413'
-  secondary: '#2f45ff'
-  on-secondary: '#ffffff'
-  tertiary: '#d6f26a'
-  on-tertiary: '#141413'
-  stage: '#2f45ff'
-  neutral: '#f2eee5'
-  surface: '#f9f7f2'
+  primary: '#c2461f'
+  primary-hover: '#a83b18'
+  on-primary: '#ffffff'
+  secondary: '#6a4fb3'
+  tertiary: '#f2a65a'
+  neutral: '#fbf6ee'
+  surface: '#fffdf9'
   surface-raised: '#ffffff'
-  surface-tint: '#ebe6db'
-  band: '#e4ded1'
-  on-surface: '#141413'
-  on-surface-muted: '#5a564d'
-  outline: '#d6cfc0'
-  inverse-surface: '#141413'
-  on-inverse-surface: '#f2eee5'
-  status-draft: '#f6e7b0'
+  surface-tint: '#f5ede1'
+  band: '#efe5d6'
+  on-surface: '#2b2118'
+  on-surface-muted: '#6b5d50'
+  outline: '#e8dccb'
+  peach: '#ffe3d1'
+  butter: '#fdefc3'
+  mint: '#d8efdf'
+  lavender: '#e7e1fa'
+  sky: '#d9ebfa'
+  status-draft: '#fbeec4'
   on-status-draft: '#6b5300'
-  status-sent: '#dfe3ff'
-  on-status-sent: '#2433b8'
-  status-accepted: '#dcefc9'
-  on-status-accepted: '#2f5a17'
+  status-sent: '#dceafb'
+  on-status-sent: '#21508a'
+  status-accepted: '#d9efdc'
+  on-status-accepted: '#2c5e33'
   error: '#b3261e'
   # Dark theme
-  primary-dark: '#ff6b47'
-  primary-hover-dark: '#ff8a6b'
-  on-primary-dark: '#141413'
-  secondary-dark: '#a3adff'
-  stage-dark: '#2536d6'
-  neutral-dark: '#121210'
-  surface-dark: '#1c1b18'
-  surface-raised-dark: '{colors.surface-dark}'
-  surface-tint-dark: '#26241f'
-  band-dark: '#1f1d1a'
-  on-surface-dark: '#f2eee5'
-  on-surface-muted-dark: '#aba596'
-  outline-dark: '#38352e'
-  inverse-surface-dark: '#f2eee5'
-  on-inverse-surface-dark: '#141413'
+  primary-dark: '#ff8a63'
+  primary-hover-dark: '#ffa182'
+  on-primary-dark: '#2b1408'
+  secondary-dark: '#b9a8ff'
+  neutral-dark: '#1b1611'
+  surface-dark: '#241e18'
+  surface-raised-dark: '#2b241d'
+  surface-tint-dark: '#2e261f'
+  band-dark: '#2a221b'
+  on-surface-dark: '#f6eee3'
+  on-surface-muted-dark: '#bfb1a1'
+  outline-dark: '#3d3329'
+  peach-dark: '#3d2a20'
+  butter-dark: '#3a3220'
+  mint-dark: '#213328'
+  lavender-dark: '#2c2740'
+  sky-dark: '#1f2e3d'
   status-draft-dark: '#463e27'
   on-status-draft-dark: '#eedc9f'
-  status-sent-dark: '#262f63'
-  on-status-sent-dark: '#cdd3ff'
-  status-accepted-dark: '#2c4224'
-  on-status-accepted-dark: '#c9e6ad'
+  status-sent-dark: '#233a55'
+  on-status-sent-dark: '#c6defa'
+  status-accepted-dark: '#2a4229'
+  on-status-accepted-dark: '#c5e6bf'
   error-dark: '#ffb4a8'
 typography:
   display:
-    fontFamily: Bricolage Grotesque Variable
-    fontSize: 132px
-    fontWeight: 600
-    lineHeight: 0.9
-    letterSpacing: -4px
-  display-accent:
-    fontFamily: Bricolage Grotesque Variable
-    fontSize: 132px
-    fontWeight: 600
-    lineHeight: 0.9
-    letterSpacing: -4px
-  numeral:
-    fontFamily: Geist Mono Variable
-    fontSize: 64px
-    fontWeight: 400
-    lineHeight: 1
-    letterSpacing: -4px
-  headline-lg:
-    fontFamily: Bricolage Grotesque Variable
-    fontSize: 88px
-    fontWeight: 600
-    lineHeight: 0.98
-    letterSpacing: -3px
-  headline-lg-accent:
-    fontFamily: Bricolage Grotesque Variable
-    fontSize: 88px
-    fontWeight: 600
-    lineHeight: 0.98
-    letterSpacing: -3px
-  headline-md:
-    fontFamily: Bricolage Grotesque Variable
-    fontSize: 56px
-    fontWeight: 600
-    lineHeight: 1
-    letterSpacing: -1.8px
-  headline-md-accent:
-    fontFamily: Bricolage Grotesque Variable
-    fontSize: 56px
-    fontWeight: 600
-    lineHeight: 1
-    letterSpacing: -1.8px
-  title-lg:
-    fontFamily: Bricolage Grotesque Variable
-    fontSize: 26px
-    fontWeight: 600
-    lineHeight: 1.15
-    letterSpacing: -0.6px
-  title-md:
-    fontFamily: Bricolage Grotesque Variable
-    fontSize: 19px
-    fontWeight: 600
-    lineHeight: 1.25
-    letterSpacing: -0.3px
-  figure:
-    fontFamily: Geist Mono Variable
-    fontSize: 22px
+    fontFamily: Fraunces Variable
+    fontSize: 76px
     fontWeight: 500
+    lineHeight: 1.04
+    letterSpacing: -2px
+  display-accent:
+    fontFamily: Fraunces Variable
+    fontSize: 76px
+    fontWeight: 400
+    lineHeight: 1.04
+    letterSpacing: -2px
+  headline-lg:
+    fontFamily: Fraunces Variable
+    fontSize: 56px
+    fontWeight: 500
+    lineHeight: 1.08
+    letterSpacing: -1.5px
+  headline-lg-accent:
+    fontFamily: Fraunces Variable
+    fontSize: 56px
+    fontWeight: 400
+    lineHeight: 1.08
+    letterSpacing: -1.5px
+  headline-md:
+    fontFamily: Fraunces Variable
+    fontSize: 44px
+    fontWeight: 500
+    lineHeight: 1.1
+    letterSpacing: -1.2px
+  headline-md-accent:
+    fontFamily: Fraunces Variable
+    fontSize: 44px
+    fontWeight: 400
+    lineHeight: 1.1
+    letterSpacing: -1.2px
+  headline-page:
+    fontFamily: Fraunces Variable
+    fontSize: 48px
+    fontWeight: 500
+    lineHeight: 1.1
+    letterSpacing: -1.2px
+  headline-page-accent:
+    fontFamily: Fraunces Variable
+    fontSize: 48px
+    fontWeight: 400
+    lineHeight: 1.1
+    letterSpacing: -1.2px
+  title-xl:
+    fontFamily: Figtree Variable
+    fontSize: 24px
+    fontWeight: 600
+    lineHeight: 1.3
+    letterSpacing: -0.3px
+  title-lg:
+    fontFamily: Figtree Variable
+    fontSize: 21px
+    fontWeight: 600
+    lineHeight: 1.3
+    letterSpacing: -0.3px
+  title-md:
+    fontFamily: Figtree Variable
+    fontSize: 18px
+    fontWeight: 600
+    lineHeight: 1.35
+    letterSpacing: -0.2px
+  figure:
+    fontFamily: Figtree Variable
+    fontSize: 22px
+    fontWeight: 700
     lineHeight: 1.2
-    letterSpacing: -0.8px
+    letterSpacing: -0.4px
+  figure-lg:
+    fontFamily: Figtree Variable
+    fontSize: 40px
+    fontWeight: 700
+    lineHeight: 1.1
+    letterSpacing: -1px
   brand:
-    fontFamily: Bricolage Grotesque Variable
-    fontSize: 28px
+    fontFamily: Figtree Variable
+    fontSize: 25px
     fontWeight: 700
     lineHeight: 1
-    letterSpacing: -1.2px
+    letterSpacing: -0.8px
+  lead:
+    fontFamily: Figtree Variable
+    fontSize: 19px
+    fontWeight: 400
+    lineHeight: 1.6
   body-lg:
-    fontFamily: Geist Variable
-    fontSize: 16px
+    fontFamily: Figtree Variable
+    fontSize: 17px
     fontWeight: 400
     lineHeight: 1.65
   body-md:
-    fontFamily: Geist Variable
-    fontSize: 14px
+    fontFamily: Figtree Variable
+    fontSize: 15px
     fontWeight: 400
     lineHeight: 1.65
   body-sm:
-    fontFamily: Geist Variable
-    fontSize: 13px
-    fontWeight: 400
-    lineHeight: 1.7
-  label-lg:
-    fontFamily: Geist Variable
+    fontFamily: Figtree Variable
     fontSize: 14px
+    fontWeight: 400
+    lineHeight: 1.65
+  label-lg:
+    fontFamily: Figtree Variable
+    fontSize: 15px
     fontWeight: 500
     lineHeight: 1.4
   label-md:
-    fontFamily: Geist Variable
-    fontSize: 14px
+    fontFamily: Figtree Variable
+    fontSize: 15px
     fontWeight: 600
     lineHeight: 1.3
-  headline-page:
-    fontFamily: Bricolage Grotesque Variable
-    fontSize: 52px
-    fontWeight: 600
-    lineHeight: 1.05
-    letterSpacing: -2px
-  headline-page-accent:
-    fontFamily: Bricolage Grotesque Variable
-    fontSize: 52px
-    fontWeight: 600
-    lineHeight: 1.05
-    letterSpacing: -2px
-  title-xl:
-    fontFamily: Bricolage Grotesque Variable
-    fontSize: 28px
-    fontWeight: 600
-    lineHeight: 1.3
-    letterSpacing: -0.6px
-  figure-lg:
-    fontFamily: Geist Mono Variable
-    fontSize: 40px
-    fontWeight: 500
-    lineHeight: 1.1
-    letterSpacing: -1.5px
-  lead:
-    fontFamily: Geist Variable
-    fontSize: 18px
-    fontWeight: 400
-    lineHeight: 1.6
   label-sm:
-    fontFamily: Geist Mono Variable
-    fontSize: 11px
-    fontWeight: 400
-    lineHeight: 1.6
+    fontFamily: Figtree Variable
+    fontSize: 12px
+    fontWeight: 500
+    lineHeight: 1.5
 rounded:
-  sm: 6px
-  md: 10px
-  lg: 20px
+  sm: 8px
+  md: 14px
+  lg: 24px
+  xl: 36px
   full: 9999px
 spacing:
   xs: 4px
@@ -193,11 +190,11 @@ spacing:
   3xl: 32px
   4xl: 40px
   5xl: 56px
-  container: 1240px
+  container: 1200px
   gutter: 40px
   gutter-tablet: 28px
-  gutter-mobile: 22px
-  section: 112px
+  gutter-mobile: 20px
+  section: 104px
   section-mobile: 64px
   container-content: 1040px
   measure: 780px
@@ -216,24 +213,28 @@ components:
   supporting-text-dark:
     backgroundColor: '{colors.neutral-dark}'
     textColor: '{colors.on-surface-muted-dark}'
-  highlight:
-    backgroundColor: '{colors.tertiary}'
-    textColor: '{colors.on-tertiary}'
-    rounded: '{rounded.sm}'
+  headline-accent:
+    backgroundColor: '{colors.neutral}'
+    textColor: '{colors.primary}'
+    typography: '{typography.headline-md-accent}'
+  headline-accent-dark:
+    backgroundColor: '{colors.neutral-dark}'
+    textColor: '{colors.primary-dark}'
   brand-mark:
-    textColor: '{colors.on-surface}'
-    size: 26px
+    backgroundColor: '{colors.primary}'
+    textColor: '{colors.on-primary}'
+    size: 30px
     rounded: '{rounded.full}'
   brand-dot:
-    textColor: '{colors.primary}'
+    textColor: '{colors.tertiary}'
     typography: '{typography.brand}'
   button-primary:
     backgroundColor: '{colors.primary}'
     textColor: '{colors.on-primary}'
     typography: '{typography.label-md}'
     rounded: '{rounded.full}'
-    height: 48px
-    padding: 24px
+    height: 52px
+    padding: 26px
   button-primary-hover:
     backgroundColor: '{colors.primary-hover}'
   button-primary-dark:
@@ -241,35 +242,69 @@ components:
     textColor: '{colors.on-primary-dark}'
   button-primary-dark-hover:
     backgroundColor: '{colors.primary-hover-dark}'
-  button-ink:
-    backgroundColor: '{colors.inverse-surface}'
-    textColor: '{colors.on-inverse-surface}'
+  button-light:
+    backgroundColor: '{colors.surface-raised}'
+    textColor: '{colors.primary}'
     typography: '{typography.label-md}'
     rounded: '{rounded.full}'
-    height: 48px
-    padding: 24px
-  button-ink-dark:
-    backgroundColor: '{colors.inverse-surface-dark}'
-    textColor: '{colors.on-inverse-surface-dark}'
+    height: 52px
+    padding: 26px
   card:
     backgroundColor: '{colors.surface}'
     textColor: '{colors.on-surface}'
     rounded: '{rounded.lg}'
-    padding: 24px
+    padding: 28px
   card-dark:
     backgroundColor: '{colors.surface-dark}'
+    textColor: '{colors.on-surface-dark}'
+  card-peach:
+    backgroundColor: '{colors.peach}'
+    textColor: '{colors.on-surface}'
+    rounded: '{rounded.xl}'
+  card-peach-dark:
+    backgroundColor: '{colors.peach-dark}'
+    textColor: '{colors.on-surface-dark}'
+  card-butter:
+    backgroundColor: '{colors.butter}'
+    textColor: '{colors.on-surface}'
+    rounded: '{rounded.xl}'
+  card-butter-dark:
+    backgroundColor: '{colors.butter-dark}'
+    textColor: '{colors.on-surface-dark}'
+  card-mint:
+    backgroundColor: '{colors.mint}'
+    textColor: '{colors.on-surface}'
+    rounded: '{rounded.xl}'
+  card-mint-dark:
+    backgroundColor: '{colors.mint-dark}'
+    textColor: '{colors.on-surface-dark}'
+  card-lavender:
+    backgroundColor: '{colors.lavender}'
+    textColor: '{colors.on-surface}'
+    rounded: '{rounded.xl}'
+  card-lavender-dark:
+    backgroundColor: '{colors.lavender-dark}'
+    textColor: '{colors.on-surface-dark}'
+  card-sky:
+    backgroundColor: '{colors.sky}'
+    textColor: '{colors.on-surface}'
+    rounded: '{rounded.xl}'
+  card-sky-dark:
+    backgroundColor: '{colors.sky-dark}'
+    textColor: '{colors.on-surface-dark}'
+  app-window:
+    backgroundColor: '{colors.surface-raised}'
+    textColor: '{colors.on-surface}'
+    typography: '{typography.body-sm}'
+    rounded: '{rounded.lg}'
+  app-window-dark:
+    backgroundColor: '{colors.surface-raised-dark}'
     textColor: '{colors.on-surface-dark}'
   plan-card:
     backgroundColor: '{colors.surface-tint}'
     textColor: '{colors.on-surface}'
     rounded: '{rounded.lg}'
     padding: 32px
-  ink-slab:
-    backgroundColor: '{colors.inverse-surface}'
-    textColor: '{colors.on-inverse-surface}'
-  ink-slab-dark:
-    backgroundColor: '{colors.inverse-surface-dark}'
-    textColor: '{colors.on-inverse-surface-dark}'
   mockup-band:
     backgroundColor: '{colors.band}'
     textColor: '{colors.on-surface}'
@@ -287,7 +322,7 @@ components:
     backgroundColor: '{colors.surface-tint}'
     textColor: '{colors.secondary}'
     typography: '{typography.label-sm}'
-    rounded: '{rounded.sm}'
+    rounded: '{rounded.full}'
     padding: 8px
   tag-dark:
     backgroundColor: '{colors.surface-tint-dark}'
@@ -319,21 +354,14 @@ components:
   status-accepted-dark:
     backgroundColor: '{colors.status-accepted-dark}'
     textColor: '{colors.on-status-accepted-dark}'
-  closing-band:
+  closing-card:
     backgroundColor: '{colors.primary}'
     textColor: '{colors.on-primary}'
     typography: '{typography.headline-lg}'
-  closing-band-dark:
+    rounded: '{rounded.xl}'
+  closing-card-dark:
     backgroundColor: '{colors.primary-dark}'
     textColor: '{colors.on-primary-dark}'
-  closing-accent:
-    backgroundColor: '{colors.on-primary}'
-    textColor: '{colors.primary}'
-    typography: '{typography.headline-lg-accent}'
-    rounded: '{rounded.md}'
-  closing-accent-dark:
-    backgroundColor: '{colors.on-primary-dark}'
-    textColor: '{colors.primary-dark}'
   input:
     backgroundColor: '{colors.surface-raised}'
     textColor: '{colors.on-surface}'
@@ -358,13 +386,6 @@ components:
   error-message-dark:
     backgroundColor: '{colors.surface-tint-dark}'
     textColor: '{colors.error-dark}'
-  quotation-stage:
-    backgroundColor: '{colors.stage}'
-    textColor: '{colors.on-secondary}'
-    rounded: '{rounded.lg}'
-  quotation-stage-dark:
-    backgroundColor: '{colors.stage-dark}'
-    textColor: '{colors.on-secondary}'
   site-header:
     backgroundColor: '{colors.neutral}'
     textColor: '{colors.on-surface}'
@@ -373,207 +394,172 @@ components:
   site-header-dark:
     backgroundColor: '{colors.neutral-dark}'
     textColor: '{colors.on-surface-dark}'
-  step-numeral:
-    backgroundColor: '{colors.neutral}'
-    textColor: '{colors.secondary}'
-    typography: '{typography.numeral}'
-  step-numeral-dark:
-    backgroundColor: '{colors.neutral-dark}'
-    textColor: '{colors.secondary-dark}'
-  index-row:
-    backgroundColor: '{colors.neutral}'
-    textColor: '{colors.on-surface}'
-    typography: '{typography.title-lg}'
-    padding: 28px
-  index-row-dark:
-    backgroundColor: '{colors.neutral-dark}'
-    textColor: '{colors.on-surface-dark}'
-  index-row-hover:
-    backgroundColor: '{colors.primary}'
-    textColor: '{colors.on-primary}'
-  index-row-hover-dark:
-    backgroundColor: '{colors.primary-dark}'
-    textColor: '{colors.on-primary-dark}'
-  footer-wordmark:
-    backgroundColor: '{colors.neutral}'
-    textColor: '{colors.on-surface}'
-    typography: '{typography.brand}'
-  footer-wordmark-dark:
-    backgroundColor: '{colors.neutral-dark}'
-    textColor: '{colors.on-surface-dark}'
 ---
 
 # orce.me
 
-This file is the source of truth for the visual design of the orce.me landing page. The YAML tokens above are the normative values. The prose below tells you why the values exist and how to apply them.
+This file is the source of truth for the visual design of orce.me. The YAML tokens above are the normative values. The prose below tells you why the values exist and how to apply them.
 
 The spec has no theme modes. Tokens with the `-dark` suffix are the dark theme values. A token `x-dark` replaces the token `x` in the dark theme. A token without a `-dark` partner, such as `tertiary`, is the same in both themes. A component with the `-dark` suffix changes only the properties it lists. All other properties come from the base component.
 
 ## Overview
 
-orce.me helps small Brazilian businesses (installers, service providers, shops that sell and install) turn a catalog into professional quotes. The site has a quotation-focused landing page, separate pricing and help pages, free calculators, and a guide.
+orce.me helps small Brazilian businesses (bakeries, installers, photographers, painters, service providers) turn a catalog into professional quotes. The site has a quotation-focused landing page, separate pricing and help pages, free calculators, and a guide.
 
-The identity is **paper, ink and stamp**. A quote is a document that gets approved, so the site borrows from print: warm paper, near-black ink, a vermilion stamp for every action, cobalt as the color of the product stage, and a highlighter that marks the words that matter. It is confident and graphic, never a soft SaaS gradient.
+The identity is **warm and friendly**: the tone of a neighborhood business, not a corporate SaaS. It must feel welcoming and easy, and it must show the real product instead of decorating around it.
 
-- **Mood:** Bold and tactile. Big grotesque headlines, flat solid color blocks, mono figures like a receipt, and hairlines like a ruled form.
-- **Voice:** Lead with concrete functionality. Headlines are short and end with a period. Use at most one catch phrase, in the closing block.
-- **Product proof:** Illustrative documents (a quotation, a catalog, a history list) show the product instead of describing it.
+- **Mood:** Cream paper, warm brown text, terracotta actions and soft pastel cards. Generous rounding and white space.
+- **Product first:** The hero and the feature cards show the quotation editor and the generated PDF at a readable size, with the same sample quote everywhere (orçamento nº 0042 for Marina Oliveira, R$ 650,00).
+- **Voice:** Plain, concrete and kind. Headlines say what the product does. Use at most one catch phrase, in the closing card.
 - **Language:** All copy is Brazilian Portuguese (`lang="pt-BR"`). Currency uses `Intl.NumberFormat('pt-BR', { style: 'currency', currency: 'BRL' })`.
 - **Content pages:** The calculators and the guide put reading and input first. They use a narrower column, larger body text, underlined links, and no mockups.
-- **Brand:** The wordmark is lowercase `orce.me` in Bricolage Grotesque 700 with a vermilion period. The mark is an ink ring with a small vermilion dot at the top right.
+- **Brand:** The wordmark is lowercase `orce.me` in Figtree 700 with an apricot period. The mark is a terracotta circle with a white `o`.
 
 ## Colors
 
-Ink on paper carries the reading. Vermilion is the stamp: buttons, the history card, the closing slab and hover fills. Cobalt is the stage that holds product illustrations, plus small labels and the focus ring. The highlighter marks one phrase per headline. Large areas are only paper, ink, vermilion or cobalt; never mix two accents in one block.
+Cream carries the page. Terracotta is the only action color. Pastels group content into friendly cards; each pastel is a background only, always with the regular brown text. Violet appears only in small labels and the focus ring.
 
 **Light theme**
 
-- `primary` Vermilion (#ff5a36) with ink `on-primary` (#141413) and hover #ff7652. Text on vermilion is always ink, never white.
-- `secondary` Cobalt (#2f45ff) with white `on-secondary`. Small labels, step numerals and the focus ring. `stage` (#2f45ff) is the quotation stage.
-- `tertiary` Highlighter (#d6f26a) with ink `on-tertiary`. Only behind text, as the `<em>` highlight.
-- `neutral` Paper (#f2eee5) is the page. `surface` (#f9f7f2) and `surface-raised` (#ffffff) are cards and documents. `surface-tint` (#ebe6db) and `band` (#e4ded1) are panels and mockup fills.
-- `on-surface` Ink (#141413) and `on-surface-muted` (#5a564d) carry text. `outline` (#d6cfc0) is the hairline.
-- `inverse-surface` Ink (#141413) with paper `on-inverse-surface` forms the features slab and the ink button.
-- Quote-status pairs keep semantic amber, cobalt and green. `error` is #b3261e.
+- `primary` Terracotta (#c2461f) with white `on-primary` (5:1) and hover #a83b18. Buttons, links that act, the brand mark, the closing card and headline accents.
+- `secondary` Violet (#6a4fb3). Small labels, tags and the focus ring.
+- `tertiary` Apricot (#f2a65a). Decorative only: the wordmark period and small dots. Never text.
+- `neutral` Cream (#fbf6ee) is the page. `surface` (#fffdf9) and `surface-raised` (#ffffff) are cards and app windows. `surface-tint` (#f5ede1) and `band` (#efe5d6) are panels and mockup fills.
+- `on-surface` (#2b2118) and `on-surface-muted` (#6b5d50) carry text. `outline` (#e8dccb) is the hairline.
+- Pastels: `peach` (#ffe3d1), `butter` (#fdefc3), `mint` (#d8efdf), `lavender` (#e7e1fa), `sky` (#d9ebfa).
+- Quote-status pairs keep semantic amber, blue and green. `error` is #b3261e.
 
 **Dark theme**
 
-- The page is warm black (#121210) with surfaces #1c1b18 and #26241f, paper text (#f2eee5) and muted #aba596. Hairlines are #38352e.
-- Vermilion brightens to #ff6b47 (hover #ff8a6b) and keeps ink text. Cobalt labels become #a3adff and the stage deepens to #2536d6.
-- The inverse slab flips to paper (#f2eee5) with ink text, so the features section is a light block in the dark theme.
+- The page is warm cocoa (#1b1611) with surfaces #241e18 and #2b241d, cream text (#f6eee3) and muted #bfb1a1. Hairlines are #3d3329.
+- Terracotta brightens to #ff8a63 with dark `on-primary-dark` text. Violet becomes #b9a8ff.
+- Each pastel has a deep, low-saturation partner (`peach-dark` #3d2a20 and so on) that keeps the card grouping without glowing.
 
 **Shared rules**
 
-- The closing slab is vermilion in both themes, with ink text and the ink button.
+- Never put two pastels side by side without a gap. Never use a pastel as text.
 - Status chips use only their semantic pairs.
 - The `theme-color` is `primary` in light and `neutral-dark` in dark. Keep the initial meta tag in `nuxt.config.ts` in sync.
 
 ## Typography
 
-Three families, all self-hosted through Fontsource; `app.vue` preloads the two files that render first.
+Two families, self-hosted through Fontsource; `app.vue` preloads the two files that render first.
 
-- **Bricolage Grotesque** (variable, optical sizes) for display, headlines, titles and the wordmark. Weight 600, 700 for the brand only.
-- **Geist** (variable) for body, navigation and buttons.
-- **Geist Mono** (variable) for figures, prices, step numerals and small notes (`label-sm`).
+- **Fraunces** (variable, with the `SOFT` axis at 100 and `opsz` auto) for display, headlines and page titles. Its soft, slightly wonky shapes give the warmth. Weight 500; the accent clause is weight 400 italic.
+- **Figtree** (variable) for everything else: body, navigation, buttons, titles, figures and the product UI.
 
-- **Display:** The hero `h1` is 132px, weight 600, line height 0.9, tracking -4px. The `-accent` tokens match their base so a highlighted phrase keeps the same size.
-- **Headlines:** Section `h2` titles use `headline-md` (56px). The closing slab uses `headline-lg` (88px). Content pages use `headline-page` (52px).
-- **Titles:** `title-md` (19px) for card and step titles, `title-lg` (26px) for index rows and feature cards, `title-xl` (28px) for content sections and the pricing link.
-- **Figures:** Prices and totals use `figure` (Geist Mono, 22px) and `figure-lg` (40px). Keep currency on one line (`white-space: nowrap`).
-- **Body:** `lead` (18px) for the hero paragraph and content intros, `body-lg` (16px) for supporting text, `body-md` (14px) for descriptions, `body-sm` (13px) for help text.
-- **Labels:** `label-lg` (14px, 500) for navigation, `label-md` (14px, 600) for buttons, `label-sm` (Geist Mono 11px) for notes, footer text and disclaimers.
-- **Highlight:** `<em>` is not italic. It renders upright with a `tertiary` highlighter behind it (`rounded.sm`, 0.08em inline padding, `box-decoration-break: clone`). Use it for one phrase in a headline. In the closing slab it inverts to an ink block with vermilion text (`closing-accent`).
-- **Numerals:** Workflow step numbers use `numeral` (Geist Mono, 64px).
-- **Responsive sizes:** At 1050px and below, `display` is 96px (-4px), `headline-lg` is 64px and `headline-md` is 44px. At 760px and below, `display` is 60px (-2.6px), `headline-lg` 44px (-1.8px), `headline-md` 36px (-1.4px), `headline-page` 36px, numerals 44px, and the hero paragraph 16px. Below 380px, `display` is 50px. The footer wordmark scales with the viewport (`clamp(88px, 22vw, 300px)`).
-- **Mockup text:** The illustrative mockups use their own reduced scale (6px to 9px). That scale imitates a screenshot. Do not reuse it for real page text.
+- **Display:** The hero `h1` is 76px, weight 500, line height 1.04, tracking -2px.
+- **Headlines:** Section `h2` titles use `headline-md` (44px). The closing card uses `headline-lg` (56px). Content pages use `headline-page` (48px).
+- **Accent:** `<em>` sets the second clause of a headline in Fraunces italic, weight 400, in `primary`. Use it once per headline at most.
+- **Titles:** `title-md` (18px) for card and step titles, `title-lg` (21px) for feature cards and resource cards, `title-xl` (24px) for content sections.
+- **Figures:** Prices and totals use `figure` (22px, 700) and `figure-lg` (40px). Use tabular numbers and keep currency on one line.
+- **Body:** `lead` (19px) for the hero paragraph and content intros, `body-lg` (17px) for supporting text, `body-md` (15px) for descriptions, `body-sm` (14px) for help text and the app window.
+- **Labels:** `label-lg` (15px, 500) for navigation, `label-md` (15px, 600) for buttons, `label-sm` (12px, 500) for notes, chips and the footer.
+- **Responsive sizes:** At 1050px and below, `display` is 60px (-1.6px) and `headline-lg` 46px. At 760px and below, `display` is 44px (-1.2px), `headline-lg` 36px, `headline-md` 32px (-0.8px), `headline-page` 34px, and the hero paragraph 17px. Below 380px, `display` is 38px.
+- **Mockup text:** The app window uses real UI sizes (12px to 15px). Only the small PDF paper and the feature mockups use the reduced scale (7px to 11px), which imitates a screenshot. Do not reuse that scale for page text.
 
 ## Layout
 
-Each page is a single column. Content sits in a centered container, `.wrap`, with a 1240px maximum width. The landing page stacks full-width sections. Content pages narrow the container to `container-content` (1040px) and keep prose at the `measure` (780px).
+Each page is a single column. Content sits in a centered container, `.wrap`, with a 1200px maximum width. Content pages narrow the container to `container-content` (1040px) and keep prose at the `measure` (780px).
 
-- **Gutters:** 40px on desktop, 28px at 1050px and below, 22px at 760px and below.
-- **Sections:** 112px block padding on desktop, 64px on mobile. Anchored sections have a 100px `scroll-margin-top` so the sticky header never covers their headings.
-- **Header:** 76px tall on desktop, 64px on mobile. Below 380px the brand is 22px and the gaps tighten to 8px. It sticks to the top with a translucent `neutral` ground (92% mix) and a 14px backdrop blur, and has a bottom hairline.
+- **Gutters:** 40px on desktop, 28px at 1050px and below, 20px at 760px and below.
+- **Sections:** 104px block padding on desktop, 64px on mobile. Anchored sections have a 100px `scroll-margin-top` so the sticky header never covers their headings.
+- **Header:** 76px tall on desktop, 64px on mobile. It sticks to the top with a translucent `neutral` ground (92% mix) and a 14px backdrop blur, and shows a bottom hairline once the page scrolls. Below 380px the brand shrinks and the gaps tighten.
 - **Grids:**
-  - Hero: the headline spans the full container, with no eyebrow or status line above it. Below it, supporting copy and CTA sit at the top of a `0.75fr 1.25fr` grid beside the quotation stage.
-  - Workflow: a full-width heading over three equal step columns with a 32px gap. One column at 760px.
-  - Features: an ink slab with a two-column card grid and a full-width vermilion history card. It becomes one column at 760px. Each card pairs one function with an illustrative UI.
-  - Pricing: a separate page with a two-column quotation capability and current-options panel. The homepage has only a contextual pricing link.
+  - Hero: copy and showcase in a `0.85fr 1.15fr` grid, vertically centered. One column at 1050px.
+  - Workflow: a centered heading over three equal pastel step cards with a 24px gap. One column at 1050px.
+  - Features: a centered heading over two pastel feature cards and a full-width history card.
+  - Pricing banner: one full-width tint card between features and resources.
+  - Resources: a three-column card grid with a 20px gap; the guide card spans the full row. Two columns at 1050px, one at 760px.
+  - Closing: a terracotta card inside the container.
+  - Pricing: a separate page with a two-column quotation capability and current-options panel.
   - FAQ: a `1fr 1.25fr` grid.
-  - Resources: an editorial index of full-width rows (title, description, arrow) separated by hairlines.
   - Calculators: inputs and result side by side. The quote calculator uses `1.2fr 1fr` with a 32px gap. The small calculators use two equal columns in one bordered box.
-- **Breakpoints:** 1050px (tablet) and 760px (mobile). A 1450px query only adds hero padding. All content grids collapse to one column at 760px. The preview gallery keeps a compact layered composition, and the closing CTA stacks below the heading.
+- **Breakpoints:** 1050px (tablet) and 760px (mobile). All content grids collapse to one column at 760px. On mobile the showcase stacks the PDF paper under the editor.
 - **Spacing scale:** Component spacing uses the 4px scale (`xs` to `5xl`). The layout tokens (`container`, `gutter*`, `section*`) are exact values. Do not round them.
 - **Overflow:** `main` uses `overflow-x: clip`.
 
 ## Elevation & Depth
 
-Depth comes from flat color blocks first: paper page, ink slab, vermilion slab, cobalt stage. Shadows are reserved for paper that sits on top of something (cards on the ink slab, documents on the stage) and are tinted with ink in the light theme.
+Depth is soft and warm. Cards sit on cream with a light warm shadow; the app window floats a little higher.
 
-- **Raised:** `0 1px 2px #1414130d, 0 12px 32px -14px #14141333`. Cards, the catalog and proposal windows, the history list.
-- **Floating:** `0 40px 80px -30px #14141366`. Only the documents on the quotation stage.
-- **Dark theme:** raised `0 1px 2px #00000040, 0 18px 40px -16px #000000aa`; floating `0 40px 90px -30px #000000cc`.
-- **Tilt:** Illustrative documents fan from -7deg to 6deg. The hero highlight and the approval stamp are rotated (-3deg and -14deg). Nothing else tilts.
-- **Paper grain:** A fixed, non-interactive fractal-noise layer covers the page at 7% opacity with `multiply` (5% with `screen` in dark), so flat blocks read as printed paper. It is hidden in print.
-- **Dialog backdrop:** Ink at 65% (`#141413a6`) with a 5px backdrop blur.
+- **Raised:** `0 1px 2px #2b21180d, 0 10px 30px -12px #2b211826`. Cards, feature windows, resource cards.
+- **Floating:** `0 30px 70px -28px #2b211859, 0 2px 6px #2b21180f`. The hero app window and the PDF paper.
+- **Dark theme:** raised `0 1px 2px #00000040, 0 14px 34px -14px #00000099`; floating `0 30px 70px -24px #000000b3`.
+- **Tilt:** Only the PDF paper in the hero tilts (3deg). Nothing else rotates.
+- **Dialog backdrop:** Brown at 60% (`#2b211899`) with a 5px backdrop blur.
 
 ## Shapes
 
-Soft rectangles and pills. Large radii on blocks, full pills on every control.
+Round and soft.
 
-- `rounded.sm` (6px): the text highlight, tags, small mockup buttons.
-- `rounded.md` (10px): inputs, the closing accent block, the approval stamp, mockup windows.
-- `rounded.lg` (20px): cards, the quotation stage, panels, the dialog.
-- `rounded.full`: every button, the login link, status chips, the brand mark and the theme toggle.
-- Borders are 1px hairlines in `outline`. Workflow rules are 2px `on-surface`. The brand ring is 3px.
+- `rounded.sm` (8px): chips inside mockups, small buttons in mockups.
+- `rounded.md` (14px): inputs, mockup rows and inner panels.
+- `rounded.lg` (24px): cards, app windows, panels, the dialog.
+- `rounded.xl` (36px): pastel section cards and the closing card.
+- `rounded.full`: every button, tags, status chips, step badges, the brand mark and the theme toggle.
+- Borders are 1px hairlines in `outline`.
 
 ## Components
 
-- **Primary button:** Vermilion pill, ink `label-md` text, 48px tall, 24px inline padding. On hover it lifts 2px and goes to `primary-hover`. The same in dark with the `-dark` pair.
-- **Ink button:** Ink pill with paper text, used on the vermilion closing slab. In dark it flips to a paper pill with ink text.
-- **Text link:** `label-lg` text with a trailing glyph (`↓` for in-page, `→` for next page) that slides on hover. No underline.
-- **Header:** Sticky and translucent (see Layout). Brand left, navigation centered (`label-lg`, 24px gap) with an underline that grows on hover, then the login pill (1px ink outline, fills with ink on hover) and the theme toggle. At 760px and below the navigation moves into a menu panel (`surface`, `rounded.lg`, hairline border).
-- **Hero highlight:** The last word of the hero (`PDF.`) is an `<em>` highlight rotated -3deg that lands with a short stamp animation after the headline rises.
-- **Quotation stage:** A cobalt `stage` block (`rounded.lg`) with a 24px dot grid in `on-secondary` at 22%. Three quotation documents with the same sample company, items, totals and conditions fan out from a stack in a perspective scene and tilt up to 6 degrees toward a fine pointer. A vermilion "Aceito" stamp (the product's accepted status) lands on the conditions area of the front document, never over the figures. No other chips or captions.
-- **Step numeral:** `numeral` (Geist Mono) in `secondary` at the top of each workflow column. A 2px ink rule above the column draws from left to right when it enters the viewport. On hover the numeral slides 8px right.
-- **Features slab:** A full-width `inverse-surface` block (ink in light, paper in dark). Catalog and proposal cards are `surface` with `rounded.lg`; the history card is a vermilion block with ink text holding a `surface-raised` list. The illustration disclaimer is `label-sm` mono at 72% of `on-inverse-surface`.
-- **Index row:** A resource link row with a `title-lg` title, a `body-md` description and a `→` glyph. On hover a vermilion fill rises from the bottom, all text turns ink, and the arrow slides 8px right.
-- **Pricing link:** A full-width homepage row in `headline-md` type with a `→` at the right edge and a bottom hairline. On hover a vermilion fill rises from the bottom, like an index row, and the arrow slides 12px.
-- **Closing slab:** A full-width vermilion block in both themes, 120px block padding (72px on mobile), a `headline-lg` statement in ink with the `closing-accent` clause (ink block, vermilion text), and the ink button aligned to the baseline on the right. A huge ink `✳` at 12% opacity rotates slowly at the right edge.
-- **Footer wordmark:** A giant lowercase `orce.me` in ink (paper in dark) with the vermilion period, above the footer links. Footer notes use `label-sm` mono.
-- **Theme toggle:** A 36px circle with a hairline border and a 17px stroke icon (1.6 stroke, round caps). Show the moon in light and the sun in dark.
-- **Card:** `surface`, `rounded.lg`, 24px padding, raised shadow. Feature cards use 32px copy insets and 24px mockup insets.
+- **Primary button:** Terracotta pill, white `label-md` text, 52px tall, 26px inline padding. On hover it lifts 2px and goes to `primary-hover`.
+- **Light button:** White pill with terracotta text, used on the terracotta closing card.
+- **Text link:** `label-lg` text with a trailing glyph (`↓` in-page, `→` next page) that slides on hover. No underline.
+- **Header:** Sticky and translucent (see Layout). Brand left, navigation centered (`label-lg`), then the login link as an outlined pill and the theme toggle. At 760px and below the navigation moves into a menu panel (`surface`, `rounded.lg`, hairline border).
+- **Hero showcase:** A peach `rounded.xl` panel holding the quotation editor (`app-window`) at real size: quote number and draft chip, client and validity fields, three item rows with quantity and price, subtotal, discount and total, and an export action rendered as a non-interactive pill. The generated PDF paper (`QuoteDocument`) overlaps the lower right, tilted 3deg. Item rows appear one by one, then the paper slides in, once.
+- **Step card:** One pastel card per workflow step (peach, butter, mint), `rounded.xl`, with a numbered `rounded.full` badge, a `title-lg` title, a `body-md` text and a small real UI snippet from the same sample quote.
+- **Feature card:** Lavender and sky `rounded.xl` cards, each with copy on top and an `app-window` mockup below. The history strip is a full-width butter card.
+- **Resource card:** A `card` link with a `title-md` title, a `body-sm` description and a `→` that slides on hover; the card lifts 4px on hover.
+- **Pricing banner:** A full-width `surface-tint` card with a short sentence and a primary text link.
+- **Closing card:** A terracotta `rounded.xl` card inside the container, white `headline-lg` text with an italic clause, and the light button.
+- **Footer:** Brand, links and copyright in one row, with a top hairline.
+- **Theme toggle:** A 36px circle with a hairline border and a 17px stroke icon. Moon in light, sun in dark.
+- **Card:** `surface`, `rounded.lg`, 28px padding, raised shadow.
 - **Pricing panel:** A card on the separate pricing route explains quotation capabilities and links to current app conditions. No speculative module cards or invented prices appear on any public page.
-- **Tag:** `surface-tint` with cobalt text, `label-sm`, `rounded.sm`, a hairline border.
-- **Status chip:** Draft, sent, and accepted pairs only, `rounded.full`, small text.
-- **FAQ:** Native `<details>` and `<summary>` with a hairline under each item. A `+` glyph in cobalt rotates 45 degrees when open.
-- **Mockups:** The documents, catalog, proposal and history list are illustrations of the product. They use the reduced mockup scale, mono figures and the floating or raised shadow. They are not editable.
+- **Tag:** `surface-tint` with violet text, `label-sm`, pill, hairline border.
+- **Status chip:** Draft, sent, and accepted pairs only, pill, small text.
+- **FAQ:** Native `<details>` and `<summary>` with a hairline under each item. A `+` glyph in terracotta rotates 45 degrees when open.
 - **Dialog:** The native `<dialog>` for the PDF preview. `surface-raised`, `rounded.lg`, hairline border, and a `surface-tint` toolbar. Print always renders it in the light theme.
-- **Input:** `surface-raised`, `on-surface` text at 18px (`lead`), `rounded.md`, 12px padding. The border is `on-surface-muted` for 3:1 contrast. The label sits above in `label-lg`. Help text sits below in `body-sm`, `on-surface-muted`.
-- **Calculator:** A bordered box (`rounded.lg`) with inputs on one side and a `tint-panel` result on the other. The result value uses `figure-lg`. Results update live in an `aria-live="polite"` region.
+- **Input:** `surface-raised`, `on-surface` text at 19px (`lead`), `rounded.md`, 12px padding. The border is `on-surface-muted` for 3:1 contrast. The label sits above in `label-lg`. Help text sits below in `body-sm`.
+- **Calculator:** A bordered box (`rounded.lg`) with inputs on one side and a `tint-panel` result on the other. The result uses `figure-lg`. Results update live in an `aria-live="polite"` region.
 - **Tint panel:** `surface-tint` with a hairline border, `rounded.lg`, 24px padding. Calculator results, the guide call to action, and table headers and footers.
 - **Error message:** `error` text in `body-md` inside the result panel. It replaces the result while the input is invalid.
 - **Breadcrumbs:** `body-sm`, `on-surface-muted`, slash separators. The link to the home page is underlined.
 - **Inline link:** On content pages, links inside prose are underlined with a 4px offset. They keep the text color.
 - **Content table:** Full width, `body-md`, 15px cell padding, hairline rows, and a `surface-tint` header and footer. It scrolls sideways on mobile.
-- **Formula:** A bordered box (`rounded.md`, 20px padding) that holds one formula in weight 500.
+- **Formula:** A bordered box (`rounded.md`, 20px padding) that holds one formula in weight 600.
 - **Skip link:** "Pular para o conteúdo" stays above the viewport until it gets focus.
 
 ## Motion
 
-- Transitions are 0.2s and change only `transform` and `background`. Editorial hovers (index rows, nav underline, step numerals, arrows) use 0.5s `cubic-bezier(.2,.7,.2,1)`.
-- **Entrance:** Hero headline lines rise out of a clipped mask (0.9s, staggered 100ms), then the `PDF.` highlight lands like a stamp (0.5s, from 1.6x and -12deg). The approval stamp on the stage lands the same way at 2.6s. Below-the-fold blocks use the `v-reveal` directive: they fade in and lift 28px over 0.9s with the same curve, staggered 90ms by the directive value, once per page view.
-- The closing `✳` rotates once every 30 seconds. It stops under reduced motion.
-- The quotation deck rises and fans out once over four seconds, then rests. It has no visible playback controls, layout-name strips, or development-status captions. Reduced motion renders all examples statically. The gallery illustrates quotation output without making template-availability claims.
-- The theme toggle reveals the new theme with a circular clip from the pointer, 520ms, `cubic-bezier(.2,.7,.2,1)`, through the View Transitions API. Without that API, the theme changes at once.
-- `prefers-reduced-motion: reduce` turns off all transitions, smooth scroll, the theme reveal, the reveal directive, the stamps, the rotating asterisk and the pointer tilt. Everything renders in its final position.
+- Transitions are 0.2s and change only `transform`, `background` and `color`. Card lifts and arrow slides use 0.4s `cubic-bezier(.2,.7,.2,1)`.
+- **Entrance:** The hero copy fades up once. In the showcase, item rows appear one by one and the PDF paper slides in, all within four seconds, once. Below-the-fold blocks use the `v-reveal` directive: they fade in and lift 24px over 0.8s, staggered 90ms by the directive value, once per page view.
+- The theme toggle reveals the new theme with a circular clip from the pointer, 520ms, through the View Transitions API. Without that API, the theme changes at once.
+- `prefers-reduced-motion: reduce` turns off all transitions, smooth scroll, the theme reveal, the reveal directive and the showcase entrance. Everything renders in its final position.
 
 ## Iconography
 
-The page uses Unicode glyphs instead of an icon library. The glyph set is part of the identity.
+The page uses Unicode glyphs instead of an icon library.
 
-- `↓` in-page links. `→` index rows and the pricing link.
-- `✳` the closing decoration.
-- `✓` success and plan features. `+` FAQ expand. `☰` the mobile menu.
-- The theme toggle is the only SVG icon. Illustrative search icons use a CSS ring and stem. The mobile menu uses three CSS lines to avoid missing-glyph boxes on systems without the hamburger character. Mark decorative glyphs with `aria-hidden="true"`.
+- `↓` in-page links. `→` next page and card links. `✓` success. `+` FAQ expand.
+- The theme toggle is the only SVG icon. Illustrative search icons use a CSS ring and stem. The mobile menu uses three CSS lines. Mark decorative glyphs with `aria-hidden="true"`.
 
 ## Do's and Don'ts
 
-- Do take every color from the tokens. Don't add a hex value near an existing token. Reuse the token.
+- Do take every color from the tokens. Don't add a hex value near an existing token.
 - Do treat the shadow and backdrop values in this file as the only colors outside the tokens.
 - Do give every new surface and text pair a `-dark` value. Check contrast in both themes.
-- Do use the focus ring as a 3px solid outline with a 5px offset, in `secondary`. That is cobalt in light and pale cobalt in dark.
-- Don't use `primary` (vermilion) or `tertiary` (highlighter) as a text color on paper, or `outline` for control borders. Vermilion text appears only on an ink block. Form control borders use `on-surface-muted` to get 3:1 contrast.
-- Do keep real page text at 10px or larger. Only the illustrative mockups go smaller.
+- Do use the focus ring as a 3px solid outline with a 5px offset, in `secondary`.
+- Don't use `tertiary` (apricot) or a pastel as text, or `outline` for control borders. Form control borders use `on-surface-muted` for 3:1 contrast.
+- Do keep real page text at 12px or larger. Only the reduced mockups go smaller.
 - Do keep one primary button per section. Pair it with a text link, not a second filled button.
-- Do highlight one phrase per headline at most. Don't highlight body text, labels, or buttons.
+- Do show the product at a readable size where it explains a feature. Don't shrink the app window below 12px text.
 - Do end headlines and step titles with a period, for example "Monte seu catálogo."
-- Do tilt only the elements listed under Elevation & Depth.
-- Don't add shadows outside the raised and floating levels. Don't use gradients or glows on surfaces; color blocks are flat.
+- Don't add gradients, glows, grain, marquees, giant wordmarks or rotating decorations.
 - Don't add an icon library or emoji. Use the glyph set.
 - Do use `error` only for validation messages.
 - Do set input text to 16px or larger, so mobile browsers do not zoom on focus.
 - Do underline links inside prose on content pages. Don't underline navigation or buttons.
 - Do write all copy in Brazilian Portuguese.
-- Don't put eyebrow labels above landing headings, decorative `01 / 02` numbering (workflow steps are a real order and keep theirs), or badges and chips that do not reflect real state. Don't add a subtitle that repeats its heading.
+- Don't put eyebrow labels above headings, decorative numbering, or badges and chips that do not reflect real state. Workflow steps keep their numbers because the order is real.
 - Do respect `prefers-reduced-motion` for every new animation.
