@@ -10,9 +10,9 @@
           preços prontos para usar de novo.
         </p>
         <div class="snippet" aria-hidden="true">
-          <div><span>Bolo de aniversário</span><b>R$ 350,00</b></div>
-          <div><span>Caixa de docinhos</span><b>R$ 180,00</b></div>
-          <div><span>Decoração da mesa</span><b>R$ 120,00</b></div>
+          <div><span>Aquecedor a gás 20 L/min</span><b>R$ 2.890,00</b></div>
+          <div><span>Tubo PPR 25 mm</span><b>R$ 18,90</b></div>
+          <div><span>Instalação de aquecedor</span><b>R$ 450,00</b></div>
         </div>
       </li>
       <li class="step" v-reveal="1">
@@ -23,8 +23,8 @@
           Confira cada detalhe antes de enviar.
         </p>
         <div class="snippet" aria-hidden="true">
-          <div><span>Marina Oliveira</span><small>3 itens</small></div>
-          <div class="snippet-total"><span>Total</span><b>R$ 650,00</b></div>
+          <div><span>Rafael Souza</span><small>3 itens</small></div>
+          <div class="snippet-total"><span>Total</span><b>R$ 3.529,00</b></div>
         </div>
       </li>
       <li class="step" v-reveal="2">
@@ -35,7 +35,7 @@
         </p>
         <div class="snippet" aria-hidden="true">
           <div>
-            <span class="file"><i></i>orcamento-0042.pdf</span
+            <span class="file"><i></i>orcamento-0015.pdf</span
             ><span class="chip">Enviado</span>
           </div>
         </div>

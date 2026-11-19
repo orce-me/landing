@@ -111,7 +111,7 @@ test('public production pages expose canonical, metadata, schema and valid route
         home,
         /<details|Sincronizar produtos|pacote inteiro|R\$ 20–30/,
       )
-      assert.match(home, /Exemplo ilustrativo: orçamento nº 0042/)
+      assert.match(home, /Tela de orçamentos do orce\.me/)
       assert.equal((home.match(/Menos tempo orçando/g) || []).length, 1)
       for (const slug of [
         'calculadora-de-desconto',

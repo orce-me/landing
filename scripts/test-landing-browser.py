@@ -51,8 +51,8 @@ with sync_playwright() as playwright:
                 }''')
                 page.evaluate("window.scrollTo({top: 0, behavior: 'instant'})")
                 stage = page.locator('.gallery-stage').bounding_box()
-                total = page.locator('.document-essential .total').bounding_box()
-                assert total['y'] + total['height'] <= stage['y'] + stage['height'] - 12, (theme, width, 'preview total is clipped', stage, total)
+                screen = page.locator('.quote-gallery img').bounding_box()
+                assert screen['x'] >= stage['x'] and screen['x'] + screen['width'] <= stage['x'] + stage['width'], (theme, width, 'product screen overflows its frame', stage, screen)
                 page.screenshot(path=str(artifacts / f'home-{theme}-{width}.png'), full_page=True)
                 page.locator('.hero').screenshot(path=str(artifacts / f'hero-{theme}-{width}.png'), style='.skip:not(:focus) { visibility: hidden; }')
                 page.locator('#recursos').screenshot(path=str(artifacts / f'features-{theme}-{width}.png'), style='.skip:not(:focus) { visibility: hidden; }')
@@ -94,11 +94,12 @@ with sync_playwright() as playwright:
             animation.pause();
             animation.currentTime = animation.effect.getTiming().duration;
         }''')
+        page.locator('#recursos').scroll_into_view_if_needed()
+        page.wait_for_function("[...document.querySelectorAll('.quote-gallery img, #recursos img')].every((img) => img.complete && img.naturalWidth > 0)", timeout=10000)
         stage = page.locator('.gallery-stage').bounding_box()
-        page.wait_for_timeout(3000)
-        paper = page.locator('.paper').bounding_box()
-        assert paper['x'] >= stage['x'] and paper['x'] + paper['width'] <= stage['x'] + stage['width'] + 8, (width, 'generated PDF does not fit inside the showcase', stage, paper)
-    checks.append('showcase entrance ends with the editor and the generated PDF inside the stage')
+        screen = page.locator('.quote-gallery img').bounding_box()
+        assert screen['x'] >= stage['x'] and screen['x'] + screen['width'] <= stage['x'] + stage['width'], (width, 'product screen overflows its frame', stage, screen)
+    checks.append('showcase entrance ends with the real product screens loaded inside their frames')
 
     for width in [1240, 390]:
         page.set_viewport_size({'width': width, 'height': 900})
@@ -140,11 +141,10 @@ with sync_playwright() as playwright:
     page.goto(args.base_url)
     expect(page.locator('.gallery-rail')).to_have_css('animation-name', 'none')
     expect(page.locator('.quote-gallery button')).to_have_count(0)
-    for document in page.locator('.layout-example').all():
-        expect(document).to_be_visible()
+    expect(page.locator('.quote-gallery img')).to_be_visible()
     assert page.evaluate('document.documentElement.scrollWidth <= innerWidth')
     page.screenshot(path=str(artifacts / 'home-reduced-motion-390.png'), full_page=True)
-    checks.append('reduced motion disables animation and exposes all three static previews')
+    checks.append('reduced motion disables animation and shows the product screen at rest')
     context.close()
     browser.close()
 

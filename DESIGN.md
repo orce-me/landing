@@ -391,7 +391,7 @@ orce.me helps small Brazilian businesses (bakeries, installers, photographers, p
 The identity is **bright and friendly**: an airy white page, light type, one vivid emerald and the real product shown large. It should feel light, modern and easy, like a tool a small business owner would enjoy opening.
 
 - **Mood:** White space, near-black text, light-grey cards, and emerald only where it matters: actions, the key words of a headline and small product details.
-- **Product first:** The hero shows the app at a large size (sidebar, quotation editor and the generated PDF) in a soft frame. Feature cards repeat the same sample quote (orçamento nº 0042 for Marina Oliveira, R$ 650,00).
+- **Product first:** The hero and the feature cards show real screens of the app (WebP captures in `public/screens/`, taken from the web app with sample data for a heater business): the quote inbox with its side panel, the product list, the quote items and the home dashboard. The workflow snippets reuse the same sample data (orçamento nº 14 for Rafael Souza, R$ 3.529,00).
 - **Voice:** Plain, concrete and kind. Headlines say what the product does. Use at most one catch phrase, in the closing card.
 - **Language:** All copy is Brazilian Portuguese (`lang="pt-BR"`). Currency uses `Intl.NumberFormat('pt-BR', { style: 'currency', currency: 'BRL' })`.
 - **Content pages:** The calculators and the guide put reading and input first. They use a narrower column, larger body text, underlined links, and no mockups.
@@ -403,11 +403,11 @@ White carries the page; light greys group content; emerald is the single brand c
 
 **Light theme**
 
-- `primary` Emerald (#12805c) with white `on-primary` (4.9:1) and hover #0d6b4c. Buttons, accent words in headlines, links that act, active states in mockups.
+- `primary` Emerald (#12805c) with white `on-primary` (4.9:1) and hover #0d6b4c. Buttons, accent words in headlines, links that act.
 - `primary-soft` (#e8f6ef) with `on-primary-soft` (#0b5a40). Small pills, the closing card and the hero wash.
 - `secondary` equals emerald and is used for the focus ring.
 - `tertiary` Sun (#ffc93c) is decorative only: the wordmark period. `tertiary-soft` (#fff6dc) is the warm half of the hero wash.
-- `neutral` (#ffffff) is the page. `surface` (#f6f6f8) is the grey card. `surface-raised` (#ffffff) is the app window and documents. `surface-tint` (#f0f0f3) and `band` (#ebebef) are panels and mockup fills.
+- `neutral` (#ffffff) is the page. `surface` (#f6f6f8) is the grey card. `surface-raised` (#ffffff) is the product window and workflow snippets. `surface-tint` (#f0f0f3) and `band` (#ebebef) are panels and mockup fills.
 - `on-surface` (#16171c) and `on-surface-muted` (#5b5d66) carry text. `outline` (#e7e7ec) is the hairline.
 - Quote-status pairs keep semantic amber, blue and green. `error` is #b3261e.
 
@@ -434,7 +434,7 @@ One family, **Figtree** (variable), self-hosted through Fontsource; `app.vue` pr
 - **Body:** `lead` (19px) for the hero paragraph and content intros, `body-lg` (17px) for supporting text, `body-md` (15px) for descriptions, `body-sm` (14px) for help text and the app window.
 - **Labels:** `label-lg` (15px, 500) for navigation, `label-md` (15px, 600) for buttons, `label-sm` (12px, 500) for notes, pills and the footer.
 - **Responsive sizes:** At 1050px and below, `display` is 52px (-1.6px) and `headline-lg` 44px. At 760px and below, `display` is 40px (-1.2px), `headline-lg` 34px, `headline-md` 32px (-0.8px), `headline-page` 34px, and the hero paragraph 17px. Below 380px, `display` is 34px.
-- **Mockup text:** The app window uses real UI sizes (12px to 15px). Only the PDF paper and small feature mockups use the reduced scale (7px to 11px), which imitates a screenshot. Do not reuse that scale for page text.
+- **Product screens:** Captures are taken at 2x and saved as WebP. Each `<img>` declares `width` and `height` (so the layout never shifts) and a descriptive `alt` that names the screen and what it shows. Recapture them whenever the app UI changes; never edit a capture by hand.
 
 ## Layout
 
@@ -462,7 +462,7 @@ Each page is a single column. Content sits in a centered container, `.wrap`, wit
 Depth is light and clean. Grey cards sit flat on white; app windows and documents float with a soft neutral shadow.
 
 - **Raised:** `0 1px 2px #16171c0a, 0 8px 24px -10px #16171c1f`. App windows inside cards, resource cards on hover.
-- **Floating:** `0 30px 80px -30px #16171c40, 0 2px 8px #16171c0d`. The hero product frame and the PDF paper.
+- **Floating:** `0 30px 80px -30px #16171c40, 0 2px 8px #16171c0d`. The hero product frame.
 - **Dark theme:** raised `0 1px 2px #00000066, 0 10px 30px -12px #000000aa`; floating `0 30px 80px -24px #000000cc`.
 - **Washes:** The hero and the closing card use soft radial washes of `primary-soft` and `tertiary-soft` only. No other gradients.
 - **Tilt:** Nothing tilts.
@@ -470,8 +470,8 @@ Depth is light and clean. Grey cards sit flat on white; app windows and document
 
 ## Shapes
 
-- `rounded.sm` (6px): chips and small buttons inside mockups.
-- `rounded.md` (10px): page buttons, inputs, mockup rows.
+- `rounded.sm` (6px): chips and small buttons inside workflow snippets.
+- `rounded.md` (10px): page buttons, inputs, workflow snippets.
 - `rounded.lg` (16px): app windows, panels, the dialog, resource cards.
 - `rounded.xl` (24px): grey section cards, the product frame and the closing card.
 - `rounded.full`: pills, status chips, step badges, the arrow circle in buttons and the theme toggle.
@@ -484,9 +484,9 @@ Depth is light and clean. Grey cards sit flat on white; app windows and document
 - **Text link:** `label-lg` text with a trailing glyph (`↓` in-page, `→` next page) that slides on hover. No underline.
 - **Header:** See Layout. Navigation links turn `primary` on hover. At 760px and below the navigation and the primary button move into a menu panel (`surface-raised`, `rounded.lg`, hairline border).
 - **Hero:** Centered `display` headline with emerald accent words, a centered `lead` paragraph, the primary button, and a `label-sm` note below it. The product frame follows.
-- **Product frame:** A translucent white `rounded.xl` frame (8px padding, hairline, floating shadow) holding the app: a sidebar with the brand and navigation (Orçamentos active), the quotation editor (number, client, validity, items with quantity and price, totals, and an export action rendered as a non-interactive button) and the generated PDF paper on the right. Item rows appear one by one and the paper slides in, once.
+- **Product frame:** A translucent white `rounded.xl` frame (8px padding, hairline, floating shadow) holding a real capture of the quote inbox in a `rounded.lg` hairline window. It rises in once.
 - **Step card:** A grey `rounded.xl` card per workflow step with an emerald numbered badge, a `title-lg` title, a `body-md` text and a small white UI snippet from the same sample quote.
-- **Feature card:** Grey `rounded.xl` cards with copy on top and an `app-window` mockup below. The history strip is a full-width grey card.
+- **Feature card:** Grey `rounded.xl` cards with copy on top and a real screen that enters from the right and is cut by the card edges (top-left radius, hairline on the top and left, raised shadow); the screen lifts 6px on hover. The follow-up card spans the row with the home dashboard beside its copy.
 - **Resource card:** A grey `rounded.lg` link with a `title-md` title, a `body-sm` description and an emerald `→`; it turns white with the raised shadow on hover. The guide card spans the row.
 - **Pricing banner:** A full-width grey card with a short title and an emerald text link.
 - **Closing card:** A `primary-soft` `rounded.xl` card with a sun wash, a centered `headline-lg` with emerald accent words, and the primary button.
@@ -513,7 +513,7 @@ Depth is light and clean. Grey cards sit flat on white; app windows and document
 ## Motion
 
 - Transitions are 0.2s and change only `transform`, `background` and `color`. Card lifts and arrow slides use 0.4s `cubic-bezier(.2,.7,.2,1)`.
-- **Entrance:** The hero copy fades up once. In the product frame, item rows appear one by one and the PDF paper slides in, all within four seconds, once. Below-the-fold blocks use the `v-reveal` directive: they fade in and lift 24px over 0.8s, staggered 90ms by the directive value, once per page view.
+- **Entrance:** The hero copy fades up once and the product frame rises in within four seconds, once. Below-the-fold blocks use the `v-reveal` directive: they fade in and lift 24px over 0.8s, staggered 90ms by the directive value, once per page view.
 - The theme toggle reveals the new theme with a circular clip from the pointer, 520ms, through the View Transitions API. Without that API, the theme changes at once.
 - `prefers-reduced-motion: reduce` turns off all transitions, smooth scroll, the theme reveal, the reveal directive and the product entrance. Everything renders in its final position.
 
@@ -531,7 +531,7 @@ The page uses Unicode glyphs instead of an icon library.
 - Do give every new surface and text pair a `-dark` value. Check contrast in both themes.
 - Do use the focus ring as a 3px solid outline with a 5px offset, in `secondary`.
 - Don't use `tertiary` as text, or `outline` for control borders. Form control borders use `on-surface-muted` for 3:1 contrast.
-- Do keep real page text at 12px or larger. Only the reduced mockups go smaller.
+- Do keep real page text at 12px or larger. Text inside product captures is part of the image.
 - Do keep one primary button per section, plus the header button. Pair it with a text link, not a second filled button.
 - Do show the product at a readable size where it explains a feature.
 - Do end headlines and step titles with a period, for example "Monte seu catálogo."

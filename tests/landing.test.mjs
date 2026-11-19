@@ -1,5 +1,5 @@
 import assert from 'node:assert/strict'
-import { readFileSync, readdirSync } from 'node:fs'
+import { existsSync, readFileSync, readdirSync } from 'node:fs'
 import test from 'node:test'
 
 const component = (name) => readFileSync(`app/components/${name}.vue`, 'utf8')
@@ -21,6 +21,24 @@ test('quotation showcase settles after a brief entrance and respects reduced mot
   assert.doesNotMatch(demo, /infinite|<button|<figcaption/)
   assert.match(demo, /prefers-reduced-motion: reduce/)
   assert.match(demo, /animation: none/)
+})
+
+test('product screens are real images with a description and a reserved size', () => {
+  for (const name of ['QuoteDemo', 'FeaturesSection']) {
+    const images = component(name).match(/<img[\s\S]*?\/>/g) ?? []
+    assert.ok(images.length > 0, name)
+    for (const img of images) {
+      const src = img.match(/src="([^"]+)"/)?.[1]
+      assert.ok(src && existsSync(`public${src}`), `${name}: missing ${src}`)
+      assert.match(img, /width="\d+"/, `${name}: ${src} has no width`)
+      assert.match(img, /height="\d+"/, `${name}: ${src} has no height`)
+      assert.match(
+        img,
+        /alt="[^"]{40,}"/,
+        `${name}: ${src} needs a descriptive alt`,
+      )
+    }
+  }
 })
 
 test('navigation reaches every homepage section from secondary pages', () => {
