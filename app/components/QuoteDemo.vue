@@ -14,6 +14,7 @@ const items = [
   },
   { name: 'Decoração da mesa', kind: 'Serviço', qty: 1, price: 'R$ 120,00' },
 ]
+const nav = ['Início', 'Orçamentos', 'Catálogo', 'Clientes', 'Configurações']
 </script>
 
 <template>
@@ -24,14 +25,25 @@ const items = [
   >
     <div class="gallery-stage" data-nosnippet>
       <div class="gallery-rail" aria-hidden="true">
-        <div class="app">
-          <div class="app-head">
-            <div>
-              <small>Orçamento nº 0042</small>
-              <b>Festa de aniversário</b>
-            </div>
-            <span class="chip">Rascunho</span>
+        <aside class="sidebar">
+          <span class="side-brand"
+            ><i></i><span>orce<span class="dot">.</span>me</span></span
+          >
+          <span
+            v-for="entry in nav"
+            :key="entry"
+            class="side-item"
+            :class="{ active: entry === 'Orçamentos' }"
+            >{{ entry }}</span
+          >
+        </aside>
+
+        <div class="editor">
+          <div class="crumbs">
+            <span>Orçamentos <i>/</i> <b>Nº 0042</b></span
+            ><span class="chip">Rascunho</span>
           </div>
+          <b class="editor-title">Festa de aniversário</b>
           <div class="fields">
             <div class="field">
               <small>Cliente</small><span>Marina Oliveira</span>
@@ -55,19 +67,23 @@ const items = [
               ><span class="price">{{ item.price }}</span>
             </div>
           </div>
-          <div class="sums">
-            <div><span>Subtotal</span><span>R$ 650,00</span></div>
-            <div><span>Desconto</span><span>R$ 0,00</span></div>
-            <div class="total">
-              <span>Total</span><strong>R$ 650,00</strong>
+          <div class="footer-row">
+            <div class="sums">
+              <span>Subtotal <b>R$ 650,00</b></span>
+              <span>Desconto <b>R$ 0,00</b></span>
             </div>
-          </div>
-          <div class="app-actions">
+            <div class="total">
+              <small>Total</small><strong>R$ 650,00</strong>
+            </div>
             <span class="fake-button">Gerar PDF</span>
           </div>
         </div>
-        <div class="layout-example paper">
-          <QuoteDocument layout="essential" />
+
+        <div class="preview">
+          <small>Prévia do PDF</small>
+          <div class="layout-example paper">
+            <QuoteDocument layout="essential" />
+          </div>
         </div>
       </div>
     </div>
@@ -79,63 +95,111 @@ const items = [
   margin: 0;
   min-width: 0;
 }
+/* The product frame. */
 .gallery-stage {
   position: relative;
-  height: 600px;
+  padding: var(--spacing-sm);
   border-radius: var(--rounded-xl);
-  background: var(--color-maracuja);
+  border: 1px solid var(--color-outline);
+  background: color-mix(in srgb, var(--color-surface-raised) 70%, transparent);
+  box-shadow: var(--shadow-floating);
   overflow: hidden;
 }
 .gallery-rail {
-  position: absolute;
-  inset: 0;
-  animation: quotation-layouts 4s ease-in-out forwards;
-}
-
-/* The quotation editor, at real UI size. */
-.app {
-  position: absolute;
-  top: var(--spacing-3xl);
-  left: var(--spacing-3xl);
-  width: 410px;
-  padding: var(--spacing-2xl);
-  background: var(--color-surface-raised);
+  display: grid;
+  grid-template-columns: 190px 1fr 300px;
+  height: 540px;
   border-radius: var(--rounded-lg);
-  box-shadow: var(--shadow-floating);
+  background: var(--color-surface-raised);
+  border: 1px solid var(--color-outline);
+  overflow: hidden;
   font-size: var(--typography-body-sm-font-size);
   font-variant-numeric: tabular-nums;
+  animation: quotation-layouts 4s ease-in-out forwards;
 }
-.app small {
+.gallery-rail small {
   display: block;
   font-size: var(--typography-label-sm-font-size);
   color: var(--color-on-surface-muted);
 }
-.app-head {
+
+/* Sidebar. */
+.sidebar {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  padding: var(--spacing-xl) var(--spacing-md);
+  border-right: 1px solid var(--color-outline);
+}
+.side-brand {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+  margin: 0 var(--spacing-sm) var(--spacing-xl);
+  font-size: var(--typography-title-md-font-size);
+  font-weight: 700;
+  letter-spacing: -0.5px;
+}
+.side-brand i {
+  width: 20px;
+  height: 20px;
+  border-radius: var(--rounded-sm);
+  background: var(--color-primary);
+}
+.dot {
+  color: var(--color-tertiary);
+}
+.side-item {
+  padding: var(--spacing-sm) var(--spacing-md);
+  border-radius: var(--rounded-md);
+  color: var(--color-on-surface-muted);
+}
+.side-item.active {
+  background: var(--color-primary-soft);
+  color: var(--color-on-primary-soft);
+  font-weight: 600;
+}
+
+/* Editor. */
+.editor {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  padding: var(--spacing-xl) var(--spacing-2xl);
+}
+.crumbs {
   display: flex;
   justify-content: space-between;
-  align-items: flex-start;
-  gap: var(--spacing-md);
+  align-items: center;
+  color: var(--color-on-surface-muted);
 }
-.app-head b {
-  display: block;
-  margin-top: 2px;
-  font-size: var(--typography-title-md-font-size);
-  font-weight: var(--typography-title-md-font-weight);
-  letter-spacing: var(--typography-title-md-letter-spacing);
+.crumbs i {
+  font-style: normal;
+  margin: 0 var(--spacing-xs);
+}
+.crumbs b {
+  color: var(--color-on-surface);
+  font-weight: 500;
 }
 .chip {
-  padding: var(--spacing-xs) var(--spacing-md);
+  padding: 2px var(--spacing-md);
   border-radius: var(--rounded-full);
   background: var(--color-status-draft);
   color: var(--color-on-status-draft);
   font-size: var(--typography-label-sm-font-size);
   font-weight: 600;
 }
+.editor-title {
+  margin-top: var(--spacing-lg);
+  font-size: var(--typography-title-lg-font-size);
+  font-weight: 500;
+  letter-spacing: var(--typography-title-lg-letter-spacing);
+}
 .fields {
   display: grid;
-  grid-template-columns: 1.4fr 1fr;
+  grid-template-columns: 1.5fr 1fr;
   gap: var(--spacing-sm);
-  margin-top: var(--spacing-xl);
+  margin-top: var(--spacing-lg);
 }
 .field {
   padding: var(--spacing-sm) var(--spacing-md);
@@ -146,12 +210,12 @@ const items = [
   font-weight: 500;
 }
 .items {
-  margin-top: var(--spacing-xl);
+  margin-top: var(--spacing-lg);
 }
 .item-head,
 .item {
   display: grid;
-  grid-template-columns: 1fr 40px 92px;
+  grid-template-columns: 1fr 44px 96px;
   align-items: center;
 }
 .item-head {
@@ -161,17 +225,13 @@ const items = [
 }
 .item {
   padding: var(--spacing-sm) var(--spacing-md);
-  border-radius: var(--rounded-md);
-  background: var(--color-surface-tint);
+  border-top: 1px solid var(--color-outline);
   animation: row-in 0.5s var(--ease-soft) both;
   animation-delay: calc(0.6s + var(--row) * 0.3s);
 }
-.item + .item {
-  margin-top: var(--spacing-xs);
-}
 .item b {
   display: block;
-  font-weight: 600;
+  font-weight: 500;
 }
 .item-head > span:nth-child(2),
 .qty {
@@ -182,25 +242,28 @@ const items = [
   text-align: right;
   white-space: nowrap;
 }
-.sums {
-  margin-top: var(--spacing-lg);
-  padding: 0 var(--spacing-md);
-}
-.sums > div {
+.footer-row {
   display: flex;
-  justify-content: space-between;
-  padding: 2px 0;
+  align-items: flex-end;
+  gap: var(--spacing-xl);
+  margin-top: auto;
+  padding: var(--spacing-lg);
+  border-radius: var(--rounded-md);
+  background: var(--color-surface);
+}
+.sums {
+  display: grid;
+  gap: 2px;
   color: var(--color-on-surface-muted);
 }
-.sums .total {
-  margin-top: var(--spacing-sm);
-  padding-top: var(--spacing-sm);
-  border-top: 1px solid var(--color-outline);
+.sums b {
+  margin-left: var(--spacing-xs);
   color: var(--color-on-surface);
-  align-items: baseline;
+  font-weight: 500;
 }
-.total span {
-  font-weight: 600;
+.total {
+  margin-left: auto;
+  text-align: right;
 }
 .total strong {
   font-size: var(--typography-figure-font-size);
@@ -208,31 +271,31 @@ const items = [
   letter-spacing: var(--typography-figure-letter-spacing);
   white-space: nowrap;
 }
-.app-actions {
-  display: flex;
-  justify-content: flex-end;
-  margin-top: var(--spacing-lg);
-}
 .fake-button {
-  padding: var(--spacing-sm) var(--spacing-xl);
-  border-radius: var(--rounded-full);
+  padding: var(--spacing-sm) var(--spacing-lg);
+  border-radius: var(--rounded-md);
   background: var(--color-primary);
   color: var(--color-on-primary);
   font-weight: 600;
+  white-space: nowrap;
 }
 
-/* The generated PDF. */
-.paper {
-  position: absolute;
-  right: var(--spacing-2xl);
-  bottom: var(--spacing-2xl);
-  width: 260px;
-  background: var(--color-surface-raised);
-  border-radius: var(--rounded-md);
-  box-shadow: var(--shadow-floating);
+/* PDF preview. */
+.preview {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-md);
+  padding: var(--spacing-xl);
+  background: var(--color-surface);
+  border-left: 1px solid var(--color-outline);
   overflow: hidden;
-  transform: rotate(3deg) scale(0.72);
-  transform-origin: bottom right;
+}
+.paper {
+  width: 100%;
+  background: var(--color-surface-raised);
+  border-radius: var(--rounded-sm);
+  box-shadow: var(--shadow-raised);
+  overflow: hidden;
   animation: paper-in 0.8s var(--ease-soft) 1.9s both;
 }
 
@@ -259,54 +322,52 @@ const items = [
 @keyframes paper-in {
   from {
     opacity: 0;
-    transform: translate(40px, 40px) rotate(9deg) scale(0.72);
+    transform: translateY(24px);
   }
 }
 @media (max-width: 1050px) {
-  .gallery-stage {
-    height: 580px;
+  .gallery-rail {
+    grid-template-columns: 1fr 280px;
+  }
+  .sidebar {
+    display: none;
   }
 }
 @media (max-width: 760px) {
   .gallery-stage {
-    height: auto;
-    padding: var(--spacing-lg) var(--spacing-lg) var(--spacing-2xl);
+    padding: var(--spacing-xs);
   }
   .gallery-rail {
-    position: relative;
-    inset: auto;
+    grid-template-columns: 1fr;
+    height: auto;
   }
-  .app {
-    position: relative;
-    top: auto;
-    left: auto;
-    width: auto;
+  .editor {
     padding: var(--spacing-lg);
   }
   .item-head,
   .item {
     grid-template-columns: 1fr 32px 84px;
   }
-  .paper {
-    position: relative;
-    right: auto;
-    bottom: auto;
-    width: 220px;
-    margin: calc(-1 * var(--spacing-sm)) var(--spacing-sm) 0 auto;
-    transform: rotate(3deg);
-    transform-origin: center;
+  .footer-row {
+    flex-wrap: wrap;
+    margin-top: var(--spacing-lg);
   }
-  @keyframes paper-in {
-    from {
-      opacity: 0;
-      transform: translateY(30px) rotate(8deg);
-    }
+  .fake-button {
+    width: 100%;
+    text-align: center;
+  }
+  .preview {
+    border-left: 0;
+    border-top: 1px solid var(--color-outline);
+    padding: var(--spacing-lg);
+  }
+  .paper {
+    max-width: 260px;
+    margin: 0 auto;
   }
 }
 @media (prefers-reduced-motion: reduce) {
-  .gallery-rail {
-    animation: none;
-  }
+  .gallery-rail,
   .item,
   .paper {
     animation: none;

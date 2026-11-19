@@ -90,8 +90,8 @@ if (origin) {
   align-items: center;
   gap: var(--spacing-2xl);
   padding: var(--spacing-2xl) var(--spacing-3xl);
-  background: var(--color-surface-tint);
-  border-radius: var(--rounded-lg);
+  background: var(--color-surface);
+  border-radius: var(--rounded-xl);
 }
 .plan-banner p {
   font-size: var(--typography-title-md-font-size);

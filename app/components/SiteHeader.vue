@@ -47,7 +47,9 @@ function closeMenu() {
         <NuxtLink to="/planos-e-precos">Planos e preços</NuxtLink>
         <NuxtLink to="/ajuda">Ajuda</NuxtLink>
       </nav>
-      <a class="login" :href="appUrl">Entrar</a><ThemeToggle /><button
+      <a class="button quiet login" :href="appUrl">Entrar</a
+      ><a class="button primary header-cta" :href="appUrl">Criar orçamento</a
+      ><ThemeToggle /><button
         ref="menuButton"
         class="menu"
         :aria-label="menuOpen ? 'Fechar menu' : 'Abrir menu'"
@@ -66,7 +68,7 @@ function closeMenu() {
   position: sticky;
   top: 0;
   z-index: 50;
-  background: color-mix(in srgb, var(--color-neutral) 92%, transparent);
+  background: color-mix(in srgb, var(--color-neutral) 94%, transparent);
   backdrop-filter: blur(14px) saturate(1.2);
   -webkit-backdrop-filter: blur(14px) saturate(1.2);
   border-bottom: 1px solid transparent;
@@ -99,6 +101,9 @@ function closeMenu() {
   transform-origin: right;
   transition: transform 0.4s var(--ease-soft);
 }
+.header nav a:hover {
+  color: var(--color-primary);
+}
 .header nav a:hover::after,
 .header nav a.router-link-exact-active::after {
   transform: scaleX(1);
@@ -123,10 +128,10 @@ function closeMenu() {
   display: grid;
   place-items: center;
   background: var(--color-primary);
-  border-radius: var(--rounded-full);
+  border-radius: var(--rounded-md);
   font-size: 0;
-  width: 30px;
-  height: 30px;
+  width: 28px;
+  height: 28px;
   margin-right: 10px;
 }
 
@@ -145,20 +150,25 @@ function closeMenu() {
   font-weight: var(--typography-label-lg-font-weight);
 }
 
-.login {
-  display: inline-flex;
-  align-items: center;
-  min-height: 36px;
-  padding: 0 var(--spacing-lg);
-  border: 1px solid var(--color-outline);
-  border-radius: var(--rounded-full);
-  background: var(--color-surface-raised);
+.login,
+.header-cta {
+  min-height: 40px;
+  padding: 8px 16px;
   font-size: var(--typography-label-lg-font-size);
-  font-weight: var(--typography-label-lg-font-weight);
-  transition: background 0.2s;
 }
-.login:hover {
-  background: var(--color-surface-tint);
+.login {
+  margin-right: -12px;
+}
+.header .theme-toggle {
+  margin-left: -8px;
+}
+@media (max-width: 1050px) {
+  .header-cta {
+    display: none;
+  }
+  .login {
+    margin-right: 0;
+  }
 }
 
 .menu {

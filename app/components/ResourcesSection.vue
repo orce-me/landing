@@ -69,7 +69,7 @@ const resources = [
   grid-column: 1 / -1;
 }
 .resource-index li:first-child .resource {
-  background: var(--color-surface-tint);
+  background: var(--color-primary-soft);
 }
 .resource-index li:first-child h3 {
   font-size: var(--typography-title-lg-font-size);
@@ -81,15 +81,16 @@ const resources = [
   width: 100%;
   padding: var(--spacing-2xl);
   background: var(--color-surface);
-  border: 1px solid var(--color-outline);
   border-radius: var(--rounded-lg);
   transition:
     transform 0.4s var(--ease-soft),
-    background 0.2s;
+    background 0.2s,
+    box-shadow 0.2s;
 }
 .resource:hover {
   transform: translateY(-4px);
   background: var(--color-surface-raised);
+  box-shadow: var(--shadow-raised);
 }
 .resource h3 {
   font-size: var(--typography-title-md-font-size);

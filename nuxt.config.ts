@@ -3,8 +3,6 @@ export default defineNuxtConfig({
   devtools: { enabled: false },
   devServer: { host: '0.0.0.0', port: 5174 },
   css: [
-    '@fontsource-variable/fraunces/full.css',
-    '@fontsource-variable/fraunces/full-italic.css',
     '@fontsource-variable/figtree/wght.css',
     '~/assets/css/tokens.css',
     '~/assets/css/main.css',
@@ -45,7 +43,7 @@ export default defineNuxtConfig({
       htmlAttrs: { lang: 'pt-BR' },
       title: 'Sistema de orçamentos para pequenos negócios | orce.me',
       meta: [
-        { name: 'theme-color', content: '#5a1f45' },
+        { name: 'theme-color', content: '#12805c' },
         {
           name: 'description',
           content:

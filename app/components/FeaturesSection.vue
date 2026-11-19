@@ -139,16 +139,12 @@
   border-radius: var(--rounded-xl);
   overflow: hidden;
 }
-.feature-card:first-child {
-  background: var(--color-anil);
-  color: var(--color-on-anil);
-}
-.feature-card:nth-child(2) {
-  background: var(--color-urucum);
-  color: var(--color-on-urucum);
+.feature-card,
+.history-card {
+  background: var(--color-surface);
 }
 .feature-copy p {
-  opacity: 0.82;
+  color: var(--color-on-surface-muted);
 }
 .workspace,
 .history-preview {
@@ -363,10 +359,7 @@
   background: var(--color-status-draft);
   color: var(--color-on-status-draft);
 }
-.history-card {
-  background: var(--color-maracuja);
-  color: var(--color-on-maracuja);
-}
+
 .proposal-total strong,
 .catalog-row strong {
   font-variant-numeric: tabular-nums;

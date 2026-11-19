@@ -8,13 +8,16 @@ const appUrl = useRuntimeConfig().public.appUrl
       <h2>
         Menos tempo orçando.<br /><em>Mais espaço para fazer acontecer.</em>
       </h2>
-      <a class="button light" :href="appUrl">Criar meu primeiro orçamento</a>
+      <a class="button primary" :href="appUrl"
+        >Criar meu primeiro orçamento
+        <span class="arrow-dot" aria-hidden="true">→</span></a
+      >
     </div>
   </section>
 </template>
 
 <style scoped>
-/* A terracotta card in both themes, with the light button. */
+/* A soft emerald card with a sun wash and the primary button. */
 .closing {
   padding-top: var(--spacing-section);
   padding-bottom: var(--spacing-section);
@@ -26,8 +29,14 @@ const appUrl = useRuntimeConfig().public.appUrl
   gap: var(--spacing-3xl);
   padding: 88px var(--spacing-4xl);
   text-align: center;
-  background: var(--color-jabuticaba);
-  color: var(--color-on-jabuticaba);
+  background:
+    radial-gradient(
+      50% 80% at 85% 20%,
+      var(--color-tertiary-soft),
+      transparent 70%
+    ),
+    var(--color-primary-soft);
+  color: var(--color-on-surface);
   border-radius: var(--rounded-xl);
 }
 .closing h2 {
@@ -40,7 +49,6 @@ const appUrl = useRuntimeConfig().public.appUrl
 .closing em {
   font-size: var(--typography-headline-lg-accent-font-size);
   letter-spacing: var(--typography-headline-lg-accent-letter-spacing);
-  color: var(--color-maracuja);
 }
 @media (max-width: 1050px) {
   .closing h2,

@@ -2,7 +2,7 @@
   <section class="workflow wrap section" id="como-funciona">
     <h2 v-reveal>Do catálogo ao PDF, <em>em três etapas.</em></h2>
     <ol class="steps">
-      <li class="step step-urucum" v-reveal="0">
+      <li class="step" v-reveal="0">
         <span class="step-number" aria-hidden="true">1</span>
         <h3>Monte seu catálogo.</h3>
         <p>
@@ -15,7 +15,7 @@
           <div><span>Decoração da mesa</span><b>R$ 120,00</b></div>
         </div>
       </li>
-      <li class="step step-anil" v-reveal="1">
+      <li class="step" v-reveal="1">
         <span class="step-number" aria-hidden="true">2</span>
         <h3>Prepare a proposta.</h3>
         <p>
@@ -27,7 +27,7 @@
           <div class="snippet-total"><span>Total</span><b>R$ 650,00</b></div>
         </div>
       </li>
-      <li class="step step-mata" v-reveal="2">
+      <li class="step" v-reveal="2">
         <span class="step-number" aria-hidden="true">3</span>
         <h3>Envie o PDF.</h3>
         <p>
@@ -51,7 +51,7 @@
 .steps {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: var(--spacing-2xl);
+  gap: var(--spacing-xl);
   margin: var(--spacing-4xl) 0 0;
   padding: 0;
   list-style: none;
@@ -62,28 +62,19 @@
   padding: var(--spacing-3xl);
   border-radius: var(--rounded-xl);
 }
-.step-urucum {
-  background: var(--color-urucum);
-  color: var(--color-on-urucum);
-}
-.step-anil {
-  background: var(--color-anil);
-  color: var(--color-on-anil);
-}
-.step-mata {
-  background: var(--color-mata);
-  color: var(--color-on-mata);
+.step {
+  background: var(--color-surface);
 }
 .step-number {
   display: grid;
   place-items: center;
-  width: 40px;
-  height: 40px;
+  width: 36px;
+  height: 36px;
   border-radius: var(--rounded-full);
-  background: var(--color-surface-raised);
-  color: var(--color-on-surface);
-  font-size: var(--typography-title-md-font-size);
-  font-weight: var(--typography-title-md-font-weight);
+  background: var(--color-primary);
+  color: var(--color-on-primary);
+  font-size: var(--typography-label-md-font-size);
+  font-weight: var(--typography-label-md-font-weight);
 }
 .step h3 {
   font-size: var(--typography-title-lg-font-size);
@@ -95,7 +86,7 @@
 .step p {
   font-size: var(--typography-body-md-font-size);
   line-height: var(--typography-body-md-line-height);
-  opacity: 0.82;
+  color: var(--color-on-surface-muted);
 }
 .snippet {
   margin-top: auto;
