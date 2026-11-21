@@ -17,6 +17,12 @@ pnpm generate
 
 The production-route tests require `pnpm build` first. Pricing and help are separate routes (`/planos-e-precos`, `/ajuda`); homepage section links are root-qualified to work from every page. Quotation documents are illustrative examples, not a promise of specific template availability.
 
+### Required CI
+
+The `Landing CI` check runs on every pull request targeting `main`, every push to `main`, and manual workflow runs. Using Node 24 and the pinned pnpm version, it installs the frozen lockfile, checks design tokens, builds the production server, runs `test:seo` (all Node regression tests, including production-route checks), and generates the static site. Keep this check name stable for branch protection.
+
+Deployment remains restricted to `main` pushes and manual runs on `main`, and depends on the same run's passing `Landing CI` job. Pull requests never run the SSH deployment job. Superseded PR runs are canceled; deployments are serialized without canceling an active upload. Both jobs have a 15-minute timeout and read-only repository permissions.
+
 ### Browser regressions
 
 The optional browser suite uses Python Playwright outside the application's dependency graph. It checks the production site in light/dark at 1240, 1050, 760, 390 and 320px, cross-page anchors and mobile navigation, the help accordion, the brief non-looping entrance animation, reduced motion, and closing CTA placement. It writes screenshots to the specified artifact directory and fails on browser errors or horizontal overflow.
