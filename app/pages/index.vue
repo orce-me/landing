@@ -48,6 +48,7 @@ if (origin) {
           'Cadastro de clientes',
           'Criação de orçamentos',
           'Assistente com IA que monta rascunhos a partir de texto ou áudio',
+          'Editor visual do documento do orçamento',
           'Exportação em PDF',
         ],
         publisher: { '@id': `${origin}/#organization` },

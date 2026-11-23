@@ -47,6 +47,26 @@
         </article>
         <article class="feature-card feature-wide" v-reveal>
           <div class="feature-copy">
+            <h3>Monte o PDF do seu jeito.</h3>
+            <p>
+              No Canvas, escolha o estilo, o cabeçalho e as cores, ou use as
+              cores do seu logo. Arraste textos e formas pela folha. A prévia
+              sai igual ao PDF.
+            </p>
+          </div>
+          <div class="shot" data-nosnippet>
+            <img
+              src="/screens/canvas.webp"
+              width="2394"
+              height="1394"
+              loading="lazy"
+              decoding="async"
+              alt="Canvas do orce.me: painel de design com estilo Moderno, cabeçalho Dividido e cor principal verde, ao lado da folha do orçamento com coletor solar, tubo de cobre e instalação."
+            />
+          </div>
+        </article>
+        <article class="feature-card feature-wide" v-reveal>
+          <div class="feature-copy">
             <h3>Acompanhe cada proposta.</h3>
             <p>
               Veja quanto está aguardando resposta, quais propostas vencem nos

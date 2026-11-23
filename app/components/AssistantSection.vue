@@ -23,10 +23,7 @@
           </li>
           <li>
             <h3>Você revisa antes de enviar.</h3>
-            <p>
-              O orçamento fica em rascunho até você conferir e enviar. O
-              assistente faz parte dos planos pagos.
-            </p>
+            <p>O orçamento fica em rascunho até você conferir e enviar.</p>
           </li>
         </ul>
         <div class="shot" data-nosnippet>
