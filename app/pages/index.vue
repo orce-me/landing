@@ -47,6 +47,7 @@ if (origin) {
           'Catálogo de produtos e serviços',
           'Cadastro de clientes',
           'Criação de orçamentos',
+          'Assistente com IA que monta rascunhos a partir de texto ou áudio',
           'Exportação em PDF',
         ],
         publisher: { '@id': `${origin}/#organization` },
@@ -69,6 +70,7 @@ if (origin) {
   <div>
     <HeroSection />
     <WorkflowSection />
+    <AssistantSection />
     <FeaturesSection />
     <div class="wrap">
       <div class="plan-banner" v-reveal>

@@ -24,7 +24,7 @@ test('quotation showcase settles after a brief entrance and respects reduced mot
 })
 
 test('product screens are real images with a description and a reserved size', () => {
-  for (const name of ['QuoteDemo', 'FeaturesSection']) {
+  for (const name of ['QuoteDemo', 'FeaturesSection', 'AssistantSection']) {
     const images = component(name).match(/<img[\s\S]*?\/>/g) ?? []
     assert.ok(images.length > 0, name)
     for (const img of images) {
@@ -57,6 +57,7 @@ test('the public quotation story does not promote speculative services or repeat
   const publicStory = [
     'HeroSection',
     'WorkflowSection',
+    'AssistantSection',
     'FeaturesSection',
     'ClosingSection',
     'SiteFooter',
