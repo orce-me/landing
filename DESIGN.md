@@ -274,6 +274,14 @@ components:
   card-dark:
     backgroundColor: '{colors.surface-dark}'
     textColor: '{colors.on-surface-dark}'
+  assistant-card:
+    backgroundColor: '{colors.surface}'
+    textColor: '{colors.on-surface}'
+    typography: '{typography.title-md}'
+    rounded: '{rounded.xl}'
+  assistant-card-dark:
+    backgroundColor: '{colors.surface-dark}'
+    textColor: '{colors.on-surface-dark}'
   app-window:
     backgroundColor: '{colors.surface-raised}'
     textColor: '{colors.on-surface}'
@@ -447,7 +455,8 @@ Each page is a single column. Content sits in a centered container, `.wrap`, wit
 - **Grids:**
   - Hero: centered copy (max 760px) over the product frame, which spans the container. A soft emerald and sun wash sits behind the lower half of the hero.
   - Workflow: a centered heading over three grey step cards with a 20px gap. One column at 1050px.
-  - Features: a centered heading over two grey feature cards and a full-width history card.
+  - Assistant: a centered heading over one grey card with three short points (`0.75fr 1.25fr`) beside a real capture of the assistant. The points sit in three columns over the capture at 1050px and stack at 760px.
+  - Features: a centered heading over two grey feature cards and two full-width cards (the Canvas designer and the history).
   - Pricing banner: one full-width grey card between the features and the closing band.
   - Closing: a soft emerald card inside the container.
   - Pricing: a separate page with a two-column quotation capability and current-options panel.
@@ -486,7 +495,8 @@ Depth is light and clean. Grey cards sit flat on white; app windows and document
 - **Hero:** Centered `display` headline with emerald accent words, a centered `lead` paragraph, the primary button, and a `label-sm` note below it. The product frame follows.
 - **Product frame:** A translucent white `rounded.xl` frame (8px padding, hairline, floating shadow) holding a real capture of the quote inbox in a `rounded.lg` hairline window. It rises in once.
 - **Step card:** A grey `rounded.xl` card per workflow step with an emerald numbered badge, a `title-lg` title, a `body-md` text and a small white UI snippet from the same sample quote.
-- **Feature card:** Grey `rounded.xl` cards with copy on top and a real screen that enters from the right and is cut by the card edges (top-left radius, hairline on the top and left, raised shadow); the screen lifts 6px on hover. The follow-up card spans the row with the home dashboard beside its copy.
+- **Assistant card:** A grey `rounded.xl` card between the workflow and the features. Three `title-md` points with `body-md` text (request by text, audio or WhatsApp; change it in one sentence; review before sending) beside a real capture of the assistant screen, cut by the card edges like the feature screens, that lifts 6px on hover.
+- **Feature card:** Grey `rounded.xl` cards with copy on top and a real screen that enters from the right and is cut by the card edges (top-left radius, hairline on the top and left, raised shadow); the screen lifts 6px on hover. Two cards span the row with the screen beside the copy: the Canvas document designer, then the follow-up card with the home dashboard.
 - **Pricing banner:** A full-width grey card with a short title and an emerald text link.
 - **Closing card:** A `primary-soft` `rounded.xl` card with a sun wash, a centered `headline-lg` with emerald accent words, and the primary button.
 - **Footer:** Brand, links (plans, help, the guide and the quote calculator) and copyright in one row, with a top hairline.
